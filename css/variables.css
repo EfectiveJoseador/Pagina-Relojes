@@ -1,0 +1,79 @@
+:root {
+
+    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-heading: 'Outfit', sans-serif;
+
+    /* Light Theme - Luxury Watch */
+    --bg-body-light: #f8f8f6;
+    --bg-card-light: #ffffff;
+    --text-main-light: #1a1a1a;
+    --text-muted-light: #6c757d;
+    --border-light: #e9ecef;
+    --primary-light: #000000;
+    --accent-light: #D4AF37;
+
+    /* Dark Theme - Luxury Watch */
+    --bg-body-dark: #000000;
+    --bg-card-dark: #0a0a0a;
+    --text-main-dark: #f8fafc;
+    --text-muted-dark: #a1a1aa;
+    --border-dark: rgba(212, 175, 55, 0.2);
+    --primary-dark: #ffffff;
+    --accent-dark: #D4AF37;
+
+    /* Gold color palette */
+    --gold: #D4AF37;
+    --gold-light: #E5C76B;
+    --gold-dark: #B8962E;
+    --gold-glow: rgba(212, 175, 55, 0.4);
+
+    /* Default to light theme */
+    --bg-body: var(--bg-body-light);
+    --bg-card: var(--bg-card-light);
+    --text-main: var(--text-main-light);
+    --text-muted: var(--text-muted-light);
+    --border: var(--border-light);
+    --primary: var(--primary-light);
+    --accent: var(--accent-light);
+
+    /* Layout */
+    --container-width: 1200px;
+    --header-height: 80px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+    --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+    --shadow-xl: 0 20px 40px -10px rgba(0, 0, 0, 0.12), 0 10px 20px -5px rgba(0, 0, 0, 0.06);
+
+    /* Elevations */
+    --elevation-1: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+    --elevation-2: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+    --elevation-3: 0 12px 28px rgba(0, 0, 0, 0.12), 0 6px 12px rgba(0, 0, 0, 0.06);
+
+    /* Gold Gradients */
+    --gradient-primary: linear-gradient(135deg, #D4AF37 0%, #B8962E 100%);
+    --gradient-accent: linear-gradient(135deg, #D4AF37 0%, #E5C76B 50%, #D4AF37 100%);
+    --gradient-dark: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
+    --gradient-subtle: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(184, 150, 46, 0.05) 100%);
+    --gradient-gold-shine: linear-gradient(135deg, #E5C76B 0%, #D4AF37 50%, #B8962E 100%);
+
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+    --transition-slow: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+[data-theme="dark"] {
+    --bg-body: var(--bg-body-dark);
+    --bg-card: var(--bg-card-dark);
+    --text-main: var(--text-main-dark);
+    --text-muted: var(--text-muted-dark);
+    --border: var(--border-dark);
+    --primary: var(--primary-dark);
+    --accent: var(--accent-dark);
+}
