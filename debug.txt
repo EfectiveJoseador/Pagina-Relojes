@@ -1,4 +1,4 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es" data-theme="light">
 
 <head>
@@ -9,8 +9,8 @@
 
     <title>Sobre Luxe MOD Watches | Tu Tienda de Relojes de Lujo</title>
     <meta name="description"
-        content="Conoce Luxe MOD Watches: tu tienda de relojes de lujo. Clientes satisfechos, envÃ­os rÃ¡pidos y calidad premium garantizada. Descubre nuestra historia!">
-    <meta name="keywords" content="luxe mod watches, tienda relojes lujo, quiÃ©nes somos, relojes premium confianza">
+        content="Conoce Luxe MOD Watches: tu tienda de relojes de lujo. Clientes satisfechos, envíos rápidos y calidad premium garantizada. Descubre nuestra historia!">
+    <meta name="keywords" content="luxe mod watches, tienda relojes lujo, quiénes somos, relojes premium confianza">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://luxemodwatches.com/sobre-nosotros">
 
@@ -19,7 +19,7 @@
     <meta property="og:url" content="https://luxemodwatches.com/sobre-nosotros">
     <meta property="og:title" content="Sobre Luxe MOD Watches | Tu Tienda de Relojes de Lujo">
     <meta property="og:description"
-        content="Conoce Luxe MOD Watches: clientes satisfechos, envÃ­os rÃ¡pidos, calidad premium garantizada. Tu tienda de relojes de lujo.">
+        content="Conoce Luxe MOD Watches: clientes satisfechos, envíos rápidos, calidad premium garantizada. Tu tienda de relojes de lujo.">
     <meta property="og:image" content="https://luxemodwatches.com/assets/logo/logo.png">
     <meta property="og:locale" content="es_ES">
 
@@ -56,7 +56,7 @@
         "url": "https://luxemodwatches.com",
         "logo": "https://luxemodwatches.com/assets/logo/logo.png",
         "foundingDate": "2024",
-        "priceRange": "â‚¬â‚¬â‚¬",
+        "priceRange": "€€€",
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
@@ -414,17 +414,17 @@
 
 
         <section class="about-hero">
-            <h1>QuiÃ©nes Somos</h1>
+            <h1>Quiénes Somos</h1>
             <p>
-                En <strong>Luxe MOD Watches</strong> nos apasiona conectar a los verdaderos amantes de la alta relojerÃ­a
+                En <strong>Luxe MOD Watches</strong> nos apasiona conectar a los verdaderos amantes de la alta relojería
                 con piezas
-                exclusivas de las mejores marcas. Nos especializamos en ofrecer relojes de lujo con diseÃ±o sofisticado
-                y precisiÃ³n excepcional al mejor precio.
+                exclusivas de las mejores marcas. Nos especializamos en ofrecer relojes de lujo con diseño sofisticado
+                y precisión excepcional al mejor precio.
             </p>
             <p>
                 Gracias a la confianza de nuestros clientes satisfechos, nos hemos consolidado como referente en
-                relojerÃ­a de lujo. Nuestro
-                compromiso es la autenticidad, la calidad premium y una atenciÃ³n al cliente excepcional.
+                relojería de lujo. Nuestro
+                compromiso es la autenticidad, la calidad premium y una atención al cliente excepcional.
             </p>
         </section>
 
@@ -438,17 +438,17 @@
             <div class="stat-card">
                 <i class="fas fa-shipping-fast"></i>
                 <span class="stat-number">600+</span>
-                <span class="stat-label">EnvÃ­os Realizados</span>
+                <span class="stat-label">Envíos Realizados</span>
             </div>
             <div class="stat-card">
                 <i class="fas fa-star"></i>
                 <span class="stat-number">4.9</span>
-                <span class="stat-label">ValoraciÃ³n Media</span>
+                <span class="stat-label">Valoración Media</span>
             </div>
             <div class="stat-card">
                 <i class="fas fa-calendar-check"></i>
                 <span class="stat-number">5</span>
-                <span class="stat-label">AÃ±os de Experiencia</span>
+                <span class="stat-label">Años de Experiencia</span>
             </div>
         </section>
 
@@ -1149,6 +1149,3 @@
 </body>
 
 </html>
-
-
-
