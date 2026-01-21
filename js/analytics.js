@@ -12,7 +12,7 @@ function trackProductView(product) {
             item_id: product.id,
             item_name: product.name,
             item_category: product.category || 'General',
-            item_brand: product.team || 'Camisetazo',
+            item_brand: product.team || 'Luxe MOD Watches',
             price: product.price || 0
         }]
     });
@@ -32,7 +32,7 @@ function trackAddToCart(product, quantity = 1, customizations = {}) {
             item_id: product.id,
             item_name: product.name,
             item_category: product.category || 'General',
-            item_brand: product.team || 'Camisetazo',
+            item_brand: product.team || 'Luxe MOD Watches',
             item_variant: customizations.size || '',
             price: product.price || 0,
             quantity: quantity

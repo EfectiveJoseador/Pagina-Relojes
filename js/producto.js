@@ -42,9 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     applySpecialPricing(product);
     products.forEach(p => applySpecialPricing(p));
-    document.title = `${product.name} - Camisetazo`;
+    document.title = `${product.name} - Luxe MOD Watches`;
 
-    
+
     const leagueNames = {
         'laliga': 'La Liga',
         'premier': 'Premier League',
@@ -68,18 +68,18 @@ document.addEventListener('DOMContentLoaded', () => {
         breadcrumbLeague.href = `/pages/tienda.html?league=${product.league}`;
     }
 
-    
-    
+
+
     const teamName = product.name
-        .replace(/\s*\d{2}\/?\d{2}.*$/, '')  
-        .replace(/\s*\(Niño\).*$/i, '')      
+        .replace(/\s*\d{2}\/?\d{2}.*$/, '')
+        .replace(/\s*\(Niño\).*$/i, '')
         .replace(/\s*(Local|Visitante|Tercera|Cuarta|Especial|Retro|Entrenamiento|Portero).*$/i, '')
         .trim();
 
     const breadcrumbTeam = document.getElementById('breadcrumb-team');
     if (breadcrumbTeam && teamName) {
         breadcrumbTeam.textContent = teamName;
-        
+
         breadcrumbTeam.href = `/pages/tienda.html?league=${product.league}&team=${encodeURIComponent(teamName)}`;
     }
 
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mainImg.src = product.image;
     mainImg.alt = product.imageAlt || product.name;
 
-    
+
     mainImg.onerror = function () {
         this.onerror = null;
         this.src = '/assets/images/placeholder-jersey.webp';
@@ -110,21 +110,21 @@ document.addEventListener('DOMContentLoaded', () => {
     let availableImages = [];
     let currentImageIndex = 0;
 
-    
+
     async function loadProductImages() {
-        
+
         if (product.images && Array.isArray(product.images) && product.images.length > 0) {
-            
+
             const allImages = [product.image, ...product.images];
 
-            
+
             const imagePromises = allImages.map((imgUrl, index) => {
                 return new Promise((resolve) => {
                     const img = new Image();
                     img.onload = () => resolve({ index: index + 1, path: imgUrl, exists: true });
                     img.onerror = () => resolve({ index: index + 1, path: imgUrl, exists: false });
                     img.src = imgUrl;
-                    
+
                     setTimeout(() => resolve({ index: index + 1, path: imgUrl, exists: false }), 5000);
                 });
             });
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
             availableImages = results.filter(r => r.exists);
 
         } else {
-            
+
             const basePath = product.image.replace('/1.webp', '');
             const imagePromises = [];
 
@@ -153,12 +153,12 @@ document.addEventListener('DOMContentLoaded', () => {
             availableImages = results.filter(r => r.exists);
         }
 
-        
+
         if (availableImages.length === 0 && product.image) {
             availableImages = [{ index: 1, path: product.image, exists: true }];
         }
 
-        
+
         availableImages.forEach((img, idx) => {
             const thumb = document.createElement('div');
             thumb.className = `thumb ${idx === 0 ? 'active' : ''}`;
@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
             thumbnailsContainer.appendChild(thumb);
         });
 
-        
+
         const prevBtn = document.getElementById('prev-image');
         const nextBtn = document.getElementById('next-image');
 
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    
+
     loadProductImages();
 
     document.querySelectorAll('.size-btn').forEach(btn => {
@@ -613,12 +613,12 @@ function loadRelatedProducts() {
 
     const grid = document.getElementById('related-grid');
 
-    
+
     const getSecondaryImage = (p) => {
         if (p.images && p.images.length > 0) {
             return p.images[0];
         }
-        return p.image; 
+        return p.image;
     };
 
     const cardsHtml = finalRelated.map(p => `
@@ -673,27 +673,27 @@ function initRelatedCarousel() {
     const cardWidth = 220 + 24;
     const totalCards = originalCards.length;
 
-    
+
     originalCards.forEach(card => {
         const cloneEnd = card.cloneNode(true);
         cloneEnd.classList.add('carousel-clone');
-        
+
         const img = cloneEnd.querySelector('img');
         if (img) img.loading = 'eager';
         track.appendChild(cloneEnd);
     });
 
-    
+
     [...originalCards].reverse().forEach(card => {
         const cloneStart = card.cloneNode(true);
         cloneStart.classList.add('carousel-clone');
-        
+
         const img = cloneStart.querySelector('img');
         if (img) img.loading = 'eager';
         track.insertBefore(cloneStart, track.firstChild);
     });
 
-    let currentPosition = totalCards * cardWidth; 
+    let currentPosition = totalCards * cardWidth;
     let isJumping = false;
     let animationId = null;
     let isPaused = false;
@@ -707,15 +707,15 @@ function initRelatedCarousel() {
         } else {
             track.style.transition = 'none';
         }
-        
+
         track.style.transform = `translate3d(${-position}px, 0, 0)`;
     }
 
     function checkBoundary(e) {
-        
+
         if (e && e.target !== track) return;
 
-        
+
         if (currentPosition >= totalCards * 2 * cardWidth) {
             isJumping = true;
             track.style.transition = 'none';
@@ -724,7 +724,7 @@ function initRelatedCarousel() {
             void track.offsetHeight;
             isJumping = false;
         }
-        
+
         if (currentPosition < totalCards * cardWidth) {
             isJumping = true;
             track.style.transition = 'none';
@@ -735,7 +735,7 @@ function initRelatedCarousel() {
         }
     }
 
-    
+
     function smoothScroll() {
         if (isPaused || isJumping) {
             animationId = requestAnimationFrame(smoothScroll);
@@ -744,12 +744,12 @@ function initRelatedCarousel() {
 
         currentPosition += SCROLL_SPEED;
 
-        
+
         if (currentPosition >= totalCards * 2 * cardWidth) {
             currentPosition -= totalCards * cardWidth;
         }
 
-        
+
         track.style.transform = `translate3d(${-currentPosition}px, 0, 0)`;
 
         animationId = requestAnimationFrame(smoothScroll);
@@ -803,10 +803,10 @@ function initRelatedCarousel() {
 
     track.addEventListener('transitionend', checkBoundary);
 
-    
+
     const carouselContainer = grid?.querySelector('.carousel-container');
 
-    
+
     if (carouselContainer) {
         carouselContainer.addEventListener('mouseenter', pauseAutoScroll);
         carouselContainer.addEventListener('mouseleave', () => {
@@ -815,14 +815,14 @@ function initRelatedCarousel() {
         });
     }
 
-    
+
     setPosition(currentPosition, false);
     track.offsetHeight;
 
-    
+
     startAutoScroll();
 
-    
+
     let isDragging = false;
     let startPos = 0;
     let lastPos = 0;
@@ -830,17 +830,17 @@ function initRelatedCarousel() {
     let velocity = 0;
     let inertiaId = null;
 
-    
+
     track.style.touchAction = 'pan-y';
     track.style.userSelect = 'none';
     track.style.webkitUserSelect = 'none';
 
-    
+
     function setTrackPosition(pos) {
         track.style.transform = `translate3d(${-pos}px, 0, 0)`;
     }
 
-    
+
     function checkAndWrapBoundaries() {
         if (currentPosition >= totalCards * 2 * cardWidth) {
             currentPosition -= totalCards * cardWidth;
@@ -852,12 +852,12 @@ function initRelatedCarousel() {
     }
 
     function touchStart(event) {
-        
+
         if (inertiaId) {
             cancelAnimationFrame(inertiaId);
             inertiaId = null;
         }
-        
+
         if (animationId) {
             cancelAnimationFrame(animationId);
             animationId = null;
@@ -869,14 +869,14 @@ function initRelatedCarousel() {
         lastPos = startPos;
         lastTime = performance.now();
         velocity = 0;
-        isPaused = true; 
+        isPaused = true;
         if (resumeTimeout) clearTimeout(resumeTimeout);
     }
 
     function touchMove(event) {
         if (!isDragging) return;
 
-        
+
         event.preventDefault();
 
         const currentX = event.touches[0].clientX;
@@ -884,7 +884,7 @@ function initRelatedCarousel() {
         const now = performance.now();
         const dt = now - lastTime;
 
-        
+
         if (dt > 0) {
             velocity = diff / dt * 16;
         }
@@ -893,10 +893,10 @@ function initRelatedCarousel() {
         lastPos = currentX;
         lastTime = now;
 
-        
+
         track.style.transform = `translate3d(${-currentPosition}px, 0, 0)`;
 
-        
+
         if (currentPosition >= totalCards * 2 * cardWidth) {
             currentPosition -= totalCards * cardWidth;
             track.style.transform = `translate3d(${-currentPosition}px, 0, 0)`;
@@ -911,11 +911,11 @@ function initRelatedCarousel() {
         isDragging = false;
         track.classList.remove('dragging');
 
-        
+
         if (Math.abs(velocity) > 0.5) {
             applyInertia();
         } else {
-            
+
             if (resumeTimeout) clearTimeout(resumeTimeout);
             resumeTimeout = setTimeout(() => {
                 isPaused = false;
@@ -932,7 +932,7 @@ function initRelatedCarousel() {
         function inertiaStep() {
             if (Math.abs(velocity) < 0.1) {
                 inertiaId = null;
-                
+
                 if (resumeTimeout) clearTimeout(resumeTimeout);
                 resumeTimeout = setTimeout(() => {
                     isPaused = false;
@@ -946,7 +946,7 @@ function initRelatedCarousel() {
             currentPosition -= velocity;
             velocity *= friction;
 
-            
+
             if (currentPosition >= totalCards * 2 * cardWidth) {
                 currentPosition -= totalCards * cardWidth;
             } else if (currentPosition < totalCards * cardWidth) {
@@ -966,14 +966,14 @@ function initRelatedCarousel() {
     track.addEventListener('touchend', touchEnd, { passive: true });
     track.addEventListener('touchcancel', touchEnd, { passive: true });
 
-    
+
     const addScrolledClass = () => {
         carouselContainer.classList.add('scrolled');
         grid.closest('.related-products')?.classList.add('scrolled');
     };
 
     track.addEventListener('touchstart', addScrolledClass, { once: true, passive: true });
-    carouselContainer.addEventListener('scroll', addScrolledClass, { once: true }); 
+    carouselContainer.addEventListener('scroll', addScrolledClass, { once: true });
 
     if (carouselContainer) {
         carouselContainer.addEventListener('scroll', () => {
