@@ -7,17 +7,17 @@
     <link rel="icon" type="image/x-icon" href="../assets/logo/logo.png">
 
 
-    <title>Camiseta de Fútbol | Luxe MOD Watches</title>
+    <title>Camiseta de Fï¿½tbol | Luxe MOD Watches</title>
     <meta name="description"
-        content="Comprar camiseta de fútbol en Luxe MOD Watches. Calidad garantizada, personalizable con nombre y número. Envo rpido a toda España.">
+        content="Comprar camiseta de fï¿½tbol en Luxe MOD Watches. Calidad garantizada, personalizable con nombre y nï¿½mero. Envo rpido a toda Espaï¿½a.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://Luxe MOD Watches.shop/camiseta/futbol">
 
 
     <meta property="og:type" content="product">
     <meta property="og:url" content="https://Luxe MOD Watches.shop/camiseta/futbol">
-    <meta property="og:title" content="Camiseta de Fútbol | Luxe MOD Watches">
-    <meta property="og:description" content="Camiseta de fútbol con calidad garantizada. Personalizable y envo rpido.">
+    <meta property="og:title" content="Camiseta de Fï¿½tbol | Luxe MOD Watches">
+    <meta property="og:description" content="Camiseta de fï¿½tbol con calidad garantizada. Personalizable y envo rpido.">
     <meta property="og:image" content="https://Luxe MOD Watches.shop/assets/logo/logo.png">
     <meta property="og:locale" content="es_ES">
     <meta property="product:price:amount" content="24.99">
@@ -38,7 +38,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family:Outfit:wght@700;800&display=swap"
         rel="stylesheet">
-    
+
     <link rel="stylesheet" href="/assets/fonts/fontawesome/css/all.min.css">
 
 
@@ -55,9 +55,9 @@
     {
         "@context": "https://schema.org/",
         "@type": "Product",
-        "name": "Camiseta de Fútbol",
+        "name": "Camiseta de Fï¿½tbol",
         "image": "https://Luxe MOD Watches.shop/assets/logo/logo.png",
-        "description": "Camiseta de fútbol barata de calidad garantizada. Personalizable con nombre y número.",
+        "description": "Camiseta de fï¿½tbol barata de calidad garantizada. Personalizable con nombre y nï¿½mero.",
         "brand": {
             "@type": "Brand",
             "name": "Luxe MOD Watches"
@@ -219,6 +219,13 @@
                 <div class="thumbnails">
 
                 </div>
+
+                <div class="description-block"
+                    style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem;">
+                    <h3>DescripciÃ³n</h3>
+                    <div id="product-description" class="product-description"></div>
+                    <ul id="product-features" class="features-list"></ul>
+                </div>
             </section>
 
 
@@ -233,118 +240,33 @@
 
                 <div class="options-block">
 
-                    <div class="option-group">
-                        <div
-                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                            <label class="option-label" style="margin-bottom: 0;">Talla *</label>
-                            <button type="button" id="size-guide-btn" class="size-guide-link">
-                                <i class="fas fa-ruler"></i> Guía de Tallas
-                            </button>
-                        </div>
-                        <div class="size-selector" id="size-selector">
-
+                    <div id="strap-selector-container" class="option-group" style="display: none;">
+                        <label class="option-label">Correa</label>
+                        <div class="size-selector" id="strap-selector">
+                            <!-- Straps will be injected here -->
                         </div>
                     </div>
-
-
-                    <div class="option-group">
-                        <label class="option-label" for="version-select">Versin</label>
-                        <select id="version-select" class="select-input">
-                            <option value="aficionado">Version Fan</option>
-                            <option value="jugador">Version Jugador (+5)</option>
-                        </select>
-                    </div>
-
-
-                    <div class="option-group"
-                        style="background: var(--bg-body); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border);">
-                        <label class="option-label" style="margin-bottom: 1rem;">Personalización <span
-                                style="color: var(--text-muted); font-weight: 400; font-size: 0.9rem;">Opcional
-                                (+2)</span></label>
-
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-
-                            <div>
-                                <label for="name-input"
-                                    style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.35rem;">Nombre</label>
-                                <input type="text" id="name-input" class="text-input" placeholder="Ej: MESSI"
-                                    maxlength="15" pattern="[A-Za-z-\s]+">
-                            </div>
-
-                            <div>
-                                <label for="number-input"
-                                    style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.35rem;">Dorsal</label>
-                                <input type="text" id="number-input" class="text-input" placeholder="Ej: 10"
-                                    maxlength="2" inputmode="numeric" pattern="[0-9]*">
-                            </div>
+                    <div class="actions-block" style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+                        <div class="quantity-selector">
+                            <button id="qty-minus">-</button>
+                            <input type="number" id="qty-input" value="1" min="1" max="10">
+                            <button id="qty-plus">+</button>
                         </div>
-                        <small class="input-hint" style="margin-top: 0.5rem; display: block;">Nombre: mx. 15 letras |
-                            Dorsal: 0-99</small>
-                    </div>
-
-
-                    <div class="option-group">
-                        <label class="option-label" for="patch-select">Parches <span
-                                style="color: var(--text-muted); font-weight: 400; font-size: 0.9rem;">Opcional
-                                (+1)</span></label>
-                        <select id="patch-select" class="select-input">
-                            <option value="none">Sin parches</option>
-                            <option value="liga">Parche Liga</option>
-                            <option value="champions">Parche Champions League</option>
-                            <option value="europa">Parche Europa League</option>
-                            <option value="premier">Parche Premier League</option>
-                            <option value="seriea">Parche Serie A</option>
-                            <option value="mundial">Parche Mundial de Clubes</option>
-                            <option value="copamundo">Parche Copa del Mundo</option>
-                            <option value="conmemorativo">Parche Conmemorativo</option>
-                        </select>
-                    </div>
-
-
-                    <div class="customization-summary">
-                        <h4 class="summary-title">Resumen de Personalización</h4>
-                        <div class="summary-content">
-                            <div class="summary-row">
-                                <span class="summary-label">Precio base:</span>
-                                <span class="summary-value" id="preview-base">0.00</span>
-                            </div>
-                            <div id="preview-list" class="summary-details"></div>
-                            <div class="summary-total">
-                                <span class="total-label">Total:</span>
-                                <span class="total-value" id="preview-total">0.00</span>
-                            </div>
-                        </div>
+                        <button id="add-to-cart-btn" class="btn-add-cart-lg">
+                            AÃ±adir al Carrito
+                        </button>
                     </div>
                 </div>
 
-                <div class="actions-block">
-                    <div class="quantity-selector">
-                        <button id="qty-minus">-</button>
-                        <input type="number" id="qty-input" value="1" min="1" max="10">
-                        <button id="qty-plus">+</button>
-                    </div>
-                    <button id="add-to-cart-btn" class="btn-add-cart-lg">
-                        Aadir al Carrito
-                    </button>
-                </div>
 
-                <div class="description-block">
-                    <h3>Descripción</h3>
-                    <p id="product-description">
-                        Descripción detallada del producto. Calidad premium, tejido transpirable y detalles oficiales.
-                    </p>
-                    <ul class="features-list">
-                        <li><i class="fas fa-check"></i> 100% Poliéster reciclado</li>
-                        <li><i class="fas fa-check"></i> Tecnología de absorción de humedad</li>
-                        <li><i class="fas fa-check"></i> Escudo bordado de alta calidad</li>
-                    </ul>
-                </div>
+
+
             </section>
         </div>
 
 
         <section class="related-products">
-            <h2>También te podría gustar</h2>
+            <h2>Tambiï¿½n te podrï¿½a gustar</h2>
             <div id="related-grid" class="product-grid">
 
             </div>

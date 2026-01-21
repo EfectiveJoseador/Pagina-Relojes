@@ -1,0 +1,50 @@
+                    <div class="quantity-selector">
+                        <button id="qty-minus">-</button>
+                        <input type="number" id="qty-input" value="1" min="1" max="10">
+                        <button id="qty-plus">+</button>
+                    </div>
+                    <button id="add-to-cart-btn" class="btn-add-cart-lg">
+                        Aadir al Carrito
+                    </button>
+                </div>
+
+                <div class="description-block">
+                    <h3>Descripci�n</h3>
+                    <p id="product-description">
+                        Descripci�n detallada del producto. Calidad premium, tejido transpirable y detalles oficiales.
+                    </p>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> 100% Poli�ster reciclado</li>
+                        <li><i class="fas fa-check"></i> Tecnolog�a de absorci�n de humedad</li>
+                        <li><i class="fas fa-check"></i> Escudo bordado de alta calidad</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+
+        <section class="related-products">
+            <h2>Tambi�n te podr�a gustar</h2>
+            <div id="related-grid" class="product-grid">
+
+            </div>
+        </section>
+    </main>
+
+
+    <div class="size-guide-modal" id="size-guide-modal">
+        <div class="size-guide-overlay"></div>
+        <div class="size-guide-content">
+            <button class="size-guide-close" id="size-guide-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3>Gua de Tallas</h3>
+            <img id="size-guide-image" src="" alt="Gua de Tallas" />
+        </div>
+    </div>
+
+
+    <div class="image-lightbox" id="image-lightbox">
+        <div class="lightbox-overlay" id="lightbox-overlay"></div>
+        <button class="lightbox-close" id="lightbox-close">&times;</button>
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev">

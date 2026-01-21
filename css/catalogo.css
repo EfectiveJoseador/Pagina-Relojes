@@ -35,20 +35,20 @@
     z-index: -1;
     background:
         /* Brillo superior izquierdo */
-        radial-gradient(ellipse 600px 400px at 5% 10%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 600px 400px at 5% 10%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
         /* Brillo central derecho */
-        radial-gradient(ellipse 500px 500px at 95% 30%, rgba(168, 85, 247, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse 500px 500px at 95% 30%, rgba(212, 175, 55, 0.06) 0%, transparent 50%),
         /* Brillo inferior izquierdo */
-        radial-gradient(ellipse 700px 400px at 10% 70%, rgba(99, 102, 241, 0.07) 0%, transparent 50%),
+        radial-gradient(ellipse 700px 400px at 10% 70%, rgba(184, 150, 46, 0.07) 0%, transparent 50%),
         /* Brillo central superior */
-        radial-gradient(ellipse 400px 300px at 50% 5%, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse 400px 300px at 50% 5%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
         /* Brillo inferior derecho */
-        radial-gradient(ellipse 600px 500px at 90% 85%, rgba(168, 85, 247, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse 600px 500px at 90% 85%, rgba(212, 175, 55, 0.06) 0%, transparent 50%),
         /* Brillo central */
-        radial-gradient(ellipse 500px 400px at 40% 50%, rgba(99, 102, 241, 0.04) 0%, transparent 50%),
+        radial-gradient(ellipse 500px 400px at 40% 50%, rgba(184, 150, 46, 0.04) 0%, transparent 50%),
         /* Brillo adicional aleatorio */
-        radial-gradient(ellipse 350px 250px at 75% 60%, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
-        radial-gradient(ellipse 400px 300px at 25% 40%, rgba(168, 85, 247, 0.04) 0%, transparent 50%);
+        radial-gradient(ellipse 350px 250px at 75% 60%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse 400px 300px at 25% 40%, rgba(212, 175, 55, 0.04) 0%, transparent 50%);
 }
 
 /* Segunda capa de brillos para más profundidad */
@@ -62,10 +62,10 @@
     pointer-events: none;
     z-index: -2;
     background:
-        radial-gradient(ellipse 800px 600px at 15% 25%, rgba(139, 92, 246, 0.04) 0%, transparent 60%),
-        radial-gradient(ellipse 600px 700px at 80% 55%, rgba(99, 102, 241, 0.035) 0%, transparent 55%),
-        radial-gradient(ellipse 500px 400px at 60% 80%, rgba(168, 85, 247, 0.04) 0%, transparent 50%),
-        radial-gradient(ellipse 450px 350px at 30% 90%, rgba(139, 92, 246, 0.03) 0%, transparent 50%);
+        radial-gradient(ellipse 800px 600px at 15% 25%, rgba(212, 175, 55, 0.04) 0%, transparent 60%),
+        radial-gradient(ellipse 600px 700px at 80% 55%, rgba(184, 150, 46, 0.035) 0%, transparent 55%),
+        radial-gradient(ellipse 500px 400px at 60% 80%, rgba(212, 175, 55, 0.04) 0%, transparent 50%),
+        radial-gradient(ellipse 450px 350px at 30% 90%, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
 }
 
 
@@ -80,14 +80,14 @@
     background: linear-gradient(180deg, rgba(15, 15, 25, 0.98) 0%, rgba(10, 10, 18, 0.99) 100%);
     padding: 1.5rem;
     border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
-    border: 1px solid rgba(168, 85, 247, 0.15);
+    border: 1px solid rgba(212, 175, 55, 0.15);
     border-left: none;
     z-index: 1000;
     overflow-y: auto;
     transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
     backdrop-filter: blur(20px);
     box-shadow: 4px 0 40px rgba(0, 0, 0, 0.5),
-        0 0 60px rgba(168, 85, 247, 0.1);
+        0 0 60px rgba(212, 175, 55, 0.1);
 }
 
 
@@ -241,8 +241,8 @@
 }
 
 .filter-checkbox:hover {
-    border-color: rgba(168, 85, 247, 0.5);
-    background: rgba(168, 85, 247, 0.08);
+    border-color: rgba(212, 175, 55, 0.5);
+    background: rgba(212, 175, 55, 0.08);
     transform: translateY(-1px);
 }
 
@@ -274,10 +274,10 @@
 }
 
 .filter-checkbox input[type="checkbox"]:checked+.checkbox-custom {
-    background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 50%, #c084fc 100%);
+    background: linear-gradient(135deg, #D4AF37 0%, #E5C76B 50%, #B8962E 100%);
     border-color: transparent;
-    box-shadow: 0 0 20px rgba(168, 85, 247, 0.6),
-        0 0 40px rgba(139, 92, 246, 0.3);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.6),
+        0 0 40px rgba(212, 175, 55, 0.3);
     animation: checkboxPulse 2s ease-in-out infinite;
 }
 
@@ -285,13 +285,13 @@
 
     0%,
     100% {
-        box-shadow: 0 0 15px rgba(168, 85, 247, 0.5),
-            0 0 30px rgba(139, 92, 246, 0.2);
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.5),
+            0 0 30px rgba(212, 175, 55, 0.2);
     }
 
     50% {
-        box-shadow: 0 0 25px rgba(168, 85, 247, 0.7),
-            0 0 50px rgba(139, 92, 246, 0.4);
+        box-shadow: 0 0 25px rgba(212, 175, 55, 0.7),
+            0 0 50px rgba(212, 175, 55, 0.4);
     }
 }
 
@@ -302,16 +302,16 @@
 
 
 .filter-checkbox:has(input[type="checkbox"]:checked) {
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(168, 85, 247, 0.2) 100%);
-    border-color: rgba(168, 85, 247, 0.6);
-    box-shadow: 0 0 25px rgba(168, 85, 247, 0.2),
-        inset 0 0 15px rgba(168, 85, 247, 0.05);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.2) 100%);
+    border-color: rgba(212, 175, 55, 0.6);
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.2),
+        inset 0 0 15px rgba(212, 175, 55, 0.05);
 }
 
 .filter-checkbox:has(input[type="checkbox"]:checked) .checkbox-label {
-    color: #c084fc;
+    color: #E5C76B;
     font-weight: 600;
-    text-shadow: 0 0 10px rgba(192, 132, 252, 0.3);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
 }
 
 .checkbox-label {
@@ -393,9 +393,9 @@
 .search-bar.expanded input:focus {
     border-color: var(--primary);
 
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2),
-        0 0 30px rgba(99, 102, 241, 0.3),
-        inset 0 0 15px rgba(99, 102, 241, 0.05);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2),
+        0 0 30px rgba(212, 175, 55, 0.3),
+        inset 0 0 15px rgba(212, 175, 55, 0.05);
     outline: none;
     transform: translateY(-2px);
 }
@@ -413,22 +413,22 @@
     transition: all 0.25s ease;
     appearance: none;
     -webkit-appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23a855f7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23D4AF37' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 1rem center;
 }
 
 #sort-select:hover {
     border-color: var(--primary);
-    background-color: rgba(99, 102, 241, 0.1);
-    box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
+    background-color: rgba(212, 175, 55, 0.1);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
 }
 
 #sort-select:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2),
-        0 0 20px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2),
+        0 0 20px rgba(212, 175, 55, 0.4);
 }
 
 #sort-select option {
@@ -555,8 +555,8 @@
 
     transform: translateY(-12px) scale(1.03) perspective(1000px) rotateY(2deg);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2),
-        0 0 40px rgba(99, 102, 241, 0.3),
-        inset 0 0 20px rgba(99, 102, 241, 0.05);
+        0 0 40px rgba(212, 175, 55, 0.3),
+        inset 0 0 20px rgba(212, 175, 55, 0.05);
     border-color: var(--primary);
     z-index: 2;
 }
@@ -639,8 +639,8 @@
     z-index: 10;
 
     animation: pulse 2s ease-in-out infinite;
-    box-shadow: 0 0 10px rgba(99, 102, 241, 0.5),
-        0 0 20px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5),
+        0 0 20px rgba(212, 175, 55, 0.3);
 }
 
 .badge-sale {
@@ -711,7 +711,7 @@
 }
 
 .product-price .price {
-    color: #a855f7;
+    color: var(--gold);
     font-weight: 800;
     font-size: 1.15rem;
     animation: priceGlow 2.5s ease-in-out infinite;
@@ -721,11 +721,11 @@
 
     0%,
     100% {
-        text-shadow: 0 0 5px rgba(168, 85, 247, 0.2);
+        text-shadow: 0 0 5px rgba(212, 175, 55, 0.2);
     }
 
     50% {
-        text-shadow: 0 0 12px rgba(168, 85, 247, 0.5);
+        text-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
     }
 }
 

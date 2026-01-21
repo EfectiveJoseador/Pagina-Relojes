@@ -11,8 +11,8 @@ let filteredProducts = [];
 let currentProduct = null;
 let selectedLeague = '';
 let selectedTeam = '';
-let selectedKids = false;
-let selectedRetro = false;
+let selectedAuto = false;
+let selectedQuartz = false;
 let currentPage = 1;
 let totalPages = 1;
 let imageObserver = null;
@@ -31,7 +31,8 @@ const SIZE_CONFIGS = {
     kids: ['16', '18', '20', '22', '24', '26', '28'],
     retro: ['S', 'M', 'L', 'XL', '2XL'],
     normal: ['S', 'M', 'L', 'XL', '2XL', '3XL', '4XL'],
-    nba: ['S', 'M', 'L', 'XL', '2XL', '3XL', '4XL']
+    nba: ['S', 'M', 'L', 'XL', '2XL', '3XL', '4XL'],
+    relojes: ['Talla Única']
 };
 
 const extraPrices = {
@@ -65,10 +66,10 @@ function getAllowedPatches(product) {
     const league = product.league;
     const isNBA = product.category === 'nba' || product.league === 'nba';
 
-    
-    if (isNBA) return [];
 
-    
+    if (isNBA || league === 'Relojes') return [];
+
+
     if (league === 'selecciones' || product.category === 'selecciones') {
         allowed.push('copamundo');
         allowed.push('eurocopa');
@@ -76,12 +77,12 @@ function getAllowedPatches(product) {
         return allowed;
     }
 
-    
+
     allowed.push('champions');
     allowed.push('europa');
     allowed.push('mundial_clubes');
 
-    
+
     switch (league) {
         case 'laliga':
             allowed.push('liga');
@@ -108,7 +109,7 @@ function generatePatchOptionsHTML(product) {
     const allowedPatches = getAllowedPatches(product);
 
     if (allowedPatches.length === 0) {
-        return ''; 
+        return '';
     }
 
     let options = '<option value="none">Sin parche</option>';
@@ -216,7 +217,7 @@ function renderPagination() {
 }
 
 function getMiniImagePath(imagePath) {
-    
+
     return imagePath.replace(/\/(\d+)\.(webp|jpg|png|jpeg)$/i, '/$1_mini.$2');
 }
 
@@ -225,7 +226,7 @@ function getSecondaryMiniImagePath(product) {
     if (product.images && product.images.length > 0) {
         return getMiniImagePath(product.images[0]);
     }
-    
+
     return product.image.replace(/\/1\.(webp|jpg|png|jpeg)$/i, '/2_mini.$1');
 }
 
@@ -351,7 +352,7 @@ function renderProducts() {
 
 
 function setupQuickAddListeners() {
-    
+
     document.querySelectorAll('.btn-quick-add').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -361,7 +362,7 @@ function setupQuickAddListeners() {
         });
     });
 
-    
+
     document.querySelectorAll('.quick-add-panel .panel-close').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -371,7 +372,7 @@ function setupQuickAddListeners() {
         });
     });
 
-    
+
     document.querySelectorAll('.optional-toggle').forEach(toggle => {
         toggle.addEventListener('click', (e) => {
             e.preventDefault();
@@ -384,7 +385,7 @@ function setupQuickAddListeners() {
         });
     });
 
-    
+
     document.querySelectorAll('.quick-add-form').forEach(form => {
         const productId = form.dataset.productId;
         const product = allProducts.find(p => p.id === parseInt(productId));
@@ -399,20 +400,20 @@ function setupQuickAddListeners() {
 
             let total = product.price;
 
-            
+
             const size = sizeSelect?.value;
             if (size === '3XL' || size === '4XL') {
                 total += 2;
             }
 
-            
+
             const name = nameInput?.value?.trim();
             const number = numberInput?.value?.trim();
             if (name && number) {
                 total += 2;
             }
 
-            
+
             const patch = patchSelect?.value;
             if (patch && patch !== 'none') {
                 total += 1;
@@ -423,12 +424,12 @@ function setupQuickAddListeners() {
             }
         };
 
-        
+
         const nameInput = form.querySelector('.quick-name');
         if (nameInput) {
             nameInput.addEventListener('input', (e) => {
                 let value = e.target.value;
-                
+
                 value = value.replace(/[^A-Za-zÀ-ÿ\s]/g, '');
                 if (value.length > 15) {
                     value = value.slice(0, 15);
@@ -438,17 +439,17 @@ function setupQuickAddListeners() {
             });
         }
 
-        
+
         const numberInput = form.querySelector('.quick-number');
         if (numberInput) {
             numberInput.addEventListener('input', (e) => {
                 let value = e.target.value;
-                
+
                 value = value.replace(/\D/g, '');
                 if (value.length > 2) {
                     value = value.slice(0, 2);
                 }
-                
+
                 if (value !== '' && parseInt(value) > 99) {
                     value = '99';
                 }
@@ -457,12 +458,12 @@ function setupQuickAddListeners() {
             });
         }
 
-        
+
         form.querySelectorAll('select').forEach(input => {
             input.addEventListener('change', updatePrice);
         });
 
-        
+
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             e.stopPropagation();
@@ -470,7 +471,7 @@ function setupQuickAddListeners() {
         });
     });
 
-    
+
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.quick-add-panel') && !e.target.closest('.btn-quick-add')) {
             closeAllQuickAddPanels();
@@ -486,7 +487,7 @@ function toggleQuickAddPanel(productId) {
 
     const isActive = panel.classList.contains('active');
 
-    
+
     closeAllQuickAddPanels();
 
     if (!isActive) {
@@ -518,7 +519,7 @@ function handleQuickAddSubmit(form, product) {
     const numberInput = form.querySelector('.quick-number');
     const patchSelect = form.querySelector('.quick-patch');
 
-    
+
     const size = sizeSelect?.value;
     if (!size) {
         if (window.Toast) {
@@ -532,7 +533,7 @@ function handleQuickAddSubmit(form, product) {
     const name = nameInput?.value?.trim().toUpperCase() || '';
     const number = numberInput?.value?.trim() || '';
 
-    
+
     if ((name && !number) || (!name && number)) {
         if (window.Toast) {
             window.Toast.error('El nombre y dorsal deben ir juntos');
@@ -542,7 +543,7 @@ function handleQuickAddSubmit(form, product) {
         return;
     }
 
-    
+
     let totalPrice = product.price;
 
     if (size === '3XL' || size === '4XL') {
@@ -558,10 +559,10 @@ function handleQuickAddSubmit(form, product) {
         totalPrice += patchPrices[patch] || 1;
     }
 
-    
+
     const customization = {
         size: size,
-        version: 'aficionado', 
+        version: 'aficionado',
         name: name,
         number: number,
         patch: patch,
@@ -578,20 +579,20 @@ function handleQuickAddSubmit(form, product) {
         customization: customization
     };
 
-    
+
     addToCart(cartItem);
 
-    
+
     closeQuickAddPanel(product.id.toString());
 
-    
+
     form.reset();
     const optionalFields = form.querySelector('.optional-fields');
     const optionalToggle = form.querySelector('.optional-toggle');
     if (optionalFields) optionalFields.classList.remove('show');
     if (optionalToggle) optionalToggle.classList.remove('expanded');
 
-    
+
     if (window.Toast) {
         window.Toast.success(`${product.name} añadido al carrito`);
     }
@@ -600,18 +601,27 @@ function handleQuickAddSubmit(form, product) {
     }
 }
 function init() {
-    
+    // Check if we have a cached order AND if it matches the current product count
     const cachedOrder = getProductOrderFromSession();
+    const currentProductIds = products.map(p => p.id);
 
-    if (cachedOrder && cachedOrder.length === products.length) {
-        
+    // Use cache only if:
+    // 1. Cache exists
+    // 2. Cache length matches current products length
+    // 3. All cached IDs exist in current products (handles deletions/changes)
+    const cacheValid = cachedOrder &&
+        cachedOrder.length === products.length &&
+        cachedOrder.every(id => currentProductIds.includes(id));
+
+    if (cacheValid) {
+        // Use cached order, but ensure all products are included
         allProducts = cachedOrder.map(id => products.find(p => p.id === id)).filter(Boolean);
-        console.log('Using session-cached product order');
+        console.log('✓ Using session-cached product order');
     } else {
-        
+        // Generate new random order and cache it
         allProducts = shuffleArray([...products]);
         saveProductOrderToSession(allProducts.map(p => p.id));
-        console.log('Generated and cached new product order');
+        console.log('✓ Generated new product order (cache invalidated or new products added)');
     }
 
     applySpecialPricing();
@@ -638,28 +648,29 @@ function shuffleArray(array) {
 
 function getProductOrderFromSession() {
     try {
-        const cached = sessionStorage.getItem('tiendaProductOrder');
+        const cached = sessionStorage.getItem('tiendaProductOrder_v2');
         if (cached) {
             const data = JSON.parse(cached);
-            
+
             if (Array.isArray(data.order)) {
                 return data.order;
             }
         }
-    } catch (e) {  }
+    } catch (e) { }
     return null;
 }
 
 function saveProductOrderToSession(orderIds) {
     try {
-        sessionStorage.setItem('tiendaProductOrder', JSON.stringify({
+        sessionStorage.setItem('tiendaProductOrder_v2', JSON.stringify({
             order: orderIds,
             timestamp: Date.now()
         }));
-    } catch (e) {  }
+    } catch (e) { }
 }
 function applySpecialPricing() {
     allProducts.forEach(product => {
+        if (product.category === 'relojes (rcbmods)') return;
         const nameLower = product.name.toLowerCase();
         const imageLower = (product.image || '').toLowerCase();
         const isKids = product.kids === true || nameLower.includes('kids') || nameLower.includes('niño') || nameLower.includes('niños') || imageLower.includes('kids');
@@ -688,7 +699,7 @@ function populateLeagueFilter() {
     const leagueSelect = document.getElementById('filter-league');
 
     if (leagueSelect) {
-        leagueSelect.innerHTML = '<option value="">Todas las Ligas</option>';
+        leagueSelect.innerHTML = '<option value="">Todas las Colecciones</option>';
         leagues.forEach(league => {
             const option = document.createElement('option');
             option.value = league;
@@ -709,7 +720,7 @@ function populateTeamFilter(league) {
 
     const leagueProducts = allProducts.filter(p => p.league === league);
 
-    
+
     const variants = [
         'Local', 'Visitante', 'Tercera', 'Cuarta', 'Fourth', 'Home', 'Away', 'Third',
         'Portero', 'Goalkeeper', 'GK',
@@ -723,11 +734,11 @@ function populateTeamFilter(league) {
     ];
     const variantRegex = new RegExp(`\\b(${variants.join('|')})\\b`, 'gi');
 
-    
+
     const sizePattern = /\bS-[X\d]+L?\b/gi;
 
-    
-    
+
+
     const canonicalNames = {
         'mexico': 'México',
         'newcastle': 'Newcastle United',
@@ -759,7 +770,7 @@ function populateTeamFilter(league) {
         'brazil': 'Brasil'
     };
 
-    
+
     const canonicalKeys = {
         'barcelona': 'fc barcelona',
         'newcastle': 'newcastle united',
@@ -777,31 +788,31 @@ function populateTeamFilter(league) {
         'brazil': 'brasil'
     };
 
-    
+
     const teamMap = new Map();
 
     leagueProducts.forEach(p => {
         let name = p.name;
-        
+
         name = name.replace(/&amp;/g, '&').replace(/&[a-z]+;/gi, ' ');
         name = name.replace(/\d{2}\/\d{2}/, '');
-        name = name.replace(/\b20\d{2}\b/, ''); 
-        name = name.replace(/\(.*\)/g, ''); 
+        name = name.replace(/\b20\d{2}\b/, '');
+        name = name.replace(/\(.*\)/g, '');
         name = name.replace(variantRegex, '');
-        name = name.replace(sizePattern, ''); 
+        name = name.replace(sizePattern, '');
         name = name.replace(/\s+/g, ' ').trim();
 
         if (name) {
-            
+
             let key = normalizeString(name);
 
-            
+
             key = canonicalKeys[key] || key;
 
-            
+
             const displayName = canonicalNames[key] || canonicalNames[normalizeString(name)] || name;
 
-            
+
             if (!teamMap.has(key)) {
                 teamMap.set(key, displayName);
             }
@@ -819,7 +830,7 @@ function populateTeamFilter(league) {
             teamSelect.appendChild(option);
         });
 
-        
+
         if (typeof DropdownDedup !== 'undefined') {
             DropdownDedup.applyMapToDropdown(teamSelect);
         }
@@ -848,7 +859,8 @@ function applyURLFilters() {
     const search = params.get('search');
     const league = params.get('league');
     const team = params.get('team');
-    const kids = params.get('kids');
+    const auto = params.get('auto');
+    const quartz = params.get('quartz');
     const sort = params.get('sort');
 
     if (search) {
@@ -877,11 +889,19 @@ function applyURLFilters() {
         }
     }
 
-    if (kids) {
-        selectedKids = kids === 'true' || kids === 'kids';
-        const kidsCheckbox = document.getElementById('filter-kids');
-        if (kidsCheckbox) {
-            kidsCheckbox.checked = selectedKids;
+    if (auto) {
+        selectedAuto = auto === 'true';
+        const cb = document.getElementById('filter-auto');
+        if (cb) {
+            cb.checked = selectedAuto;
+        }
+    }
+
+    if (quartz) {
+        selectedQuartz = quartz === 'true';
+        const cb = document.getElementById('filter-quartz');
+        if (cb) {
+            cb.checked = selectedQuartz;
         }
     }
 
@@ -905,8 +925,11 @@ function updateURLWithFilters(searchTerm, sortBy) {
     if (selectedTeam) {
         params.set('team', selectedTeam);
     }
-    if (selectedKids) {
-        params.set('kids', selectedKids);
+    if (selectedAuto) {
+        params.set('auto', selectedAuto);
+    }
+    if (selectedQuartz) {
+        params.set('quartz', selectedQuartz);
     }
     if (sortBy && sortBy !== 'default') {
         params.set('sort', sortBy);
@@ -932,19 +955,19 @@ function attachEventListeners() {
         selectedTeam = e.target.value;
         applyFilters();
     });
-    
-    const kidsCheckbox = document.getElementById('filter-kids');
-    if (kidsCheckbox) {
-        kidsCheckbox.addEventListener('change', (e) => {
-            selectedKids = e.target.checked;
+
+    const autoCheckbox = document.getElementById('filter-auto');
+    if (autoCheckbox) {
+        autoCheckbox.addEventListener('change', (e) => {
+            selectedAuto = e.target.checked;
             applyFilters();
         });
     }
-    
-    const retroCheckbox = document.getElementById('filter-retro');
-    if (retroCheckbox) {
-        retroCheckbox.addEventListener('change', (e) => {
-            selectedRetro = e.target.checked;
+
+    const quartzCheckbox = document.getElementById('filter-quartz');
+    if (quartzCheckbox) {
+        quartzCheckbox.addEventListener('change', (e) => {
+            selectedQuartz = e.target.checked;
             applyFilters();
         });
     }
@@ -971,15 +994,15 @@ function attachEventListeners() {
         document.getElementById('filter-league').value = '';
         selectedLeague = '';
         selectedTeam = '';
-        selectedKids = false;
-        selectedRetro = false;
+        selectedAuto = false;
+        selectedQuartz = false;
         document.getElementById('team-step').classList.add('hidden');
-        
-        const kidsCb = document.getElementById('filter-kids');
-        if (kidsCb) kidsCb.checked = false;
-        
-        const retroCb = document.getElementById('filter-retro');
-        if (retroCb) retroCb.checked = false;
+
+        const autoCb = document.getElementById('filter-auto');
+        if (autoCb) autoCb.checked = false;
+
+        const quartzCb = document.getElementById('filter-quartz');
+        if (quartzCb) quartzCb.checked = false;
 
         document.getElementById('search-input').value = '';
         document.getElementById('sort-select').value = 'default';
@@ -997,7 +1020,7 @@ function applyFilters(updateURL = true) {
     const sortBy = document.getElementById('sort-select').value;
     currentPage = 1;
 
-    
+
     const teamSearchAliases = {
         'sporting de lisboa': ['sporting lisboa', 'sporting lisbon', 'sporting de lisboa'],
         'fc barcelona': ['fc barcelona', 'barcelona'],
@@ -1023,25 +1046,22 @@ function applyFilters(updateURL = true) {
         if (selectedTeam !== '') {
             const teamKey = normalizeString(selectedTeam);
             const aliases = teamSearchAliases[teamKey] || [teamKey];
-            
+
             matchesTeam = aliases.some(alias => productName.includes(normalizeString(alias)));
         }
-        let matchesKids = true;
-        const nameLower = product.name.toLowerCase();
-        const imageLower = (product.image || '').toLowerCase();
-        const isKidsProduct = product.kids === true || nameLower.includes('kids') || nameLower.includes('niño') || nameLower.includes('niños') || imageLower.includes('kids');
-
-        if (selectedKids) {
-            matchesKids = isKidsProduct;
+        let matchesAuto = true;
+        if (selectedAuto) {
+            const mov = (product.specs && product.specs['Movimiento']) || '';
+            matchesAuto = mov.toLowerCase().includes('automático');
         }
 
-        
-        let matchesRetro = true;
-        if (selectedRetro) {
-            matchesRetro = nameLower.includes('retro');
+        let matchesQuartz = true;
+        if (selectedQuartz) {
+            const mov = (product.specs && product.specs['Movimiento']) || '';
+            matchesQuartz = mov.toLowerCase().includes('cuarzo');
         }
 
-        return matchesSearch && matchesLeague && matchesTeam && matchesKids && matchesRetro;
+        return matchesSearch && matchesLeague && matchesTeam && matchesAuto && matchesQuartz;
     });
     function getProductTypeOrder(name) {
         const nameLower = name.toLowerCase();
@@ -1122,6 +1142,7 @@ function openCustomizationModal(productId) {
 function getProductType(product) {
     const nameLower = product.name.toLowerCase();
     const imageLower = (product.image || '').toLowerCase();
+    if (product.league === 'Relojes' || product.category === 'relojes (rcbmods)') return 'relojes';
     if (product.kids === true || nameLower.includes('kids') || nameLower.includes('niño') || nameLower.includes('niños') || imageLower.includes('kids')) return 'kids';
     if (product.category === 'nba' || product.league === 'nba') return 'nba';
     if (product.retro === true || product.name.toLowerCase().includes('retro') || product.league === 'retro') return 'retro';

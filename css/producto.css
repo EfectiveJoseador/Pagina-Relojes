@@ -40,8 +40,9 @@
     border: 1px solid var(--border);
     aspect-ratio: 1;
     overflow: hidden;
-    width: 100%;
-    max-width: 100%;
+    width: 70%;
+    max-width: 70%;
+    margin: 0;
 
     animation: scaleIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) backwards;
     box-shadow: var(--shadow-md);
@@ -108,7 +109,7 @@
     opacity: 0;
     transition: all 0.3s;
     z-index: 10;
-    
+
 }
 
 
@@ -189,7 +190,7 @@
     display: flex;
     flex-direction: column;
     gap: 0;
-    
+
     animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s backwards;
 }
 
@@ -226,16 +227,16 @@
     font-size: 2.5rem;
     font-weight: 800;
     margin-bottom: 0.75rem;
-    
+
     line-height: 1.1;
-    
+
     min-height: unset;
     height: auto;
 }
 
 .price-block {
     margin-bottom: 1.5rem;
-    
+
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -308,61 +309,63 @@
 
 .size-selector {
     display: flex;
-    gap: 0.75rem;
+    gap: 1rem;
     flex-wrap: wrap;
+    margin-bottom: 2rem;
+    /* Add spacing below straps */
 }
 
 .size-btn {
-    width: 45px;
-    height: 45px;
+    flex: 1;
+    /* Make buttons expand equally */
+    min-width: 120px;
+    /* Ensure decent width */
+    height: 50px;
+    /* Taller buttons */
+    padding: 0 1rem;
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
     background: var(--bg-card);
     color: var(--text-main);
     font-weight: 600;
+    font-size: 1rem;
     transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
     cursor: pointer;
+    text-align: center;
+    display: flex;
+    /* Centering text */
+    align-items: center;
+    justify-content: center;
 }
 
 .size-btn:hover {
     border-color: var(--primary);
-    transform: translateY(-4px) scale(1.1);
-    box-shadow: 0 6px 15px rgba(99, 102, 241, 0.2);
-    animation: pulse 0.3s ease;
+    transform: translateY(-2px);
+    /* Subtle lift */
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
 }
 
 .size-btn.active {
     background: var(--primary);
     color: var(--bg-card);
     border-color: var(--primary);
-    transform: scale(1.15);
-
-    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4),
-        0 0 30px rgba(99, 102, 241, 0.3),
-        inset 0 0 10px rgba(255, 255, 255, 0.2);
-    animation: rippleEffect 0.6s ease;
+    transform: scale(1.02);
+    /* Slight scale */
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+    /* Removed animation for cleaner feel */
 }
 
-#version-select {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    background: var(--bg-card);
-    color: var(--text-main);
-    transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-#version-select:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
-}
+/* ... existing version-select CSS ... */
 
 .actions-block {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
+    /* Larger gap between QTY and Add Button */
     margin-bottom: 2rem;
+    align-items: stretch;
+    /* Ensure same height */
+    height: 55px;
+    /* Locked height for symmetry */
 }
 
 .quantity-selector {
@@ -371,15 +374,23 @@
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
     background: var(--bg-card);
+    height: 100%;
+    /* Fill parent height */
 }
 
 .quantity-selector button {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    /* Wider click area */
+    height: 100%;
     font-size: 1.2rem;
     color: var(--text-main);
     cursor: pointer;
     transition: background 0.2s;
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .quantity-selector button:hover {
@@ -387,12 +398,15 @@
 }
 
 .quantity-selector input {
-    width: 50px;
+    width: 60px;
+    /* Wider number input */
+    height: 100%;
     text-align: center;
     border: none;
     background: transparent;
     color: var(--text-main);
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 1.1rem;
     -moz-appearance: textfield;
     appearance: textfield;
 }
@@ -405,9 +419,13 @@
 
 .btn-add-cart-lg {
     flex: 1;
-    background: var(--primary);
-    color: var(--bg-card);
-    font-weight: 700;
+    /* Expand to fill remaining space */
+    background: var(--primary, #fff);
+    /* Fallback or var */
+    color: var(--bg-card, #000);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     border-radius: var(--radius-sm);
     font-size: 1.1rem;
     transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
@@ -415,7 +433,12 @@
     overflow: hidden;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+    height: 100%;
+    /* Fill parent height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -503,11 +526,11 @@
 .carousel-track {
     display: flex;
     gap: 1.5rem;
-    
+
     transition: none;
     padding-top: 15px;
     margin-top: -15px;
-    
+
     will-change: transform;
     transform: translate3d(0, 0, 0);
     -webkit-backface-visibility: hidden;
@@ -523,7 +546,7 @@
 
 
 .carousel-track.dragging {
-    
+
     will-change: transform;
 }
 
@@ -788,9 +811,9 @@
     .carousel-container {
         padding: 0 1rem;
         padding-right: 0;
-        
+
         overflow: hidden;
-        
+
     }
 
     .carousel-container::-webkit-scrollbar {
@@ -798,10 +821,10 @@
     }
 
     .carousel-track {
-        
+
         scroll-snap-align: start;
         padding-right: 1rem;
-        
+
     }
 
     .carousel-track .product-card {
@@ -818,7 +841,7 @@
         width: 45vw;
     }
 
-    
+
     .related-products {
         position: relative;
     }
@@ -837,7 +860,7 @@
         transition: opacity 0.3s ease;
     }
 
-    
+
     .related-products.scrolled::after {
         opacity: 0;
     }
@@ -1108,7 +1131,7 @@
     justify-content: center;
     animation: zoomIn 0.3s cubic-bezier(0.22, 1, 0.36, 1);
     overflow: hidden;
-    
+
     margin-bottom: 5vh;
 }
 
@@ -1117,7 +1140,7 @@
     cursor: grab;
     touch-action: none;
     user-select: none;
-    
+
     border-radius: var(--radius-lg);
     overflow: hidden;
 }
@@ -1137,7 +1160,7 @@
     border-radius: var(--radius-lg);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     transform-origin: center center;
-    
+
     will-change: transform;
 }
 
@@ -1307,7 +1330,7 @@
 
 @media (max-width: 768px) {
     .lightbox-content {
-        
+
         margin-bottom: 0;
     }
 
