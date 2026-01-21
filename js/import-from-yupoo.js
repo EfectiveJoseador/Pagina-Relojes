@@ -233,132 +233,197 @@ async function main() {
     print('bright', '\n=== IMPORTE DE RELOJES (RCB MODS) ===\n');
 
     const args = process.argv.slice(2);
-    let url = args[0];
+    let initialUrl = args[0];
+    let continueImporting = true;
+    let isFirstRun = true;
 
-    if (!url) {
-        url = await askQuestion(`${COLORS.cyan}Introduce la URL del producto RCBMods: ${COLORS.reset}`);
-    }
-
-    if (!url.includes('rcbmods.com')) {
-        print('red', 'Error: La URL no parece ser de rcbmods.com');
-        process.exit(1);
-    }
-
-    print('yellow', `\nDescargando HTML de: ${url}...`);
-    let html;
-    try {
-        html = await fetchHtml(url);
-    } catch (e) {
-        print('red', `Error descargando URL: ${e.message}`);
-        process.exit(1);
-    }
-
-    const data = parseRcbMods(html);
-
-    print('green', '\n¡Datos Extraídos!');
-    console.log(`${COLORS.bright}Nombre:${COLORS.reset} ${data.name}`);
-    console.log(`${COLORS.bright}Precio:${COLORS.reset} €${data.price}`);
-    console.log(`${COLORS.bright}Specs encontradas:${COLORS.reset} ${Object.keys(data.specifications).length}`);
-    if (data.straps.length) console.log(`${COLORS.bright}Correas:${COLORS.reset} ${data.straps.join(', ')}`);
-    console.log(`${COLORS.bright}Imágenes encontradas:${COLORS.reset} ${data.images.length}`);
-
-    // Selección de Imágenes
-    if (data.images.length === 0) {
-        print('red', 'No se encontraron imágenes. Revisa el selector.');
-        process.exit(1);
-    }
-
-    console.log(`\n${COLORS.cyan}Imágenes disponibles:${COLORS.reset}`);
-    data.images.forEach((img, i) => {
-        console.log(`[${i}] ${img}`);
-    });
-
-    const selectionStr = await askQuestion(`\n${COLORS.yellow}Elige las imágenes (índices separados por coma, ej: 0,2,5): ${COLORS.reset}`);
-    const selectedIndices = selectionStr.split(',').map(n => parseInt(n.trim())).filter(n => !isNaN(n) && data.images[n]);
-
-    if (selectedIndices.length === 0) {
-        print('red', 'Ninguna imagen seleccionada.');
-        process.exit(1);
-    }
-
-    const selectedImages = selectedIndices.map(i => data.images[i]);
-
-    // Generar ID único basado en nombre
-    const id = Date.now();
-    const handle = data.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-
-    // Descargar Imágenes
-    print('yellow', '\nDescargando y procesando imágenes...');
-    const localImages = [];
-    const productDir = path.join(FILES.assetsDir, handle);
-    if (!fs.existsSync(productDir)) fs.mkdirSync(productDir, { recursive: true });
-
-    for (let i = 0; i < selectedImages.length; i++) {
-        const imageNumber = i + 1;
-
-        try {
-            const relPath = await processImage(selectedImages[i], productDir, imageNumber.toString());
-            localImages.push(relPath);
-        } catch (e) {
-            print('red', `  ✗ ${e.message}`);
-        }
-    }
-
-    // Construir objeto producto final
-    const finalProduct = {
-        id: id,
-        name: data.name,
-        category: data.name.split(' ')[0], // Ejemplo: "GMTeiko" de "GMTeiko Bruce Wayne"
-        league: data.name.split(' ')[0],
-        price: data.price,
-        oldPrice: data.price * 1.2,
-        image: localImages[0],
-        images: localImages.slice(1),
-        description: data.features.length > 0 ? "Especificaciones Técnicas:\n" + data.features.join('\n') : "Reloj de alta calidad.",
-        features: Object.values(data.specifications),
-        straps: data.straps,
-        specs: data.specifications
-    };
-
-    // Guardar en data
-    if (fs.existsSync(FILES.products)) {
-        let content = fs.readFileSync(FILES.products, 'utf-8');
-
-        // Remover el export anterior si existe
-        content = content.replace(/export\s+default\s+products;\s*$/, '');
-
-        // Buscar el array
-        const start = content.indexOf('[');
-        const end = content.lastIndexOf(']');
-
-        if (start !== -1 && end !== -1) {
-            const newEntry = JSON.stringify(finalProduct, null, 4);
-            const arrayContent = content.substring(start + 1, end).trim();
-
-            // Check if there are actual products (not just comments)
-            // A real product will have an opening brace { outside of comments
-            const hasActualProducts = arrayContent.replace(/\/\*[\s\S]*?\*\//g, '').trim().length > 0;
-            const prefix = hasActualProducts && !arrayContent.endsWith(',') ? ',' : '';
-
-            const insertion = `${prefix}\n    ${newEntry}\n`;
-            let newContent = content.slice(0, end) + insertion + content.slice(end);
-
-            // Añadir export al final
-            newContent += '\nexport default products;';
-
-            fs.writeFileSync(FILES.products, newContent);
-            print('green', `\nProducto guardado en ${FILES.products}`);
-            console.log(newEntry);
+    while (continueImporting) {
+        let url;
+        if (isFirstRun && initialUrl) {
+            url = initialUrl;
         } else {
-            print('red', 'No se pudo encontrar el array de productos en products-data.js');
+            url = await askQuestion(`${COLORS.cyan}Introduce la URL del producto RCBMods (o deja vacío para salir): ${COLORS.reset}`);
         }
-    } else {
-        print('red', 'products-data.js no existe.');
+
+        isFirstRun = false;
+
+        if (!url || url.trim() === '') {
+            continueImporting = false;
+            break;
+        }
+
+        if (!url.includes('rcbmods.com')) {
+            print('red', 'Error: La URL no parece ser de rcbmods.com');
+            continue;
+        }
+
+        print('yellow', `\nDescargando HTML de: ${url}...`);
+        let html;
+        try {
+            html = await fetchHtml(url);
+        } catch (e) {
+            print('red', `Error descargando URL: ${e.message}`);
+            continue;
+        }
+
+        const data = parseRcbMods(html);
+
+        print('green', '\n¡Datos Extraídos!');
+        console.log(`${COLORS.bright}Nombre:${COLORS.reset} ${data.name}`);
+        console.log(`${COLORS.bright}Precio:${COLORS.reset} €${data.price}`);
+        console.log(`${COLORS.bright}Specs encontradas:${COLORS.reset} ${Object.keys(data.specifications).length}`);
+        if (data.straps.length) console.log(`${COLORS.bright}Correas:${COLORS.reset} ${data.straps.join(', ')}`);
+        console.log(`${COLORS.bright}Imágenes encontradas:${COLORS.reset} ${data.images.length}`);
+
+        // Selección de Imágenes
+        if (data.images.length === 0) {
+            print('red', 'No se encontraron imágenes. Revisa el selector.');
+            continue;
+        }
+
+        console.log(`\n${COLORS.cyan}Imágenes disponibles:${COLORS.reset}`);
+        data.images.forEach((img, i) => {
+            console.log(`[${i}] ${img}`);
+        });
+
+        const selectionStr = await askQuestion(`\n${COLORS.yellow}Elige las imágenes (índices separados por coma, ej: 0,2,5): ${COLORS.reset}`);
+        const selectedIndices = selectionStr.split(',').map(n => parseInt(n.trim())).filter(n => !isNaN(n) && data.images[n]);
+
+        if (selectedIndices.length === 0) {
+            print('red', 'Ninguna imagen seleccionada.');
+            continue;
+        }
+
+        const selectedImages = selectedIndices.map(i => data.images[i]);
+
+        // Generar handle basado en nombre
+        const handle = data.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+        // Descargar Imágenes
+        print('yellow', '\nDescargando y procesando imágenes...');
+        const localImages = [];
+        const productDir = path.join(FILES.assetsDir, handle);
+        if (!fs.existsSync(productDir)) fs.mkdirSync(productDir, { recursive: true });
+
+        for (let i = 0; i < selectedImages.length; i++) {
+            const imageNumber = i + 1;
+            try {
+                const relPath = await processImage(selectedImages[i], productDir, imageNumber.toString());
+                localImages.push(relPath);
+            } catch (e) {
+                print('red', `  ✗ ${e.message}`);
+            }
+        }
+
+        // Construir objeto producto final
+        const finalProduct = {
+            id: Date.now(),
+            name: data.name,
+            category: data.name.split(' ')[0],
+            league: data.name.split(' ')[0],
+            price: data.price,
+            oldPrice: data.price * 1.2,
+            image: localImages[0],
+            images: localImages.slice(1),
+            description: data.features.length > 0 ? "Especificaciones Técnicas:\n" + data.features.join('\n') : "Reloj de alta calidad.",
+            features: data.features,
+            straps: data.straps,
+            specs: data.specifications
+        };
+
+        // Guardar/Actualizar en data
+        await saveOrUpdateProduct(finalProduct);
+
+        print('bright', '\n--- Producto Completado ---\n');
     }
 
     print('bright', '\n¡Proceso Finalizado!');
 }
 
+async function saveOrUpdateProduct(newProduct) {
+    if (!fs.existsSync(FILES.products)) {
+        print('red', 'products-data.js no existe.');
+        return;
+    }
+
+    let content = fs.readFileSync(FILES.products, 'utf-8');
+
+    // Buscar el array de productos
+    const startIdx = content.indexOf('[');
+    const endIdx = content.lastIndexOf(']');
+
+    if (startIdx === -1 || endIdx === -1) {
+        print('red', 'No se pudo encontrar el array de productos.');
+        return;
+    }
+
+    let arrayContent = content.substring(startIdx + 1, endIdx);
+
+    // Buscar por nombre directamente
+    const escapedName = newProduct.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const namePattern = new RegExp(`"name"\\s*:\\s*"${escapedName}"`);
+    const nameMatch = arrayContent.match(namePattern);
+
+    if (nameMatch) {
+        print('yellow', `\n⚠️  El producto "${newProduct.name}" ya existe. Actualizando datos...`);
+
+        // Encontrar el inicio del objeto {
+        let blockStart = arrayContent.lastIndexOf('{', nameMatch.index);
+
+        // Encontrar el final del objeto } (manejando anidamiento)
+        let blockEnd = -1;
+        let braceCount = 0;
+        for (let i = blockStart; i < arrayContent.length; i++) {
+            if (arrayContent[i] === '{') braceCount++;
+            if (arrayContent[i] === '}') {
+                braceCount--;
+                if (braceCount === 0) {
+                    blockEnd = i;
+                    break;
+                }
+            }
+        }
+
+        if (blockStart !== -1 && blockEnd !== -1) {
+            const oldBlock = arrayContent.substring(blockStart, blockEnd + 1);
+
+            // Conservar el ID original
+            const idMatch = oldBlock.match(/"id":\s*(\d+)/);
+            if (idMatch) newProduct.id = parseInt(idMatch[1]);
+
+            const newBlock = JSON.stringify(newProduct, null, 4);
+
+            // Reemplazar el bloque en el contenido total
+            const newContent = content.substring(0, startIdx + 1 + blockStart) +
+                newBlock +
+                content.substring(startIdx + 1 + blockEnd + 1);
+
+            fs.writeFileSync(FILES.products, newContent);
+            print('green', `✓ Producto "${newProduct.name}" actualizado exitosamente.`);
+            return;
+        }
+    }
+
+    // Si es nuevo
+    print('green', `\nCreando nuevo producto: "${newProduct.name}"`);
+
+    let insertionContent = content.replace(/export\s+default\s+products;\s*$/, '').trim();
+    const newEndIdx = insertionContent.lastIndexOf(']');
+
+    const newEntry = JSON.stringify(newProduct, null, 4);
+    const innerContent = insertionContent.substring(startIdx + 1, newEndIdx).trim();
+    const hasActualProducts = innerContent.replace(/\/\*[\s\S]*?\*\//g, '').trim().length > 0;
+    const prefix = (hasActualProducts && !innerContent.endsWith(',')) ? ',' : '';
+
+    const insertion = `${prefix}\n    ${newEntry}\n`;
+    let finalContent = insertionContent.slice(0, newEndIdx) + insertion + insertionContent.slice(newEndIdx);
+    finalContent += '\n\nexport default products;';
+
+    fs.writeFileSync(FILES.products, finalContent);
+    print('green', `✓ Producto guardado en ${FILES.products}`);
+}
+
 main().catch(err => {
     console.error('Error fatal:', err);
 });
+

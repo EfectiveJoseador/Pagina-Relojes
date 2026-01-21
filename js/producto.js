@@ -43,9 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
         featuresEl.innerHTML = product.features.map(feature => {
             if (feature.includes(':')) {
                 const [label, ...rest] = feature.split(':');
-                return `<li><i class="fas fa-check"></i> <strong>${label}:</strong>${rest.join(':')}</li>`;
+                const value = rest.join(':').trim();
+                return `<li><i class="fas fa-check"></i> <span><strong>${label}:</strong> ${value}</span></li>`;
             }
-            return `<li><i class="fas fa-check"></i> ${feature}</li>`;
+            return `<li><i class="fas fa-check"></i> <span>${feature}</span></li>`;
         }).join('');
     }
 
