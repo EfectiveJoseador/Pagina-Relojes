@@ -40,7 +40,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Populate features (List Only, as requested)
     const featuresEl = document.getElementById('product-features');
     if (featuresEl && product.features && Array.isArray(product.features)) {
-        featuresEl.innerHTML = product.features.map(f => `<li><i class="fas fa-check"></i> ${f}</li>`).join('');
+        featuresEl.innerHTML = product.features.map(feature => {
+            if (feature.includes(':')) {
+                const [label, ...rest] = feature.split(':');
+                return `<li><i class="fas fa-check"></i> <strong>${label}:</strong>${rest.join(':')}</li>`;
+            }
+            return `<li><i class="fas fa-check"></i> ${feature}</li>`;
+        }).join('');
     }
 
     // Populate Straps
