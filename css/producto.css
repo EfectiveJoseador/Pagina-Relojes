@@ -449,7 +449,73 @@
     box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
 }
 
+/* Box Selector Styles */
+.box-selector {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
 
+.box-option {
+    position: relative;
+    cursor: pointer;
+}
+
+.box-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.box-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0.75rem;
+    min-height: 70px;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg-card);
+    transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.box-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    text-align: center;
+    margin-bottom: 0.25rem;
+}
+
+.box-price {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--gold, #D4AF37);
+}
+
+.box-option:hover .box-card {
+    border-color: var(--gold, #D4AF37);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.15);
+}
+
+.box-option input[type="radio"]:checked~.box-card {
+    border-color: var(--gold, #D4AF37);
+    border-width: 3px;
+    background: rgba(212, 175, 55, 0.08);
+    box-shadow: 0 4px 16px rgba(212, 175, 55, 0.25);
+}
+
+.box-option input[type="radio"]:checked~.box-card .box-name {
+    color: var(--gold, #D4AF37);
+}
+
+.box-option input[type="radio"]:checked~.box-card .box-price {
+    font-weight: 800;
+}
 
 .description-block h3 {
     font-weight: 700;

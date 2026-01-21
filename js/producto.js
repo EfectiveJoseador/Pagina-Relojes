@@ -2,6 +2,7 @@ import products from './products-data.js';
 
 let product = null;
 let selectedStrap = null;
+let selectedBox = 'none';
 
 document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -87,6 +88,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Quantity
     initQuantitySelector();
 
+    // Box Selection
+    const boxRadios = document.querySelectorAll('input[name="box"]');
+    boxRadios.forEach(radio => {
+        radio.addEventListener('change', (e) => {
+            selectedBox = e.target.value;
+        });
+    });
+
     // Related Products
     loadRelatedProducts();
 
@@ -134,22 +143,36 @@ function addToCart() {
 
     const quantity = parseInt(document.getElementById('qty-input').value) || 1;
 
+    // Calculate box price
+    const boxPrices = {
+        'none': 0,
+        'basic': 3,
+        'black': 5,
+        'brown': 5,
+        'seiko': 10
+    };
+    const boxPrice = boxPrices[selectedBox] || 0;
+    const totalPrice = product.price + boxPrice;
+
     const cartItem = {
         id: product.id,
         name: product.name,
         image: product.image,
         basePrice: product.price,
-        price: product.price, // No extra costs for straps for now
+        price: totalPrice,
         quantity: quantity,
         customization: {
-            strap: selectedStrap
+            strap: selectedStrap,
+            box: selectedBox,
+            boxPrice: boxPrice
         }
     };
 
     let cart = JSON.parse(localStorage.getItem('cart') || '[]');
     const existingIndex = cart.findIndex(item =>
         item.id === cartItem.id &&
-        item.customization.strap === cartItem.customization.strap
+        item.customization.strap === cartItem.customization.strap &&
+        item.customization.box === cartItem.customization.box
     );
 
     if (existingIndex > -1) {
