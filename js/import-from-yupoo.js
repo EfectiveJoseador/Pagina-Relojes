@@ -182,11 +182,6 @@ function parseRcbMods(html) {
         const match = cleanHtml.match(regex);
         if (match) {
             let value = match[1].trim();
-            // REGLA: Cambiar 904L a 316L en Caja y Correa
-            if ((key === 'Caja' || key === 'Correa') && value.includes('904L')) {
-                value = value.replace('904L', '316L');
-                value += ' (Acero corregido)';
-            }
             data.specifications[key] = value;
             data.features.push(`${key}: ${value}`);
         }

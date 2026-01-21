@@ -13,6 +13,13 @@
     animation: fadeIn 0.8s ease backwards;
 }
 
+.breadcrumbs a:not([style*="display: none"])::after,
+.breadcrumbs a:not([style*="display:none"])::after {
+    content: " / ";
+    color: var(--text-muted);
+    margin: 0 0.25rem;
+}
+
 .breadcrumbs a:hover {
     color: var(--primary);
     text-decoration: underline;
