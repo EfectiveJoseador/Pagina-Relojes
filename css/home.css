@@ -1757,8 +1757,10 @@ a.catalogo-btn:hover,
 }
 
 .equipo-card img {
-    width: 100px;
-    height: 120px;
+    width: 200px !important;
+    height: 220px !important;
+    min-width: 200px;
+    min-height: 220px;
     object-fit: contain;
     margin-bottom: 1rem;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));

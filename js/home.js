@@ -457,30 +457,17 @@ function initCatalogoCards() {
     });
 }
 function applySpecialPricing() {
+    // Los relojes ya tienen sus precios definidos correctamente en products-data.js
     products.forEach(product => {
-        const nameLower = product.name.toLowerCase();
-        const imageLower = (product.image || '').toLowerCase();
-        const isKids = product.kids === true || nameLower.includes('kids') || nameLower.includes('niño') || nameLower.includes('niños') || imageLower.includes('kids');
-        const isRetro = product.name.trim().endsWith('R') || product.league === 'retro';
-        const isNBA = product.category === 'nba' || product.league === 'nba';
-
-        let oldPrice = 25.00;
-        let newPrice = 19.90;
-
-        if (isNBA) {
-            oldPrice = 30.00;
-            newPrice = 24.90;
-        } else if (isRetro) {
-            oldPrice = 30.00;
-            newPrice = 24.90;
-        } else if (isKids) {
-            oldPrice = 27.00;
-            newPrice = 21.90;
+        if (product.price && product.oldPrice) {
+            product.sale = true;
+            return;
         }
-
-        product.oldPrice = oldPrice;
-        product.price = newPrice;
-        product.sale = true;
+        if (!product.price) {
+            product.price = 139.90;
+            product.oldPrice = 169.90;
+            product.sale = true;
+        }
     });
 }
 

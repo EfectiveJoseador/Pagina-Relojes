@@ -139,6 +139,59 @@ function askQuestion(query) {
         resolve(ans);
     }));
 }
+// === PRICING LOGIC ===
+
+/**
+ * Calcula el precio basado en el tipo de movimiento y nombre del producto.
+ * - GMTeiko: 149.90€ / 169.90€
+ * - Automático (no GMTeiko): 139.90€ / 169.90€
+ * - Cuarzo/Híbrido (VK): 124.90€ / 149.90€
+ */
+function calculatePrice(productName, specifications) {
+    const name = productName.toLowerCase();
+    const movement = (specifications.Movimiento || '').toLowerCase();
+
+    // Detectar si es GMTeiko
+    if (name.includes('gmteiko')) {
+        print('cyan', '  💰 Tipo detectado: GMTeiko → 149.90€ / 169.90€');
+        return { price: 149.90, oldPrice: 169.90 };
+    }
+
+    // Detectar si es cuarzo/híbrido (VK63, VK64, etc.)
+    if (movement.includes('vk') || movement.includes('cuarzo') || movement.includes('quartz') || movement.includes('híbrido')) {
+        print('cyan', '  💰 Tipo detectado: Cuarzo/Híbrido → 124.90€ / 149.90€');
+        return { price: 124.90, oldPrice: 149.90 };
+    }
+
+    // Por defecto: Automático no GMTeiko (NH35, NH38, NH34, etc.)
+    print('cyan', '  💰 Tipo detectado: Automático → 139.90€ / 169.90€');
+    return { price: 139.90, oldPrice: 169.90 };
+}
+
+/**
+ * Detecta la colección basándose en el nombre del producto.
+ * Soporta: GMTeiko, Nauteiko, Royal Seikoak, Seikojust
+ */
+function detectCollection(productName) {
+    const name = productName.toLowerCase();
+
+    if (name.includes('gmteiko')) {
+        return 'GMTeiko';
+    }
+    if (name.includes('nauteiko')) {
+        return 'Nauteiko';
+    }
+    if (name.includes('royal seikoak') || name.includes('royal-seikoak')) {
+        return 'Royal Seikoak';
+    }
+    if (name.includes('seikojust')) {
+        return 'Seikojust';
+    }
+
+    // Fallback: usar primera palabra capitalizada
+    const firstWord = productName.split(' ')[0];
+    return firstWord.charAt(0).toUpperCase() + firstWord.slice(1);
+}
 
 // === PARSER ===
 
@@ -316,13 +369,19 @@ async function main() {
         }
 
         // Construir objeto producto final
+        // Determinar precio basado en tipo de movimiento y nombre
+        const productPricing = calculatePrice(data.name, data.specifications);
+
+        // Detectar colección basándose en el nombre del producto
+        const collectionName = detectCollection(data.name);
+
         const finalProduct = {
             id: Date.now(),
             name: data.name,
-            category: data.name.split(' ')[0],
-            league: data.name.split(' ')[0],
-            price: data.price,
-            oldPrice: data.price * 1.2,
+            category: collectionName,
+            league: collectionName,
+            price: productPricing.price,
+            oldPrice: productPricing.oldPrice,
             image: localImages[0],
             images: localImages.slice(1),
             description: data.features.length > 0 ? "Especificaciones Técnicas:\n" + data.features.join('\n') : "Reloj de alta calidad.",

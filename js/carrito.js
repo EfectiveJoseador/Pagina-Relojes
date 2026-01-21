@@ -1,27 +1,16 @@
 import products from './products-data.js';
 function applySpecialPricing() {
+    // Los relojes ya tienen sus precios definidos correctamente en products-data.js
     products.forEach(product => {
-        const nameLower = product.name.toLowerCase();
-        const imageLower = (product.image || '').toLowerCase();
-        const isKids = product.kids === true || nameLower.includes('kids') || nameLower.includes('niño') || nameLower.includes('niños') || imageLower.includes('kids');
-        const isRetro = product.name.trim().endsWith('R') || product.league === 'retro';
-        const isNBA = product.category === 'nba' || product.league === 'nba';
-        let oldPrice = 25.00;
-        let newPrice = 19.90;
-
-        if (isNBA) {
-            oldPrice = 30.00;
-            newPrice = 24.90;
-        } else if (isRetro) {
-            oldPrice = 30.00;
-            newPrice = 24.90;
-        } else if (isKids) {
-            oldPrice = 27.00;
-            newPrice = 21.90;
+        if (product.price && product.oldPrice) {
+            product.sale = true;
+            return;
         }
-        product.oldPrice = oldPrice;
-        product.price = newPrice;
-        product.sale = true;
+        if (!product.price) {
+            product.price = 139.90;
+            product.oldPrice = 169.90;
+            product.sale = true;
+        }
     });
 }
 applySpecialPricing();
@@ -100,39 +89,26 @@ const Cart = {
     },
 
     calculateTotal() {
+        let subtotal = 0;
         let totalQty = 0;
-        let surcharges = 0;
+
         this.items.forEach(item => {
+            const product = products.find(p => p.id === item.id);
             const qty = item.quantity || item.qty || 1;
+            const itemPrice = item.price || product?.price || 139.90;
+            subtotal += itemPrice * qty;
             totalQty += qty;
-            const itemPrice = item.price || item.basePrice || 0;
-            const surcharge = Math.max(0, itemPrice - 19.90);
-            surcharges += surcharge * qty;
         });
 
         if (totalQty === 0) return { subtotal: 0, shipping: 0, total: 0 };
-        const fullCycles = Math.floor(totalQty / 5);
-        const remainder = totalQty % 5;
 
-        let packBasePrice = fullCycles * 85.90;
-        if (remainder === 1) {
-            packBasePrice += 19.90;
-        } else if (remainder === 2) {
-            packBasePrice += 19.90 * 2;
-        } else if (remainder === 3) {
-            packBasePrice += 56.90;
-        } else if (remainder === 4) {
-            packBasePrice += 56.90 + 19.90;
-        }
-        const subtotal = packBasePrice + surcharges;
+        // Envío gratis en relojes
         let shipping = 0;
-        if (totalQty === 1) {
-            shipping = 1.90;
-        }
         const total = subtotal + shipping;
+
         const shippingEl = document.getElementById('shipping-price');
         if (shippingEl) {
-            shippingEl.textContent = shipping === 0 ? 'Gratis' : `€${shipping.toFixed(2)}`;
+            shippingEl.textContent = 'Gratis';
         }
         this.renderPackIndicators(totalQty);
 

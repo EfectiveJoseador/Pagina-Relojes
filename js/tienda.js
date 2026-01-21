@@ -669,29 +669,21 @@ function saveProductOrderToSession(orderIds) {
     } catch (e) { }
 }
 function applySpecialPricing() {
+    // Los relojes ya tienen sus precios definidos correctamente en products-data.js
+    // Esta función ahora solo asegura que el flag 'sale' esté activo si hay oldPrice
     allProducts.forEach(product => {
-        if (product.category === 'relojes (rcbmods)') return;
-        const nameLower = product.name.toLowerCase();
-        const imageLower = (product.image || '').toLowerCase();
-        const isKids = product.kids === true || nameLower.includes('kids') || nameLower.includes('niño') || nameLower.includes('niños') || imageLower.includes('kids');
-        const isRetro = product.retro === true || product.name.toLowerCase().includes('retro') || product.league === 'retro';
-        const isNBA = product.category === 'nba' || product.league === 'nba';
-        let oldPrice = 25.00;
-        let newPrice = 19.90;
-
-        if (isNBA) {
-            oldPrice = 30.00;
-            newPrice = 24.90;
-        } else if (isRetro) {
-            oldPrice = 30.00;
-            newPrice = 24.90;
-        } else if (isKids) {
-            oldPrice = 27.00;
-            newPrice = 21.90;
+        // Si el producto ya tiene precio y oldPrice definidos, respetarlos
+        if (product.price && product.oldPrice) {
+            product.sale = true;
+            return;
         }
-        product.oldPrice = oldPrice;
-        product.price = newPrice;
-        product.sale = true;
+
+        // Fallback para productos sin precio definido (legacy)
+        if (!product.price) {
+            product.price = 139.90;
+            product.oldPrice = 169.90;
+            product.sale = true;
+        }
     });
 }
 function populateLeagueFilter() {
@@ -857,7 +849,7 @@ function formatLeagueName(league) {
 function applyURLFilters() {
     const params = new URLSearchParams(window.location.search);
     const search = params.get('search');
-    const league = params.get('league');
+    const league = params.get('collection');
     const team = params.get('team');
     const auto = params.get('auto');
     const quartz = params.get('quartz');
@@ -920,7 +912,7 @@ function updateURLWithFilters(searchTerm, sortBy) {
         params.set('search', searchTerm);
     }
     if (selectedLeague) {
-        params.set('league', selectedLeague);
+        params.set('collection', selectedLeague);
     }
     if (selectedTeam) {
         params.set('team', selectedTeam);
