@@ -1,9 +1,13 @@
 .product-container {
     padding-top: 0.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .breadcrumbs {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     color: var(--text-muted);
     font-size: 0.9rem;
     animation: fadeIn 0.8s ease backwards;
@@ -16,45 +20,41 @@
 
 .product-layout {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    margin-bottom: 4rem;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    align-items: start;
 }
-
 
 .product-gallery {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
     width: 100%;
-    max-width: 100%;
 }
 
 .main-image {
     position: relative;
     background: var(--bg-card);
-    border-radius: var(--radius-lg);
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 1px solid var(--border);
     aspect-ratio: 1;
     overflow: hidden;
-    width: 70%;
-    max-width: 70%;
-    margin: 0;
-
+    width: 100%;
+    max-width: 600px;
     animation: scaleIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) backwards;
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     cursor: zoom-in;
 }
-
 
 .main-image::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0) 0%, rgba(99, 102, 241, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0) 0%, rgba(212, 175, 55, 0.08) 100%);
     opacity: 0;
     transition: opacity 0.4s ease;
     pointer-events: none;
@@ -72,7 +72,7 @@
 }
 
 .main-image:hover img {
-    transform: scale(1.15) rotate(2deg);
+    transform: scale(1.08);
 }
 
 
@@ -143,24 +143,23 @@
 }
 
 .thumbnails {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 80px);
     gap: 0.75rem;
-    justify-content: flex-start;
     padding: 0.5rem 0;
+    max-width: 600px;
     animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s backwards;
 }
 
 .thumb {
-    width: 70px;
-    height: 70px;
-    min-width: 70px;
-    flex-shrink: 0;
-    border-radius: var(--radius-sm);
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
     border: 2px solid var(--border);
     cursor: pointer;
     background: var(--bg-card);
-    opacity: 0.6;
-    transition: all 0.25s ease;
+    opacity: 0.7;
+    transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
     overflow: hidden;
     padding: 0;
 }
@@ -168,13 +167,14 @@
 .thumb.active,
 .thumb:hover {
     opacity: 1;
-    border-color: var(--primary);
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+    border-color: var(--gold, #D4AF37);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
 }
 
 .thumb.active {
-    border-width: 2px;
+    border-width: 3px;
+    border-color: var(--gold, #D4AF37);
 }
 
 .thumb img {
@@ -190,16 +190,16 @@
     display: flex;
     flex-direction: column;
     gap: 0;
-
     animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s backwards;
 }
 
 .category-tag {
     text-transform: uppercase;
-    color: #a855f7;
-    font-weight: 600;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
+    color: var(--gold, #D4AF37);
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.75rem;
 }
 
 .badge-sale {
@@ -214,7 +214,6 @@
     vertical-align: middle;
 }
 
-
 .product-details .badge-sale {
     position: static !important;
     display: inline-block !important;
@@ -226,60 +225,49 @@
     font-family: var(--font-heading);
     font-size: 2.5rem;
     font-weight: 800;
-    margin-bottom: 0.75rem;
-
+    margin-bottom: 1rem;
     line-height: 1.1;
-
-    min-height: unset;
-    height: auto;
+    letter-spacing: -0.5px;
 }
 
 .price-block {
-    margin-bottom: 1.5rem;
-
+    margin-bottom: 2rem;
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
 .current-price {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--text-main);
-    color: #a855f7;
-
-    position: relative;
-    display: inline-block;
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--gold, #D4AF37);
 }
-
 
 .price-block:has(.old-price) .current-price {
-    color: #a855f7;
-
-    text-shadow: 0 0 20px rgba(168, 85, 247, 0.3),
-        0 0 40px rgba(168, 85, 247, 0.15);
-    animation: priceGlow 2s ease-in-out infinite;
+    color: var(--gold, #D4AF37);
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.3),
+        0 0 40px rgba(212, 175, 55, 0.15);
 }
-
 
 @keyframes priceGlow {
 
     0%,
     100% {
-        text-shadow: 0 0 15px rgba(168, 85, 247, 0.25),
-            0 0 30px rgba(168, 85, 247, 0.12);
+        text-shadow: 0 0 15px rgba(212, 175, 55, 0.25),
+            0 0 30px rgba(212, 175, 55, 0.12);
     }
 
     50% {
-        text-shadow: 0 0 25px rgba(168, 85, 247, 0.4),
-            0 0 50px rgba(168, 85, 247, 0.2);
+        text-shadow: 0 0 25px rgba(212, 175, 55, 0.4),
+            0 0 50px rgba(212, 175, 55, 0.2);
     }
 }
 
 .old-price {
     font-size: 1.25rem;
-    text-decoration: line-through;
     color: var(--text-muted);
+    text-decoration: line-through;
+    opacity: 0.6;
 }
 
 
@@ -312,77 +300,66 @@
     gap: 1rem;
     flex-wrap: wrap;
     margin-bottom: 2rem;
-    /* Add spacing below straps */
 }
 
 .size-btn {
     flex: 1;
-    /* Make buttons expand equally */
     min-width: 120px;
-    /* Ensure decent width */
-    height: 50px;
-    /* Taller buttons */
-    padding: 0 1rem;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
+    height: 52px;
+    padding: 0 1.25rem;
+    border: 2px solid var(--border);
+    border-radius: 8px;
     background: var(--bg-card);
     color: var(--text-main);
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1rem;
-    transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
     cursor: pointer;
     text-align: center;
     display: flex;
-    /* Centering text */
     align-items: center;
     justify-content: center;
 }
 
 .size-btn:hover {
-    border-color: var(--primary);
-    transform: translateY(-2px);
-    /* Subtle lift */
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+    border-color: var(--gold, #D4AF37);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.15);
 }
 
 .size-btn.active {
-    background: var(--primary);
-    color: var(--bg-card);
-    border-color: var(--primary);
+    background: var(--gold, #D4AF37);
+    color: #000;
+    border-color: var(--gold, #D4AF37);
     transform: scale(1.02);
-    /* Slight scale */
-    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
-    /* Removed animation for cleaner feel */
+    box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
 }
 
 /* ... existing version-select CSS ... */
 
 .actions-block {
     display: flex;
-    gap: 1.5rem;
-    /* Larger gap between QTY and Add Button */
+    gap: 1.25rem;
     margin-bottom: 2rem;
     align-items: stretch;
-    /* Ensure same height */
-    height: 55px;
-    /* Locked height for symmetry */
+    height: 56px;
 }
 
 .quantity-selector {
     display: flex;
     align-items: center;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
+    min-width: 140px;
+    border: 2px solid var(--border);
+    border-radius: 8px;
     background: var(--bg-card);
     height: 100%;
-    /* Fill parent height */
 }
 
 .quantity-selector button {
-    width: 50px;
-    /* Wider click area */
+    width: 48px;
     height: 100%;
     font-size: 1.2rem;
+    font-weight: 700;
     color: var(--text-main);
     cursor: pointer;
     transition: background 0.2s;
@@ -394,18 +371,18 @@
 }
 
 .quantity-selector button:hover {
-    background: var(--bg-body);
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--gold, #D4AF37);
 }
 
 .quantity-selector input {
     width: 60px;
-    /* Wider number input */
     height: 100%;
     text-align: center;
     border: none;
     background: transparent;
     color: var(--text-main);
-    font-weight: 700;
+    font-weight: 800;
     font-size: 1.1rem;
     -moz-appearance: textfield;
     appearance: textfield;
@@ -419,23 +396,20 @@
 
 .btn-add-cart-lg {
     flex: 1;
-    /* Expand to fill remaining space */
-    background: var(--primary, #fff);
-    /* Fallback or var */
-    color: var(--bg-card, #000);
+    background: var(--gold, #D4AF37);
+    color: #000;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    border-radius: var(--radius-sm);
-    font-size: 1.1rem;
+    border-radius: 8px;
+    font-size: 1.05rem;
     transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
     position: relative;
     overflow: hidden;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 16px rgba(212, 175, 55, 0.25);
     height: 100%;
-    /* Fill parent height */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -449,7 +423,7 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
     transition: left 0.5s;
 }
 
@@ -458,16 +432,14 @@
 }
 
 .btn-add-cart-lg:hover {
-    transform: scale(1.02);
-
-    box-shadow: 0 10px 35px rgba(99, 102, 241, 0.6),
-        0 0 50px rgba(99, 102, 241, 0.4);
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4),
+        0 0 40px rgba(212, 175, 55, 0.2);
 }
 
-
 .btn-add-cart-lg:active {
-    animation: pulse 0.2s ease,
-        shakeSubtle 0.3s ease 0.1s;
+    transform: scale(0.98);
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
 }
 
 
@@ -778,24 +750,40 @@
         object-fit: cover;
     }
 
+    .thumbnails {
+        grid-template-columns: repeat(auto-fill, 70px);
+        gap: 0.5rem;
+    }
+
+    .thumb {
+        width: 70px;
+        height: 70px;
+    }
+
     .product-title {
-        font-size: 2rem;
+        font-size: 1.75rem;
+    }
+
+    .current-price {
+        font-size: 1.85rem;
     }
 
     .actions-block {
         flex-direction: column;
+        height: auto;
+        gap: 1rem;
     }
-
 
     .quantity-selector {
         width: 100%;
+        min-width: unset;
+        height: 52px;
         justify-content: space-between;
     }
 
     .quantity-selector button {
-        width: 50px;
-        height: 50px;
-        font-size: 1.4rem;
+        width: 52px;
+        height: 52px;
     }
 
     .quantity-selector input {
@@ -804,7 +792,7 @@
     }
 
     .btn-add-cart-lg {
-        padding: 1rem;
+        height: 52px;
     }
 
 
