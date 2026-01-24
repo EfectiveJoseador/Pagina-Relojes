@@ -41,9 +41,9 @@
 .cart-item:hover {
 
     transform: translateX(8px) translateY(-3px);
-    border-color: rgba(99, 102, 241, 0.4);
+    border-color: rgba(212, 175, 55, 0.4);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12),
-        0 0 20px rgba(99, 102, 241, 0.15);
+        0 0 20px rgba(212, 175, 55, 0.15);
 }
 
 .cart-item-img {
@@ -173,7 +173,7 @@
     background: var(--bg-card);
     padding: 2rem;
     border-radius: var(--radius-lg);
-    border: 1px solid rgba(99, 102, 241, 0.2);
+    border: 1px solid rgba(212, 175, 55, 0.2);
     height: fit-content;
     position: sticky;
     top: calc(var(--header-height) + 2rem);
@@ -187,10 +187,10 @@
 
 .cart-summary:hover {
 
-    border-color: rgba(99, 102, 241, 0.4);
+    border-color: rgba(212, 175, 55, 0.4);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12),
-        0 0 40px rgba(99, 102, 241, 0.15),
-        inset 0 0 30px rgba(99, 102, 241, 0.05);
+        0 0 40px rgba(212, 175, 55, 0.15),
+        inset 0 0 30px rgba(212, 175, 55, 0.05);
     transform: translateY(-2px);
 }
 
@@ -232,11 +232,11 @@
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 
-    background: #6366f1;
+    background: #D4AF37;
     color: #ffffff;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
 }
 
 
@@ -258,8 +258,8 @@
 .btn-block:hover {
     transform: translateY(-4px) scale(1.02);
 
-    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.5),
-        0 0 40px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.5),
+        0 0 40px rgba(212, 175, 55, 0.3);
     animation: gradientShift 2s ease infinite;
 }
 
@@ -385,7 +385,7 @@
 
 .form-group input:focus {
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
     outline: none;
 }
 
@@ -408,10 +408,10 @@
 
 .payment-option:hover {
     border-color: var(--primary);
-    background: linear-gradient(90deg, rgba(99, 102, 241, 0.08) 0%, rgba(99, 102, 241, 0.03) 100%);
+    background: linear-gradient(90deg, rgba(212, 175, 55, 0.08) 0%, rgba(212, 175, 55, 0.03) 100%);
     transform: translateX(5px);
     box-shadow: -3px 0 0 0 var(--primary),
-        0 4px 15px rgba(99, 102, 241, 0.1);
+        0 4px 15px rgba(212, 175, 55, 0.1);
 }
 
 .payment-option input:checked+span {
@@ -681,8 +681,8 @@
 
 .address-option.selected {
     border-color: var(--primary);
-    background: linear-gradient(90deg, rgba(99, 102, 241, 0.08) 0%, rgba(99, 102, 241, 0.02) 100%);
-    box-shadow: -4px 0 0 0 var(--primary), 0 4px 20px rgba(99, 102, 241, 0.2);
+    background: linear-gradient(90deg, rgba(212, 175, 55, 0.08) 0%, rgba(212, 175, 55, 0.02) 100%);
+    box-shadow: -4px 0 0 0 var(--primary), 0 4px 20px rgba(212, 175, 55, 0.2);
 }
 
 .address-option input[type="radio"] {

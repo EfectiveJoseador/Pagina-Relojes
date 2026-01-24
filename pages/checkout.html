@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../assets/logo/logo.png">
+    <title>Finalizar Compra - Luxe MOD Watches</title>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GS53GWE2Z0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-GS53GWE2Z0');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/assets/fonts/fontawesome/css/all.min.css">
+
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/carrito.css">
+    <link rel="stylesheet" href="/css/ux-feedback.css">
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="checkout-container">
+        <h1 class="page-title">Finalizar Compra</h1>
+
+        <div class="checkout-layout">
+            <!-- Formulario de Checkout -->
+            <section class="checkout-form-section">
+                <!-- Se usa onsubmit para manejar la lógica personalizada antes del envío si fuera un submit normal, 
+                     pero aquí usaremos JS event listener para fetch como pidió el usuario -->
+                <form id="checkout-form" class="checkout-form">
+                    <!-- Configuración Web3Forms -->
+                    <input type="hidden" name="access_key" value="e7d55d3d-14d8-47b5-a3ee-e5216b7bd3e2">
+                    <input type="hidden" name="subject" value="Nuevo Pedido - Luxe MOD Watches">
+                    <input type="hidden" name="from_name" value="Luxe MOD Watches Checkout">
+
+                    <!-- Campo oculto donde inyectaremos el resumen del pedido -->
+                    <textarea name="pedido_detalles" id="order-details" style="display:none;"></textarea>
+
+                    <div class="checkout-section">
+                        <h2>Información de Contacto</h2>
+                        <div class="form-group">
+                            <label for="name">Nombre Completo</label>
+                            <input type="text" id="name" name="nombre" required placeholder="Juan Pérez">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required placeholder="juan@ejemplo.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Teléfono</label>
+                                <input type="tel" id="phone" name="telefono" required placeholder="+34 600 000 000">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checkout-section">
+                        <h2>Dirección de Envío</h2>
+                        <div class="form-group">
+                            <label for="address">Dirección y Número</label>
+                            <input type="text" id="address" name="direccion" required
+                                placeholder="Calle Principal 123, 4º B">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">Ciudad</label>
+                                <input type="text" id="city" name="ciudad" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="zip">Código Postal</label>
+                                <input type="text" id="zip" name="codigo_postal" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="province">Provincia/Estado</label>
+                            <input type="text" id="province" name="provincia" required>
+                        </div>
+                    </div>
+
+                    <div class="checkout-section">
+                        <h2>Método de Pago</h2>
+                        <div class="payment-methods">
+                            <!-- Por ahora simulado o contrareembolso/transferencia para propósitos del formulario simple -->
+                            <label class="payment-option">
+                                <input type="radio" name="metodo_pago" value="transferencia" checked>
+                                <span>Transferencia Bancaria</span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="metodo_pago" value="bizum">
+                                <span>Bizum</span>
+                            </label>
+                        </div>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">
+                            * Recibirás las instrucciones de pago en tu email al confirmar el pedido.
+                        </p>
+                    </div>
+
+                    <button type="submit" class="btn-block" id="confirm-order-btn">
+                        Confirmar Pedido
+                    </button>
+                </form>
+            </section>
+
+            <!-- Resumen lateral -->
+            <aside class="cart-summary">
+                <h3>Resumen del Pedido</h3>
+                <div id="checkout-items-summary" class="checkout-items-list">
+                    <!-- Items inyectados por JS -->
+                </div>
+
+                <div class="summary-divider"></div>
+
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="checkout-subtotal">€0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Envío</span>
+                    <span>Gratis</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span id="checkout-total">€0.00</span>
+                </div>
+
+                <div class="secure-badge">
+                    <i class="fas fa-lock"></i> Datos cifrados y seguros
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="/js/theme.js"></script>
+    <script src="/js/components.js"></script>
+    <script src="/js/ux-feedback.js"></script>
+
+    <!-- Script específico de checkout -->
+    <script type="module" src="/js/checkout.js"></script>
+</body>
+
+</html>

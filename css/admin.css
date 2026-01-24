@@ -1,6 +1,3 @@
-
-
-
 * {
     margin: 0;
     padding: 0;
@@ -21,7 +18,7 @@ body {
 
 .admin-header {
     background: #12121f;
-    border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
@@ -54,7 +51,7 @@ body {
 }
 
 .admin-badge {
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    background: linear-gradient(135deg, #D4AF37, #B8962E);
     color: white;
     padding: 0.25rem 0.75rem;
     border-radius: 1rem;
@@ -123,8 +120,8 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 1.25rem;
-    background: rgba(99, 102, 241, 0.15);
-    color: #6366f1;
+    background: rgba(212, 175, 55, 0.15);
+    color: #D4AF37;
 }
 
 .stat-pending .stat-icon {
@@ -189,7 +186,7 @@ body {
 
 .filter-group select:focus {
     outline: none;
-    border-color: #6366f1;
+    border-color: #D4AF37;
 }
 
 .search-box {
@@ -218,11 +215,11 @@ body {
 
 .search-box input:focus {
     outline: none;
-    border-color: #6366f1;
+    border-color: #D4AF37;
 }
 
 .btn-refresh {
-    background: #6366f1;
+    background: #D4AF37;
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -273,13 +270,13 @@ body {
 }
 
 .orders-table tbody tr:hover {
-    background: rgba(99, 102, 241, 0.05);
+    background: rgba(212, 175, 55, 0.05);
 }
 
 .order-id {
     font-family: monospace;
     font-size: 0.85rem;
-    color: #6366f1;
+    color: #D4AF37;
 }
 
 .order-date {
@@ -387,7 +384,7 @@ body {
 
 .status-select.status-enviado {
     background: rgba(139, 92, 246, 0.2);
-    color: #8b5cf6;
+    color: #D4AF37;
 }
 
 .status-select.status-entregado {
@@ -418,7 +415,7 @@ body {
 
 .tracking-input input:focus {
     outline: none;
-    border-color: #6366f1;
+    border-color: #D4AF37;
 }
 
 
@@ -429,8 +426,8 @@ body {
 }
 
 .btn-view {
-    background: rgba(99, 102, 241, 0.15);
-    color: #6366f1;
+    background: rgba(212, 175, 55, 0.15);
+    color: #D4AF37;
     border: none;
     padding: 0.5rem 0.75rem;
     border-radius: 0.5rem;
@@ -439,7 +436,7 @@ body {
 }
 
 .btn-view:hover {
-    background: rgba(99, 102, 241, 0.25);
+    background: rgba(212, 175, 55, 0.25);
 }
 
 .btn-delete {
@@ -474,8 +471,8 @@ body {
 .loading-orders .spinner {
     width: 40px;
     height: 40px;
-    border: 4px solid rgba(99, 102, 241, 0.2);
-    border-top-color: #6366f1;
+    border: 4px solid rgba(212, 175, 55, 0.2);
+    border-top-color: #D4AF37;
     border-radius: 50%;
     animation: spin 1s linear infinite;
     margin: 0 auto 1rem;
@@ -524,7 +521,7 @@ body {
     max-width: 900px;
     max-height: 90vh;
     overflow-y: auto;
-    border: 1px solid rgba(99, 102, 241, 0.2);
+    border: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .modal-header {
@@ -576,7 +573,7 @@ body {
 
 .detail-section h3 {
     font-size: 0.9rem;
-    color: #6366f1;
+    color: #D4AF37;
     margin-bottom: 0.75rem;
     display: flex;
     align-items: center;
@@ -617,7 +614,7 @@ body {
 
 .status-badge.status-enviado {
     background: rgba(139, 92, 246, 0.2);
-    color: #8b5cf6;
+    color: #D4AF37;
 }
 
 .status-badge.status-entregado {
@@ -699,7 +696,7 @@ body {
     gap: 0.75rem;
     font-size: 0.9rem;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(99, 102, 241, 0.3);
+    border: 1px solid rgba(212, 175, 55, 0.3);
     opacity: 0;
     transition: all 0.3s;
     z-index: 2000;
@@ -770,13 +767,13 @@ body {
 }
 
 .promo-codes-section .section-title i {
-    color: #6366f1;
+    color: #D4AF37;
 }
 
 
 .promo-create-form {
-    background: rgba(99, 102, 241, 0.1);
-    border: 1px solid rgba(99, 102, 241, 0.2);
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.2);
     border-radius: 0.75rem;
     padding: 1.25rem;
     margin-bottom: 1.5rem;
@@ -822,11 +819,11 @@ body {
 .promo-create-form input:focus,
 .promo-create-form select:focus {
     outline: none;
-    border-color: #6366f1;
+    border-color: #D4AF37;
 }
 
 .btn-create-promo {
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    background: linear-gradient(135deg, #D4AF37, #B8962E);
     color: white;
     border: none;
     padding: 0.65rem 1.25rem;
@@ -843,7 +840,7 @@ body {
 
 .btn-create-promo:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
 }
 
 
@@ -873,12 +870,12 @@ body {
 }
 
 .promo-codes-table tbody tr:hover {
-    background: rgba(99, 102, 241, 0.05);
+    background: rgba(212, 175, 55, 0.05);
 }
 
 .promo-code-cell code {
-    background: rgba(99, 102, 241, 0.15);
-    color: #a5b4fc;
+    background: rgba(212, 175, 55, 0.15);
+    color: #E5C76B;
     padding: 0.25rem 0.6rem;
     border-radius: 0.35rem;
     font-size: 0.9rem;
@@ -1046,7 +1043,7 @@ body {
     gap: 0.25rem;
     padding: 0.25rem 0.5rem;
     background: rgba(99, 102, 241, 0.1);
-    color: #6366f1;
+    color: #D4AF37;
     border-radius: 6px;
     font-weight: 600;
     font-size: 0.85rem;
@@ -1078,11 +1075,11 @@ body {
 
 .btn-view-user {
     background: rgba(99, 102, 241, 0.1);
-    color: #6366f1;
+    color: #D4AF37;
 }
 
 .btn-view-user:hover {
-    background: #6366f1;
+    background: #D4AF37;
     color: white;
 }
 
@@ -1123,7 +1120,7 @@ body {
 }
 
 .user-info-section h3 i {
-    color: #6366f1;
+    color: #D4AF37;
 }
 
 .user-points-section h3 i {

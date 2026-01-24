@@ -1,0 +1,552 @@
+﻿<!DOCTYPE html>
+<html lang="es" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../assets/logo/logo.png">
+    <title>Mi Perfil - Camisetazo</title>
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GS53GWE2Z0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-GS53GWE2Z0');
+    </script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/assets/fonts/fontawesome/css/all.min.css">
+
+
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/auth.css">
+</head>
+
+<body>
+
+
+    <div id="header-placeholder"></div>
+
+    <main class="profile-container">
+        <aside class="profile-sidebar">
+            <div class="user-info">
+                <div class="avatar">U</div>
+                <h3>Usuario</h3>
+                <p>usuario@example.com</p>
+            </div>
+            <nav class="profile-nav">
+                <button class="nav-item active" data-target="orders">
+                    <i class="fas fa-box"></i> Mis Pedidos
+                </button>
+                <button class="nav-item" data-target="points">
+                    <i class="fas fa-star"></i> Mis Puntos
+                </button>
+                <button class="nav-item" data-target="address">
+                    <i class="fas fa-map-marker-alt"></i> Direcciones
+                </button>
+                <button class="nav-item" data-target="settings">
+                    <i class="fas fa-cog"></i> Configuración
+                </button>
+                <button id="logout-btn" class="nav-item logout">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                </button>
+            </nav>
+        </aside>
+
+        <section class="profile-content">
+
+            <div id="orders" class="content-section active">
+                <h2>Historial de Pedidos</h2>
+                <div id="orders-list" class="orders-list">
+
+                    <p style="text-align: center; color: var(--text-muted); padding: 2rem;">Cargando pedidos...</p>
+                </div>
+            </div>
+
+
+            <div id="points" class="content-section">
+                <h2>Mis Puntos</h2>
+
+
+                <div class="points-summary"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+                    <div class="points-card"
+                        style="background: linear-gradient(135deg, var(--bg-card) 0%, rgba(99, 102, 241, 0.1) 100%); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); text-align: center;">
+                        <i class="fas fa-clock" style="font-size: 1.5rem; color: #f59e0b; margin-bottom: 0.5rem;"></i>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.25rem;">Puntos
+                            Pendientes</p>
+                        <span id="pending-points" style="font-size: 2rem; font-weight: 700; color: #f59e0b;">0</span>
+                    </div>
+                    <div class="points-card"
+                        style="background: linear-gradient(135deg, var(--bg-card) 0%, rgba(34, 197, 94, 0.1) 100%); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); text-align: center;">
+                        <i class="fas fa-star" style="font-size: 1.5rem; color: #22c55e; margin-bottom: 0.5rem;"></i>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.25rem;">Puntos
+                            Disponibles</p>
+                        <span id="available-points" style="font-size: 2rem; font-weight: 700; color: #22c55e;">0</span>
+                    </div>
+                </div>
+
+
+                <div
+                    style="background: var(--bg-card); padding: 1rem 1.25rem; border-radius: 10px; border: 1px solid var(--border); margin-bottom: 1.5rem;">
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">
+                        <i class="fas fa-info-circle" style="color: var(--primary);"></i>
+                        Ganas <strong>10 puntos</strong> por cada camiseta. Los puntos pasan a disponibles cuando subes
+                        las fotos de tu pedido.
+                    </p>
+                </div>
+
+
+                <button id="open-rewards-store" style="
+                    width: 100%;
+                    margin-bottom: 2rem;
+                    padding: 1rem 1.5rem;
+                    background: linear-gradient(135deg, #8b5cf6 0%, #c026d3 50%, #ec4899 100%);
+                    border: none;
+                    border-radius: 12px;
+                    color: white;
+                    font-size: 1.1rem;
+                    font-weight: 700;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0.75rem;
+                    position: relative;
+                    overflow: hidden;
+                    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+                    transition: all 0.3s ease;
+                ">
+                    <i class="fas fa-gift" style="font-size: 1.25rem;"></i>
+                    <span>Tienda de Puntos</span>
+                    <i class="fas fa-star" style="font-size: 0.9rem; opacity: 0.8;"></i>
+                </button>
+                <style>
+                    #open-rewards-store:hover {
+                        transform: translateY(-2px);
+                        box-shadow: 0 6px 30px rgba(192, 38, 211, 0.5);
+                    }
+
+                    #open-rewards-store::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: -100%;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+                        animation: shimmer 3s infinite;
+                    }
+
+                    @keyframes shimmer {
+                        0% {
+                            left: -100%;
+                        }
+
+                        50%,
+                        100% {
+                            left: 100%;
+                        }
+                    }
+                </style>
+
+
+                <div style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
+                    <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">
+                        <i class="fas fa-ticket-alt" style="color: #c026d3;"></i> Mis Cupones
+                    </h3>
+                    <div id="user-coupons" style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+                        <p style="text-align: center; color: var(--text-muted); padding: 1rem; width: 100%;">Cargando
+                            cupones...</p>
+                    </div>
+                </div>
+
+
+                <div style="margin-top: 1rem;">
+                    <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Historial de Transacciones</h3>
+                    <div id="points-history" style="max-height: 300px; overflow-y: auto;">
+                        <p style="text-align: center; color: var(--text-muted); padding: 1rem;">Cargando historial...
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="address" class="content-section">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                    <h2 style="margin: 0;">Mis Direcciones</h2>
+                    <button id="add-address-btn" class="btn-add-address">
+                        <i class="fas fa-plus"></i> Añadir Dirección
+                    </button>
+                </div>
+                <div id="address-list" class="address-list">
+
+                    <p style="text-align: center; color: var(--text-muted); padding: 2rem;">Cargando direcciones...</p>
+                </div>
+            </div>
+
+
+            <div id="settings" class="content-section">
+                <h2>Configuración</h2>
+
+
+                <div class="settings-card"
+                    style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 1.5rem;">
+                    <h3 style="margin-bottom: 1rem; font-size: 1.1rem;">Seguridad</h3>
+                    <button id="change-password-btn" class="btn-change-password">
+                        <i class="fas fa-key"></i> Cambiar Contraseña
+                    </button>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">
+                        Se enviará un correo para restablecer tu contraseña
+                    </p>
+                </div>
+
+
+                <div class="settings-card"
+                    style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border);">
+                    <h3 style="margin-bottom: 1rem; font-size: 1.1rem;">Preferencias</h3>
+                    <form id="preferences-form">
+                        <div class="form-group" style="margin-bottom: 1rem;">
+                            <label class="custom-checkbox-label">
+                                <input type="checkbox" id="newsletter-pref" class="custom-checkbox">
+                                <span class="checkbox-box"></span>
+                                <span class="checkbox-text">Recibir novedades y ofertas por email</span>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn-save-preferences">
+                            <i class="fas fa-save"></i> Guardar Preferencias
+                        </button>
+                        <div id="preferences-message" style="margin-top: 1rem; display: none;"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <div id="address-modal" class="modal" style="display: none;">
+        <div class="modal-content"
+            style="background: var(--bg-card); padding: 2rem; border-radius: 16px; max-width: 500px; margin: 2rem auto; position: relative;">
+            <button id="close-address-modal"
+                style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-muted);">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 id="address-modal-title" style="margin-bottom: 1.5rem;">Añadir Dirección</h2>
+            <form id="address-form">
+                <input type="hidden" id="address-id">
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Nombre Completo</label>
+                    <input type="text" id="address-name" required placeholder="Ej: Juan Pérez"
+                        style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-input, #f9fafb); color: var(--text-main);">
+                </div>
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Dirección</label>
+                    <input type="text" id="address-street" required placeholder="Ej: Calle Principal 123, 4ºA"
+                        style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-input, #f9fafb); color: var(--text-main);">
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                    <div class="form-group">
+                        <label>Ciudad</label>
+                        <input type="text" id="address-city" required placeholder="Ej: Madrid"
+                            style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-input, #f9fafb); color: var(--text-main);">
+                    </div>
+                    <div class="form-group">
+                        <label>Código Postal</label>
+                        <input type="text" id="address-zip" required placeholder="Ej: 28001"
+                            style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-input, #f9fafb); color: var(--text-main);">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Provincia <span style="color: #ef4444;">*</span></label>
+                    <select id="address-province" required
+                        style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-input, #f9fafb); color: var(--text-main);">
+                        <option value="">Selecciona una provincia</option>
+                        <option value="A Coruña">A Coruña</option>
+                        <option value="Álava">Álava</option>
+                        <option value="Albacete">Albacete</option>
+                        <option value="Alicante">Alicante</option>
+                        <option value="Almería">Almería</option>
+                        <option value="Asturias">Asturias</option>
+                        <option value="Ávila">Ávila</option>
+                        <option value="Badajoz">Badajoz</option>
+                        <option value="Barcelona">Barcelona</option>
+                        <option value="Burgos">Burgos</option>
+                        <option value="Cáceres">Cáceres</option>
+                        <option value="Cádiz">Cádiz</option>
+                        <option value="Cantabria">Cantabria</option>
+                        <option value="Castellón">Castellón</option>
+                        <option value="Ceuta">Ceuta</option>
+                        <option value="Ciudad Real">Ciudad Real</option>
+                        <option value="Córdoba">Córdoba</option>
+                        <option value="Cuenca">Cuenca</option>
+                        <option value="Girona">Girona</option>
+                        <option value="Granada">Granada</option>
+                        <option value="Guadalajara">Guadalajara</option>
+                        <option value="Guipúzcoa">Guipúzcoa</option>
+                        <option value="Huelva">Huelva</option>
+                        <option value="Huesca">Huesca</option>
+                        <option value="Illes Balears">Illes Balears</option>
+                        <option value="Jaén">Jaén</option>
+                        <option value="La Rioja">La Rioja</option>
+                        <option value="Las Palmas">Las Palmas</option>
+                        <option value="León">León</option>
+                        <option value="Lleida">Lleida</option>
+                        <option value="Lugo">Lugo</option>
+                        <option value="Madrid">Madrid</option>
+                        <option value="Málaga">Málaga</option>
+                        <option value="Melilla">Melilla</option>
+                        <option value="Murcia">Murcia</option>
+                        <option value="Navarra">Navarra</option>
+                        <option value="Ourense">Ourense</option>
+                        <option value="Palencia">Palencia</option>
+                        <option value="Pontevedra">Pontevedra</option>
+                        <option value="Salamanca">Salamanca</option>
+                        <option value="Santa Cruz de Tenerife">Santa Cruz de Tenerife</option>
+                        <option value="Segovia">Segovia</option>
+                        <option value="Sevilla">Sevilla</option>
+                        <option value="Soria">Soria</option>
+                        <option value="Tarragona">Tarragona</option>
+                        <option value="Teruel">Teruel</option>
+                        <option value="Toledo">Toledo</option>
+                        <option value="Valencia">Valencia</option>
+                        <option value="Valladolid">Valladolid</option>
+                        <option value="Vizcaya">Vizcaya</option>
+                        <option value="Zamora">Zamora</option>
+                        <option value="Zaragoza">Zaragoza</option>
+                    </select>
+                </div>
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Teléfono <span style="color: #ef4444;">*</span></label>
+                    <input type="tel" id="address-phone" required placeholder="Ej: +34 600 000 000"
+                        style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-input, #f9fafb); color: var(--text-main);">
+                </div>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label>Instagram <span style="color: #ef4444;">*</span></label>
+                    <input type="text" id="address-instagram" required placeholder="@tu_usuario"
+                        style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-input, #f9fafb); color: var(--text-main);">
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
+                    <button type="submit" class="btn-modal-primary">
+                        <i class="fas fa-save"></i> Guardar
+                    </button>
+                    <button type="button" id="cancel-address-btn" class="btn-modal-secondary">
+                        <i class="fas fa-times"></i> Cancelar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div id="rewards-modal" class="modal" style="display: none;">
+        <div class="modal-content"
+            style="background: var(--bg-card); padding: 2rem; border-radius: 16px; max-width: 600px; margin: 2rem auto; position: relative; max-height: 90vh; overflow-y: auto;">
+            <button id="close-rewards-modal"
+                style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-muted);">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 style="margin-bottom: 0.5rem;"><i class="fas fa-gift" style="color: var(--primary);"></i> Tienda de
+                Puntos</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Canjea tus puntos por descuentos exclusivos</p>
+
+            <div id="rewards-list" style="display: grid; gap: 1rem;">
+
+                <div class="reward-card" data-reward="discount_10"
+                    style="background: var(--bg-body); padding: 1.25rem; border-radius: 12px; border: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; transition: all 0.3s;">
+                    <div>
+                        <h4 style="margin: 0 0 0.25rem; font-size: 1rem;">10% Descuento</h4>
+                        <p style="margin: 0; color: var(--text-muted); font-size: 0.85rem;">En tu próxima compra</p>
+                    </div>
+                    <button class="btn-redeem" data-cost="20"
+                        style="background: linear-gradient(135deg, var(--primary) 0%, #7c3aed 100%); color: white; border: none; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 600; cursor: pointer;">
+                        20 <i class="fas fa-star" style="font-size: 0.75rem;"></i>
+                    </button>
+                </div>
+
+                <div class="reward-card" data-reward="discount_15"
+                    style="background: var(--bg-body); padding: 1.25rem; border-radius: 12px; border: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; transition: all 0.3s;">
+                    <div>
+                        <h4 style="margin: 0 0 0.25rem; font-size: 1rem;">15% Descuento</h4>
+                        <p style="margin: 0; color: var(--text-muted); font-size: 0.85rem;">En tu próxima compra</p>
+                    </div>
+                    <button class="btn-redeem" data-cost="40"
+                        style="background: linear-gradient(135deg, var(--primary) 0%, #7c3aed 100%); color: white; border: none; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 600; cursor: pointer;">
+                        40 <i class="fas fa-star" style="font-size: 0.75rem;"></i>
+                    </button>
+                </div>
+
+                <div class="reward-card" data-reward="discount_20"
+                    style="background: var(--bg-body); padding: 1.25rem; border-radius: 12px; border: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; transition: all 0.3s;">
+                    <div>
+                        <h4 style="margin: 0 0 0.25rem; font-size: 1rem;">20% Descuento</h4>
+                        <p style="margin: 0; color: var(--text-muted); font-size: 0.85rem;">En tu próxima compra</p>
+                    </div>
+                    <button class="btn-redeem" data-cost="60"
+                        style="background: linear-gradient(135deg, var(--primary) 0%, #7c3aed 100%); color: white; border: none; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 600; cursor: pointer;">
+                        60 <i class="fas fa-star" style="font-size: 0.75rem;"></i>
+                    </button>
+                </div>
+
+                <div class="reward-card" data-reward="free_shirt"
+                    style="background: linear-gradient(135deg, var(--bg-body) 0%, rgba(234, 179, 8, 0.1) 100%); padding: 1.25rem; border-radius: 12px; border: 2px solid #eab308; display: flex; justify-content: space-between; align-items: center; transition: all 0.3s;">
+                    <div>
+                        <h4 style="margin: 0 0 0.25rem; font-size: 1rem;"><i class="fas fa-crown"
+                                style="color: #eab308;"></i> Camiseta Gratis</h4>
+                        <p style="margin: 0; color: var(--text-muted); font-size: 0.85rem;">Valor: 19,90€ (extras
+                            aparte)</p>
+                    </div>
+                    <button class="btn-redeem" data-cost="100"
+                        style="background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%); color: white; border: none; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 600; cursor: pointer;">
+                        100 <i class="fas fa-star" style="font-size: 0.75rem;"></i>
+                    </button>
+                </div>
+            </div>
+
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.8rem; margin-top: 1.5rem;">
+                Tus puntos disponibles: <strong id="modal-available-points">0</strong>
+            </p>
+        </div>
+    </div>
+
+
+    <div id="order-address-modal" class="modal" style="display: none;">
+        <div class="modal-content"
+            style="background: var(--bg-card); padding: 2rem; border-radius: 16px; max-width: 500px; margin: 2rem auto; position: relative;">
+            <button id="close-order-address-modal"
+                style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-muted);">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 style="margin-bottom: 0.5rem;"><i class="fas fa-edit" style="color: var(--primary);"></i> Editar
+                Dirección del Pedido</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.9rem;">
+                Solo puedes editar la dirección 1 vez por pedido y máximo 1 vez por semana.
+            </p>
+            <form id="order-address-form">
+                <input type="hidden" id="order-address-order-id">
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Nombre Completo</label>
+                    <input type="text" id="order-address-name" required placeholder="Ej: Juan Pérez"
+                        style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-input, #f9fafb); color: var(--text-main);">
+                </div>
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Dirección</label>
+                    <input type="text" id="order-address-street" required placeholder="Ej: Calle Principal 123, 4ºA"
+                        style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-input, #f9fafb); color: var(--text-main);">
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                    <div class="form-group">
+                        <label>Ciudad</label>
+                        <input type="text" id="order-address-city" required placeholder="Ej: Madrid"
+                            style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-input, #f9fafb); color: var(--text-main);">
+                    </div>
+                    <div class="form-group">
+                        <label>Código Postal</label>
+                        <input type="text" id="order-address-zip" required placeholder="Ej: 28001"
+                            style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-input, #f9fafb); color: var(--text-main);">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Provincia <span style="color: #ef4444;">*</span></label>
+                    <select id="order-address-province" required
+                        style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-input, #f9fafb); color: var(--text-main);">
+                        <option value="">Selecciona una provincia</option>
+                        <option value="A Coruña">A Coruña</option>
+                        <option value="Álava">Álava</option>
+                        <option value="Albacete">Albacete</option>
+                        <option value="Alicante">Alicante</option>
+                        <option value="Almería">Almería</option>
+                        <option value="Asturias">Asturias</option>
+                        <option value="Ávila">Ávila</option>
+                        <option value="Badajoz">Badajoz</option>
+                        <option value="Barcelona">Barcelona</option>
+                        <option value="Burgos">Burgos</option>
+                        <option value="Cáceres">Cáceres</option>
+                        <option value="Cádiz">Cádiz</option>
+                        <option value="Cantabria">Cantabria</option>
+                        <option value="Castellón">Castellón</option>
+                        <option value="Ceuta">Ceuta</option>
+                        <option value="Ciudad Real">Ciudad Real</option>
+                        <option value="Córdoba">Córdoba</option>
+                        <option value="Cuenca">Cuenca</option>
+                        <option value="Girona">Girona</option>
+                        <option value="Granada">Granada</option>
+                        <option value="Guadalajara">Guadalajara</option>
+                        <option value="Guipúzcoa">Guipúzcoa</option>
+                        <option value="Huelva">Huelva</option>
+                        <option value="Huesca">Huesca</option>
+                        <option value="Illes Balears">Illes Balears</option>
+                        <option value="Jaén">Jaén</option>
+                        <option value="La Rioja">La Rioja</option>
+                        <option value="Las Palmas">Las Palmas</option>
+                        <option value="León">León</option>
+                        <option value="Lleida">Lleida</option>
+                        <option value="Lugo">Lugo</option>
+                        <option value="Madrid">Madrid</option>
+                        <option value="Málaga">Málaga</option>
+                        <option value="Melilla">Melilla</option>
+                        <option value="Murcia">Murcia</option>
+                        <option value="Navarra">Navarra</option>
+                        <option value="Ourense">Ourense</option>
+                        <option value="Palencia">Palencia</option>
+                        <option value="Pontevedra">Pontevedra</option>
+                        <option value="Salamanca">Salamanca</option>
+                        <option value="Santa Cruz de Tenerife">Santa Cruz de Tenerife</option>
+                        <option value="Segovia">Segovia</option>
+                        <option value="Sevilla">Sevilla</option>
+                        <option value="Soria">Soria</option>
+                        <option value="Tarragona">Tarragona</option>
+                        <option value="Teruel">Teruel</option>
+                        <option value="Toledo">Toledo</option>
+                        <option value="Valencia">Valencia</option>
+                        <option value="Valladolid">Valladolid</option>
+                        <option value="Vizcaya">Vizcaya</option>
+                        <option value="Zamora">Zamora</option>
+                        <option value="Zaragoza">Zaragoza</option>
+                    </select>
+                </div>
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Teléfono <span style="color: #ef4444;">*</span></label>
+                    <input type="tel" id="order-address-phone" required placeholder="Ej: +34 600 000 000"
+                        style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-input, #f9fafb); color: var(--text-main);">
+                </div>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label>Instagram <span style="color: #ef4444;">*</span></label>
+                    <input type="text" id="order-address-instagram" required placeholder="@tu_usuario"
+                        style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-input, #f9fafb); color: var(--text-main);">
+                </div>
+                <div id="order-address-error"
+                    style="display: none; background: #fef2f2; color: #ef4444; padding: 0.75rem; border-radius: 8px; margin-bottom: 1rem; border: 1px solid #fecaca;">
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
+                    <button type="submit" id="save-order-address-btn" class="btn-modal-primary">
+                        <i class="fas fa-save"></i> Guardar y Reenviar Correo
+                    </button>
+                    <button type="button" id="cancel-order-address-btn" class="btn-modal-secondary">
+                        <i class="fas fa-times"></i> Cancelar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div id="footer-placeholder"></div>
+
+
+    <script src="/js/theme.js"></script>
+    <script src="/js/components.js"></script>
+    <script type="module" src="/js/auth.js"></script>
+    <script type="module" src="/js/profile.js"></script>
+    <script type="module" src="/js/carrito.js"></script>
+</body>
+
+</html>

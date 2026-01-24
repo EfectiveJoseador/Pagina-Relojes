@@ -197,7 +197,7 @@
     appearance: none;
     -webkit-appearance: none;
     cursor: pointer;
-    transition: all 0.25s ease;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 }
 
 .custom-select option {
@@ -208,13 +208,14 @@
 
 .custom-select:hover {
     border-color: var(--primary);
-    background: rgba(99, 102, 241, 0.1);
+    background: rgba(212, 175, 55, 0.1);
 }
 
-.custom-select:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+.custom-select:focus,
+.custom-select:focus-visible {
+    outline: none !important;
+    border-color: #D4AF37 !important;
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2) !important;
 }
 
 .select-arrow {
@@ -222,9 +223,9 @@
     right: 1rem;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--text-muted);
     pointer-events: none;
     font-size: 0.8rem;
+    transition: none;
 }
 
 
@@ -410,7 +411,7 @@
     font-size: 1rem;
     font-weight: 500;
     min-width: 200px;
-    transition: all 0.25s ease;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
     appearance: none;
     -webkit-appearance: none;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23D4AF37' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
@@ -419,16 +420,17 @@
 }
 
 #sort-select:hover {
-    border-color: var(--primary);
+    border-color: #D4AF37 !important;
     background-color: rgba(212, 175, 55, 0.1);
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3) !important;
 }
 
-#sort-select:focus {
-    outline: none;
-    border-color: var(--primary);
+#sort-select:focus,
+#sort-select:focus-visible {
+    outline: none !important;
+    border-color: #D4AF37 !important;
     box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2),
-        0 0 20px rgba(212, 175, 55, 0.4);
+        0 0 20px rgba(212, 175, 55, 0.4) !important;
 }
 
 #sort-select option {
@@ -803,14 +805,14 @@
     font-size: 0.95rem;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.2);
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.2);
 }
 
 .btn-show-filters:hover {
-    border-color: var(--primary);
-    background: var(--primary);
-    color: white;
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+    border-color: #D4AF37 !important;
+    background: #D4AF37 !important;
+    color: #000 !important;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4) !important;
 }
 
 
@@ -1001,7 +1003,7 @@
 
 [data-theme="light"] .close-filters-btn:hover {
     background: #f1f5f9;
-    color: #6366f1;
+    color: #D4AF37;
 }
 
 [data-theme="light"] .filter-label {
@@ -1021,13 +1023,13 @@
 }
 
 [data-theme="light"] .custom-select:hover {
-    border-color: #6366f1;
-    background: rgba(99, 102, 241, 0.05);
+    border-color: #D4AF37;
+    background: rgba(212, 175, 55, 0.05);
 }
 
 [data-theme="light"] .custom-select:focus {
-    border-color: #6366f1;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+    border-color: #D4AF37;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
 }
 
 [data-theme="light"] .select-arrow {
@@ -1045,15 +1047,15 @@
 }
 
 [data-theme="light"] #sort-select:hover {
-    border-color: #6366f1;
-    background-color: rgba(99, 102, 241, 0.05);
-    box-shadow: 0 0 15px rgba(99, 102, 241, 0.15);
+    border-color: #D4AF37;
+    background-color: rgba(212, 175, 55, 0.05);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
 }
 
 [data-theme="light"] #sort-select:focus {
-    border-color: #6366f1;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15),
-        0 0 20px rgba(99, 102, 241, 0.1);
+    border-color: #D4AF37;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15),
+        0 0 20px rgba(212, 175, 55, 0.1);
 }
 
 [data-theme="light"] #sort-select option {
@@ -1089,11 +1091,11 @@
 }
 
 [data-theme="light"] .filter-checkbox:has(input[type="checkbox"]:checked) .checkbox-label {
-    color: #6366f1;
+    color: #D4AF37;
 }
 
 [data-theme="light"] .filter-checkbox input[type="checkbox"]:checked+.checkbox-custom {
-    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+    background: linear-gradient(135deg, #D4AF37 0%, #D4AF37 50%, #a855f7 100%);
 }
 
 
@@ -1104,10 +1106,10 @@
 }
 
 [data-theme="light"] .btn-show-filters:hover {
-    border-color: #6366f1;
-    background: #6366f1;
+    border-color: #D4AF37;
+    background: #D4AF37;
     color: white;
-    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
 }
 
 
@@ -1116,7 +1118,7 @@
 }
 
 [data-theme="light"] .btn-text:hover {
-    color: #6366f1;
+    color: #D4AF37;
 }
 
 
@@ -1139,7 +1141,7 @@
 
     .product-price .price {
         animation: none;
-        text-shadow: 0 0 5px rgba(168, 85, 247, 0.2);
+        text-shadow: 0 0 5px rgba(212, 175, 55, 0.2);
     }
 
 
@@ -1167,7 +1169,7 @@
     position: absolute;
     bottom: 0.5rem;
     right: 0.5rem;
-    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    background: linear-gradient(135deg, #D4AF37 0%, #D4AF37 100%);
     color: white;
     border: none;
     padding: 0.5rem;
@@ -1304,9 +1306,9 @@
 
 .quick-add-form select:focus,
 .quick-add-form input:focus {
-    outline: none;
-    border-color: #6366f1;
-    box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.2);
+    outline: none !important;
+    border-color: #D4AF37 !important;
+    box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.2) !important;
 }
 
 .quick-add-form select option {
@@ -1354,7 +1356,7 @@
 .quick-add-form .btn-add-quick {
     width: 100% !important;
     padding: 0.4rem !important;
-    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%) !important;
+    background: linear-gradient(135deg, #D4AF37 0%, #D4AF37 100%) !important;
     color: white !important;
     border: none !important;
     border-radius: 5px !important;
@@ -1507,7 +1509,7 @@
     transform: translateX(-50%);
     width: 60%;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.5), transparent);
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent);
 }
 
 /* Brillo púrpura de fondo */

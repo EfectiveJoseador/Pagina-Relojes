@@ -256,7 +256,8 @@
 
                     <div class="option-group">
                         <label class="option-label">Caja <span
-                                style="color: var(--text-muted); font-weight: 400; font-size: 0.9rem;">Opcional</span></label>
+                                style="color: var(--text-muted); font-weight: 400; font-size: 0.9rem;">Opcional</span>
+                            <button type="button" class="btn-view-boxes">Ver tipos de cajas</button></label>
                         <div class="box-selector">
                             <label class="box-option">
                                 <input type="radio" name="box" value="none" checked>
@@ -282,7 +283,7 @@
                             <label class="box-option">
                                 <input type="radio" name="box" value="brown">
                                 <div class="box-card">
-                                    <span class="box-name">Caja 3 - Negra/Marrón</span>
+                                    <span class="box-name">Caja 3 - Negra / Marrón</span>
                                     <span class="box-price">+€5</span>
                                 </div>
                             </label>
@@ -389,6 +390,18 @@
     <script type="module" src="/js/producto.js"></script>
     <script type="module" src="/js/carrito.js"></script>
     <script src="/js/image-protection.js"></script>
+    <script src="/js/cajas-modal.js"></script>
+
+    <!-- Modal Tipos de Cajas -->
+    <div class="boxes-modal" id="boxes-modal">
+        <div class="boxes-modal-overlay"></div>
+        <div class="boxes-modal-content">
+            <button class="boxes-modal-close" id="boxes-modal-close" title="Cerrar">
+                <i class="fas fa-times"></i>
+            </button>
+            <img src="/assets/images/cajas.png" alt="Tipos de Cajas" class="boxes-modal-img">
+        </div>
+    </div>
 </body>
 
 </html>

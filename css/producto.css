@@ -139,8 +139,8 @@
     background: rgba(0, 0, 0, 0.9);
     transform: translateY(-50%) scale(1.15);
 
-    box-shadow: 0 0 20px rgba(99, 102, 241, 0.5),
-        0 0 40px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5),
+        0 0 40px rgba(212, 175, 55, 0.3);
 }
 
 .gallery-arrow-left {
@@ -284,7 +284,7 @@
 (prefers-reduced-motion: reduce) {
     .price-block:has(.old-price) .current-price {
         animation: none;
-        text-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+        text-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
     }
 }
 
@@ -649,7 +649,7 @@
     border-color: var(--primary);
     transform: scale(1.15);
     transform: scale(1.15);
-    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.25), 0 0 15px rgba(99, 102, 241, 0.15);
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25), 0 0 15px rgba(212, 175, 55, 0.15);
 }
 
 .carousel-arrow.disabled {

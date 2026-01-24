@@ -78,7 +78,7 @@
             background: rgba(0, 0, 0, 0.7);
             display: flex;
             justify-content: center;
-            align-itemás: center;
+            align-items: center;
             z-index: 1000;
             opacity: 0;
             visibility: hidden;
@@ -113,7 +113,7 @@
         .modal-header {
             display: flex;
             justify-content: space-between;
-            align-itemás: center;
+            align-items: center;
             margin-bottom: 1.75rem;
             padding-bottom: 1.25rem;
             border-bottom: 1px solid var(--border);
@@ -390,7 +390,9 @@
 
             <div class="form-group">
                 <label>Extras <span style="color: var(--text-muted); font-weight: 400; font-size: 0.85rem;">(+precio
-                        indicado)</span></label>
+                        indicado)</span>
+                    <button type="button" class="btn-view-boxes">Ver tipos de cajas</button>
+                </label>
                 <select id="modal-patch">
                     <option value="none">Sin extras</option>
                     <option value="caja">Caja de Presentaci€n Premium (+25€)</option>
@@ -420,9 +422,21 @@
     <div id="footer-placeholder"></div>
 
 
+    <!-- Modal Tipos de Cajas -->
+    <div class="boxes-modal" id="boxes-modal">
+        <div class="boxes-modal-overlay"></div>
+        <div class="boxes-modal-content">
+            <button class="boxes-modal-close" id="boxes-modal-close" title="Cerrar">
+                <i class="fas fa-times"></i>
+            </button>
+            <img src="/assets/images/cajas.png" alt="Tipos de Cajas" class="boxes-modal-img">
+        </div>
+    </div>
+
     <script src="/js/theme.js"></script>
     <script src="/js/components.js"></script>
     <script src="/js/ux-feedback.js"></script>
+    <script src="/js/cajas-modal.js"></script>
 
     <script src="/js/dropdown-dedup.js"></script>
     <script type="module" src="/js/tienda.js"></script>

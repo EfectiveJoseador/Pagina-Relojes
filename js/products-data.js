@@ -928,6 +928,31 @@ const products = [
         "Fondo de caja": "acero cerrado con acabado cepillado, sobrio y limpio"
     }
 }
+,
+    {
+    "id": 1769260840545,
+    "name": "Santeiko Black",
+    "category": "Santeiko",
+    "league": "Santeiko",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/santeiko-black/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/santeiko-black/2.webp",
+        "/assets/productos/RC_Mods/santeiko-black/3.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 38 mm\nGrosor: 11 mm",
+    "features": [
+        "Diámetro: 38 mm",
+        "Grosor: 11 mm"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Diámetro": "38 mm",
+        "Grosor": "11 mm"
+    }
+}
 ];
 
 export default products;
