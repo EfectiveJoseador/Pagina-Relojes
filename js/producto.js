@@ -2,15 +2,16 @@ import products from './products-data.js';
 
 let product = null;
 let selectedStrap = null;
+let selectedSize = null;
 let selectedBox = 'none';
 
 document.addEventListener('DOMContentLoaded', () => {
+    // ... (rest of setup) ...
     const urlParams = new URLSearchParams(window.location.search);
     const productId = parseInt(urlParams.get('id')); // IDs are numbers in the new data
     product = products.find(p => p.id === productId);
 
     if (!product) {
-        // Fallback for string IDs or older links if needed, but primarily 404 behavior
         window.location.href = '/pages/tienda.html';
         return;
     }
@@ -25,15 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
         breadcrumbCategory.href = `/pages/tienda.html?collection=${encodeURIComponent(product.category)}`;
     }
 
-
-
-
     document.getElementById('breadcrumb-name').textContent = product.name;
     document.getElementById('product-category').textContent = product.category;
     document.getElementById('product-name').textContent = product.name;
     document.getElementById('product-price').textContent = `€${product.price.toFixed(2)}`;
 
-    // Populate features (List Only, as requested)
+    // Populate features
     const featuresEl = document.getElementById('product-features');
     if (featuresEl && product.features && Array.isArray(product.features)) {
         featuresEl.innerHTML = product.features.map(feature => {
@@ -46,6 +44,36 @@ document.addEventListener('DOMContentLoaded', () => {
         }).join('');
     }
 
+    // Populate Sizes
+    const sizeContainer = document.getElementById('size-selector-container');
+    const sizeSelector = document.getElementById('size-selector');
+
+    if (product.sizes && product.sizes.length > 0) {
+        if (sizeContainer) sizeContainer.style.display = 'block';
+        if (sizeSelector) {
+            sizeSelector.innerHTML = '';
+            product.sizes.forEach((size, index) => {
+                const btn = document.createElement('button');
+                btn.className = `size-btn ${index === 0 ? 'active' : ''}`;
+                btn.textContent = size;
+                btn.dataset.size = size;
+
+                if (index === 0) selectedSize = size;
+
+                btn.addEventListener('click', () => {
+                    // Only target buttons within the size selector
+                    const sizeBtns = sizeSelector.querySelectorAll('.size-btn');
+                    sizeBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    selectedSize = size;
+                });
+
+                sizeSelector.appendChild(btn);
+            });
+        }
+    }
+
+
     // Populate Straps
     const strapContainer = document.getElementById('strap-selector-container');
     const strapSelector = document.getElementById('strap-selector');
@@ -56,23 +84,22 @@ document.addEventListener('DOMContentLoaded', () => {
             strapSelector.innerHTML = '';
             product.straps.forEach((strap, index) => {
                 const btn = document.createElement('button');
-                btn.className = `size-btn ${index === 0 ? 'active' : ''}`; // Reuse size-btn class for styling
+                btn.className = `size-btn ${index === 0 ? 'active' : ''}`;
                 btn.textContent = strap;
                 btn.dataset.strap = strap;
 
-                if (index === 0) selectedStrap = strap; // Default select first
+                if (index === 0) selectedStrap = strap;
 
                 btn.addEventListener('click', () => {
-                    document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+                    // Only target buttons within the strap selector
+                    const strapBtns = strapSelector.querySelectorAll('.size-btn');
+                    strapBtns.forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
                     selectedStrap = strap;
                 });
 
                 strapSelector.appendChild(btn);
             });
-            // Update CSS for strap buttons if needed, size-btn width is fixed to 45px usually, might need auto width
-            // We will inject a style tag for this specific fix or ensure CSS handles it.
-            // Check CSS below.
         }
     }
 
@@ -112,10 +139,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Fix for strap button width if they are text
     const style = document.createElement('style');
     style.innerHTML = `
-        .product-description { display: none; } /* Ensure text description is hidden as requested */
+        .product-description { display: none; }
     `;
     document.head.appendChild(style);
 });
@@ -144,6 +170,11 @@ function addToCart() {
         return;
     }
 
+    if (product.sizes && product.sizes.length > 0 && !selectedSize) {
+        alert('Por favor selecciona un tamaño.');
+        return;
+    }
+
     const quantity = parseInt(document.getElementById('qty-input').value) || 1;
 
     // Calculate box price
@@ -165,6 +196,7 @@ function addToCart() {
         price: totalPrice,
         quantity: quantity,
         customization: {
+            size: selectedSize,
             strap: selectedStrap,
             box: selectedBox,
             boxPrice: boxPrice
@@ -175,6 +207,7 @@ function addToCart() {
     const existingIndex = cart.findIndex(item =>
         item.id === cartItem.id &&
         item.customization.strap === cartItem.customization.strap &&
+        item.customization.size === cartItem.customization.size &&
         item.customization.box === cartItem.customization.box
     );
 
@@ -204,7 +237,6 @@ function showToast(message) {
     const toast = document.createElement('div');
     toast.className = 'cart-toast';
     toast.innerHTML = `<i class="fas fa-check-circle"></i><span>${message}</span>`;
-    // ... toast styles are usually global or in CSS, assuming existing CSS or inline
     document.body.appendChild(toast);
     setTimeout(() => {
         toast.remove();

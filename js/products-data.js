@@ -881,6 +881,53 @@ const products = [
             "Fondo de caja": "Cristal transparente (movimiento visible)"
         }
     }
+,
+    {
+    "id": 1769260114751,
+    "name": "Seitona Black Panda",
+    "category": "Seitona",
+    "league": "Seitona",
+    "price": 119.9,
+    "oldPrice": 149.9,
+    "image": "/assets/productos/RC_Mods/seitona-black-panda/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seitona-black-panda/2.webp",
+        "/assets/productos/RC_Mods/seitona-black-panda/3.webp",
+        "/assets/productos/RC_Mods/seitona-black-panda/4.webp",
+        "/assets/productos/RC_Mods/seitona-black-panda/5.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 40 mm (sin corona), equilibrio perfecto entre elegancia y presencia\nMovimiento: Seiko VK63 mecaquartz, preciso y con cronógrafo funcional de barrido suave\nGrosor: 12 mm, delgado y cómodo para vestir o llevar a diario\nCristal: zafiro con tratamiento antirreflejos, alta claridad y resistencia a rayaduras\nLuminosidad: Luminova, con visibilidad total incluso en ambientes oscuros\nCaja: acero inoxidable 316L con acabado espejo, resistente y brillante\nCorona: enroscada, para mayor protección y tacto firme al accionar\nBisel: cerámico con grabado taquimétrico, brillante, duradero y elegante\nTamaño de muñeca: ajustable entre 14,5 cm y 22 cm, adaptable con cierre seguro\nLugs: 20 mm, permite cambiar la correa fácilmente si quieres personalizarlo\nCorrea: brazalete Oyster de acero inoxidable 316L, con cierre de seguridad y ajuste cómodo\nFondo de caja: acero cerrado con acabado cepillado, sobrio y limpio",
+    "features": [
+        "Diámetro: 40 mm (sin corona), equilibrio perfecto entre elegancia y presencia",
+        "Movimiento: Seiko VK63 mecaquartz, preciso y con cronógrafo funcional de barrido suave",
+        "Grosor: 12 mm, delgado y cómodo para vestir o llevar a diario",
+        "Cristal: zafiro con tratamiento antirreflejos, alta claridad y resistencia a rayaduras",
+        "Luminosidad: Luminova, con visibilidad total incluso en ambientes oscuros",
+        "Caja: acero inoxidable 316L con acabado espejo, resistente y brillante",
+        "Corona: enroscada, para mayor protección y tacto firme al accionar",
+        "Bisel: cerámico con grabado taquimétrico, brillante, duradero y elegante",
+        "Tamaño de muñeca: ajustable entre 14,5 cm y 22 cm, adaptable con cierre seguro",
+        "Lugs: 20 mm, permite cambiar la correa fácilmente si quieres personalizarlo",
+        "Correa: brazalete Oyster de acero inoxidable 316L, con cierre de seguridad y ajuste cómodo",
+        "Fondo de caja: acero cerrado con acabado cepillado, sobrio y limpio"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Diámetro": "40 mm (sin corona), equilibrio perfecto entre elegancia y presencia",
+        "Movimiento": "Seiko VK63 mecaquartz, preciso y con cronógrafo funcional de barrido suave",
+        "Grosor": "12 mm, delgado y cómodo para vestir o llevar a diario",
+        "Cristal": "zafiro con tratamiento antirreflejos, alta claridad y resistencia a rayaduras",
+        "Luminosidad": "Luminova, con visibilidad total incluso en ambientes oscuros",
+        "Caja": "acero inoxidable 316L con acabado espejo, resistente y brillante",
+        "Corona": "enroscada, para mayor protección y tacto firme al accionar",
+        "Bisel": "cerámico con grabado taquimétrico, brillante, duradero y elegante",
+        "Tamaño de muñeca": "ajustable entre 14,5 cm y 22 cm, adaptable con cierre seguro",
+        "Lugs": "20 mm, permite cambiar la correa fácilmente si quieres personalizarlo",
+        "Correa": "brazalete Oyster de acero inoxidable 316L, con cierre de seguridad y ajuste cómodo",
+        "Fondo de caja": "acero cerrado con acabado cepillado, sobrio y limpio"
+    }
+}
 ];
 
 export default products;
