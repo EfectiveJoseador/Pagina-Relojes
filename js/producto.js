@@ -313,36 +313,303 @@ function updateLightboxImage(images) {
     if (lbImg) lbImg.src = images[currentImageIndex];
 }
 
-// Related Products
-function loadRelatedProducts() {
-    const grid = document.getElementById('related-grid');
-    if (!grid) return;
+// Related Products Carousel
+function getMiniImagePath(imagePath) {
+    if (!imagePath) return '';
+    return imagePath.replace(/\/(\d+)\.(webp|jpg|png|jpeg)$/i, '/$1.webp'); // Simplificado para usar la webp normal si no hay mini o usar _mini si existe
+    // Nota: home.js usa _mini, aquí imitamos o reutilizamos.
+    // Para asegurar compatibilidad con la estructura de home.js:
+    // return imagePath.replace(/\/(\d+)\.(webp|jpg|png|jpeg)$/i, '/$1_mini.$2');
+    // Usaremos la versión simple o la misma que home.js si estamos seguros de que existe.
+    // Dado que home.js lo usa, asumimos que existen.
+    return imagePath.replace(/\/(\d+)\.(webp|jpg|png|jpeg)$/i, '/$1_mini.$2');
+}
 
-    // Simple random selection for now or existing logic
+function getSecondaryMiniImage(product) {
+    if (product.images && product.images.length > 0) {
+        return getMiniImagePath(product.images[0]);
+    }
+    if (product.image) {
+        // Intento de adivinar la segunda imagen
+        const secondaryPath = product.image.replace(/\/1\.(webp|jpg|png|jpeg)$/i, '/2.$1');
+        return getMiniImagePath(secondaryPath);
+    }
+    return null;
+}
+
+
+function loadRelatedProducts() {
+    const carousel = document.getElementById('related-carousel');
+    if (!carousel) return;
+
+    const track = document.getElementById('related-track');
+    const prevBtn = document.getElementById('related-prev');
+    const nextBtn = document.getElementById('related-next');
+    const carouselContainer = carousel.querySelector('.carousel-container');
+
+    if (!track || !prevBtn || !nextBtn) return;
+
+    // Filter and Shuffle Logic
+    // Same filtering as before: exclude current product
     const related = products.filter(p => p.id !== product.id).sort(() => 0.5 - Math.random()).slice(0, 8);
 
-    grid.innerHTML = `
-        <div class="carousel-container">
-            <div class="carousel-track">
-                ${related.map(p => `
-                    <article class="product-card">
-                        <div class="product-image">
-                            <a href="/pages/producto.html?id=${p.id}">
-                                <img src="${p.image}" alt="${p.name}">
-                            </a>
-                        </div>
-                        <div class="product-info">
-                            <h3>${p.name}</h3>
-                            <div class="product-price">€${p.price.toFixed(2)}</div>
-                        </div>
-                    </article>
-                `).join('')}
-            </div>
-        </div>
-    `;
+    if (related.length === 0) return;
 
-    // Initialize carousel scroll logic if needed, or just CSS scroll
-    const container = grid.querySelector('.carousel-container');
-    container.style.overflowX = 'auto'; // Simple scroll for reliability
-    container.style.display = 'flex';
+    // Render Cards in Track
+    track.innerHTML = related.map(product => {
+        const miniImage = getMiniImagePath(product.image);
+        const secondaryImg = getSecondaryMiniImage(product);
+        return `
+            <article class="product-card carousel-product-card">
+                <div class="product-image">
+                    <a href="/pages/producto.html?id=${product.id}">
+                        <img src="${miniImage}" alt="${product.name}" class="primary-image" loading="lazy">
+                        ${secondaryImg ? `<img src="${secondaryImg}" alt="${product.name} - Vista 2" class="secondary-image" loading="lazy">` : ''}
+                    </a>
+                    <button class="btn-quick-view"><i class="fas fa-eye"></i></button>
+                    ${product.sale ? `<span class="badge-sale">OFERTA</span>` : ''}
+                </div>
+                <div class="product-info">
+                    <span class="product-category">${product.category || 'Reloj'}</span>
+                    <h3 class="product-title">${product.name}</h3>
+                    <div class="product-price">
+                        ${product.oldPrice ? `<span class="price-old">€${product.oldPrice.toFixed(2)}</span>` : ''}
+                        <span class="price">€${product.price.toFixed(2)}</span>
+                    </div>
+                </div>
+            </article>
+        `;
+    }).join('');
+
+    // --- CAROUSEL LOGIC COPY FROM HOME.JS ---
+
+    const originalCards = Array.from(track.querySelectorAll('.product-card'));
+    if (originalCards.length === 0) return;
+
+    const cardWidth = 280 + 24; // Width + Gap (gap is 1.5rem = 24px)
+    const totalCards = originalCards.length;
+
+    // Clone for infinite scroll
+    originalCards.forEach(card => {
+        const cloneEnd = card.cloneNode(true);
+        cloneEnd.classList.add('carousel-clone');
+        // cloneEnd.querySelector('img').loading = 'eager'; // Optional
+        track.appendChild(cloneEnd);
+    });
+
+    [...originalCards].reverse().forEach(card => {
+        const cloneStart = card.cloneNode(true);
+        cloneStart.classList.add('carousel-clone');
+        // cloneStart.querySelector('img').loading = 'eager'; // Optional
+        track.insertBefore(cloneStart, track.firstChild);
+    });
+
+    let currentPosition = totalCards * cardWidth;
+    let isJumping = false;
+    let animationId = null;
+    let isPaused = false;
+
+    // const SCROLL_SPEED = 0.5; // Slightly faster for related? Keep consistent with home
+    const SCROLL_SPEED = 0.3;
+    const PAUSE_DURATION = 3000;
+
+    function setPosition(position, animate = true) {
+        if (animate) {
+            track.style.transition = 'transform 150ms ease-out';
+        } else {
+            track.style.transition = 'none';
+        }
+        track.style.transform = `translateX(${-position}px)`;
+    }
+
+    function checkBoundary(e) {
+        if (e && e.target !== track) return;
+
+        if (currentPosition >= totalCards * 2 * cardWidth) {
+            isJumping = true;
+            track.style.transition = 'none';
+            currentPosition -= totalCards * cardWidth;
+            track.style.transform = `translateX(${-currentPosition}px)`;
+            void track.offsetHeight; // Force reflow
+            isJumping = false;
+        }
+
+        if (currentPosition < totalCards * cardWidth) {
+            isJumping = true;
+            track.style.transition = 'none';
+            currentPosition += totalCards * cardWidth;
+            track.style.transform = `translateX(${-currentPosition}px)`;
+            void track.offsetHeight;
+            isJumping = false;
+        }
+    }
+
+    function smoothScroll() {
+        if (isPaused || isJumping) {
+            animationId = requestAnimationFrame(smoothScroll);
+            return;
+        }
+
+        currentPosition += SCROLL_SPEED;
+
+        if (currentPosition >= totalCards * 2 * cardWidth) {
+            currentPosition -= totalCards * cardWidth;
+            track.style.transition = 'none';
+            track.style.transform = `translateX(${-currentPosition}px)`;
+        } else {
+            track.style.transition = 'none';
+            track.style.transform = `translateX(${-currentPosition}px)`;
+        }
+
+        animationId = requestAnimationFrame(smoothScroll);
+    }
+
+    function startAutoScroll() {
+        if (animationId) return;
+        isPaused = false;
+        animationId = requestAnimationFrame(smoothScroll);
+    }
+
+    function stopAutoScroll() {
+        if (animationId) {
+            cancelAnimationFrame(animationId);
+            animationId = null;
+        }
+    }
+
+    function pauseAutoScroll() {
+        isPaused = true;
+    }
+
+    function resumeAutoScroll() {
+        isPaused = false;
+    }
+
+    let resumeTimeout = null;
+    function handleUserInteraction() {
+        pauseAutoScroll();
+        if (resumeTimeout) clearTimeout(resumeTimeout);
+        resumeTimeout = setTimeout(resumeAutoScroll, PAUSE_DURATION);
+    }
+
+    prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        if (isJumping) return;
+        handleUserInteraction();
+        currentPosition -= cardWidth;
+        setPosition(currentPosition, true);
+    });
+
+    nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        if (isJumping) return;
+        handleUserInteraction();
+        currentPosition += cardWidth;
+        setPosition(currentPosition, true);
+    });
+
+    track.addEventListener('transitionend', checkBoundary);
+
+    carouselContainer.addEventListener('mouseenter', pauseAutoScroll);
+    carouselContainer.addEventListener('mouseleave', () => {
+        if (resumeTimeout) clearTimeout(resumeTimeout);
+        resumeAutoScroll();
+    });
+
+    // Initial Set
+    setPosition(currentPosition, false);
+    track.offsetHeight; // Force reflow
+
+    startAutoScroll();
+
+    // Touch / Drag Logic
+    let isDragging = false;
+    let startPos = 0;
+    let lastPos = 0;
+    let lastTime = 0;
+    let velocity = 0;
+    let inertiaId = null;
+
+    track.style.touchAction = 'pan-y';
+    track.style.userSelect = 'none';
+
+    function touchStart(event) {
+        if (inertiaId) {
+            cancelAnimationFrame(inertiaId);
+            inertiaId = null;
+        }
+        if (animationId) {
+            cancelAnimationFrame(animationId);
+            animationId = null;
+        }
+
+        isDragging = true;
+        track.classList.add('dragging');
+        startPos = event.touches[0].clientX;
+        lastPos = startPos;
+        lastTime = performance.now();
+        velocity = 0;
+        isPaused = true;
+        if (resumeTimeout) clearTimeout(resumeTimeout);
+    }
+
+    function touchMove(event) {
+        if (!isDragging) return;
+        event.preventDefault();
+        const currentX = event.touches[0].clientX;
+        const diff = currentX - lastPos;
+        const now = performance.now();
+        const dt = now - lastTime;
+
+        if (dt > 0) {
+            velocity = diff / dt * 16;
+        }
+        currentPosition -= diff;
+        lastPos = currentX;
+        lastTime = now;
+
+        track.style.transform = `translateX(${-currentPosition}px)`;
+    }
+
+    function touchEnd() {
+        if (!isDragging) return;
+        isDragging = false;
+        track.classList.remove('dragging');
+
+        if (Math.abs(velocity) > 0.5) {
+            applyInertia();
+        } else {
+            if (resumeTimeout) clearTimeout(resumeTimeout);
+            resumeTimeout = setTimeout(() => {
+                isPaused = false;
+                if (!animationId) animationId = requestAnimationFrame(smoothScroll);
+            }, PAUSE_DURATION);
+        }
+    }
+
+    function applyInertia() {
+        const friction = 0.94;
+        function inertiaStep() {
+            if (Math.abs(velocity) < 0.1) {
+                inertiaId = null;
+                if (resumeTimeout) clearTimeout(resumeTimeout);
+                resumeTimeout = setTimeout(() => {
+                    isPaused = false;
+                    if (!animationId) animationId = requestAnimationFrame(smoothScroll);
+                }, PAUSE_DURATION);
+                return;
+            }
+            currentPosition -= velocity;
+            velocity *= friction;
+            track.style.transform = `translateX(${-currentPosition}px)`;
+            inertiaId = requestAnimationFrame(inertiaStep);
+        }
+        inertiaId = requestAnimationFrame(inertiaStep);
+    }
+
+    track.addEventListener('touchstart', touchStart, { passive: true });
+    track.addEventListener('touchmove', touchMove, { passive: false });
+    track.addEventListener('touchend', touchEnd, { passive: true });
 }

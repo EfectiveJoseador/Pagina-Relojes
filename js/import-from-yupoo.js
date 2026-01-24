@@ -193,6 +193,18 @@ function detectCollection(productName) {
     if (name.includes('seikojust')) {
         return 'Seikojust';
     }
+    if (name.includes('seikom') || name.includes('seiko m') || name.includes('mariner')) {
+        return 'SeikoMariner';
+    }
+    if (name.includes('yatch') || name.includes('tacheiko')) {
+        return 'Yatcheiko';
+    }
+    if (name.includes('santeiko') || name.includes('santos')) {
+        return 'Santeiko';
+    }
+    if (name.includes('seitona') || name.includes('daytona')) {
+        return 'Seitona';
+    }
 
     // Fallback: usar primera palabra capitalizada
     const firstWord = productName.split(' ')[0];
@@ -208,6 +220,7 @@ function parseRcbMods(html) {
         images: [],
         features: [],
         straps: [],
+        sizes: [],
         price: 0,
         specifications: {}
     };
@@ -258,6 +271,14 @@ function parseRcbMods(html) {
             .split(/[,;&\n]+/)
             .map(s => s.trim())
             .filter(Boolean);
+    }
+
+    // Detectar Tamaños
+    data.sizes = [];
+    const sizeFeatures = data.features.find(f => f.startsWith('Diámetro:') || f.startsWith('Diametro:'));
+    if (sizeFeatures && (sizeFeatures.includes('36 mm o 39 mm') || sizeFeatures.includes('36mm o 39mm') || sizeFeatures.includes('36mm / 39mm'))) {
+        data.sizes = ['36mm', '39mm'];
+        console.log('  ℹ Tamaños detectados: 36mm, 39mm');
     }
 
     // Si no se encontraron correas pero es un reloj GMT/Diver, agregar opciones comunes
@@ -394,6 +415,7 @@ async function main() {
             images: localImages.slice(1),
             description: data.features.length > 0 ? "Especificaciones Técnicas:\n" + data.features.join('\n') : "Reloj de alta calidad.",
             features: data.features,
+            sizes: data.sizes,
             straps: data.straps,
             specs: data.specifications
         };

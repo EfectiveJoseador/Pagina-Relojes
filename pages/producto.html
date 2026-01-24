@@ -46,6 +46,7 @@
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/catalogo.css">
+    <link rel="stylesheet" href="/css/home.css">
     <link rel="stylesheet" href="/css/producto.css">
     <link rel="stylesheet" href="/css/badges.css">
     <link rel="stylesheet" href="/css/ux-feedback.css">
@@ -304,7 +305,20 @@
 
         <section class="related-products">
             <h2>También te podría gustar</h2>
-            <div id="related-grid" class="product-grid">
+            <div class="catalogo-carousel" id="related-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-track" id="related-track">
+                        <!-- Products loaded dynamically by JavaScript -->
+                    </div>
+                </div>
+                <div class="carousel-arrows">
+                    <button class="carousel-arrow carousel-arrow-left" id="related-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-arrow carousel-arrow-right" id="related-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
             </div>
         </section>
     </main>
