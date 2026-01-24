@@ -28,7 +28,7 @@ const products = [
         "name": "GMTeiko Bruce Wayne",
         "category": "GMTeiko",
         "league": "GMTeiko",
-        "price": 149.90,
+        "price": 139.90,
         "oldPrice": 169.90,
         "image": "/assets/productos/RC_Mods/gmteiko-bruce-wayne/1.webp",
         "images": [
@@ -117,7 +117,7 @@ const products = [
         "name": "Royal Seikoak Black",
         "category": "Royal Seikoak",
         "league": "Royal Seikoak",
-        "price": 139.90,
+        "price": 129.90,
         "oldPrice": 169.90,
         "image": "/assets/productos/RC_Mods/royal-seikoak-black/1.webp",
         "images": [
@@ -162,7 +162,7 @@ const products = [
         "name": "Royal Seikoak Chrono Black",
         "category": "Royal Seikoak",
         "league": "Royal Seikoak",
-        "price": 124.90,
+        "price": 119.90,
         "oldPrice": 149.90,
         "image": "/assets/productos/RC_Mods/royal-seikoak-chrono-black/1.webp",
         "images": [
@@ -206,7 +206,7 @@ const products = [
         "name": "Seikojust Sky Dweller Black",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 139.90,
+        "price": 129.90,
         "oldPrice": 169.90,
         "image": "/assets/productos/RC_Mods/seikojust-sky-dweller-black/1.webp",
         "images": [
@@ -241,6 +241,268 @@ const products = [
             "Fondo de caja": "Cristal transparente (movimiento a la vista)"
         }
     }
+    ,
+    {
+        "id": 1769256457096,
+        "name": "Seikojust Black Roman",
+        "category": "Seikojust",
+        "league": "Seikojust",
+        "price": 129.9,
+        "oldPrice": 169.9,
+        "image": "/assets/productos/RC_Mods/seikojust-black-roman-stock/1.webp",
+        "images": [
+            "/assets/productos/RC_Mods/seikojust-black-roman-stock/2.webp",
+            "/assets/productos/RC_Mods/seikojust-black-roman-stock/3.webp",
+            "/assets/productos/RC_Mods/seikojust-black-roman-stock/4.webp"
+        ],
+        "description": "Especificaciones Técnicas:\nDiámetro: 36 mm o 39 mm (sin corona), adaptable para distintos tamaños de muñeca\nMovimiento: Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas\nGrosor: 12 mm, cómodo para uso diario\nCristal: zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad\nLuminosidad: Luminova en agujas para lectura óptima en la oscuridad\nCaja: acero inoxidable 904L pulido y cepillado, robusto y elegante\nCorona: enroscada para mayor protección contra agua y polvo\nBisel: acero inoxidable pulido, clásico y atemporal\nCorrea: acero inoxidable 904L, con cierre desplegable seguro y cómodo",
+        "features": [
+            "Diámetro: 36 mm o 39 mm (sin corona), adaptable para distintos tamaños de muñeca",
+            "Movimiento: Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas",
+            "Grosor: 12 mm, cómodo para uso diario",
+            "Cristal: zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad",
+            "Luminosidad: Luminova en agujas para lectura óptima en la oscuridad",
+            "Caja: acero inoxidable 904L pulido y cepillado, robusto y elegante",
+            "Corona: enroscada para mayor protección contra agua y polvo",
+            "Bisel: acero inoxidable pulido, clásico y atemporal",
+            "Correa: acero inoxidable 904L, con cierre desplegable seguro y cómodo"
+        ],
+        "straps": [],
+        "specs": {
+            "Diámetro": "36 mm o 39 mm (sin corona), adaptable para distintos tamaños de muñeca",
+            "Movimiento": "Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas",
+            "Grosor": "12 mm, cómodo para uso diario",
+            "Cristal": "zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad",
+            "Luminosidad": "Luminova en agujas para lectura óptima en la oscuridad",
+            "Caja": "acero inoxidable 904L pulido y cepillado, robusto y elegante",
+            "Corona": "enroscada para mayor protección contra agua y polvo",
+            "Bisel": "acero inoxidable pulido, clásico y atemporal",
+            "Correa": "acero inoxidable 904L, con cierre desplegable seguro y cómodo"
+        }
+    }
+,
+    {
+    "id": 1769256641581,
+    "name": "GMTeiko Pepsi",
+    "category": "GMTeiko",
+    "league": "GMTeiko",
+    "price": 139.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/gmteiko-pepsi/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/gmteiko-pepsi/2.webp",
+        "/assets/productos/RC_Mods/gmteiko-pepsi/3.webp",
+        "/assets/productos/RC_Mods/gmteiko-pepsi/4.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 40 mm (sin corona), equilibrio perfecto entre presencia y comodidad\nMovimiento: Seiko NH34 automático, fiable y preciso\nGrosor: 12.5 mm, elegante y cómodo para uso diario\nCristal: Zafiro anti-arañazos con tratamiento antirreflectante\nLuminosidad: Luminova en índices y agujas, lectura perfecta incluso en la oscuridad\nCaja: Acero inoxidable 904L, robusto y premium\nCorona: Enroscada, segura y fácil de accionar\nBisel: Cerámico bicolor rojo y azul, duradero y sofisticado\nTamaño de muñeca: Ajustable entre 14,5 cm y 22 cm\nLugs: 20 mm, permite cambios de correa fácilmente\nCorrea: en acero 904L con cierre de seguridad\nFondo de caja: Cristal transparente, movimiento visible",
+    "features": [
+        "Diámetro: 40 mm (sin corona), equilibrio perfecto entre presencia y comodidad",
+        "Movimiento: Seiko NH34 automático, fiable y preciso",
+        "Grosor: 12.5 mm, elegante y cómodo para uso diario",
+        "Cristal: Zafiro anti-arañazos con tratamiento antirreflectante",
+        "Luminosidad: Luminova en índices y agujas, lectura perfecta incluso en la oscuridad",
+        "Caja: Acero inoxidable 904L, robusto y premium",
+        "Corona: Enroscada, segura y fácil de accionar",
+        "Bisel: Cerámico bicolor rojo y azul, duradero y sofisticado",
+        "Tamaño de muñeca: Ajustable entre 14,5 cm y 22 cm",
+        "Lugs: 20 mm, permite cambios de correa fácilmente",
+        "Correa: en acero 904L con cierre de seguridad",
+        "Fondo de caja: Cristal transparente, movimiento visible"
+    ],
+    "straps": [
+        "Jubilee",
+        "Oyster"
+    ],
+    "specs": {
+        "Diámetro": "40 mm (sin corona), equilibrio perfecto entre presencia y comodidad",
+        "Movimiento": "Seiko NH34 automático, fiable y preciso",
+        "Grosor": "12.5 mm, elegante y cómodo para uso diario",
+        "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
+        "Luminosidad": "Luminova en índices y agujas, lectura perfecta incluso en la oscuridad",
+        "Caja": "Acero inoxidable 904L, robusto y premium",
+        "Corona": "Enroscada, segura y fácil de accionar",
+        "Bisel": "Cerámico bicolor rojo y azul, duradero y sofisticado",
+        "Tamaño de muñeca": "Ajustable entre 14,5 cm y 22 cm",
+        "Lugs": "20 mm, permite cambios de correa fácilmente",
+        "Correa": "en acero 904L con cierre de seguridad",
+        "Fondo de caja": "Cristal transparente, movimiento visible"
+    }
+}
+,
+    {
+    "id": 1769256695697,
+    "name": "Yatcheiko Master Rubber",
+    "category": "Yatcheiko",
+    "league": "Yatcheiko",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/yatcheiko-master-rubber/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/yatcheiko-master-rubber/2.webp",
+        "/assets/productos/RC_Mods/yatcheiko-master-rubber/3.webp",
+        "/assets/productos/RC_Mods/yatcheiko-master-rubber/4.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 40 mm, tamaño equilibrado y versátil\nMovimiento: Seiko NH35 automático, fiable y preciso\nCristal: Zafiro antiarañazos con tratamiento antirreflectante\nLuminosidad: Luminova en índices y manecillas, legibilidad en la oscuridad\nCaja: Acero inoxidable 904L plateado, resistente y lujosa\nCorona: Enroscada, mayor protección y seguridad\nBisel: Cerámico negro, duradero y sofisticado\nCorrea: Oysterflex de caucho premium con cierre de seguridad, cómoda y deportiva\nFondo de caja: Cristal transparente mostrando el movimiento o acero cerrado para un estilo más clásico",
+    "features": [
+        "Diámetro: 40 mm, tamaño equilibrado y versátil",
+        "Movimiento: Seiko NH35 automático, fiable y preciso",
+        "Cristal: Zafiro antiarañazos con tratamiento antirreflectante",
+        "Luminosidad: Luminova en índices y manecillas, legibilidad en la oscuridad",
+        "Caja: Acero inoxidable 904L plateado, resistente y lujosa",
+        "Corona: Enroscada, mayor protección y seguridad",
+        "Bisel: Cerámico negro, duradero y sofisticado",
+        "Correa: Oysterflex de caucho premium con cierre de seguridad, cómoda y deportiva",
+        "Fondo de caja: Cristal transparente mostrando el movimiento o acero cerrado para un estilo más clásico"
+    ],
+    "straps": [],
+    "specs": {
+        "Diámetro": "40 mm, tamaño equilibrado y versátil",
+        "Movimiento": "Seiko NH35 automático, fiable y preciso",
+        "Cristal": "Zafiro antiarañazos con tratamiento antirreflectante",
+        "Luminosidad": "Luminova en índices y manecillas, legibilidad en la oscuridad",
+        "Caja": "Acero inoxidable 904L plateado, resistente y lujosa",
+        "Corona": "Enroscada, mayor protección y seguridad",
+        "Bisel": "Cerámico negro, duradero y sofisticado",
+        "Correa": "Oysterflex de caucho premium con cierre de seguridad, cómoda y deportiva",
+        "Fondo de caja": "Cristal transparente mostrando el movimiento o acero cerrado para un estilo más clásico"
+    }
+}
+,
+    {
+    "id": 1769256731352,
+    "name": "Royal Seikoak Ice Blue",
+    "category": "Royal Seikoak",
+    "league": "Royal Seikoak",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/royal-seikoak-ice-blue/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/royal-seikoak-ice-blue/2.webp",
+        "/assets/productos/RC_Mods/royal-seikoak-ice-blue/3.webp",
+        "/assets/productos/RC_Mods/royal-seikoak-ice-blue/4.webp",
+        "/assets/productos/RC_Mods/royal-seikoak-ice-blue/5.webp",
+        "/assets/productos/RC_Mods/royal-seikoak-ice-blue/6.webp",
+        "/assets/productos/RC_Mods/royal-seikoak-ice-blue/7.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 41 mm (sin corona), equilibrio perfecto entre presencia y comodidad\nMovimiento: Seiko NH35 automático, fiable y preciso\nGrosor: 12 mm, elegante y versátil para uso diario\nCristal: Zafiro anti-arañazos con tratamiento antirreflectante\nLuminosidad: Luminova en índices y agujas, lectura perfecta incluso en la oscuridad\nCaja: Acero inoxidable 904L, robusto y premium\nCorona: Enroscada, segura y fácil de accionar\nBisel: Acero 904L, resistente y elegante\nTamaño de muñeca: Ajustable entre 14,5 cm y 22 cm\nLugs: 20 mm, permite cambios de correa fácilmente\nCorrea: Acero 904L con cierre de seguridad\nFondo de caja: Cristal transparente, movimiento visible",
+    "features": [
+        "Diámetro: 41 mm (sin corona), equilibrio perfecto entre presencia y comodidad",
+        "Movimiento: Seiko NH35 automático, fiable y preciso",
+        "Grosor: 12 mm, elegante y versátil para uso diario",
+        "Cristal: Zafiro anti-arañazos con tratamiento antirreflectante",
+        "Luminosidad: Luminova en índices y agujas, lectura perfecta incluso en la oscuridad",
+        "Caja: Acero inoxidable 904L, robusto y premium",
+        "Corona: Enroscada, segura y fácil de accionar",
+        "Bisel: Acero 904L, resistente y elegante",
+        "Tamaño de muñeca: Ajustable entre 14,5 cm y 22 cm",
+        "Lugs: 20 mm, permite cambios de correa fácilmente",
+        "Correa: Acero 904L con cierre de seguridad",
+        "Fondo de caja: Cristal transparente, movimiento visible"
+    ],
+    "straps": [],
+    "specs": {
+        "Diámetro": "41 mm (sin corona), equilibrio perfecto entre presencia y comodidad",
+        "Movimiento": "Seiko NH35 automático, fiable y preciso",
+        "Grosor": "12 mm, elegante y versátil para uso diario",
+        "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
+        "Luminosidad": "Luminova en índices y agujas, lectura perfecta incluso en la oscuridad",
+        "Caja": "Acero inoxidable 904L, robusto y premium",
+        "Corona": "Enroscada, segura y fácil de accionar",
+        "Bisel": "Acero 904L, resistente y elegante",
+        "Tamaño de muñeca": "Ajustable entre 14,5 cm y 22 cm",
+        "Lugs": "20 mm, permite cambios de correa fácilmente",
+        "Correa": "Acero 904L con cierre de seguridad",
+        "Fondo de caja": "Cristal transparente, movimiento visible"
+    }
+}
+,
+    {
+    "id": 1769256833281,
+    "name": "Yatcheiko Master Rose Gold Two Tone",
+    "category": "Yatcheiko",
+    "league": "Yatcheiko",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/yatcheiko-master-rose-gold-two-tone/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/yatcheiko-master-rose-gold-two-tone/2.webp",
+        "/assets/productos/RC_Mods/yatcheiko-master-rose-gold-two-tone/3.webp",
+        "/assets/productos/RC_Mods/yatcheiko-master-rose-gold-two-tone/4.webp",
+        "/assets/productos/RC_Mods/yatcheiko-master-rose-gold-two-tone/5.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 40 mm, proporciones equilibradas y elegantes\nMovimiento: Seiko NH35 automático, fiabilidad y precisión garantizadas\nCristal: Zafiro antiarañazos con tratamiento antirreflectante\nLuminosidad: Luminova en índices y manecillas, visibilidad total en la oscuridad\nCaja: Acero inoxidable 904L con acabados en oro rosa, robustez y distinción\nCorona: Enroscada, seguridad y estilo asegurados\nBisel: Cerámico en tono rose gold, resistente y refinado\nFondo de caja: Cristal transparente mostrando el movimiento.",
+    "features": [
+        "Diámetro: 40 mm, proporciones equilibradas y elegantes",
+        "Movimiento: Seiko NH35 automático, fiabilidad y precisión garantizadas",
+        "Cristal: Zafiro antiarañazos con tratamiento antirreflectante",
+        "Luminosidad: Luminova en índices y manecillas, visibilidad total en la oscuridad",
+        "Caja: Acero inoxidable 904L con acabados en oro rosa, robustez y distinción",
+        "Corona: Enroscada, seguridad y estilo asegurados",
+        "Bisel: Cerámico en tono rose gold, resistente y refinado",
+        "Fondo de caja: Cristal transparente mostrando el movimiento."
+    ],
+    "straps": [],
+    "specs": {
+        "Diámetro": "40 mm, proporciones equilibradas y elegantes",
+        "Movimiento": "Seiko NH35 automático, fiabilidad y precisión garantizadas",
+        "Cristal": "Zafiro antiarañazos con tratamiento antirreflectante",
+        "Luminosidad": "Luminova en índices y manecillas, visibilidad total en la oscuridad",
+        "Caja": "Acero inoxidable 904L con acabados en oro rosa, robustez y distinción",
+        "Corona": "Enroscada, seguridad y estilo asegurados",
+        "Bisel": "Cerámico en tono rose gold, resistente y refinado",
+        "Fondo de caja": "Cristal transparente mostrando el movimiento."
+    }
+}
+,
+    {
+    "id": 1769256882503,
+    "name": "GMTeiko Sprite",
+    "category": "GMTeiko",
+    "league": "GMTeiko",
+    "price": 139.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/gmteiko-sprite/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/gmteiko-sprite/2.webp",
+        "/assets/productos/RC_Mods/gmteiko-sprite/3.webp",
+        "/assets/productos/RC_Mods/gmteiko-sprite/4.webp",
+        "/assets/productos/RC_Mods/gmteiko-sprite/5.webp",
+        "/assets/productos/RC_Mods/gmteiko-sprite/6.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 40 mm (sin corona), perfecto equilibrio entre comodidad y presencia\nMovimiento: Seiko NH34 automático, precisión garantizada\nGrosor: 12.5 mm, estilizado y versátil\nCristal: Zafiro anti-arañazos con tratamiento antirreflectante\nLuminosidad: Luminova en índices y agujas, visibilidad en todo momento\nCaja: Acero inoxidable 904L, robusta y premium\nCorona: Enroscada, segura y funcional\nBisel: Cerámico verde y negro, vibrante y distintivo\nTamaño de muñeca: Ajustable entre 14,5 cm y 22 cm\nLugs: 20 mm, compatibles con correas intercambiables\nCorrea: Acero 904L con cierre de seguridad\nFondo de caja: Cristal transparente, movimiento visible",
+    "features": [
+        "Diámetro: 40 mm (sin corona), perfecto equilibrio entre comodidad y presencia",
+        "Movimiento: Seiko NH34 automático, precisión garantizada",
+        "Grosor: 12.5 mm, estilizado y versátil",
+        "Cristal: Zafiro anti-arañazos con tratamiento antirreflectante",
+        "Luminosidad: Luminova en índices y agujas, visibilidad en todo momento",
+        "Caja: Acero inoxidable 904L, robusta y premium",
+        "Corona: Enroscada, segura y funcional",
+        "Bisel: Cerámico verde y negro, vibrante y distintivo",
+        "Tamaño de muñeca: Ajustable entre 14,5 cm y 22 cm",
+        "Lugs: 20 mm, compatibles con correas intercambiables",
+        "Correa: Acero 904L con cierre de seguridad",
+        "Fondo de caja: Cristal transparente, movimiento visible"
+    ],
+    "straps": [
+        "Jubilee",
+        "Oyster"
+    ],
+    "specs": {
+        "Diámetro": "40 mm (sin corona), perfecto equilibrio entre comodidad y presencia",
+        "Movimiento": "Seiko NH34 automático, precisión garantizada",
+        "Grosor": "12.5 mm, estilizado y versátil",
+        "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
+        "Luminosidad": "Luminova en índices y agujas, visibilidad en todo momento",
+        "Caja": "Acero inoxidable 904L, robusta y premium",
+        "Corona": "Enroscada, segura y funcional",
+        "Bisel": "Cerámico verde y negro, vibrante y distintivo",
+        "Tamaño de muñeca": "Ajustable entre 14,5 cm y 22 cm",
+        "Lugs": "20 mm, compatibles con correas intercambiables",
+        "Correa": "Acero 904L con cierre de seguridad",
+        "Fondo de caja": "Cristal transparente, movimiento visible"
+    }
+}
 ];
 
 export default products;

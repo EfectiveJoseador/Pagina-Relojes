@@ -153,19 +153,25 @@ function calculatePrice(productName, specifications) {
 
     // Detectar si es GMTeiko
     if (name.includes('gmteiko')) {
-        print('cyan', '  💰 Tipo detectado: GMTeiko → 149.90€ / 169.90€');
-        return { price: 149.90, oldPrice: 169.90 };
+        print('cyan', '  💰 Tipo detectado: GMTeiko → 139.90€ / 169.90€');
+        return { price: 139.90, oldPrice: 169.90 };
     }
 
     // Detectar si es cuarzo/híbrido (VK63, VK64, etc.)
     if (movement.includes('vk') || movement.includes('cuarzo') || movement.includes('quartz') || movement.includes('híbrido')) {
-        print('cyan', '  💰 Tipo detectado: Cuarzo/Híbrido → 124.90€ / 149.90€');
-        return { price: 124.90, oldPrice: 149.90 };
+        print('cyan', '  💰 Tipo detectado: Cuarzo/Híbrido → 119.90€ / 149.90€');
+        return { price: 119.90, oldPrice: 149.90 };
+    }
+
+    // Detectar Nauteiko Open Heart
+    if (name.includes('open heart') || name.includes('openheart') || name.includes('open-heart')) {
+        print('cyan', '  💰 Tipo detectado: Open Heart → 139.90€ / 169.90€');
+        return { price: 139.90, oldPrice: 169.90 };
     }
 
     // Por defecto: Automático no GMTeiko (NH35, NH38, NH34, etc.)
-    print('cyan', '  💰 Tipo detectado: Automático → 139.90€ / 169.90€');
-    return { price: 139.90, oldPrice: 169.90 };
+    print('cyan', '  💰 Tipo detectado: Automático → 129.90€ / 169.90€');
+    return { price: 129.90, oldPrice: 169.90 };
 }
 
 /**
@@ -209,7 +215,9 @@ function parseRcbMods(html) {
     // 1. Nombre del producto (h1)
     const titleMatch = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
     if (titleMatch) {
-        data.name = titleMatch[1].replace(/<[^>]+>/g, '').trim();
+        let rawName = titleMatch[1].replace(/<[^>]+>/g, '').trim();
+        // Remove content in parentheses (e.g., (Stock), (Envio 24h))
+        data.name = rawName.replace(/\s*\([^)]+\)/g, '').trim();
     }
 
     // 2. Descripción y Características

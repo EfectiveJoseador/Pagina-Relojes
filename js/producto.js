@@ -19,18 +19,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.title = `${product.name} - Luxe MOD Watches`;
 
     // Breadcrumbs
-    const leagueName = product.league || product.category;
-    const breadcrumbLeague = document.getElementById('breadcrumb-league');
-    if (breadcrumbLeague) {
-        breadcrumbLeague.textContent = leagueName;
-        breadcrumbLeague.href = `/pages/tienda.html?category=${encodeURIComponent(product.category)}`;
+    const breadcrumbCategory = document.getElementById('breadcrumb-category');
+    if (breadcrumbCategory) {
+        breadcrumbCategory.textContent = product.category || 'Colección';
+        breadcrumbCategory.href = `/pages/tienda.html?collection=${encodeURIComponent(product.category)}`;
     }
 
-    const breadcrumbTeam = document.getElementById('breadcrumb-team');
-    if (breadcrumbTeam) {
-        // If there's a specific team or collection, otherwise hide or set to name
-        breadcrumbTeam.style.display = 'none'; // Simplify breadcrumbs for now
-    }
+
+
 
     document.getElementById('breadcrumb-name').textContent = product.name;
     document.getElementById('product-category').textContent = product.category;

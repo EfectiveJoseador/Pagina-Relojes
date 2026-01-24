@@ -7,7 +7,7 @@ function applySpecialPricing() {
             return;
         }
         if (!product.price) {
-            product.price = 139.90;
+            product.price = 129.90;
             product.oldPrice = 169.90;
             product.sale = true;
         }
@@ -37,12 +37,15 @@ const Cart = {
         this.updateHeaderCount();
     },
 
-    add(id, qty = 1, size = 'M', version = 'aficionado', customizations = {}) {
-        const existing = this.items.find(i => i.id === id && i.size === size && i.version === version);
+    add(id, qty = 1, customizations = {}) {
+        const existing = this.items.find(i =>
+            i.id === id &&
+            JSON.stringify(i.customization) === JSON.stringify(customizations)
+        );
         if (existing) {
             existing.qty += qty;
         } else {
-            this.items.push({ id, qty, size, version });
+            this.items.push({ id, qty, customization: customizations });
         }
         this.save();
         this.render();
@@ -54,7 +57,7 @@ const Cart = {
             window.CartBadge.animate();
         }
         if (product && window.Analytics) {
-            window.Analytics.trackAddToCart(product, qty, { size, version, ...customizations });
+            window.Analytics.trackAddToCart(product, qty, customizations);
         }
     },
 
@@ -95,7 +98,7 @@ const Cart = {
         this.items.forEach(item => {
             const product = products.find(p => p.id === item.id);
             const qty = item.quantity || item.qty || 1;
-            const itemPrice = item.price || product?.price || 139.90;
+            const itemPrice = item.price || product?.price || 129.90;
             subtotal += itemPrice * qty;
             totalQty += qty;
         });
@@ -110,71 +113,12 @@ const Cart = {
         if (shippingEl) {
             shippingEl.textContent = 'Gratis';
         }
-        this.renderPackIndicators(totalQty);
+
 
         return { subtotal, shipping, total };
     },
 
-    renderPackIndicators(totalQty) {
-        const isCheckoutPage = window.location.pathname.includes('checkout');
-        if (isCheckoutPage) {
-            return;
-        }
-        const summaryCard = document.querySelector('.cart-summary');
-        if (!summaryCard) return;
-        const isMobile = window.innerWidth <= 900;
-        let container = document.getElementById('pack-indicator-container');
-        if (!container) {
-            container = document.createElement('div');
-            container.id = 'pack-indicator-container';
-            container.className = 'pack-indicator-container';
-            if (isMobile) {
-                summaryCard.parentNode.insertBefore(container, summaryCard);
-            } else {
-                summaryCard.appendChild(container);
-            }
-        }
-        if (isMobile && container.parentNode === summaryCard) {
-            summaryCard.parentNode.insertBefore(container, summaryCard);
-        } else if (!isMobile && container.parentNode !== summaryCard) {
-            summaryCard.appendChild(container);
-        }
 
-        container.innerHTML = '';
-        const isMult3 = totalQty % 3 === 0 && totalQty > 0;
-        const isMult5 = totalQty % 5 === 0 && totalQty > 0;
-        let packType = null;
-        let multiplier = 0;
-
-        if (isMult5) {
-            packType = 'mega';
-            multiplier = totalQty / 5;
-        } else if (isMult3) {
-            packType = 'popular';
-            multiplier = totalQty / 3;
-        }
-        if (!packType) {
-            container.classList.remove('visible');
-            return;
-        }
-        const badge = document.createElement('div');
-        const glowLevel = Math.min(multiplier, 4);
-
-        if (packType === 'popular') {
-            badge.className = `pack-badge pack-popular glow-x${glowLevel}`;
-            badge.innerHTML = multiplier === 1 ? 'PACK POPULAR' : `PACK POPULAR ×${multiplier}`;
-        } else {
-            badge.className = `pack-badge pack-mega glow-x${glowLevel}`;
-            badge.innerHTML = multiplier === 1 ? 'MEGAPACK' : `MEGAPACK ×${multiplier}`;
-        }
-
-        container.appendChild(badge);
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                container.classList.add('visible');
-            });
-        });
-    },
 
     render() {
         const cartList = document.getElementById('cart-items-list');
@@ -198,7 +142,7 @@ const Cart = {
             document.getElementById('subtotal-price').textContent = '€0.00';
             document.getElementById('total-price').textContent = '€0.00';
             document.getElementById('shipping-price').textContent = 'Gratis';
-            this.renderPackIndicators(0);
+
             return;
         }
 
@@ -210,35 +154,38 @@ const Cart = {
             if (!product) return;
             const displayPrice = product.price;
             const custom = item.customization || {};
-            const size = custom.size || item.size || 'N/A';
-            const version = custom.version || item.version || 'aficionado';
-            const name = custom.name || '';
-            const number = custom.number || '';
-            const patch = custom.patch || 'none';
-            let customDetails = `Talla: ${size}`;
-            if (version === 'jugador') {
-                customDetails += ' | Versión: Jugador';
-            } else {
-                customDetails += ' | Versión: Aficionado';
+            const strap = custom.strap;
+            const box = custom.box;
+            const boxPrice = custom.boxPrice || 0;
+
+            let customDetails = '';
+
+            // Priorizar opciones de relojes
+            if (strap) {
+                customDetails += `<div>Correa: ${strap}</div>`;
             }
-            if (name) {
-                customDetails += ` | Nombre: ${name}`;
-            }
-            if (number) {
-                customDetails += ` | Dorsal: ${number}`;
-            }
-            if (patch && patch !== 'none') {
-                const patchNames = {
-                    liga: 'Parche Liga',
-                    champions: 'Parche Champions',
-                    europa: 'Parche Europa League',
-                    premier: 'Parche Premier',
-                    seriea: 'Parche Serie A',
-                    mundial: 'Parche Mundial de Clubes',
-                    copamundo: 'Parche Copa del Mundo',
-                    conmemorativo: 'Parche Conmemorativo'
+
+            if (box && box !== 'none') {
+                const boxNames = {
+                    'basic': 'Caja Básica',
+                    'black': 'Caja Negra',
+                    'brown': 'Caja Negra/Marrón',
+                    'seiko': 'Caja Seiko + Tarjetas'
                 };
-                customDetails += ` | ${patchNames[patch] || patch}`;
+                const boxName = boxNames[box] || box;
+                const priceStr = boxPrice > 0 ? ` (+€${boxPrice})` : '';
+                customDetails += `<div>${boxName}${priceStr}</div>`;
+            } else if (box === 'none') {
+                // Opcional: Mostrar "Sin caja" si se desea explicitar, o no mostrar nada
+                // customDetails += `<div>Sin caja</div>`;
+            }
+
+            // Fallback para legacy items (camisetas) si fuera necesario, o simplemente limpiar
+            // Si el item tiene talla/name/number antiguos, se ignorarán para dar prioridad a la limpieza solicitada
+            // Salvo que el usuario quiera mantener compatibilidad, pero pidió "eliminar todo lo innecesario"
+            if (!customDetails && (item.size || custom.size)) {
+                // Si no hay info de reloj y hay info antigua, podría mostrarse algo genérico o nada.
+                // Asumimos transición completa a relojes según contexto.
             }
 
             const qty = item.quantity || item.qty || 1;
@@ -308,7 +255,7 @@ const Cart = {
                 <img src="${product.image}" alt="${product.name}">
                 <div>
                     <h4>${product.name} x${qty}</h4>
-                    <p>${size} / ${version === 'jugador' ? 'Jugador' : 'Aficionado'}</p>
+                    <p>${custom.strap ? `Correa: ${custom.strap}` : ''}</p>
                 </div>
                 <span>€${(basePrice * qty).toFixed(2)}</span>
             `;
