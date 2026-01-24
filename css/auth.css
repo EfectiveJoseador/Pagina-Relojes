@@ -40,24 +40,33 @@
     padding: 0.75rem 0;
     font-weight: 600;
     font-size: 0.95rem;
-    color: var(--text-muted);
-    background: none;
-    border: none;
     border-bottom: 2px solid transparent;
     margin-bottom: -2px;
-
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: center;
 }
 
 .auth-tab:hover {
-    color: var(--primary);
+    color: #D4AF37;
 }
 
 .auth-tab.active {
-    color: var(--primary);
-    border-bottom-color: var(--primary);
+    color: #D4AF37;
+    border-bottom-color: #D4AF37;
+}
+
+[data-theme="dark"] .auth-tab {
+    color: #cbd5e1;
+    /* Gris claro para mejor contraste en fondo negro */
+}
+
+[data-theme="dark"] .auth-tab:hover {
+    color: #ffd700;
+}
+
+[data-theme="dark"] .auth-tab.active {
+    color: #D4AF37;
 }
 
 
@@ -150,7 +159,7 @@
 }
 
 .forgot-password {
-    color: var(--primary);
+    color: #D4AF37;
     text-decoration: none;
     font-weight: 500;
     transition: opacity 0.2s;
@@ -168,7 +177,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--primary);
+    background: linear-gradient(135deg, #D4AF37 0%, #B8962E 100%);
     color: white;
     font-size: 1rem;
     font-weight: 600;
