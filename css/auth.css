@@ -11,7 +11,9 @@
 
 .auth-card {
     background: var(--bg-card);
-    padding: 3rem 2.5rem;
+    padding: 2rem;
+    /* Reducido de 3rem a 2rem */
+    border-radius: 16px;
 
     border-radius: 16px;
 
@@ -23,8 +25,10 @@
     border: 1px solid rgba(0, 0, 0, 0.05);
 
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; Eliminado para evitar recortes de sombras/botones */
     animation: scaleIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    padding-bottom: 2.5rem;
+    /* Asegurar espacio extra abajo */
 }
 
 
@@ -328,8 +332,11 @@
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
     padding: 1.5rem;
-    margin-bottom: 1rem;
-    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: 1.5rem;
+    /* Más separación entre tarjetas */
+    transition: all 0.3s ease;
+    overflow: hidden;
+    /* Para asegurar bordes redondeados */
 }
 
 .order-card:hover,
@@ -342,7 +349,13 @@
 .order-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0.5rem;
+    align-items: center;
+    /* Alineación vertical centrada */
+    margin-bottom: 0.75rem;
+    /* Más espacio */
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+    /* Separador visual sutil si se desea, o quitar si está duplicado */
 }
 
 .order-id {
@@ -522,6 +535,28 @@
 
 .modal-content {
     animation: scaleIn 0.3s ease-out;
+    height: auto !important;
+    max-height: 90vh !important;
+    /* Limitar altura y permitir scroll */
+    overflow-y: auto !important;
+    margin: 2.5% auto !important;
+    /* Reducir margen superior para aprovechar espacio */
+    padding-bottom: 2rem !important;
+    display: block;
+}
+
+/* Scrollbar personalizado */
+.modal-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: #D4AF37;
+    border-radius: 10px;
 }
 
 
@@ -542,12 +577,11 @@
 }
 
 
-[data-theme="dark"] .modal input[type="text"],
-[data-theme="dark"] .modal input[type="tel"],
+/* Estilos de input corregidos más abajo - bloque eliminado para evitar conflictos */
 [data-theme="dark"] .modal select {
-    background: #000000 !important;
+    background: #1e1e1e !important;
     color: #f8fafc !important;
-    border-color: rgba(255, 255, 255, 0.12) !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
 }
 
 [data-theme="dark"] .modal input[type="text"]:focus,
@@ -591,13 +625,61 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 0.875rem 1.5rem;
-    font-size: 0.95rem;
-    font-weight: 600;
+    padding: 1rem 1.5rem;
+    /* Botón más grande */
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     border-radius: 12px;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
+    width: 100%;
+    /* Asegurar ancho completo en móviles/modales */
+    margin-top: 1.5rem;
+}
+
+/* Asegurar que el botón primario del modal se vea bien */
+.modal button[type="submit"] {
+    display: block !important;
+    width: 100% !important;
+    padding: 1rem !important;
+    margin-top: 1.5rem !important;
+    background: linear-gradient(135deg, #D4AF37 0%, #B8962E 100%) !important;
+    color: #000 !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    border-radius: 12px !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3) !important;
+    margin-bottom: 0 !important;
+    /* Eliminar margen extra abajo */
+}
+
+.modal button[type="submit"]:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5) !important;
+}
+
+/* Forzar estilos de input para visibilidad */
+.modal .input-icon input {
+    background: #f0f0f0 !important;
+    color: #333 !important;
+    border: 1px solid #ddd !important;
+}
+
+[data-theme="dark"] .modal .input-icon input {
+    background: #1e1e1e !important;
+    /* Gris oscuro visible */
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+[data-theme="dark"] .modal .input-icon i {
+    color: #D4AF37 !important;
+    /* Iconos dorados */
 }
 
 
