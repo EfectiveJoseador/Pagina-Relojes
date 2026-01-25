@@ -254,8 +254,7 @@ const products = [
         "image": "/assets/productos/RC_Mods/seikojust-black-roman-stock/1.webp",
         "images": [
             "/assets/productos/RC_Mods/seikojust-black-roman-stock/2.webp",
-            "/assets/productos/RC_Mods/seikojust-black-roman-stock/3.webp",
-            "/assets/productos/RC_Mods/seikojust-black-roman-stock/4.webp"
+            "/assets/productos/RC_Mods/seikojust-black-roman-stock/3.webp"
         ],
         "description": "Especificaciones Técnicas:\nDiámetro: 36 mm o 39 mm (sin corona), adaptable para distintos tamaños de muñeca\nMovimiento: Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas\nGrosor: 12 mm, cómodo para uso diario\nCristal: zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad\nLuminosidad: Luminova en agujas para lectura óptima en la oscuridad\nCaja: acero inoxidable 904L pulido y cepillado, robusto y elegante\nCorona: enroscada para mayor protección contra agua y polvo\nBisel: acero inoxidable pulido, clásico y atemporal\nCorrea: acero inoxidable 904L, con cierre desplegable seguro y cómodo",
         "features": [
@@ -881,78 +880,78 @@ const products = [
             "Fondo de caja": "Cristal transparente (movimiento visible)"
         }
     }
-,
+    ,
     {
-    "id": 1769260114751,
-    "name": "Seitona Black Panda",
-    "category": "Seitona",
-    "league": "Seitona",
-    "price": 119.9,
-    "oldPrice": 149.9,
-    "image": "/assets/productos/RC_Mods/seitona-black-panda/1.webp",
-    "images": [
-        "/assets/productos/RC_Mods/seitona-black-panda/2.webp",
-        "/assets/productos/RC_Mods/seitona-black-panda/3.webp",
-        "/assets/productos/RC_Mods/seitona-black-panda/4.webp",
-        "/assets/productos/RC_Mods/seitona-black-panda/5.webp"
-    ],
-    "description": "Especificaciones Técnicas:\nDiámetro: 40 mm (sin corona), equilibrio perfecto entre elegancia y presencia\nMovimiento: Seiko VK63 mecaquartz, preciso y con cronógrafo funcional de barrido suave\nGrosor: 12 mm, delgado y cómodo para vestir o llevar a diario\nCristal: zafiro con tratamiento antirreflejos, alta claridad y resistencia a rayaduras\nLuminosidad: Luminova, con visibilidad total incluso en ambientes oscuros\nCaja: acero inoxidable 316L con acabado espejo, resistente y brillante\nCorona: enroscada, para mayor protección y tacto firme al accionar\nBisel: cerámico con grabado taquimétrico, brillante, duradero y elegante\nTamaño de muñeca: ajustable entre 14,5 cm y 22 cm, adaptable con cierre seguro\nLugs: 20 mm, permite cambiar la correa fácilmente si quieres personalizarlo\nCorrea: brazalete Oyster de acero inoxidable 316L, con cierre de seguridad y ajuste cómodo\nFondo de caja: acero cerrado con acabado cepillado, sobrio y limpio",
-    "features": [
-        "Diámetro: 40 mm (sin corona), equilibrio perfecto entre elegancia y presencia",
-        "Movimiento: Seiko VK63 mecaquartz, preciso y con cronógrafo funcional de barrido suave",
-        "Grosor: 12 mm, delgado y cómodo para vestir o llevar a diario",
-        "Cristal: zafiro con tratamiento antirreflejos, alta claridad y resistencia a rayaduras",
-        "Luminosidad: Luminova, con visibilidad total incluso en ambientes oscuros",
-        "Caja: acero inoxidable 316L con acabado espejo, resistente y brillante",
-        "Corona: enroscada, para mayor protección y tacto firme al accionar",
-        "Bisel: cerámico con grabado taquimétrico, brillante, duradero y elegante",
-        "Tamaño de muñeca: ajustable entre 14,5 cm y 22 cm, adaptable con cierre seguro",
-        "Lugs: 20 mm, permite cambiar la correa fácilmente si quieres personalizarlo",
-        "Correa: brazalete Oyster de acero inoxidable 316L, con cierre de seguridad y ajuste cómodo",
-        "Fondo de caja: acero cerrado con acabado cepillado, sobrio y limpio"
-    ],
-    "sizes": [],
-    "straps": [],
-    "specs": {
-        "Diámetro": "40 mm (sin corona), equilibrio perfecto entre elegancia y presencia",
-        "Movimiento": "Seiko VK63 mecaquartz, preciso y con cronógrafo funcional de barrido suave",
-        "Grosor": "12 mm, delgado y cómodo para vestir o llevar a diario",
-        "Cristal": "zafiro con tratamiento antirreflejos, alta claridad y resistencia a rayaduras",
-        "Luminosidad": "Luminova, con visibilidad total incluso en ambientes oscuros",
-        "Caja": "acero inoxidable 316L con acabado espejo, resistente y brillante",
-        "Corona": "enroscada, para mayor protección y tacto firme al accionar",
-        "Bisel": "cerámico con grabado taquimétrico, brillante, duradero y elegante",
-        "Tamaño de muñeca": "ajustable entre 14,5 cm y 22 cm, adaptable con cierre seguro",
-        "Lugs": "20 mm, permite cambiar la correa fácilmente si quieres personalizarlo",
-        "Correa": "brazalete Oyster de acero inoxidable 316L, con cierre de seguridad y ajuste cómodo",
-        "Fondo de caja": "acero cerrado con acabado cepillado, sobrio y limpio"
+        "id": 1769260114751,
+        "name": "Seitona Black Panda",
+        "category": "Seitona",
+        "league": "Seitona",
+        "price": 119.9,
+        "oldPrice": 149.9,
+        "image": "/assets/productos/RC_Mods/seitona-black-panda/1.webp",
+        "images": [
+            "/assets/productos/RC_Mods/seitona-black-panda/2.webp",
+            "/assets/productos/RC_Mods/seitona-black-panda/3.webp",
+            "/assets/productos/RC_Mods/seitona-black-panda/4.webp",
+            "/assets/productos/RC_Mods/seitona-black-panda/5.webp"
+        ],
+        "description": "Especificaciones Técnicas:\nDiámetro: 40 mm (sin corona), equilibrio perfecto entre elegancia y presencia\nMovimiento: Seiko VK63 mecaquartz, preciso y con cronógrafo funcional de barrido suave\nGrosor: 12 mm, delgado y cómodo para vestir o llevar a diario\nCristal: zafiro con tratamiento antirreflejos, alta claridad y resistencia a rayaduras\nLuminosidad: Luminova, con visibilidad total incluso en ambientes oscuros\nCaja: acero inoxidable 316L con acabado espejo, resistente y brillante\nCorona: enroscada, para mayor protección y tacto firme al accionar\nBisel: cerámico con grabado taquimétrico, brillante, duradero y elegante\nTamaño de muñeca: ajustable entre 14,5 cm y 22 cm, adaptable con cierre seguro\nLugs: 20 mm, permite cambiar la correa fácilmente si quieres personalizarlo\nCorrea: brazalete Oyster de acero inoxidable 316L, con cierre de seguridad y ajuste cómodo\nFondo de caja: acero cerrado con acabado cepillado, sobrio y limpio",
+        "features": [
+            "Diámetro: 40 mm (sin corona), equilibrio perfecto entre elegancia y presencia",
+            "Movimiento: Seiko VK63 mecaquartz, preciso y con cronógrafo funcional de barrido suave",
+            "Grosor: 12 mm, delgado y cómodo para vestir o llevar a diario",
+            "Cristal: zafiro con tratamiento antirreflejos, alta claridad y resistencia a rayaduras",
+            "Luminosidad: Luminova, con visibilidad total incluso en ambientes oscuros",
+            "Caja: acero inoxidable 316L con acabado espejo, resistente y brillante",
+            "Corona: enroscada, para mayor protección y tacto firme al accionar",
+            "Bisel: cerámico con grabado taquimétrico, brillante, duradero y elegante",
+            "Tamaño de muñeca: ajustable entre 14,5 cm y 22 cm, adaptable con cierre seguro",
+            "Lugs: 20 mm, permite cambiar la correa fácilmente si quieres personalizarlo",
+            "Correa: brazalete Oyster de acero inoxidable 316L, con cierre de seguridad y ajuste cómodo",
+            "Fondo de caja: acero cerrado con acabado cepillado, sobrio y limpio"
+        ],
+        "sizes": [],
+        "straps": [],
+        "specs": {
+            "Diámetro": "40 mm (sin corona), equilibrio perfecto entre elegancia y presencia",
+            "Movimiento": "Seiko VK63 mecaquartz, preciso y con cronógrafo funcional de barrido suave",
+            "Grosor": "12 mm, delgado y cómodo para vestir o llevar a diario",
+            "Cristal": "zafiro con tratamiento antirreflejos, alta claridad y resistencia a rayaduras",
+            "Luminosidad": "Luminova, con visibilidad total incluso en ambientes oscuros",
+            "Caja": "acero inoxidable 316L con acabado espejo, resistente y brillante",
+            "Corona": "enroscada, para mayor protección y tacto firme al accionar",
+            "Bisel": "cerámico con grabado taquimétrico, brillante, duradero y elegante",
+            "Tamaño de muñeca": "ajustable entre 14,5 cm y 22 cm, adaptable con cierre seguro",
+            "Lugs": "20 mm, permite cambiar la correa fácilmente si quieres personalizarlo",
+            "Correa": "brazalete Oyster de acero inoxidable 316L, con cierre de seguridad y ajuste cómodo",
+            "Fondo de caja": "acero cerrado con acabado cepillado, sobrio y limpio"
+        }
     }
-}
-,
+    ,
     {
-    "id": 1769260840545,
-    "name": "Santeiko Black",
-    "category": "Santeiko",
-    "league": "Santeiko",
-    "price": 129.9,
-    "oldPrice": 169.9,
-    "image": "/assets/productos/RC_Mods/santeiko-black/1.webp",
-    "images": [
-        "/assets/productos/RC_Mods/santeiko-black/2.webp",
-        "/assets/productos/RC_Mods/santeiko-black/3.webp"
-    ],
-    "description": "Especificaciones Técnicas:\nDiámetro: 38 mm\nGrosor: 11 mm",
-    "features": [
-        "Diámetro: 38 mm",
-        "Grosor: 11 mm"
-    ],
-    "sizes": [],
-    "straps": [],
-    "specs": {
-        "Diámetro": "38 mm",
-        "Grosor": "11 mm"
+        "id": 1769260840545,
+        "name": "Santeiko Black",
+        "category": "Santeiko",
+        "league": "Santeiko",
+        "price": 129.9,
+        "oldPrice": 169.9,
+        "image": "/assets/productos/RC_Mods/santeiko-black/1.webp",
+        "images": [
+            "/assets/productos/RC_Mods/santeiko-black/2.webp",
+            "/assets/productos/RC_Mods/santeiko-black/3.webp"
+        ],
+        "description": "Especificaciones Técnicas:\nDiámetro: 38 mm\nGrosor: 11 mm",
+        "features": [
+            "Diámetro: 38 mm",
+            "Grosor: 11 mm"
+        ],
+        "sizes": [],
+        "straps": [],
+        "specs": {
+            "Diámetro": "38 mm",
+            "Grosor": "11 mm"
+        }
     }
-}
 ];
 
 export default products;

@@ -646,9 +646,11 @@
 }
 
 .badge-sale {
-    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-    box-shadow: 0 0 10px rgba(239, 68, 68, 0.6),
-        0 0 20px rgba(239, 68, 68, 0.4);
+    background: linear-gradient(135deg, #8B0000 0%, #a01a1a 100%);
+    box-shadow: 0 0 10px rgba(139, 0, 0, 0.4);
+    border-radius: var(--radius-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .btn-quick-view {

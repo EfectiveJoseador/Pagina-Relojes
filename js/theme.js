@@ -35,17 +35,19 @@
 
 window.ThemeManager = {
     init() {
-        // Forzar siempre tema oscuro
+        // Force Dark Mode Always
         this.applyTheme('dark');
 
-        // Eliminar botón si existe (doble seguridad)
+        // Remove toggle button if exists
         const btn = document.getElementById('theme-toggle');
-        if (btn) btn.style.display = 'none';
+        if (btn) btn.remove();
     },
 
     applyTheme(theme) {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
+        // Always force dark, ignore 'theme' argument if it tries to be light,
+        // but for safety we just set 'dark'
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
     }
 };
 
