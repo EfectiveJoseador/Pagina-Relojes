@@ -35,39 +35,17 @@
 
 window.ThemeManager = {
     init() {
-        this.themeToggleBtn = document.getElementById('theme-toggle');
-        this.currentTheme = localStorage.getItem('theme') || 'dark';
+        // Forzar siempre tema oscuro
+        this.applyTheme('dark');
 
-        this.applyTheme(this.currentTheme);
-
-        if (this.themeToggleBtn) {
-            const newBtn = this.themeToggleBtn.cloneNode(true);
-            this.themeToggleBtn.parentNode.replaceChild(newBtn, this.themeToggleBtn);
-            this.themeToggleBtn = newBtn;
-
-            this.themeToggleBtn.addEventListener('click', () => this.toggleTheme());
-            this.updateIcon();
-        }
-    },
-
-    toggleTheme() {
-        this.currentTheme = this.currentTheme === 'light' ? 'dark' : 'light';
-        this.applyTheme(this.currentTheme);
-        this.updateIcon();
+        // Eliminar botón si existe (doble seguridad)
+        const btn = document.getElementById('theme-toggle');
+        if (btn) btn.style.display = 'none';
     },
 
     applyTheme(theme) {
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
-    },
-
-    updateIcon() {
-        if (!this.themeToggleBtn) return;
-        const icon = this.themeToggleBtn.querySelector('i');
-        if (icon) {
-
-            icon.className = this.currentTheme === 'light' ? 'fas fa-moon' : 'fas fa-lightbulb';
-        }
     }
 };
 

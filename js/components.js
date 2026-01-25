@@ -23,7 +23,7 @@ const Components = {
                     <a href="/pages/login.html" class="icon-btn" aria-label="Cuenta">
                         <i class="fas fa-user"></i>
                     </a>
-                    <button class="icon-btn" id="theme-toggle" aria-label="Cambiar tema"><i class="fas fa-moon"></i></button>
+
                     <button class="icon-btn mobile-menu-btn" id="mobile-menu-toggle" aria-label="Menú"><i class="fas fa-bars"></i></button>
                 </div>
             </div>
