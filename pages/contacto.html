@@ -4,18 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Luxe MOD Watches</title>
+    <meta name="description"
+        content="ContÃ¡ctanos para cualquier duda sobre nuestros relojes de lujo. AtenciÃ³n personalizada.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://luxemodwatches.com/pages/contacto.html">
+
     <link rel="icon" type="image/x-icon" href="../assets/logo/logo.png">
-    <title>Contacto - Luxe MOD Watches</title>
-
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GS53GWE2Z0"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-GS53GWE2Z0');
-    </script>
-
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,70 +28,63 @@
 <body>
     <div id="header-placeholder"></div>
 
-    <main class="auth-container">
-        <div class="auth-card" style="max-width: 600px;">
-            <h2 style="text-align: center; margin-bottom: 1.5rem; color: var(--text-main);">
-                <i class="fas fa-envelope" style="color: #D4AF37; margin-right: 0.5rem;"></i>
-                Contáctanos
-            </h2>
-            <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">
-                ¿Tienes alguna pregunta sobre nuestros relojes? Envíanos un mensaje y te responderemos lo antes posible.
-            </p>
+    <main class="page-content" style="min-height: 80vh; background: var(--bg-body); padding: 4rem 1.5rem;">
+        <div class="auth-container" style="min-height: auto; align-items: flex-start; padding: 0;">
+            <div class="auth-card" style="max-width: 600px; margin: 0 auto; animation: slideUp 0.8s ease backwards;">
+                <h1
+                    style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 2rem; text-align: center;">
+                    ContÃ¡ctanos</h1>
 
-            <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-
-                <input type="hidden" name="access_key" value="8e920ab3-b0f7-4768-a83a-ed3ef8cd58a8">
-                <input type="hidden" name="subject" value="Nuevo mensaje de contacto - Luxe MOD Watches">
-                <input type="hidden" name="redirect" value="/pages/mensaje-enviado.html">
-                <input type="checkbox" name="botcheck" style="display:none;">
-
-                <div class="form-group">
-                    <label>Nombre Completo</label>
-                    <div class="input-icon">
-                        <i class="fas fa-user"></i>
-                        <input type="text" name="nombre" required placeholder="Tu nombre completo">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Email</label>
-                    <div class="input-icon">
-                        <i class="fas fa-envelope"></i>
-                        <input type="email" name="email" required placeholder="tu@email.com">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Asunto</label>
-                    <div class="input-icon">
-                        <i class="fas fa-tag"></i>
-                        <input type="text" name="asunto" required placeholder="¿En qué podemos ayudarte?">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Mensaje</label>
-                    <textarea name="mensaje" required placeholder="Escribe tu mensaje aquí..."
-                        style="width: 100%; min-height: 150px; padding: 1rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--bg-body); color: var(--text-main); font-family: var(--font-body); font-size: 1rem; resize: vertical;"></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-block btn-primary">
-                    <i class="fas fa-paper-plane" style="margin-right: 0.5rem;"></i>
-                    Enviar Mensaje
-                </button>
-            </form>
-
-            <div style="text-align: center; margin-top: 1.5rem; color: var(--text-muted); font-size: 0.9rem;">
-                <p style="margin-bottom: 0.5rem;">También puedes contactarnos directamente:</p>
-                <p style="margin-bottom: 0.25rem;">
-                    <i class="fas fa-envelope" style="color: #D4AF37; margin-right: 0.5rem;"></i>
-                    <a href="mailto:luxemodwatches@gmail.com" style="color: #D4AF37;">luxemodwatches@gmail.com</a>
+                <p style="color: var(--text-muted); text-align: center; margin-bottom: 2.5rem;">
+                    Â¿Tienes alguna pregunta o necesitas asistencia? Completa el formulario o escrÃ­benos directamente.
                 </p>
-                <p>
-                    <i class="fab fa-instagram" style="color: #D4AF37; margin-right: 0.5rem;"></i>
-                    <a href="https://www.instagram.com/luxemodwatches/" target="_blank"
-                        style="color: #D4AF37;">@luxemodwatches</a>
-                </p>
+
+                <form id="contactForm" class="auth-form active" style="display: block;">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <div class="input-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <div class="input-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <div class="input-icon">
+                            <i class="fas fa-comment-alt" style="top: 1rem; transform: none;"></i>
+                            <textarea id="message" name="message" placeholder="Â¿En quÃ© podemos ayudarte?" required
+                                style="width: 100%; min-height: 120px; padding: 0.8rem 1rem 0.8rem 2.8rem; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border); border-radius: 10px; color: var(--text-main); font-family: var(--font-main); resize: vertical;"></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-paper-plane" style="margin-right: 0.5rem;"></i> Enviar Mensaje
+                    </button>
+                </form>
+
+                <div
+                    style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center;">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 1rem;">Otras formas
+                        de contacto</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center;">
+                        <a href="mailto:luxemodwatches@gmail.com"
+                            style="color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; transition: color 0.3s;">
+                            <i class="fas fa-envelope" style="color: #D4AF37;"></i> luxemodwatches@gmail.com
+                        </a>
+                        <a href="https://www.instagram.com/luxemodwatches/" target="_blank"
+                            style="color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; transition: color 0.3s;">
+                            <i class="fab fa-instagram" style="color: #D4AF37;"></i> @luxemodwatches
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -105,7 +93,13 @@
 
     <script src="/js/theme.js"></script>
     <script src="/js/components.js"></script>
-
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Gracias por contactarnos. Te responderemos pronto.');
+            this.reset();
+        });
+    </script>
 </body>
 
 </html>

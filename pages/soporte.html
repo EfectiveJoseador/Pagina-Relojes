@@ -4,17 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte y Ayuda | Luxe MOD Watches</title>
     <link rel="icon" type="image/x-icon" href="../assets/logo/logo.png">
-    <title>Soporte - Luxe MOD Watches</title>
-
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GS53GWE2Z0"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-GS53GWE2Z0');
-    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,74 +23,37 @@
 <body>
     <div id="header-placeholder"></div>
 
-    <main class="auth-container">
-        <div class="auth-card" style="max-width: 600px;">
-            <h2 style="text-align: center; margin-bottom: 1.5rem; color: var(--text-main);">
-                <i class="fas fa-life-ring" style="color: var(--primary); margin-right: 0.5rem;"></i>
-                Soporte TÈcnico
-            </h2>
-            <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">
-                øTienes problemas con tu pedido? CuÈntanos y te ayudaremos a resolverlo.
-            </p>
+    <main class="page-content" style="min-height: 80vh; background: var(--bg-body); padding: 4rem 1.5rem;">
+        <div class="auth-card" style="max-width: 800px; margin: 0 auto; animation: slideUp 0.8s ease backwards;">
+            <h1
+                style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem;">
+                Centro de Soporte</h1>
 
-            <form id="soporteForm" action="https://api.web3forms.com/submit" method="POST">
+            <div style="color: var(--text-main); line-height: 1.8;">
+                <p style="margin-bottom: 2rem;">¬øNecesitas ayuda? Aqu√≠ encontrar√°s respuestas a las preguntas m√°s
+                    frecuentes.</p>
 
-                <input type="hidden" name="access_key" value="8e920ab3-b0f7-4768-a83a-ed3ef8cd58a8">
-                <input type="hidden" name="subject" value="Solicitud de Soporte - Luxe MOD Watches">
-                <input type="hidden" name="redirect" value="/pages/mensaje-enviado.html">
-                <input type="checkbox" name="botcheck" style="display:none;">
+                <h2 style="font-family: var(--font-heading); margin-top: 2rem; margin-bottom: 1rem; color: #D4AF37;">
+                    Env√≠os</h2>
+                <p>Todos nuestros pedidos se procesan en 24-48 horas. El tiempo de env√≠o est√°ndar es de 3-5 d√≠as
+                    laborables para Espa√±a peninsular.</p>
 
-                <div class="form-group">
-                    <label>Nombre Completo</label>
-                    <div class="input-icon">
-                        <i class="fas fa-user"></i>
-                        <input type="text" name="nombre" required placeholder="Tu nombre completo">
-                    </div>
+                <h2 style="font-family: var(--font-heading); margin-top: 2rem; margin-bottom: 1rem; color: #D4AF37;">
+                    Devoluciones</h2>
+                <p>Si no est√°s satisfecho con tu compra, puedes devolver el producto dentro de los 14 d√≠as posteriores a
+                    la recepci√≥n. El producto debe estar sin usar y en su embalaje original.</p>
+
+                <h2 style="font-family: var(--font-heading); margin-top: 2rem; margin-bottom: 1rem; color: #D4AF37;">
+                    Garant√≠a</h2>
+                <p>Todos nuestros relojes cuentan con una garant√≠a de 2 a√±os contra defectos de fabricaci√≥n.</p>
+
+                <div
+                    style="margin-top: 3rem; text-align: center; border-top: 1px solid var(--border); padding-top: 2rem;">
+                    <p style="margin-bottom: 1rem;">¬øNo encuentras lo que buscas?</p>
+                    <a href="/pages/contacto.html" class="btn btn-primary"
+                        style="display: inline-block; padding: 0.8rem 2rem; text-decoration: none;">Cont√°ctanos</a>
                 </div>
-
-                <div class="form-group">
-                    <label>Email</label>
-                    <div class="input-icon">
-                        <i class="fas fa-envelope"></i>
-                        <input type="email" name="email" required placeholder="tu@email.com">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>N˙mero de Pedido (opcional)</label>
-                    <div class="input-icon">
-                        <i class="fas fa-hashtag"></i>
-                        <input type="text" name="pedido" placeholder="#12345">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Tipo de Problema</label>
-                    <div class="input-icon">
-                        <i class="fas fa-exclamation-circle"></i>
-                        <select name="tipo_problema" required
-                            style="width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--bg-body); color: var(--text-main); font-size: 1rem;">
-                            <option value="">Selecciona una opciÛn</option>
-                            <option value="EnvÌo">Problema con el envÌo</option>
-                            <option value="Producto">Problema con el producto</option>
-                            <option value="Pago">Problema con el pago</option>
-                            <option value="DevoluciÛn">DevoluciÛn o cambio</option>
-                            <option value="Otro">Otro</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>DescripciÛn del Problema</label>
-                    <textarea name="descripcion" required placeholder="DescripciÛn detallada del problema..."
-                        style="width: 100%; min-height: 150px; padding: 1rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--bg-body); color: var(--text-main); font-family: var(--font-body); font-size: 1rem; resize: vertical;"></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-block btn-primary">
-                    <i class="fas fa-paper-plane" style="margin-right: 0.5rem;"></i>
-                    Enviar Solicitud
-                </button>
-            </form>
+            </div>
         </div>
     </main>
 
