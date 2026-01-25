@@ -98,3 +98,8 @@
         font-size: 0.65rem !important;
     }
 }
+
+/* User requested modification: Hide sale badge in tienda.html */
+.page-tienda .badge-sale {
+    display: none !important;
+}
