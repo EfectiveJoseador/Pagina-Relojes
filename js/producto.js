@@ -312,8 +312,19 @@ function updateActiveThumb(index) {
 }
 
 // Lightbox
+// Lightbox Logic
+let lightboxState = {
+    zoom: 1,
+    isDragging: false,
+    startX: 0,
+    startY: 0,
+    translateX: 0,
+    translateY: 0,
+    maxZoom: 3,
+    minZoom: 1
+};
+
 function initLightbox(images) {
-    // Basic lightbox setup reusing the existing HTML structure
     const lightbox = document.getElementById('image-lightbox');
     if (!lightbox) return;
 
@@ -321,28 +332,195 @@ function initLightbox(images) {
     if (mainImg) {
         mainImg.addEventListener('click', (e) => {
             if (e.target.closest('.gallery-arrow')) return;
-            lightbox.classList.add('active');
-            updateLightboxImage(images);
+            openLightbox(images, currentImageIndex);
         });
     }
 
-    document.getElementById('lightbox-close')?.addEventListener('click', () => lightbox.classList.remove('active'));
-    document.getElementById('lightbox-overlay')?.addEventListener('click', () => lightbox.classList.remove('active'));
+    // Close Events
+    const closeBtn = document.getElementById('lightbox-close');
+    const overlay = document.getElementById('lightbox-overlay');
 
-    // Lightbox navigation
-    document.getElementById('lightbox-prev')?.addEventListener('click', () => {
-        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-        updateLightboxImage(images);
+    [closeBtn, overlay].forEach(el => {
+        el?.addEventListener('click', closeLightbox);
     });
-    document.getElementById('lightbox-next')?.addEventListener('click', () => {
-        currentImageIndex = (currentImageIndex + 1) % images.length;
-        updateLightboxImage(images);
+
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') navigateLightbox(-1, images);
+        if (e.key === 'ArrowRight') navigateLightbox(1, images);
     });
+
+    // Navigation
+    document.getElementById('lightbox-prev')?.addEventListener('click', () => navigateLightbox(-1, images));
+    document.getElementById('lightbox-next')?.addEventListener('click', () => navigateLightbox(1, images));
+
+    // Zoom Controls
+    initZoomControls();
+}
+
+function openLightbox(images, index) {
+    const lightbox = document.getElementById('image-lightbox');
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    currentImageIndex = index;
+    updateLightboxImage(images);
+    renderLightboxThumbnails(images);
+    resetZoom();
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('image-lightbox');
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function navigateLightbox(direction, images) {
+    currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+    updateLightboxImage(images);
+    updateActiveLightboxThumb();
+    resetZoom();
 }
 
 function updateLightboxImage(images) {
     const lbImg = document.getElementById('lightbox-image');
-    if (lbImg) lbImg.src = images[currentImageIndex];
+    if (lbImg) {
+        // Fade effect
+        lbImg.style.opacity = '0.5';
+        setTimeout(() => {
+            lbImg.src = images[currentImageIndex];
+            lbImg.onload = () => lbImg.style.opacity = '1';
+        }, 150);
+    }
+}
+
+function renderLightboxThumbnails(images) {
+    const container = document.getElementById('lightbox-thumbnails');
+    if (!container) return;
+
+    container.innerHTML = '';
+    images.forEach((img, idx) => {
+        const thumb = document.createElement('div');
+        thumb.className = `lightbox-thumb ${idx === currentImageIndex ? 'active' : ''}`;
+        thumb.innerHTML = `<img src="${img}" loading="lazy">`;
+        thumb.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent drag/click conflicts
+            currentImageIndex = idx;
+            updateLightboxImage(images);
+            updateActiveLightboxThumb();
+            resetZoom();
+        });
+        container.appendChild(thumb);
+    });
+}
+
+function updateActiveLightboxThumb() {
+    document.querySelectorAll('.lightbox-thumb').forEach((t, i) => {
+        t.classList.toggle('active', i === currentImageIndex);
+        if (i === currentImageIndex) t.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    });
+}
+
+// ------ Zoom & Pan Core Logic ------
+
+function initZoomControls() {
+    const imgWrapper = document.getElementById('lightbox-wrapper');
+    const img = document.getElementById('lightbox-image');
+    const zoomInBtn = document.getElementById('zoom-in-btn');
+    const zoomOutBtn = document.getElementById('zoom-out-btn');
+    const slider = document.getElementById('zoom-slider');
+    const levelDisplay = document.getElementById('zoom-level-display');
+
+    if (!imgWrapper || !img) return;
+
+    // Helper: Apply Transforms
+    function updateTransform() {
+        // Constrain Dragging Boundaries
+        if (lightboxState.zoom > 1) {
+            const rect = imgWrapper.getBoundingClientRect();
+            // Allow panning logic here if needed, simplified for now
+        } else {
+            lightboxState.translateX = 0;
+            lightboxState.translateY = 0;
+        }
+
+        img.style.transform = `translate(${lightboxState.translateX}px, ${lightboxState.translateY}px) scale(${lightboxState.zoom})`;
+
+        // Update UI
+        if (slider) slider.value = Math.round(lightboxState.zoom * 100);
+        if (levelDisplay) levelDisplay.textContent = `${Math.round(lightboxState.zoom * 100)}%`;
+
+        imgWrapper.classList.toggle('zoomed', lightboxState.zoom > 1);
+        imgWrapper.classList.toggle('dragging', lightboxState.isDragging);
+    }
+
+    function setZoom(val) {
+        lightboxState.zoom = Math.min(Math.max(val, lightboxState.minZoom), lightboxState.maxZoom);
+        updateTransform();
+    }
+
+    // Button Events
+    zoomInBtn?.addEventListener('click', () => setZoom(lightboxState.zoom + 0.25));
+    zoomOutBtn?.addEventListener('click', () => setZoom(lightboxState.zoom - 0.25));
+
+    // Slider Event
+    slider?.addEventListener('input', (e) => {
+        setZoom(parseInt(e.target.value) / 100);
+    });
+
+    // Mouse Wheel Zoom
+    imgWrapper.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        const delta = e.deltaY * -0.002;
+        setZoom(lightboxState.zoom + delta);
+    }, { passive: false });
+
+    // Double Click to Reset/Max
+    imgWrapper.addEventListener('dblclick', (e) => {
+        if (lightboxState.zoom > 1) {
+            resetZoom();
+        } else {
+            setZoom(2.5); // Instant zoom to 250%
+        }
+    });
+
+    // Pan (Drag) Logic
+    imgWrapper.addEventListener('mousedown', (e) => {
+        if (lightboxState.zoom <= 1) return;
+        lightboxState.isDragging = true;
+        lightboxState.startX = e.clientX - lightboxState.translateX;
+        lightboxState.startY = e.clientY - lightboxState.translateY;
+        e.preventDefault(); // Prevent default drag behavior
+    });
+
+    window.addEventListener('mousemove', (e) => {
+        if (!lightboxState.isDragging) return;
+        e.preventDefault();
+        lightboxState.translateX = e.clientX - lightboxState.startX;
+        lightboxState.translateY = e.clientY - lightboxState.startY;
+        updateTransform();
+    });
+
+    window.addEventListener('mouseup', () => {
+        lightboxState.isDragging = false;
+        updateTransform();
+    });
+}
+
+function resetZoom() {
+    lightboxState.zoom = 1;
+    lightboxState.translateX = 0;
+    lightboxState.translateY = 0;
+
+    const slider = document.getElementById('zoom-slider');
+    const levelDisplay = document.getElementById('zoom-level-display');
+    const img = document.getElementById('lightbox-image');
+
+    if (slider) slider.value = 100;
+    if (levelDisplay) levelDisplay.textContent = '100%';
+    if (img) img.style.transform = `translate(0px, 0px) scale(1)`;
+
+    document.getElementById('lightbox-wrapper')?.classList.remove('zoomed', 'dragging');
 }
 
 // Related Products Carousel
