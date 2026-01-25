@@ -40,6 +40,13 @@
                 </p>
 
                 <form id="contactForm" class="auth-form active" style="display: block;">
+                    <!-- Web3Forms Security -->
+                    <input type="hidden" name="access_key" value="e7d55d3d-14d8-47b5-a3ee-e5216b7bd3e2">
+                    <input type="hidden" name="subject" value="Nuevo Mensaje de Contacto - Luxe MOD">
+                    <input type="hidden" name="from_name" value="Luxe MOD Contact Form">
+                    <!-- Spam Protection -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
                     <div class="form-group">
                         <label for="name">Nombre</label>
                         <div class="input-icon">
@@ -65,9 +72,10 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary btn-block">
+                    <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
                         <i class="fas fa-paper-plane" style="margin-right: 0.5rem;"></i> Enviar Mensaje
                     </button>
+                    <p id="formStatus" style="margin-top: 1rem; text-align: center; font-size: 0.9rem;"></p>
                 </form>
 
                 <div
@@ -94,10 +102,44 @@
     <script src="/js/theme.js"></script>
     <script src="/js/components.js"></script>
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const statusText = document.getElementById('formStatus');
+
+        form.addEventListener('submit', async function (e) {
             e.preventDefault();
-            alert('Gracias por contactarnos. Te responderemos pronto.');
-            this.reset();
+
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            submitBtn.disabled = true;
+            statusText.innerText = "";
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    // Redirect on success similar to checkout
+                    window.location.href = "/pages/mensaje-enviado.html";
+                } else {
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                    statusText.innerText = "Error al enviar: " + (data.message || "Inténtalo de nuevo.");
+                    statusText.style.color = "#ef4444";
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+                statusText.innerText = "Error de conexión. Verifica tu internet.";
+                statusText.style.color = "#ef4444";
+            }
         });
     </script>
 </body>

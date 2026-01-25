@@ -167,7 +167,7 @@ Phone Number: ${phone}`;
 
             if (response.ok) {
                 localStorage.removeItem('cart');
-                window.location.href = "/pages/mensaje-enviado.html";
+                window.location.href = "/pages/orden-exitosa.html";
             } else {
                 alert("Error al enviar el pedido: " + data.message);
                 submitBtn.textContent = originalText;
