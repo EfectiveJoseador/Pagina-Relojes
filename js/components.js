@@ -18,10 +18,12 @@ const Components = {
                 <div class="header-actions">
                     <a href="/pages/carrito.html" class="icon-btn" aria-label="Carrito">
                         <i class="fas fa-shopping-cart"></i>
+                        <span class="action-label">Ver Cesta</span>
                         <span class="cart-badge" id="cart-count">0</span>
                     </a>
                     <a href="/pages/login.html" class="icon-btn" aria-label="Cuenta">
                         <i class="fas fa-user"></i>
+                        <span class="action-label">Ver Cuenta</span>
                     </a>
 
                     <button class="icon-btn mobile-menu-btn" id="mobile-menu-toggle" aria-label="Menú"><i class="fas fa-bars"></i></button>

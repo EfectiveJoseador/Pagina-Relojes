@@ -198,6 +198,20 @@ main {
     color: #D4AF37;
 }
 
+.action-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-left: 0.5rem;
+    display: none;
+    /* Hidden by default on mobile */
+}
+
+@media (min-width: 768px) {
+    .action-label {
+        display: inline-block;
+    }
+}
+
 .cart-badge {
     position: absolute;
     top: -8px;
