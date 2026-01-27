@@ -196,14 +196,27 @@ Phone Number: ${phone}`;
                 if (!product) return;
 
                 const qty = item.quantity || item.qty || 1;
-                const price = product.price || 0;
-                const itemTotal = price * qty;
+                const custom = item.customization || {};
+                const boxPrice = custom.boxPrice || 0;
+
+                // Use stored price or calculate: base + box
+                const unitPrice = item.price || (product.price + boxPrice);
+                const itemTotal = unitPrice * qty;
                 subtotal += itemTotal;
 
-                const custom = item.customization || {};
                 let detailsStr = '';
                 if (custom.strap) detailsStr += `Correa: ${custom.strap}, `;
-                if (custom.box && custom.box !== 'none') detailsStr += `Caja: ${custom.box}, `;
+
+                if (custom.box && custom.box !== 'none') {
+                    const boxNames = {
+                        'basic': 'Caja Básica',
+                        'black': 'Caja Negra',
+                        'brown': 'Caja Negra/Marrón',
+                        'seiko': 'Caja Seiko + Tarjetas'
+                    };
+                    const boxName = boxNames[custom.box] || custom.box;
+                    detailsStr += `Caja: ${boxName}, `;
+                }
 
                 detailsStr = detailsStr.replace(/, $/, '');
 
@@ -220,7 +233,7 @@ Phone Number: ${phone}`;
 
                 // Construir string para email
                 orderStr += `#${index + 1} - ${product.name}\n`;
-                orderStr += `   Cant: ${qty} | Precio: €${price}\n`;
+                orderStr += `   Cant: ${qty} | Precio Ud: €${unitPrice.toFixed(2)} | Total: €${itemTotal.toFixed(2)}\n`;
                 if (detailsStr) orderStr += `   ${detailsStr}\n`;
                 orderStr += "--------------------------------\n";
             });

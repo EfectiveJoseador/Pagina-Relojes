@@ -287,6 +287,15 @@ function parseRcbMods(html) {
         console.log('  ℹ No se encontraron correas específicas, usando opciones por defecto: Jubilee, Oyster');
     }
 
+    // Regla para Seikojust: Jubilee y President
+    if (data.name.toLowerCase().includes('seikojust') || data.name.toLowerCase().includes('just')) {
+        const requiredStraps = ['Jubilee', 'President'];
+        requiredStraps.forEach(s => {
+            if (!data.straps.includes(s)) data.straps.push(s);
+        });
+        console.log('  ℹ Seikojust detectado: Asegurando correas Jubilee y President');
+    }
+
     // 3. Imágenes
     const imgRegex = /class="[^"]*product__media[^"]*media--transparent[^"]*"[\s\S]*?<img[^>]+src="([^"]+)"/g;
     let match;

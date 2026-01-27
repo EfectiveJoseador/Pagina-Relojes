@@ -173,8 +173,8 @@ const Cart = {
                     'seiko': 'Caja Seiko + Tarjetas'
                 };
                 const boxName = boxNames[box] || box;
-                const priceStr = boxPrice > 0 ? ` (+€${boxPrice})` : '';
-                customDetails += `<div>${boxName}${priceStr}</div>`;
+                // const priceStr = boxPrice > 0 ? ` (+€${boxPrice})` : ''; // Removed as per request to show total in product price
+                customDetails += `<div>${boxName}</div>`;
             } else if (box === 'none') {
                 // Opcional: Mostrar "Sin caja" si se desea explicitar, o no mostrar nada
                 // customDetails += `<div>Sin caja</div>`;
@@ -203,7 +203,7 @@ const Cart = {
                     <div class="cart-item-meta">
                         ${customDetails}
                     </div>
-                    <div class="cart-item-price">€${displayPrice.toFixed(2)}</div>
+                    <div class="cart-item-price">€${(item.price || (product.price + boxPrice)).toFixed(2)}</div>
                 </div>
                 <div class="cart-item-actions">
                     <div class="quantity-selector">

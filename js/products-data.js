@@ -229,7 +229,7 @@ const products = [
             "Fondo de caja: Cristal transparente (movimiento a la vista)"
         ],
         "sizes": ["36mm", "39mm"],
-        "straps": [],
+        "straps": ["Jubilee", "President"],
         "specs": {
             "Diámetro": "36 mm o 39 mm (sin corona), versatilidad para todo estilo",
             "Movimiento": "Automático Seiko NH35, precisión reconocida mundialmente",
@@ -269,7 +269,7 @@ const products = [
             "Correa: acero inoxidable 904L, con cierre desplegable seguro y cómodo"
         ],
         "sizes": ["36mm", "39mm"],
-        "straps": [],
+        "straps": ["Jubilee", "President"],
         "specs": {
             "Diámetro": "36 mm o 39 mm (sin corona), adaptable para distintos tamaños de muñeca",
             "Movimiento": "Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas",
@@ -738,7 +738,7 @@ const products = [
             "Correa: acero inoxidable 904L, con cierre desplegable seguro y cómodo"
         ],
         "sizes": ["36mm", "39mm"],
-        "straps": [],
+        "straps": ["Jubilee", "President"],
         "specs": {
             "Diámetro": "36 mm o 39 mm (sin corona), adaptable para distintos tamaños de muñeca",
             "Movimiento": "Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas",
@@ -824,7 +824,7 @@ const products = [
             "Correa: Jubilee en acero 904L, reconocida por su confort y sofisticación"
         ],
         "sizes": ["36mm", "39mm"],
-        "straps": [],
+        "straps": ["Jubilee", "President"],
         "specs": {
             "Diámetro": "36 mm o 39 mm (sin corona), adaptable a cualquier muñeca",
             "Movimiento": "Seiko NH35 automático, precisión y fiabilidad con reserva de 41 h",
@@ -866,7 +866,7 @@ const products = [
             "Fondo de caja: Cristal transparente (movimiento visible)"
         ],
         "sizes": ["36mm", "39mm"],
-        "straps": [],
+        "straps": ["Jubilee", "President"],
         "specs": {
             "Diámetro": "36 mm o 39 mm (sin corona), adaptado a cada estilo",
             "Movimiento": "Automático Seiko NH35, fiable y preciso",

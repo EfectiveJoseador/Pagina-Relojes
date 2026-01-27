@@ -577,7 +577,7 @@ function loadRelatedProducts() {
                         ${secondaryImg ? `<img src="${secondaryImg}" alt="${product.name} - Vista 2" class="secondary-image" loading="lazy">` : ''}
                     </a>
                     <button class="btn-quick-view"><i class="fas fa-eye"></i></button>
-                    ${product.sale ? `<span class="badge-sale">OFERTA</span>` : ''}
+
                 </div>
                 <div class="product-info">
                     <span class="product-category">${product.category || 'Reloj'}</span>
