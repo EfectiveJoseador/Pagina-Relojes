@@ -197,7 +197,7 @@
 
 .product-details {
     display: block;
-    /* Changed from flex to allow collapsing margins */
+    
     animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s backwards;
 }
 
@@ -211,7 +211,7 @@
     display: block;
 }
 
-/* ... badge sale ... */
+
 
 .product-title {
     font-family: var(--font-heading);
@@ -336,7 +336,7 @@
     box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
 }
 
-/* ... existing version-select CSS ... */
+
 
 .actions-block {
     display: flex;
@@ -443,7 +443,7 @@
     box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
 }
 
-/* Box Selector Styles */
+
 .box-selector {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -772,7 +772,7 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     font-family: var(--font-main);
-    /* Ensure matches Tienda (Sans) */
+    
 }
 
 .related-products .product-price {
@@ -793,15 +793,15 @@
 
 @media (max-width: 768px) {
 
-    /* --- MOBILE SAFETY SYSTEM --- */
-    /* Aggressively prevent horizontal scroll */
+    
+    
     html,
     body {
         overflow-x: hidden;
-        /* Removed max-width: 100vw to prevent double scrollbars */
+        
     }
 
-    /* Force all content to stay within bounds - SCOPED TO PRODUCT CONTAINER */
+    
     .product-container *,
     .product-description *,
     .description-block * {
@@ -813,7 +813,7 @@
         hyphens: auto;
     }
 
-    /* Specific safety for media - SCOPED TO PRODUCT CONTAINER ONLY */
+    
     .product-container img,
     .product-container video,
     .product-container iframe,
@@ -826,7 +826,7 @@
         margin-right: 0 !important;
     }
 
-    /* Ensure container is safe */
+    
     .product-container {
         overflow-x: hidden;
         padding-left: 1rem;
@@ -842,10 +842,10 @@
         max-width: 100%;
         margin-bottom: 2rem;
         width: 100%;
-        /* Explicit width */
+        
     }
 
-    /* Better Mobile Gallery */
+    
     .product-gallery {
         width: 100%;
         max-width: 100%;
@@ -871,7 +871,7 @@
         border-radius: var(--radius-md);
     }
 
-    /* Arrows Visibility */
+    
     .gallery-arrow {
         display: flex !important;
         opacity: 1;
@@ -907,7 +907,7 @@
         border-radius: var(--radius-sm);
     }
 
-    /* Typography & Spacing */
+    
     .product-title {
         font-size: clamp(1.5rem, 5vw, 1.8rem);
         margin-bottom: 0.75rem;
@@ -929,7 +929,7 @@
         font-size: 1.1rem;
     }
 
-    /* Box Selector - 2 Columns */
+    
     .box-selector {
         grid-template-columns: 1fr 1fr;
         gap: 0.75rem;
@@ -949,7 +949,7 @@
         white-space: normal;
     }
 
-    /* Size Selector */
+    
     .size-selector {
         gap: 0.75rem;
         margin-bottom: 1.5rem;
@@ -963,7 +963,7 @@
         padding: 0 0.5rem;
     }
 
-    /* Actions Block - Fixed Sticky Footer */
+    
     .actions-block {
         flex-direction: row;
         align-items: center;
@@ -1033,14 +1033,14 @@
         overflow-x: auto;
         overflow-y: hidden;
 
-        /* STRICT SCROLL LOCKING */
+        
         touch-action: pan-x;
-        /* Disables vertical scroll on this element */
+        
         -webkit-overflow-scrolling: touch;
 
-        /* Fixed dimensions */
+        
         width: 100%;
-        /* Dynamic height based on card width (45vw) + text content buffer (~160px) */
+        
         height: calc(45vw + 160px);
         min-height: 320px;
 
@@ -1072,7 +1072,7 @@
         display: none;
     }
 
-    /* Ensure footer spacing is static + buffer */
+    
     .product-container {
         padding-bottom: 90px !important;
     }
@@ -1081,7 +1081,7 @@
         padding-bottom: 0;
         margin-bottom: 0;
         overflow: hidden;
-        /* Containment */
+        
     }
 
     .related-products .product-card {
@@ -1118,7 +1118,7 @@
         padding-right: 0;
     }
 
-    /* Description Overflow Fix */
+    
     .product-description,
     .description-block {
         width: 100%;
@@ -1134,7 +1134,7 @@
         height: auto !important;
     }
 
-    /* Fix Carousel Images Cutoff - Move focus up to correct zoom */
+    
     .related-products .product-image img {
         object-position: top center !important;
     }
@@ -1414,7 +1414,7 @@
     user-select: none;
     border-radius: 0;
     overflow: visible;
-    /* Allow zoom to overflow wrapper if needed, or keep hidden */
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1516,7 +1516,7 @@
     }
 }
 
-/* Remove Quick View Button (Eye Icon) */
+
 .btn-quick-view {
     display: none !important;
 }

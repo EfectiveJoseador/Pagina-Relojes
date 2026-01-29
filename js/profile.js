@@ -5,20 +5,20 @@ import { ref, push, set, onValue, remove } from "https://www.gstatic.com/firebas
 document.addEventListener('DOMContentLoaded', () => {
     let currentUser = null;
 
-    // --- Referencias UI ---
+
     const addressModal = document.getElementById('address-modal');
     const openModalBtn = document.getElementById('btn-new-address');
     const closeModalBtn = document.getElementById('close-address-modal');
     const addressForm = document.getElementById('address-form');
     const addressesList = document.querySelector('.address-list');
 
-    // Referencias navegación y usuario
+
     const profileEmail = document.getElementById('profile-email');
     const logoutBtn = document.getElementById('logout-btn');
     const navItems = document.querySelectorAll('.nav-item:not(.logout)');
     const sections = document.querySelectorAll('.content-section');
 
-    // --- Auth Listener ---
+
     onAuthStateChanged(auth, (user) => {
         if (user) {
             currentUser = user;
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Logout ---
+
     if (logoutBtn) {
         logoutBtn.addEventListener('click', async () => {
             try {
@@ -42,15 +42,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Navegación Pestañas ---
+
     if (navItems.length > 0) {
         navItems.forEach(item => {
             item.addEventListener('click', () => {
-                // Update UI Pestañas
+
                 navItems.forEach(n => n.classList.remove('active'));
                 item.classList.add('active');
 
-                // Show Content
+
                 const targetId = item.dataset.target;
                 sections.forEach(s => s.classList.remove('active'));
                 const target = document.getElementById(targetId);
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Modal Logic ---
+
     if (openModalBtn && addressModal) {
         openModalBtn.addEventListener('click', () => {
             addressModal.style.display = 'flex';
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Guardar Dirección ---
+
     if (addressForm) {
         addressForm.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -90,12 +90,12 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.disabled = true;
 
             const formData = new FormData(addressForm);
-            // Generar alias automático usando la calle
+
             const autoAlias = formData.get('street').split(',')[0] || 'Dirección';
 
             const addressData = {
                 name: formData.get('name'),
-                alias: autoAlias, // Usamos la calle como identificador interno
+                alias: autoAlias,
                 street: formData.get('street'),
                 city: formData.get('city'),
                 zip: formData.get('zip'),
@@ -106,15 +106,15 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             try {
-                // Guardar en RTDB: users/{uid}/addresses
+
                 const addressesRef = ref(db, 'users/' + currentUser.uid + '/addresses');
                 const newAddressRef = push(addressesRef);
                 await set(newAddressRef, addressData);
 
-                // Reset y cerrar
+
                 addressForm.reset();
                 addressModal.style.display = 'none';
-                // alert('Dirección guardada'); 
+
 
             } catch (error) {
                 console.error("Error saving address:", error);
@@ -126,15 +126,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Cargar Direcciones ---
+
     function loadAddresses(uid) {
         const addressesRef = ref(db, 'users/' + uid + '/addresses');
         onValue(addressesRef, (snapshot) => {
-            addressesList.innerHTML = ''; // Limpiar lista
+            addressesList.innerHTML = '';
             const data = snapshot.val();
 
             if (data) {
-                // Convertir objeto a array [key, value]
+
                 Object.entries(data).forEach(([key, addr]) => {
                     const card = createAddressCard(key, addr);
                     addressesList.appendChild(card);
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
 
-        // Listener eliminar
+
         const deleteBtn = div.querySelector('.btn-delete-addr');
         deleteBtn.addEventListener('click', () => deleteAddress(key));
 

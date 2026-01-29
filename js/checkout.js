@@ -8,24 +8,24 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const checkoutItemsContainer = document.getElementById('checkout-items-summary');
     const orderDetailsInput = document.getElementById('order-details');
-    // Campo oculto nuevo
+
     const shippingInfoInput = document.getElementById('shipping-info-blob');
     const form = document.getElementById('checkout-form');
     const submitBtn = document.getElementById('confirm-order-btn');
-    const addressSection = document.querySelector('.checkout-section:nth-of-type(2)'); // Sección de dirección
+    const addressSection = document.querySelector('.checkout-section:nth-of-type(2)');
 
-    // --- Renderizado inicial ---
+
     renderCheckoutSummary();
 
-    // --- Integración Firebase Auth & Direcciones ---
+
     onAuthStateChanged(auth, async (user) => {
         if (user) {
             console.log("Usuario en checkout:", user.email);
-            // Pre-llenar email si está vacío
+
             const emailInput = document.getElementById('email');
             if (emailInput && !emailInput.value) emailInput.value = user.email;
 
-            // Buscar direcciones guardadas
+
             try {
                 const addressesRef = ref(db, 'users/' + user.uid + '/addresses');
                 const snapshot = await get(addressesRef);
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     function renderAddressSelector(addresses) {
-        // Crear contenedor para seleccionar dirección
+
         if (!addressSection) return;
 
         const container = document.createElement('div');
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         container.innerHTML = `<h3 style="font-size:1rem; margin-bottom:0.5rem; color:var(--text-muted)">Usar dirección guardada:</h3>`;
 
         const select = document.createElement('select');
-        select.className = 'select-input'; // Usar estilos de input existentes si aplica o styles genéricos
+        select.className = 'select-input';
         select.style.width = '100%';
         select.style.padding = '0.75rem';
         select.style.marginBottom = '1rem';
@@ -68,22 +68,22 @@ document.addEventListener('DOMContentLoaded', async () => {
             select.appendChild(opt);
         });
 
-        // Evento cambio
+
         select.addEventListener('change', () => {
             const key = select.value;
             if (key && addresses[key]) {
                 const addr = addresses[key];
                 fillAddressForm(addr);
             } else {
-                // Limpiar o dejar como está? 
-                // form.reset() borraría todo, solo limpiamos address fields?
-                // Mejor no borrar por si el usuario estaba escribiendo
+
+
+
             }
         });
 
         container.appendChild(select);
 
-        // Insertar antes de los campos de input
+
         const firstGroup = addressSection.querySelector('.form-group');
         if (firstGroup) {
             addressSection.insertBefore(container, firstGroup);
@@ -104,32 +104,32 @@ document.addEventListener('DOMContentLoaded', async () => {
         const el = document.getElementById(id);
         if (el) {
             el.value = val || '';
-            // Disparar evento input por si hay validaciones
+
             el.dispatchEvent(new Event('input'));
         }
     }
 
 
-    // --- Lógica de Envío (existente + ajustes) ---
+
     if (!checkoutItemsContainer || !form) return;
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        // Regenerar string antes de enviar por si cambió algo
-        // Nota: generateOrderString síncrono depende de lógica global o recalculada.
-        // Simulamos la lógica para asegurar que el input oculto tenga datos.
-        // Mejor: re-construir el valor. 
-        // Como no tenemos productos en variable síncrona fácil, confiamos en lo que hay o 
-        // lo hacemos de nuevo si es crítico. 
-        // Para MVP, confiaremos en que el usuario no hackea el DOM.
 
-        // Importante: asegurarte de que order-details tenga algo
+
+
+
+
+
+
+
+
         if (!orderDetailsInput.value) {
             orderDetailsInput.value = "Detalles del pedido no generados correctamente. Contactar soporte.";
         }
 
-        // --- Generar bloque de dirección formateado ---
+
         if (shippingInfoInput) {
             const contactName = document.getElementById('contact-name').value;
             const address = document.getElementById('address').value;
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const zip = document.getElementById('zip').value;
             const phone = document.getElementById('phone').value;
 
-            // Formato copia-pegable para el proveedor
+
             const shippingBlock = `Contact Name: ${contactName}
 Address Line: ${address}
 City: ${city}
@@ -183,8 +183,8 @@ Phone Number: ${phone}`;
     });
 
     function renderCheckoutSummary() {
-        // ... (misma lógica de antes, mantenida simplificada aquí) ...
-        // Re-implementando brevemente la carga dinámica para no perder funcionalidad visual
+
+
         import('./products-data.js').then(module => {
             const products = module.default;
             checkoutItemsContainer.innerHTML = '';
@@ -199,7 +199,7 @@ Phone Number: ${phone}`;
                 const custom = item.customization || {};
                 const boxPrice = custom.boxPrice || 0;
 
-                // Use stored price or calculate: base + box
+
                 const unitPrice = item.price || (product.price + boxPrice);
                 const itemTotal = unitPrice * qty;
                 subtotal += itemTotal;
@@ -231,7 +231,7 @@ Phone Number: ${phone}`;
                 `;
                 checkoutItemsContainer.appendChild(el);
 
-                // Construir string para email
+
                 orderStr += `#${index + 1} - ${product.name}\n`;
                 orderStr += `   Cant: ${qty} | Precio Ud: €${unitPrice.toFixed(2)} | Total: €${itemTotal.toFixed(2)}\n`;
                 if (detailsStr) orderStr += `   ${detailsStr}\n`;

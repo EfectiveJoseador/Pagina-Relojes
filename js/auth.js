@@ -8,12 +8,12 @@ import {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Monitor de Estado de Autenticación ---
+
     onAuthStateChanged(auth, (user) => {
         if (user) {
             console.log("Usuario logueado:", user.email);
-            // Si estamos en la página de login, redirigir al home o perfil
-            // (Verificamos si estamos en login.html para evitar bucles en otras páginas)
+
+
             if (window.location.pathname.includes('/pages/login.html')) {
                 window.location.href = '/pages/perfil.html';
             }
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Manejo de Pestañas (UI) ---
+
     const tabs = document.querySelectorAll('.auth-tab');
     const forms = document.querySelectorAll('.auth-form');
 
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Links de Olvidé Contraseña ---
+
     const forgotLinks = document.querySelectorAll('.forgot-password');
     const backToLoginBtn = document.getElementById('back-to-login');
     const resetForm = document.getElementById('reset-form');
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Funciones de Ayuda para Errores ---
+
     function showError(elementId, message) {
         const el = document.getElementById(elementId);
         if (el) {
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function traducirError(code) {
-        // Mapeo básico de errores de Firebase a español
+
         if (code.includes('auth/invalid-email')) return 'El correo electrónico no es válido.';
         if (code.includes('auth/user-disabled')) return 'Este usuario ha sido deshabilitado.';
         if (code.includes('auth/user-not-found')) return 'No existe una cuenta con este correo.';
@@ -88,11 +88,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (code.includes('auth/weak-password')) return 'La contraseña debe tener al menos 6 caracteres.';
         if (code.includes('auth/missing-password')) return 'Por favor ingresa una contraseña.';
 
-        // Mensaje default si no es código de firebase o es desconocido
+
         return code.includes('auth/') ? 'Error de autenticación: ' + code : code;
     }
 
-    // --- Manejo de Login ---
+
     const loginForm = document.getElementById('login-form');
     if (loginForm) {
         loginForm.addEventListener('submit', async (e) => {
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             try {
                 await signInWithEmailAndPassword(auth, email, password);
-                // La redirección la maneja onAuthStateChanged
+
             } catch (error) {
                 console.error("Login error:", error);
                 showError('login-error', error.code || error.message);
@@ -118,14 +118,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Manejo de Registro ---
+
     const registerForm = document.getElementById('register-form');
     if (registerForm) {
         registerForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const email = registerForm.querySelector('input[type="email"]').value;
             const password = registerForm.querySelector('input[type="password"]').value;
-            const name = registerForm.querySelector('input[type="text"]').value; // Nombre, podemos guardarlo luego en el perfil
+            const name = registerForm.querySelector('input[type="text"]').value;
             const btn = registerForm.querySelector('button[type="submit"]');
 
             clearError('register-error');
@@ -135,10 +135,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             try {
                 const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-                // Aquí se podría actualizar el perfil del usuario con `updateProfile` para guardar el nombre
-                // pero por brevedad solo logueamos.
+
+
                 console.log("Usuario registrado:", userCredential.user);
-                // La redirección la maneja onAuthStateChanged
+
             } catch (error) {
                 console.error("Register error:", error);
                 showError('register-error', error.code || error.message);
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Manejo de Reset Password ---
+
     const resetFormEl = document.getElementById('reset-form');
     if (resetFormEl) {
         resetFormEl.addEventListener('submit', async (e) => {
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 await sendPasswordResetEmail(auth, email);
                 alert('Correo de recuperación enviado. Revisa tu bandeja de entrada.');
-                // Volver a login opcionalmente
+
                 document.getElementById('back-to-login').click();
             } catch (error) {
                 console.error("Reset error:", error);

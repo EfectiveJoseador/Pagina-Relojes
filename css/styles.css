@@ -3,7 +3,7 @@
 @import 'animations.css';
 
 
-/* Global Input Styles */
+
 input,
 select,
 textarea {
@@ -203,7 +203,7 @@ main {
     font-weight: 600;
     margin-left: 0.5rem;
     display: none;
-    /* Hidden by default on mobile */
+    
 }
 
 @media (min-width: 768px) {
@@ -758,7 +758,7 @@ html {
     background: rgba(212, 175, 55, 0.1);
 }
 
-/* Modal Tipos de Cajas */
+
 .btn-view-boxes {
     color: #D4AF37;
     font-size: 0.85rem;
@@ -783,7 +783,7 @@ html {
     width: 100%;
     height: 100%;
     z-index: 20000;
-    /* Por encima de todo */
+    
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;

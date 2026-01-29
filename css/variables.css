@@ -4,7 +4,7 @@
     --font-main: 'Montserrat', sans-serif;
     --font-heading: 'Playfair Display', serif;
 
-    /* Luxury Composition - Dark Mode Only */
+    
     --bg-body: #050505;
     --bg-card: #0a0a0a;
     --text-main: #f0f0f0;
@@ -13,13 +13,13 @@
     --primary: #D4AF37;
     --accent: #D4AF37;
 
-    /* Gold Variances */
+    
     --gold: #D4AF37;
     --gold-light: #F4D03F;
     --gold-dark: #8E701D;
     --gold-glow: rgba(212, 175, 55, 0.3);
 
-    /* Mapped Light Theme to Dark (Forced) */
+    
     --bg-body-light: var(--bg-body);
     --bg-card-light: var(--bg-card);
     --text-main-light: var(--text-main);
@@ -28,7 +28,7 @@
     --primary-light: var(--primary);
     --accent-light: var(--accent);
 
-    /* Dark Theme */
+    
     --bg-body-dark: var(--bg-body);
     --bg-card-dark: var(--bg-card);
     --text-main-dark: var(--text-main);
@@ -37,32 +37,32 @@
     --primary-dark: var(--primary);
     --accent-dark: var(--accent);
 
-    /* Layout */
+    
     --container-width: 1440px;
     --header-height: 90px;
     --radius-sm: 2px;
     --radius-md: 4px;
     --radius-lg: 8px;
 
-    /* Shadows (Subtle & Deep) */
+    
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
     --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
     --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.6);
     --shadow-xl: 0 24px 60px rgba(0, 0, 0, 0.8);
 
-    /* Elevations */
+    
     --elevation-1: 0 2px 4px rgba(0, 0, 0, 0.5);
     --elevation-2: 0 8px 16px rgba(0, 0, 0, 0.6);
     --elevation-3: 0 16px 32px rgba(0, 0, 0, 0.7);
 
-    /* Gradients */
+    
     --gradient-primary: linear-gradient(135deg, #D4AF37 0%, #AA8A2E 100%);
     --gradient-accent: linear-gradient(to right, #D4AF37, #F4D03F, #D4AF37);
     --gradient-dark: linear-gradient(180deg, #050505 0%, #111111 100%);
     --gradient-subtle: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, rgba(170, 138, 46, 0.05) 100%);
     --gradient-gold-shine: linear-gradient(45deg, #8E701D 0%, #D4AF37 50%, #F4D03F 100%);
 
-    /* Transitions */
+    
     --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-base: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);

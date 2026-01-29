@@ -72,7 +72,7 @@ function initCatalogoCarousel() {
 
     if (!track || !prevBtn || !nextBtn) return;
 
-    // Populate carousel with random products from store
+
     const CAROUSEL_PRODUCT_COUNT = 8;
     const shuffledProducts = [...products].sort(() => Math.random() - 0.5).slice(0, CAROUSEL_PRODUCT_COUNT);
 
@@ -402,7 +402,7 @@ function initCatalogoCards() {
     if (catalogoCardsInitialized) return;
     catalogoCardsInitialized = true;
 
-    // Close dropdown when mouse leaves the card area
+
     document.querySelectorAll('.catalogo-card.has-dropdown').forEach(card => {
         let closeTimeout;
 
@@ -457,7 +457,7 @@ function initCatalogoCards() {
     });
 }
 function applySpecialPricing() {
-    // Los relojes ya tienen sus precios definidos correctamente en products-data.js
+
     products.forEach(product => {
         if (product.price && product.oldPrice) {
             product.sale = true;

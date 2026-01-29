@@ -36,19 +36,18 @@
         <h1 class="page-title">Finalizar Compra</h1>
 
         <div class="checkout-layout">
-            <!-- Formulario de Checkout -->
+            
             <section class="checkout-form-section">
-                <!-- Se usa onsubmit para manejar la lógica personalizada antes del envío si fuera un submit normal, 
-                     pero aquí usaremos JS event listener para fetch como pidió el usuario -->
+                
                 <form id="checkout-form" class="checkout-form">
-                    <!-- Configuración Web3Forms -->
+                    
                     <input type="hidden" name="access_key" value="e7d55d3d-14d8-47b5-a3ee-e5216b7bd3e2">
                     <input type="hidden" name="subject" value="Nuevo Pedido - Luxe MOD Watches">
                     <input type="hidden" name="from_name" value="Luxe MOD Watches Checkout">
 
-                    <!-- Campo oculto donde inyectaremos el resumen del pedido -->
+                    
                     <textarea name="Order Details" id="order-details" style="display:none;"></textarea>
-                    <!-- Campo oculto para dirección formateada en bloque -->
+                    
                     <textarea name="Shipping Info" id="shipping-info-blob" style="display:none;"></textarea>
 
                     <div class="checkout-section">
@@ -99,7 +98,7 @@
                     <div class="checkout-section">
                         <h2>Método de Pago</h2>
                         <div class="payment-methods">
-                            <!-- Por ahora simulado o contrareembolso/transferencia para propósitos del formulario simple -->
+                            
                             <label class="payment-option">
                                 <input type="radio" name="metodo_pago" value="transferencia" checked>
                                 <span>Transferencia Bancaria</span>
@@ -120,11 +119,11 @@
                 </form>
             </section>
 
-            <!-- Resumen lateral -->
+            
             <aside class="cart-summary">
                 <h3>Resumen del Pedido</h3>
                 <div id="checkout-items-summary" class="checkout-items-list">
-                    <!-- Items inyectados por JS -->
+                    
                 </div>
 
                 <div class="summary-divider"></div>
@@ -155,7 +154,7 @@
     <script src="/js/components.js"></script>
     <script src="/js/ux-feedback.js"></script>
 
-    <!-- Script específico de checkout -->
+    
     <script type="module" src="/js/checkout.js"></script>
 </body>
 

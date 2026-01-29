@@ -17,7 +17,7 @@ let currentPage = 1;
 let totalPages = 1;
 let imageObserver = null;
 
-// Generate strap selector HTML for watches
+
 function generateStrapOptionsHTML(product) {
     if (!product.straps || product.straps.length === 0) {
         return '';
@@ -286,7 +286,7 @@ function setupQuickAddListeners() {
 
             let total = product.price;
 
-            // Add box price
+
             const boxPrices = {
                 'none': 0,
                 'basic': 3,
@@ -363,7 +363,7 @@ function handleQuickAddSubmit(form, product) {
     const strapSelect = form.querySelector('.quick-strap');
     const boxSelect = form.querySelector('.quick-box');
 
-    // Validate strap if product has straps
+
     if (product.straps && product.straps.length > 0) {
         const strap = strapSelect?.value;
         if (!strap) {
@@ -376,7 +376,7 @@ function handleQuickAddSubmit(form, product) {
         }
     }
 
-    // Calculate box price
+
     const boxPrices = {
         'none': 0,
         'basic': 3,
@@ -416,24 +416,24 @@ function handleQuickAddSubmit(form, product) {
     }
 }
 function init() {
-    // Check if we have a cached order AND if it matches the current product count
+
     const cachedOrder = getProductOrderFromSession();
     const currentProductIds = products.map(p => p.id);
 
-    // Use cache only if:
-    // 1. Cache exists
-    // 2. Cache length matches current products length
-    // 3. All cached IDs exist in current products (handles deletions/changes)
+
+
+
+
     const cacheValid = cachedOrder &&
         cachedOrder.length === products.length &&
         cachedOrder.every(id => currentProductIds.includes(id));
 
     if (cacheValid) {
-        // Use cached order, but ensure all products are included
+
         allProducts = cachedOrder.map(id => products.find(p => p.id === id)).filter(Boolean);
         console.log('✓ Using session-cached product order');
     } else {
-        // Generate new random order and cache it
+
         allProducts = shuffleArray([...products]);
         saveProductOrderToSession(allProducts.map(p => p.id));
         console.log('✓ Generated new product order (cache invalidated or new products added)');
@@ -483,16 +483,16 @@ function saveProductOrderToSession(orderIds) {
     } catch (e) { }
 }
 function applySpecialPricing() {
-    // Los relojes ya tienen sus precios definidos correctamente en products-data.js
-    // Esta función ahora solo asegura que el flag 'sale' esté activo si hay oldPrice
+
+
     allProducts.forEach(product => {
-        // Si el producto ya tiene precio y oldPrice definidos, respetarlos
+
         if (product.price && product.oldPrice) {
             product.sale = true;
             return;
         }
 
-        // Fallback para productos sin precio definido (legacy)
+
         if (!product.price) {
             product.price = 129.90;
             product.oldPrice = 169.90;

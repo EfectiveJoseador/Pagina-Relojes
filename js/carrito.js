@@ -1,6 +1,6 @@
 import products from './products-data.js';
 function applySpecialPricing() {
-    // Los relojes ya tienen sus precios definidos correctamente en products-data.js
+
     products.forEach(product => {
         if (product.price && product.oldPrice) {
             product.sale = true;
@@ -105,7 +105,7 @@ const Cart = {
 
         if (totalQty === 0) return { subtotal: 0, shipping: 0, total: 0 };
 
-        // Envío gratis en relojes
+
         let shipping = 0;
         const total = subtotal + shipping;
 
@@ -160,7 +160,7 @@ const Cart = {
 
             let customDetails = '';
 
-            // Priorizar opciones de relojes
+
             if (strap) {
                 customDetails += `<div>Correa: ${strap}</div>`;
             }
@@ -173,19 +173,19 @@ const Cart = {
                     'seiko': 'Caja Seiko + Tarjetas'
                 };
                 const boxName = boxNames[box] || box;
-                // const priceStr = boxPrice > 0 ? ` (+€${boxPrice})` : ''; // Removed as per request to show total in product price
+
                 customDetails += `<div>${boxName}</div>`;
             } else if (box === 'none') {
-                // Opcional: Mostrar "Sin caja" si se desea explicitar, o no mostrar nada
-                // customDetails += `<div>Sin caja</div>`;
+
+
             }
 
-            // Fallback para legacy items (camisetas) si fuera necesario, o simplemente limpiar
-            // Si el item tiene talla/name/number antiguos, se ignorarán para dar prioridad a la limpieza solicitada
-            // Salvo que el usuario quiera mantener compatibilidad, pero pidió "eliminar todo lo innecesario"
+
+
+
             if (!customDetails && (item.size || custom.size)) {
-                // Si no hay info de reloj y hay info antigua, podría mostrarse algo genérico o nada.
-                // Asumimos transición completa a relojes según contexto.
+
+
             }
 
             const qty = item.quantity || item.qty || 1;

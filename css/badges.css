@@ -99,7 +99,7 @@
     }
 }
 
-/* User requested modification: Hide sale badge in tienda.html */
+
 .page-tienda .badge-sale {
     display: none !important;
 }

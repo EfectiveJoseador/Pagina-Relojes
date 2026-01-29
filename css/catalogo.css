@@ -23,7 +23,7 @@
     min-height: 100vh;
 }
 
-/* Brillos púrpura de fondo distribuidos */
+
 .catalog-container::before {
     content: '';
     position: fixed;
@@ -34,24 +34,24 @@
     pointer-events: none;
     z-index: -1;
     background:
-        /* Brillo superior izquierdo */
+        
         radial-gradient(ellipse 600px 400px at 5% 10%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
-        /* Brillo central derecho */
+        
         radial-gradient(ellipse 500px 500px at 95% 30%, rgba(212, 175, 55, 0.06) 0%, transparent 50%),
-        /* Brillo inferior izquierdo */
+        
         radial-gradient(ellipse 700px 400px at 10% 70%, rgba(184, 150, 46, 0.07) 0%, transparent 50%),
-        /* Brillo central superior */
+        
         radial-gradient(ellipse 400px 300px at 50% 5%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
-        /* Brillo inferior derecho */
+        
         radial-gradient(ellipse 600px 500px at 90% 85%, rgba(212, 175, 55, 0.06) 0%, transparent 50%),
-        /* Brillo central */
+        
         radial-gradient(ellipse 500px 400px at 40% 50%, rgba(184, 150, 46, 0.04) 0%, transparent 50%),
-        /* Brillo adicional aleatorio */
+        
         radial-gradient(ellipse 350px 250px at 75% 60%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
         radial-gradient(ellipse 400px 300px at 25% 40%, rgba(212, 175, 55, 0.04) 0%, transparent 50%);
 }
 
-/* Segunda capa de brillos para más profundidad */
+
 .catalog-container::after {
     content: '';
     position: fixed;
@@ -1484,9 +1484,7 @@
 }
 
 
-/* ========================================
-   HERO CATÁLOGO - Estilo tarjeta premium
-   ======================================== */
+
 
 .page-catalogo .hero-small {
     background: linear-gradient(135deg, rgba(15, 15, 25, 0.95) 0%, rgba(20, 20, 30, 0.98) 100%) !important;
@@ -1502,7 +1500,7 @@
         inset 0 0 60px rgba(139, 92, 246, 0.03);
 }
 
-/* Brillo superior sutil */
+
 .page-catalogo .hero-small::before {
     content: '';
     position: absolute;
@@ -1514,7 +1512,7 @@
     background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent);
 }
 
-/* Brillo púrpura de fondo */
+
 .page-catalogo .hero-small::after {
     content: '';
     position: absolute;

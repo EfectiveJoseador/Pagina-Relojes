@@ -110,7 +110,7 @@
         if (document.getElementById('image-protection-css')) return;
 
         const css = `
-            /* Image Protection Styles - All protected images */
+            
             .product-image,
             .product-image img,
             .product-card img,
@@ -147,7 +147,7 @@
                 pointer-events: auto;
             }
             
-            /* Transparent overlay that blocks direct image access */
+            
             .product-image-overlay {
                 position: absolute;
                 inset: 0;
@@ -156,7 +156,7 @@
                 cursor: pointer;
             }
             
-            /* Ensure containers are positioned */
+            
             .product-image,
             .product-card,
             .main-image,
