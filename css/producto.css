@@ -990,22 +990,29 @@
 
     .quantity-selector {
         width: auto;
-        min-width: 100px;
+        min-width: 140px;
         height: 48px;
         margin-bottom: 0;
         flex-shrink: 0;
+        gap: 0;
     }
 
     .quantity-selector button {
-        width: 35px;
+        width: 45px;
         height: 100%;
         font-size: 1.2rem;
+        flex-shrink: 0;
     }
 
     .quantity-selector input {
-        width: 30px;
+        width: 50px;
+        min-width: 50px;
         text-align: center;
-        font-size: 1rem;
+        font-size: 1.1rem;
+        flex-shrink: 0;
+        opacity: 1;
+        color: var(--text-main);
+        padding: 0;
     }
 
     .btn-add-cart-lg {
