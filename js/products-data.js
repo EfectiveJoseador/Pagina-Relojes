@@ -486,43 +486,44 @@ const products = [
     }
     ,
     {
-        "id": 1769257960603,
-        "name": "Yatch Master Rose Gold Black",
-        "category": "Yatcheiko",
-        "league": "Yatcheiko",
-        "price": 129.9,
-        "oldPrice": 169.9,
-        "image": "/assets/productos/RC_Mods/yatch-master-rose-gold-black/1.webp",
-        "images": [
-            "/assets/productos/RC_Mods/yatch-master-rose-gold-black/2.webp",
-            "/assets/productos/RC_Mods/yatch-master-rose-gold-black/3.webp",
-            "/assets/productos/RC_Mods/yatch-master-rose-gold-black/4.webp",
-            "/assets/productos/RC_Mods/yatch-master-rose-gold-black/5.webp",
-            "/assets/productos/RC_Mods/yatch-master-rose-gold-black/6.webp"
-        ],
-        "description": "Especificaciones Técnicas:\nDiámetro: 40 mm, equilibrio entre presencia y comodidad\nMovimiento: Seiko NH35 automático, reconocido por su precisión y fiabilidad\nCristal: Zafiro antiarañazos con tratamiento antirreflectante, máxima claridad\nLuminosidad: Luminova en índices y manecillas, legibilidad total en la oscuridad\nCaja: Acero inoxidable 904L con acabados en oro rosa, durabilidad premium\nCorona: Enroscada, seguridad y estilo en un solo detalle\nBisel: Cerámico en tono rose gold, resistente y sofisticado\nFondo de caja: Cristal transparente para admirar el movimiento o acero cerrado para un look más sobrio",
-        "features": [
-            "Diámetro: 40 mm, equilibrio entre presencia y comodidad",
-            "Movimiento: Seiko NH35 automático, reconocido por su precisión y fiabilidad",
-            "Cristal: Zafiro antiarañazos con tratamiento antirreflectante, máxima claridad",
-            "Luminosidad: Luminova en índices y manecillas, legibilidad total en la oscuridad",
-            "Caja: Acero inoxidable 904L con acabados en oro rosa, durabilidad premium",
-            "Corona: Enroscada, seguridad y estilo en un solo detalle",
-            "Bisel: Cerámico en tono rose gold, resistente y sofisticado",
-            "Fondo de caja: Cristal transparente para admirar el movimiento o acero cerrado para un look más sobrio"
-        ],
-        "straps": [],
-        "specs": {
-            "Diámetro": "40 mm, equilibrio entre presencia y comodidad",
-            "Movimiento": "Seiko NH35 automático, reconocido por su precisión y fiabilidad",
-            "Cristal": "Zafiro antiarañazos con tratamiento antirreflectante, máxima claridad",
-            "Luminosidad": "Luminova en índices y manecillas, legibilidad total en la oscuridad",
-            "Caja": "Acero inoxidable 904L con acabados en oro rosa, durabilidad premium",
-            "Corona": "Enroscada, seguridad y estilo en un solo detalle",
-            "Bisel": "Cerámico en tono rose gold, resistente y sofisticado",
-            "Fondo de caja": "Cristal transparente para admirar el movimiento o acero cerrado para un look más sobrio"
-        }
+    "id": 1769257960603,
+    "name": "Yatch Master Rose Gold Black",
+    "category": "Yatcheiko",
+    "league": "Yatcheiko",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/yatch-master-rose-gold-black/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/yatch-master-rose-gold-black/2.webp",
+        "/assets/productos/RC_Mods/yatch-master-rose-gold-black/3.webp",
+        "/assets/productos/RC_Mods/yatch-master-rose-gold-black/4.webp",
+        "/assets/productos/RC_Mods/yatch-master-rose-gold-black/5.webp",
+        "/assets/productos/RC_Mods/yatch-master-rose-gold-black/6.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 40 mm, equilibrio entre presencia y comodidad\nMovimiento: Seiko NH35 automático, reconocido por su precisión y fiabilidad\nCristal: Zafiro antiarañazos con tratamiento antirreflectante, máxima claridad\nLuminosidad: Luminova en índices y manecillas, legibilidad total en la oscuridad\nCaja: Acero inoxidable 904L con acabados en oro rosa, durabilidad premium\nCorona: Enroscada, seguridad y estilo en un solo detalle\nBisel: Cerámico en tono rose gold, resistente y sofisticado\nFondo de caja: Cristal transparente para admirar el movimiento o acero cerrado para un look más sobrio",
+    "features": [
+        "Diámetro: 40 mm, equilibrio entre presencia y comodidad",
+        "Movimiento: Seiko NH35 automático, reconocido por su precisión y fiabilidad",
+        "Cristal: Zafiro antiarañazos con tratamiento antirreflectante, máxima claridad",
+        "Luminosidad: Luminova en índices y manecillas, legibilidad total en la oscuridad",
+        "Caja: Acero inoxidable 904L con acabados en oro rosa, durabilidad premium",
+        "Corona: Enroscada, seguridad y estilo en un solo detalle",
+        "Bisel: Cerámico en tono rose gold, resistente y sofisticado",
+        "Fondo de caja: Cristal transparente para admirar el movimiento o acero cerrado para un look más sobrio"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Diámetro": "40 mm, equilibrio entre presencia y comodidad",
+        "Movimiento": "Seiko NH35 automático, reconocido por su precisión y fiabilidad",
+        "Cristal": "Zafiro antiarañazos con tratamiento antirreflectante, máxima claridad",
+        "Luminosidad": "Luminova en índices y manecillas, legibilidad total en la oscuridad",
+        "Caja": "Acero inoxidable 904L con acabados en oro rosa, durabilidad premium",
+        "Corona": "Enroscada, seguridad y estilo en un solo detalle",
+        "Bisel": "Cerámico en tono rose gold, resistente y sofisticado",
+        "Fondo de caja": "Cristal transparente para admirar el movimiento o acero cerrado para un look más sobrio"
     }
+}
     ,
     {
         "id": 1769258102622,
