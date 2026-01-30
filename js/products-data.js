@@ -975,6 +975,1034 @@ const products = [
         "Fondo de caja": "Transparente, mostrando el movimiento automático"
     }
 }
+,
+    {
+    "id": 1769772710753,
+    "name": "Nauteiko Chrono White",
+    "category": "Nauteiko",
+    "league": "Nauteiko",
+    "price": 119.9,
+    "oldPrice": 149.9,
+    "image": "/assets/productos/RC_Mods/nauteiko-chrono-white/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/nauteiko-chrono-white/2.webp",
+        "/assets/productos/RC_Mods/nauteiko-chrono-white/3.webp",
+        "/assets/productos/RC_Mods/nauteiko-chrono-white/4.webp",
+        "/assets/productos/RC_Mods/nauteiko-chrono-white/5.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 41 mm (sin corona)\nMovimiento: Seiko VK61 mecaquartz híbrido con cronógrafo funcional\nCristal: Zafiro antiarañazos con tratamiento antirreflejos\nLuminosidad: Luminova en índices y agujas\nCaja: Acero inoxidable 316L\nCorona: Atornillada\nTamaño de muñeca: Ajustable de 14,5 cm a 22 cm\nLugs: 13 mm\nFondo de caja: Cristal transparente (movimiento visible)",
+    "features": [
+        "Diámetro: 41 mm (sin corona)",
+        "Movimiento: Seiko VK61 mecaquartz híbrido con cronógrafo funcional",
+        "Cristal: Zafiro antiarañazos con tratamiento antirreflejos",
+        "Luminosidad: Luminova en índices y agujas",
+        "Caja: Acero inoxidable 316L",
+        "Corona: Atornillada",
+        "Tamaño de muñeca: Ajustable de 14,5 cm a 22 cm",
+        "Lugs: 13 mm",
+        "Fondo de caja: Cristal transparente (movimiento visible)"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Diámetro": "41 mm (sin corona)",
+        "Movimiento": "Seiko VK61 mecaquartz híbrido con cronógrafo funcional",
+        "Cristal": "Zafiro antiarañazos con tratamiento antirreflejos",
+        "Luminosidad": "Luminova en índices y agujas",
+        "Caja": "Acero inoxidable 316L",
+        "Corona": "Atornillada",
+        "Tamaño de muñeca": "Ajustable de 14,5 cm a 22 cm",
+        "Lugs": "13 mm",
+        "Fondo de caja": "Cristal transparente (movimiento visible)"
+    }
+}
+,
+    {
+    "id": 1769772774351,
+    "name": "Nauteiko Grey",
+    "category": "Nauteiko",
+    "league": "Nauteiko",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/nauteiko-grey/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/nauteiko-grey/2.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 41 mm (sin incluir la corona), moderno y equilibrado\nMovimiento: Automático Seiko NH35, visible en la ventana open-heart\nGrosor: 12 mm, cómodo para el uso diario\nCristal: Zafiro anti-arañazos con tratamiento antirreflectante\nLuminosidad: Luminova en agujas e índices, perfecta en baja luz\nCaja: Transparente, mostrando el movimiento automático\nCorona: Enroscada, segura y funcional\nTamaño de muñeca: Ajustable entre 14,5 cm y 22 cm\nLugs: 13 mm\nCorrea: Acero inoxidable 904L con cierre de seguridad\nFondo de caja: Transparente, mostrando el movimiento automático",
+    "features": [
+        "Diámetro: 41 mm (sin incluir la corona), moderno y equilibrado",
+        "Movimiento: Automático Seiko NH35, visible en la ventana open-heart",
+        "Grosor: 12 mm, cómodo para el uso diario",
+        "Cristal: Zafiro anti-arañazos con tratamiento antirreflectante",
+        "Luminosidad: Luminova en agujas e índices, perfecta en baja luz",
+        "Caja: Transparente, mostrando el movimiento automático",
+        "Corona: Enroscada, segura y funcional",
+        "Tamaño de muñeca: Ajustable entre 14,5 cm y 22 cm",
+        "Lugs: 13 mm",
+        "Correa: Acero inoxidable 904L con cierre de seguridad",
+        "Fondo de caja: Transparente, mostrando el movimiento automático"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Diámetro": "41 mm (sin incluir la corona), moderno y equilibrado",
+        "Movimiento": "Automático Seiko NH35, visible en la ventana open-heart",
+        "Grosor": "12 mm, cómodo para el uso diario",
+        "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
+        "Luminosidad": "Luminova en agujas e índices, perfecta en baja luz",
+        "Caja": "Transparente, mostrando el movimiento automático",
+        "Corona": "Enroscada, segura y funcional",
+        "Tamaño de muñeca": "Ajustable entre 14,5 cm y 22 cm",
+        "Lugs": "13 mm",
+        "Correa": "Acero inoxidable 904L con cierre de seguridad",
+        "Fondo de caja": "Transparente, mostrando el movimiento automático"
+    }
+}
+,
+    {
+    "id": 1769772808298,
+    "name": "Nauteiko Gold Black",
+    "category": "Nauteiko",
+    "league": "Nauteiko",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/nauteiko-gold-black/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/nauteiko-gold-black/2.webp",
+        "/assets/productos/RC_Mods/nauteiko-gold-black/3.webp",
+        "/assets/productos/RC_Mods/nauteiko-gold-black/4.webp",
+        "/assets/productos/RC_Mods/nauteiko-gold-black/5.webp"
+    ],
+    "description": "Reloj de alta calidad.",
+    "features": [],
+    "sizes": [],
+    "straps": [],
+    "specs": {}
+}
+,
+    {
+    "id": 1769772827641,
+    "name": "Nauteiko Openheart Rose Gold Black",
+    "category": "Nauteiko",
+    "league": "Nauteiko",
+    "price": 139.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/nauteiko-openheart-rose-gold-black/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/nauteiko-openheart-rose-gold-black/2.webp"
+    ],
+    "description": "Reloj de alta calidad.",
+    "features": [],
+    "sizes": [],
+    "straps": [],
+    "specs": {}
+}
+,
+    {
+    "id": 1769772889755,
+    "name": "Royal Seikoak Chrono Green",
+    "category": "Royal Seikoak",
+    "league": "Royal Seikoak",
+    "price": 119.9,
+    "oldPrice": 149.9,
+    "image": "/assets/productos/RC_Mods/royal-seikoak-chrono-green/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/royal-seikoak-chrono-green/2.webp",
+        "/assets/productos/RC_Mods/royal-seikoak-chrono-green/3.webp",
+        "/assets/productos/RC_Mods/royal-seikoak-chrono-green/4.webp",
+        "/assets/productos/RC_Mods/royal-seikoak-chrono-green/5.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 41 mm (sin corona), equilibrio entre presencia y comodidad\nMovimiento: Seiko VK63 híbrido (cuarzo + automático), fiabilidad absoluta\nGrosor: 12 mm, estilizado y cómodo para uso diario\nCristal: Zafiro anti-arañazos con tratamiento antirreflectante\nLuminosidad: Luminova en agujas e índices, lectura en la oscuridad\nCaja: Acero inoxidable 316L cepillado, robusta y premium\nCorona: Enroscada, diseño seguro y funcional\nBisel: Cerámico pulido, resistencia y elegancia\nTamaño de muñeca: Ajustable de 14,5 cm a 22 cm\nLugs: 20 mm, compatibles con correas intercambiables\nCorrea: Acero inoxidable 316L con cierre mariposa de seguridad\nFondo de caja: Acero cerrado, protección extra",
+    "features": [
+        "Diámetro: 41 mm (sin corona), equilibrio entre presencia y comodidad",
+        "Movimiento: Seiko VK63 híbrido (cuarzo + automático), fiabilidad absoluta",
+        "Grosor: 12 mm, estilizado y cómodo para uso diario",
+        "Cristal: Zafiro anti-arañazos con tratamiento antirreflectante",
+        "Luminosidad: Luminova en agujas e índices, lectura en la oscuridad",
+        "Caja: Acero inoxidable 316L cepillado, robusta y premium",
+        "Corona: Enroscada, diseño seguro y funcional",
+        "Bisel: Cerámico pulido, resistencia y elegancia",
+        "Tamaño de muñeca: Ajustable de 14,5 cm a 22 cm",
+        "Lugs: 20 mm, compatibles con correas intercambiables",
+        "Correa: Acero inoxidable 316L con cierre mariposa de seguridad",
+        "Fondo de caja: Acero cerrado, protección extra"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Diámetro": "41 mm (sin corona), equilibrio entre presencia y comodidad",
+        "Movimiento": "Seiko VK63 híbrido (cuarzo + automático), fiabilidad absoluta",
+        "Grosor": "12 mm, estilizado y cómodo para uso diario",
+        "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
+        "Luminosidad": "Luminova en agujas e índices, lectura en la oscuridad",
+        "Caja": "Acero inoxidable 316L cepillado, robusta y premium",
+        "Corona": "Enroscada, diseño seguro y funcional",
+        "Bisel": "Cerámico pulido, resistencia y elegancia",
+        "Tamaño de muñeca": "Ajustable de 14,5 cm a 22 cm",
+        "Lugs": "20 mm, compatibles con correas intercambiables",
+        "Correa": "Acero inoxidable 316L con cierre mariposa de seguridad",
+        "Fondo de caja": "Acero cerrado, protección extra"
+    }
+}
+,
+    {
+    "id": 1769772985313,
+    "name": "GMTeiko Rootbeer",
+    "category": "GMTeiko",
+    "league": "GMTeiko",
+    "price": 139.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/gmteiko-rootbeer/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/gmteiko-rootbeer/2.webp",
+        "/assets/productos/RC_Mods/gmteiko-rootbeer/3.webp",
+        "/assets/productos/RC_Mods/gmteiko-rootbeer/4.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 40 mm (sin corona), equilibrio perfecto entre presencia y comodidad\nMovimiento: Seiko NH34 automático, fiable y preciso\nGrosor: 12.5 mm, elegante y versátil para uso diario\nCristal: Zafiro anti-arañazos con tratamiento antirreflectante\nLuminosidad: Luminova en índices y agujas, visibilidad perfecta incluso en la oscuridad\nCaja: Acero inoxidable 904L, robusto y premium\nCorona: Enroscada, segura y funcional\nBisel: Cerámico Coke negro y rojo, duradero y sofisticado\nTamaño de muñeca: Ajustable entre 14,5 cm y 22 cm\nLugs: 20 mm, permite cambios de correa fácilmente\nCorrea: Acero 904L con cierre de seguridad\nFondo de caja: Cristal transparente, movimiento visible",
+    "features": [
+        "Diámetro: 40 mm (sin corona), equilibrio perfecto entre presencia y comodidad",
+        "Movimiento: Seiko NH34 automático, fiable y preciso",
+        "Grosor: 12.5 mm, elegante y versátil para uso diario",
+        "Cristal: Zafiro anti-arañazos con tratamiento antirreflectante",
+        "Luminosidad: Luminova en índices y agujas, visibilidad perfecta incluso en la oscuridad",
+        "Caja: Acero inoxidable 904L, robusto y premium",
+        "Corona: Enroscada, segura y funcional",
+        "Bisel: Cerámico Coke negro y rojo, duradero y sofisticado",
+        "Tamaño de muñeca: Ajustable entre 14,5 cm y 22 cm",
+        "Lugs: 20 mm, permite cambios de correa fácilmente",
+        "Correa: Acero 904L con cierre de seguridad",
+        "Fondo de caja: Cristal transparente, movimiento visible"
+    ],
+    "sizes": [],
+    "straps": [
+        "Jubilee",
+        "Oyster"
+    ],
+    "specs": {
+        "Diámetro": "40 mm (sin corona), equilibrio perfecto entre presencia y comodidad",
+        "Movimiento": "Seiko NH34 automático, fiable y preciso",
+        "Grosor": "12.5 mm, elegante y versátil para uso diario",
+        "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
+        "Luminosidad": "Luminova en índices y agujas, visibilidad perfecta incluso en la oscuridad",
+        "Caja": "Acero inoxidable 904L, robusto y premium",
+        "Corona": "Enroscada, segura y funcional",
+        "Bisel": "Cerámico Coke negro y rojo, duradero y sofisticado",
+        "Tamaño de muñeca": "Ajustable entre 14,5 cm y 22 cm",
+        "Lugs": "20 mm, permite cambios de correa fácilmente",
+        "Correa": "Acero 904L con cierre de seguridad",
+        "Fondo de caja": "Cristal transparente, movimiento visible"
+    }
+}
+,
+    {
+    "id": 1769773014939,
+    "name": "GMT Zombie",
+    "category": "GMT",
+    "league": "GMT",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/gmt-zombie/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/gmt-zombie/2.webp",
+        "/assets/productos/RC_Mods/gmt-zombie/3.webp",
+        "/assets/productos/RC_Mods/gmt-zombie/4.webp",
+        "/assets/productos/RC_Mods/gmt-zombie/5.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 40 mm (sin corona), equilibrio perfecto entre elegancia y comodidad\nMovimiento: Seiko NH34 automático, fiable y preciso\nGrosor: 12.5 mm, estilizado y versátil para uso diario\nCristal: Zafiro anti-arañazos con tratamiento antirreflectante\nLuminosidad: Luminova en índices y agujas, visibilidad en todo momento\nCaja: Acero inoxidable 904L, robusta y premium\nCorona: Enroscada, segura y funcional\nBisel: Cerámico negro y dorado, sofisticado y duradero\nTamaño de muñeca: Ajustable entre 14,5 cm y 22 cm\nLugs: 20 mm, compatibilidad con correas intercambiables\nCorrea: Acero 904L con cierre de seguridad\nFondo de caja: Cristal transparente, movimiento visible",
+    "features": [
+        "Diámetro: 40 mm (sin corona), equilibrio perfecto entre elegancia y comodidad",
+        "Movimiento: Seiko NH34 automático, fiable y preciso",
+        "Grosor: 12.5 mm, estilizado y versátil para uso diario",
+        "Cristal: Zafiro anti-arañazos con tratamiento antirreflectante",
+        "Luminosidad: Luminova en índices y agujas, visibilidad en todo momento",
+        "Caja: Acero inoxidable 904L, robusta y premium",
+        "Corona: Enroscada, segura y funcional",
+        "Bisel: Cerámico negro y dorado, sofisticado y duradero",
+        "Tamaño de muñeca: Ajustable entre 14,5 cm y 22 cm",
+        "Lugs: 20 mm, compatibilidad con correas intercambiables",
+        "Correa: Acero 904L con cierre de seguridad",
+        "Fondo de caja: Cristal transparente, movimiento visible"
+    ],
+    "sizes": [],
+    "straps": [
+        "Jubilee",
+        "Oyster"
+    ],
+    "specs": {
+        "Diámetro": "40 mm (sin corona), equilibrio perfecto entre elegancia y comodidad",
+        "Movimiento": "Seiko NH34 automático, fiable y preciso",
+        "Grosor": "12.5 mm, estilizado y versátil para uso diario",
+        "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
+        "Luminosidad": "Luminova en índices y agujas, visibilidad en todo momento",
+        "Caja": "Acero inoxidable 904L, robusta y premium",
+        "Corona": "Enroscada, segura y funcional",
+        "Bisel": "Cerámico negro y dorado, sofisticado y duradero",
+        "Tamaño de muñeca": "Ajustable entre 14,5 cm y 22 cm",
+        "Lugs": "20 mm, compatibilidad con correas intercambiables",
+        "Correa": "Acero 904L con cierre de seguridad",
+        "Fondo de caja": "Cristal transparente, movimiento visible"
+    }
+}
+,
+    {
+    "id": 1769773064824,
+    "name": "GMTeiko Coke",
+    "category": "GMTeiko",
+    "league": "GMTeiko",
+    "price": 139.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/gmteiko-coke/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/gmteiko-coke/2.webp",
+        "/assets/productos/RC_Mods/gmteiko-coke/3.webp",
+        "/assets/productos/RC_Mods/gmteiko-coke/4.webp",
+        "/assets/productos/RC_Mods/gmteiko-coke/5.webp",
+        "/assets/productos/RC_Mods/gmteiko-coke/6.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 40 mm (sin corona), equilibrio perfecto entre presencia y comodidad\nMovimiento: Seiko NH34 automático, fiable y preciso\nGrosor: 12.5 mm, elegante y versátil para uso diario\nCristal: Zafiro anti-arañazos con tratamiento antirreflectante\nLuminosidad: Luminova en índices y agujas, visibilidad perfecta incluso en la oscuridad\nCaja: Acero inoxidable 904L, robusto y premium\nCorona: Enroscada, segura y funcional\nBisel: Cerámico Coke negro y rojo, duradero y sofisticado\nTamaño de muñeca: Ajustable entre 14,5 cm y 22 cm\nLugs: 20 mm, permite cambios de correa fácilmente\nCorrea: Acero 904L con cierre de seguridad\nFondo de caja: Cristal transparente, movimiento visible",
+    "features": [
+        "Diámetro: 40 mm (sin corona), equilibrio perfecto entre presencia y comodidad",
+        "Movimiento: Seiko NH34 automático, fiable y preciso",
+        "Grosor: 12.5 mm, elegante y versátil para uso diario",
+        "Cristal: Zafiro anti-arañazos con tratamiento antirreflectante",
+        "Luminosidad: Luminova en índices y agujas, visibilidad perfecta incluso en la oscuridad",
+        "Caja: Acero inoxidable 904L, robusto y premium",
+        "Corona: Enroscada, segura y funcional",
+        "Bisel: Cerámico Coke negro y rojo, duradero y sofisticado",
+        "Tamaño de muñeca: Ajustable entre 14,5 cm y 22 cm",
+        "Lugs: 20 mm, permite cambios de correa fácilmente",
+        "Correa: Acero 904L con cierre de seguridad",
+        "Fondo de caja: Cristal transparente, movimiento visible"
+    ],
+    "sizes": [],
+    "straps": [
+        "Jubilee",
+        "Oyster"
+    ],
+    "specs": {
+        "Diámetro": "40 mm (sin corona), equilibrio perfecto entre presencia y comodidad",
+        "Movimiento": "Seiko NH34 automático, fiable y preciso",
+        "Grosor": "12.5 mm, elegante y versátil para uso diario",
+        "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
+        "Luminosidad": "Luminova en índices y agujas, visibilidad perfecta incluso en la oscuridad",
+        "Caja": "Acero inoxidable 904L, robusto y premium",
+        "Corona": "Enroscada, segura y funcional",
+        "Bisel": "Cerámico Coke negro y rojo, duradero y sofisticado",
+        "Tamaño de muñeca": "Ajustable entre 14,5 cm y 22 cm",
+        "Lugs": "20 mm, permite cambios de correa fácilmente",
+        "Correa": "Acero 904L con cierre de seguridad",
+        "Fondo de caja": "Cristal transparente, movimiento visible"
+    }
+}
+,
+    {
+    "id": 1769773182886,
+    "name": "Seitona Gold Ice Blue",
+    "category": "Seitona",
+    "league": "Seitona",
+    "price": 119.9,
+    "oldPrice": 149.9,
+    "image": "/assets/productos/RC_Mods/seitona-gold-ice-blue/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seitona-gold-ice-blue/2.webp",
+        "/assets/productos/RC_Mods/seitona-gold-ice-blue/3.webp",
+        "/assets/productos/RC_Mods/seitona-gold-ice-blue/4.webp",
+        "/assets/productos/RC_Mods/seitona-gold-ice-blue/5.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 40 mm (sin corona), proporciones icónicas de la línea Seitona\nMovimiento: Seiko VK63 mecaquartz, cronógrafo funcional con segundero fluido (5 ticks\\/segundo)\nGrosor: 12 mm, perfecto equilibrio entre comodidad y presencia\nCristal: Zafiro con tratamiento antirreflejos, máxima resistencia y nitidez\nLuminosidad: Luminova en agujas e índices, visibilidad incluso en la oscuridad\nCaja: Acero inoxidable 904L con acabado Gold, durabilidad premium y brillo superior\nCorona: Enroscada, aportando fiabilidad y protección extra\nBisel: Cerámico dorado con escala taquimétrica grabada, diseño deportivo y sofisticado\nLugs: 20 mm, compatibles con múltiples correas\nCorrea: Oyster en acero 904L con recubrimiento Gold o Oysterflex para un look más dinámico\nFondo de caja: Acero inoxidable 904L cepillado",
+    "features": [
+        "Diámetro: 40 mm (sin corona), proporciones icónicas de la línea Seitona",
+        "Movimiento: Seiko VK63 mecaquartz, cronógrafo funcional con segundero fluido (5 ticks\\/segundo)",
+        "Grosor: 12 mm, perfecto equilibrio entre comodidad y presencia",
+        "Cristal: Zafiro con tratamiento antirreflejos, máxima resistencia y nitidez",
+        "Luminosidad: Luminova en agujas e índices, visibilidad incluso en la oscuridad",
+        "Caja: Acero inoxidable 904L con acabado Gold, durabilidad premium y brillo superior",
+        "Corona: Enroscada, aportando fiabilidad y protección extra",
+        "Bisel: Cerámico dorado con escala taquimétrica grabada, diseño deportivo y sofisticado",
+        "Lugs: 20 mm, compatibles con múltiples correas",
+        "Correa: Oyster en acero 904L con recubrimiento Gold o Oysterflex para un look más dinámico",
+        "Fondo de caja: Acero inoxidable 904L cepillado"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Diámetro": "40 mm (sin corona), proporciones icónicas de la línea Seitona",
+        "Movimiento": "Seiko VK63 mecaquartz, cronógrafo funcional con segundero fluido (5 ticks\\/segundo)",
+        "Grosor": "12 mm, perfecto equilibrio entre comodidad y presencia",
+        "Cristal": "Zafiro con tratamiento antirreflejos, máxima resistencia y nitidez",
+        "Luminosidad": "Luminova en agujas e índices, visibilidad incluso en la oscuridad",
+        "Caja": "Acero inoxidable 904L con acabado Gold, durabilidad premium y brillo superior",
+        "Corona": "Enroscada, aportando fiabilidad y protección extra",
+        "Bisel": "Cerámico dorado con escala taquimétrica grabada, diseño deportivo y sofisticado",
+        "Lugs": "20 mm, compatibles con múltiples correas",
+        "Correa": "Oyster en acero 904L con recubrimiento Gold o Oysterflex para un look más dinámico",
+        "Fondo de caja": "Acero inoxidable 904L cepillado"
+    }
+}
+,
+    {
+    "id": 1769773222514,
+    "name": "Seitona Rose Gold Rainbow",
+    "category": "Seitona",
+    "league": "Seitona",
+    "price": 119.9,
+    "oldPrice": 149.9,
+    "image": "/assets/productos/RC_Mods/seitona-rose-gold-rainbow/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seitona-rose-gold-rainbow/2.webp",
+        "/assets/productos/RC_Mods/seitona-rose-gold-rainbow/3.webp",
+        "/assets/productos/RC_Mods/seitona-rose-gold-rainbow/4.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 40 mm (sin corona), medida equilibrada con presencia visual impactanteMovimiento: Seiko VK63 mecaquartz, híbrido entre cuarzo y mecánico, con cronógrafo funcional y barrido suaveGrosor: 12 mm, perfil delgado y cómodo para un uso diario con carácterCristal: zafiro con tratamiento antirreflejos, ultraresistente y de visibilidad impecableLuminosidad: Luminova, para destacar incluso en la oscuridadCaja: acero inoxidable 316L con baño oro rosa y acabado pulido espejoCorona: enroscada, sólida y segura, con un tacto firme y precisoBisel: cerámico tipo rainbow con incrustaciones multicolor estilo zafiro, vibrante y resistente al desgasteTamaño de muñeca: ajustable entre 14,5 cm y 22 cm, con cierre ergonómico y firmeLugs: 20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación\nMovimiento: Seiko VK63 mecaquartz, híbrido entre cuarzo y mecánico, con cronógrafo funcional y barrido suaveGrosor: 12 mm, perfil delgado y cómodo para un uso diario con carácterCristal: zafiro con tratamiento antirreflejos, ultraresistente y de visibilidad impecableLuminosidad: Luminova, para destacar incluso en la oscuridadCaja: acero inoxidable 316L con baño oro rosa y acabado pulido espejoCorona: enroscada, sólida y segura, con un tacto firme y precisoBisel: cerámico tipo rainbow con incrustaciones multicolor estilo zafiro, vibrante y resistente al desgasteTamaño de muñeca: ajustable entre 14,5 cm y 22 cm, con cierre ergonómico y firmeLugs: 20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación\nGrosor: 12 mm, perfil delgado y cómodo para un uso diario con carácterCristal: zafiro con tratamiento antirreflejos, ultraresistente y de visibilidad impecableLuminosidad: Luminova, para destacar incluso en la oscuridadCaja: acero inoxidable 316L con baño oro rosa y acabado pulido espejoCorona: enroscada, sólida y segura, con un tacto firme y precisoBisel: cerámico tipo rainbow con incrustaciones multicolor estilo zafiro, vibrante y resistente al desgasteTamaño de muñeca: ajustable entre 14,5 cm y 22 cm, con cierre ergonómico y firmeLugs: 20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación\nCristal: zafiro con tratamiento antirreflejos, ultraresistente y de visibilidad impecableLuminosidad: Luminova, para destacar incluso en la oscuridadCaja: acero inoxidable 316L con baño oro rosa y acabado pulido espejoCorona: enroscada, sólida y segura, con un tacto firme y precisoBisel: cerámico tipo rainbow con incrustaciones multicolor estilo zafiro, vibrante y resistente al desgasteTamaño de muñeca: ajustable entre 14,5 cm y 22 cm, con cierre ergonómico y firmeLugs: 20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación\nLuminosidad: Luminova, para destacar incluso en la oscuridadCaja: acero inoxidable 316L con baño oro rosa y acabado pulido espejoCorona: enroscada, sólida y segura, con un tacto firme y precisoBisel: cerámico tipo rainbow con incrustaciones multicolor estilo zafiro, vibrante y resistente al desgasteTamaño de muñeca: ajustable entre 14,5 cm y 22 cm, con cierre ergonómico y firmeLugs: 20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación\nCaja: acero inoxidable 316L con baño oro rosa y acabado pulido espejoCorona: enroscada, sólida y segura, con un tacto firme y precisoBisel: cerámico tipo rainbow con incrustaciones multicolor estilo zafiro, vibrante y resistente al desgasteTamaño de muñeca: ajustable entre 14,5 cm y 22 cm, con cierre ergonómico y firmeLugs: 20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación\nCorona: enroscada, sólida y segura, con un tacto firme y precisoBisel: cerámico tipo rainbow con incrustaciones multicolor estilo zafiro, vibrante y resistente al desgasteTamaño de muñeca: ajustable entre 14,5 cm y 22 cm, con cierre ergonómico y firmeLugs: 20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación\nBisel: cerámico tipo rainbow con incrustaciones multicolor estilo zafiro, vibrante y resistente al desgasteTamaño de muñeca: ajustable entre 14,5 cm y 22 cm, con cierre ergonómico y firmeLugs: 20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación\nTamaño de muñeca: ajustable entre 14,5 cm y 22 cm, con cierre ergonómico y firmeLugs: 20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación\nLugs: 20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación\nCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación\nFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación",
+    "features": [
+        "Diámetro: 40 mm (sin corona), medida equilibrada con presencia visual impactanteMovimiento: Seiko VK63 mecaquartz, híbrido entre cuarzo y mecánico, con cronógrafo funcional y barrido suaveGrosor: 12 mm, perfil delgado y cómodo para un uso diario con carácterCristal: zafiro con tratamiento antirreflejos, ultraresistente y de visibilidad impecableLuminosidad: Luminova, para destacar incluso en la oscuridadCaja: acero inoxidable 316L con baño oro rosa y acabado pulido espejoCorona: enroscada, sólida y segura, con un tacto firme y precisoBisel: cerámico tipo rainbow con incrustaciones multicolor estilo zafiro, vibrante y resistente al desgasteTamaño de muñeca: ajustable entre 14,5 cm y 22 cm, con cierre ergonómico y firmeLugs: 20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación",
+        "Movimiento: Seiko VK63 mecaquartz, híbrido entre cuarzo y mecánico, con cronógrafo funcional y barrido suaveGrosor: 12 mm, perfil delgado y cómodo para un uso diario con carácterCristal: zafiro con tratamiento antirreflejos, ultraresistente y de visibilidad impecableLuminosidad: Luminova, para destacar incluso en la oscuridadCaja: acero inoxidable 316L con baño oro rosa y acabado pulido espejoCorona: enroscada, sólida y segura, con un tacto firme y precisoBisel: cerámico tipo rainbow con incrustaciones multicolor estilo zafiro, vibrante y resistente al desgasteTamaño de muñeca: ajustable entre 14,5 cm y 22 cm, con cierre ergonómico y firmeLugs: 20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación",
+        "Grosor: 12 mm, perfil delgado y cómodo para un uso diario con carácterCristal: zafiro con tratamiento antirreflejos, ultraresistente y de visibilidad impecableLuminosidad: Luminova, para destacar incluso en la oscuridadCaja: acero inoxidable 316L con baño oro rosa y acabado pulido espejoCorona: enroscada, sólida y segura, con un tacto firme y precisoBisel: cerámico tipo rainbow con incrustaciones multicolor estilo zafiro, vibrante y resistente al desgasteTamaño de muñeca: ajustable entre 14,5 cm y 22 cm, con cierre ergonómico y firmeLugs: 20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación",
+        "Cristal: zafiro con tratamiento antirreflejos, ultraresistente y de visibilidad impecableLuminosidad: Luminova, para destacar incluso en la oscuridadCaja: acero inoxidable 316L con baño oro rosa y acabado pulido espejoCorona: enroscada, sólida y segura, con un tacto firme y precisoBisel: cerámico tipo rainbow con incrustaciones multicolor estilo zafiro, vibrante y resistente al desgasteTamaño de muñeca: ajustable entre 14,5 cm y 22 cm, con cierre ergonómico y firmeLugs: 20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación",
+        "Luminosidad: Luminova, para destacar incluso en la oscuridadCaja: acero inoxidable 316L con baño oro rosa y acabado pulido espejoCorona: enroscada, sólida y segura, con un tacto firme y precisoBisel: cerámico tipo rainbow con incrustaciones multicolor estilo zafiro, vibrante y resistente al desgasteTamaño de muñeca: ajustable entre 14,5 cm y 22 cm, con cierre ergonómico y firmeLugs: 20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación",
+        "Caja: acero inoxidable 316L con baño oro rosa y acabado pulido espejoCorona: enroscada, sólida y segura, con un tacto firme y precisoBisel: cerámico tipo rainbow con incrustaciones multicolor estilo zafiro, vibrante y resistente al desgasteTamaño de muñeca: ajustable entre 14,5 cm y 22 cm, con cierre ergonómico y firmeLugs: 20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación",
+        "Corona: enroscada, sólida y segura, con un tacto firme y precisoBisel: cerámico tipo rainbow con incrustaciones multicolor estilo zafiro, vibrante y resistente al desgasteTamaño de muñeca: ajustable entre 14,5 cm y 22 cm, con cierre ergonómico y firmeLugs: 20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación",
+        "Bisel: cerámico tipo rainbow con incrustaciones multicolor estilo zafiro, vibrante y resistente al desgasteTamaño de muñeca: ajustable entre 14,5 cm y 22 cm, con cierre ergonómico y firmeLugs: 20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación",
+        "Tamaño de muñeca: ajustable entre 14,5 cm y 22 cm, con cierre ergonómico y firmeLugs: 20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación",
+        "Lugs: 20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación",
+        "Correa: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación",
+        "Fondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Diámetro": "40 mm (sin corona), medida equilibrada con presencia visual impactanteMovimiento: Seiko VK63 mecaquartz, híbrido entre cuarzo y mecánico, con cronógrafo funcional y barrido suaveGrosor: 12 mm, perfil delgado y cómodo para un uso diario con carácterCristal: zafiro con tratamiento antirreflejos, ultraresistente y de visibilidad impecableLuminosidad: Luminova, para destacar incluso en la oscuridadCaja: acero inoxidable 316L con baño oro rosa y acabado pulido espejoCorona: enroscada, sólida y segura, con un tacto firme y precisoBisel: cerámico tipo rainbow con incrustaciones multicolor estilo zafiro, vibrante y resistente al desgasteTamaño de muñeca: ajustable entre 14,5 cm y 22 cm, con cierre ergonómico y firmeLugs: 20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación",
+        "Movimiento": "Seiko VK63 mecaquartz, híbrido entre cuarzo y mecánico, con cronógrafo funcional y barrido suaveGrosor: 12 mm, perfil delgado y cómodo para un uso diario con carácterCristal: zafiro con tratamiento antirreflejos, ultraresistente y de visibilidad impecableLuminosidad: Luminova, para destacar incluso en la oscuridadCaja: acero inoxidable 316L con baño oro rosa y acabado pulido espejoCorona: enroscada, sólida y segura, con un tacto firme y precisoBisel: cerámico tipo rainbow con incrustaciones multicolor estilo zafiro, vibrante y resistente al desgasteTamaño de muñeca: ajustable entre 14,5 cm y 22 cm, con cierre ergonómico y firmeLugs: 20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación",
+        "Grosor": "12 mm, perfil delgado y cómodo para un uso diario con carácterCristal: zafiro con tratamiento antirreflejos, ultraresistente y de visibilidad impecableLuminosidad: Luminova, para destacar incluso en la oscuridadCaja: acero inoxidable 316L con baño oro rosa y acabado pulido espejoCorona: enroscada, sólida y segura, con un tacto firme y precisoBisel: cerámico tipo rainbow con incrustaciones multicolor estilo zafiro, vibrante y resistente al desgasteTamaño de muñeca: ajustable entre 14,5 cm y 22 cm, con cierre ergonómico y firmeLugs: 20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación",
+        "Cristal": "zafiro con tratamiento antirreflejos, ultraresistente y de visibilidad impecableLuminosidad: Luminova, para destacar incluso en la oscuridadCaja: acero inoxidable 316L con baño oro rosa y acabado pulido espejoCorona: enroscada, sólida y segura, con un tacto firme y precisoBisel: cerámico tipo rainbow con incrustaciones multicolor estilo zafiro, vibrante y resistente al desgasteTamaño de muñeca: ajustable entre 14,5 cm y 22 cm, con cierre ergonómico y firmeLugs: 20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación",
+        "Luminosidad": "Luminova, para destacar incluso en la oscuridadCaja: acero inoxidable 316L con baño oro rosa y acabado pulido espejoCorona: enroscada, sólida y segura, con un tacto firme y precisoBisel: cerámico tipo rainbow con incrustaciones multicolor estilo zafiro, vibrante y resistente al desgasteTamaño de muñeca: ajustable entre 14,5 cm y 22 cm, con cierre ergonómico y firmeLugs: 20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación",
+        "Caja": "acero inoxidable 316L con baño oro rosa y acabado pulido espejoCorona: enroscada, sólida y segura, con un tacto firme y precisoBisel: cerámico tipo rainbow con incrustaciones multicolor estilo zafiro, vibrante y resistente al desgasteTamaño de muñeca: ajustable entre 14,5 cm y 22 cm, con cierre ergonómico y firmeLugs: 20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación",
+        "Corona": "enroscada, sólida y segura, con un tacto firme y precisoBisel: cerámico tipo rainbow con incrustaciones multicolor estilo zafiro, vibrante y resistente al desgasteTamaño de muñeca: ajustable entre 14,5 cm y 22 cm, con cierre ergonómico y firmeLugs: 20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación",
+        "Bisel": "cerámico tipo rainbow con incrustaciones multicolor estilo zafiro, vibrante y resistente al desgasteTamaño de muñeca: ajustable entre 14,5 cm y 22 cm, con cierre ergonómico y firmeLugs: 20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación",
+        "Tamaño de muñeca": "ajustable entre 14,5 cm y 22 cm, con cierre ergonómico y firmeLugs: 20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación",
+        "Lugs": "20 mm, compatibles con correas personalizadasCorrea: estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación",
+        "Correa": "estilo Oyster en acero inoxidable 316L con baño rose gold, sólida y eleganteFondo de caja: cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación",
+        "Fondo de caja": "cerrado en acero con acabado cepillado, minimalista y sobrioResistencia al agua: 3 ATM, ideal para el uso diario sin preocupacionesCronógrafo: funcional, con subesferas activas y sensación mecánica en cada pulsación"
+    }
+}
+,
+    {
+    "id": 1769773264234,
+    "name": "Seitona Gold Black II",
+    "category": "Seitona",
+    "league": "Seitona",
+    "price": 119.9,
+    "oldPrice": 149.9,
+    "image": "/assets/productos/RC_Mods/seitona-gold-black-ii/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seitona-gold-black-ii/2.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 40 mm (sin corona), tamaño clásico de la línea Seitona\nMovimiento: Seiko VK63 mecaquartz, cronógrafo funcional con segundero fluido\nGrosor: 12 mm, cómodo y elegante en la muñeca\nCristal: Zafiro con revestimiento antirreflejos, máxima resistencia\nLuminosidad: Luminova, visibilidad óptima en ambientes oscuros\nCaja: Acero inoxidable 904L con acabado Gold, durabilidad premium y brillo superior\nCorona: Enroscada, precisión y protección extra\nBisel: Cerámico dorado con escala taquimétrica grabada\nTamaño de muñeca: Ajustable de 14,5 cm a 22 cm\nLugs: 20 mm, compatibles con diferentes correas\nCorrea: Oyster en acero 904L con recubrimiento Gold, resistente y sofisticada\nFondo de caja: Acero 904L cepillado con acabado dorado",
+    "features": [
+        "Diámetro: 40 mm (sin corona), tamaño clásico de la línea Seitona",
+        "Movimiento: Seiko VK63 mecaquartz, cronógrafo funcional con segundero fluido",
+        "Grosor: 12 mm, cómodo y elegante en la muñeca",
+        "Cristal: Zafiro con revestimiento antirreflejos, máxima resistencia",
+        "Luminosidad: Luminova, visibilidad óptima en ambientes oscuros",
+        "Caja: Acero inoxidable 904L con acabado Gold, durabilidad premium y brillo superior",
+        "Corona: Enroscada, precisión y protección extra",
+        "Bisel: Cerámico dorado con escala taquimétrica grabada",
+        "Tamaño de muñeca: Ajustable de 14,5 cm a 22 cm",
+        "Lugs: 20 mm, compatibles con diferentes correas",
+        "Correa: Oyster en acero 904L con recubrimiento Gold, resistente y sofisticada",
+        "Fondo de caja: Acero 904L cepillado con acabado dorado"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Diámetro": "40 mm (sin corona), tamaño clásico de la línea Seitona",
+        "Movimiento": "Seiko VK63 mecaquartz, cronógrafo funcional con segundero fluido",
+        "Grosor": "12 mm, cómodo y elegante en la muñeca",
+        "Cristal": "Zafiro con revestimiento antirreflejos, máxima resistencia",
+        "Luminosidad": "Luminova, visibilidad óptima en ambientes oscuros",
+        "Caja": "Acero inoxidable 904L con acabado Gold, durabilidad premium y brillo superior",
+        "Corona": "Enroscada, precisión y protección extra",
+        "Bisel": "Cerámico dorado con escala taquimétrica grabada",
+        "Tamaño de muñeca": "Ajustable de 14,5 cm a 22 cm",
+        "Lugs": "20 mm, compatibles con diferentes correas",
+        "Correa": "Oyster en acero 904L con recubrimiento Gold, resistente y sofisticada",
+        "Fondo de caja": "Acero 904L cepillado con acabado dorado"
+    }
+}
+,
+    {
+    "id": 1769773292351,
+    "name": "Seitona Silver Blue",
+    "category": "Seitona",
+    "league": "Seitona",
+    "price": 119.9,
+    "oldPrice": 149.9,
+    "image": "/assets/productos/RC_Mods/seitona-silver-blue/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seitona-silver-blue/2.webp",
+        "/assets/productos/RC_Mods/seitona-silver-blue/3.webp",
+        "/assets/productos/RC_Mods/seitona-silver-blue/4.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 40 mm (sin corona), tamaño clásico y equilibrado\nMovimiento: Seiko VK63 mecaquartz, cronógrafo funcional con segundero fluido\nGrosor: 12 mm, perfil fino y cómodo en la muñeca\nCristal: Zafiro con antirreflejos, resistencia y claridad superior\nLuminosidad: Luminova, visibilidad garantizada en ambientes con poca luz\nCaja: Acero inoxidable 904L plateado, máxima durabilidad y brillo premium\nCorona: Enroscada, precisión y seguridad en cada uso\nBisel: Cerámico plateado con escala taquimétrica grabada\nTamaño de muñeca: Ajustable de 14,5 cm a 22 cm\nLugs: 20 mm, intercambiables con otras correas\nCorrea: Oyster en acero inoxidable 904L, robusta y elegante\nFondo de caja: Acero 904L cepillado, estilo discreto y resistente",
+    "features": [
+        "Diámetro: 40 mm (sin corona), tamaño clásico y equilibrado",
+        "Movimiento: Seiko VK63 mecaquartz, cronógrafo funcional con segundero fluido",
+        "Grosor: 12 mm, perfil fino y cómodo en la muñeca",
+        "Cristal: Zafiro con antirreflejos, resistencia y claridad superior",
+        "Luminosidad: Luminova, visibilidad garantizada en ambientes con poca luz",
+        "Caja: Acero inoxidable 904L plateado, máxima durabilidad y brillo premium",
+        "Corona: Enroscada, precisión y seguridad en cada uso",
+        "Bisel: Cerámico plateado con escala taquimétrica grabada",
+        "Tamaño de muñeca: Ajustable de 14,5 cm a 22 cm",
+        "Lugs: 20 mm, intercambiables con otras correas",
+        "Correa: Oyster en acero inoxidable 904L, robusta y elegante",
+        "Fondo de caja: Acero 904L cepillado, estilo discreto y resistente"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Diámetro": "40 mm (sin corona), tamaño clásico y equilibrado",
+        "Movimiento": "Seiko VK63 mecaquartz, cronógrafo funcional con segundero fluido",
+        "Grosor": "12 mm, perfil fino y cómodo en la muñeca",
+        "Cristal": "Zafiro con antirreflejos, resistencia y claridad superior",
+        "Luminosidad": "Luminova, visibilidad garantizada en ambientes con poca luz",
+        "Caja": "Acero inoxidable 904L plateado, máxima durabilidad y brillo premium",
+        "Corona": "Enroscada, precisión y seguridad en cada uso",
+        "Bisel": "Cerámico plateado con escala taquimétrica grabada",
+        "Tamaño de muñeca": "Ajustable de 14,5 cm a 22 cm",
+        "Lugs": "20 mm, intercambiables con otras correas",
+        "Correa": "Oyster en acero inoxidable 904L, robusta y elegante",
+        "Fondo de caja": "Acero 904L cepillado, estilo discreto y resistente"
+    }
+}
+,
+    {
+    "id": 1769773310001,
+    "name": "Seitona Gold Green",
+    "category": "Seitona",
+    "league": "Seitona",
+    "price": 119.9,
+    "oldPrice": 149.9,
+    "image": "/assets/productos/RC_Mods/seitona-gold-green/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seitona-gold-green/2.webp",
+        "/assets/productos/RC_Mods/seitona-gold-green/3.webp",
+        "/assets/productos/RC_Mods/seitona-gold-green/4.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 40 mm (sin corona), tamaño icónico y versátil\nMovimiento: Seiko VK63 mecaquartz, cronógrafo funcional con barrido suave\nGrosor: 12 mm, perfil fino y cómodo en la muñeca\nCristal: Zafiro con antirreflejos, máxima resistencia y nitidez\nLuminosidad: Luminova, lectura clara incluso en ambientes oscuros\nCaja: Acero inoxidable 904L con acabado Gold, resistencia premium y brillo superior\nCorona: Enroscada, tacto robusto y segura\nBisel: Cerámico dorado con escala taquimétrica grabada\nTamaño de muñeca: Ajustable de 14,5 cm a 22 cm, adaptabilidad total\nLugs: 20 mm, compatibles con correas intercambiables\nCorrea: Oyster en acero 904L dorado, sólida y elegante\nFondo de caja: Acero 904L dorado cepillado, durabilidad y estilo",
+    "features": [
+        "Diámetro: 40 mm (sin corona), tamaño icónico y versátil",
+        "Movimiento: Seiko VK63 mecaquartz, cronógrafo funcional con barrido suave",
+        "Grosor: 12 mm, perfil fino y cómodo en la muñeca",
+        "Cristal: Zafiro con antirreflejos, máxima resistencia y nitidez",
+        "Luminosidad: Luminova, lectura clara incluso en ambientes oscuros",
+        "Caja: Acero inoxidable 904L con acabado Gold, resistencia premium y brillo superior",
+        "Corona: Enroscada, tacto robusto y segura",
+        "Bisel: Cerámico dorado con escala taquimétrica grabada",
+        "Tamaño de muñeca: Ajustable de 14,5 cm a 22 cm, adaptabilidad total",
+        "Lugs: 20 mm, compatibles con correas intercambiables",
+        "Correa: Oyster en acero 904L dorado, sólida y elegante",
+        "Fondo de caja: Acero 904L dorado cepillado, durabilidad y estilo"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Diámetro": "40 mm (sin corona), tamaño icónico y versátil",
+        "Movimiento": "Seiko VK63 mecaquartz, cronógrafo funcional con barrido suave",
+        "Grosor": "12 mm, perfil fino y cómodo en la muñeca",
+        "Cristal": "Zafiro con antirreflejos, máxima resistencia y nitidez",
+        "Luminosidad": "Luminova, lectura clara incluso en ambientes oscuros",
+        "Caja": "Acero inoxidable 904L con acabado Gold, resistencia premium y brillo superior",
+        "Corona": "Enroscada, tacto robusto y segura",
+        "Bisel": "Cerámico dorado con escala taquimétrica grabada",
+        "Tamaño de muñeca": "Ajustable de 14,5 cm a 22 cm, adaptabilidad total",
+        "Lugs": "20 mm, compatibles con correas intercambiables",
+        "Correa": "Oyster en acero 904L dorado, sólida y elegante",
+        "Fondo de caja": "Acero 904L dorado cepillado, durabilidad y estilo"
+    }
+}
+,
+    {
+    "id": 1769773392039,
+    "name": "Seikojust Arabic Blue",
+    "category": "Seikojust",
+    "league": "Seikojust",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seikojust-arabic-blue/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seikojust-arabic-blue/2.webp",
+        "/assets/productos/RC_Mods/seikojust-arabic-blue/3.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 36 mm o 39 mm (sin corona), adaptable para distintos gustos y tamaños de muñeca\nMovimiento: Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas\nGrosor: Aproximadamente 12 mm, cómodo para uso diario\nCristal: Zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad\nLuminosidad: Luminova en índices y agujas para lectura óptima en la oscuridad\nCaja: Acero inoxidable 904L con acabado pulido y cepillado, robusto y elegante\nCorona: Enroscada para mayor protección contra agua y polvo\nBisel: Acero inoxidable pulido, clásico y atemporal\nCorrea: Acero inoxidable 904L con cierre desplegable seguro y cómodo",
+    "features": [
+        "Diámetro: 36 mm o 39 mm (sin corona), adaptable para distintos gustos y tamaños de muñeca",
+        "Movimiento: Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas",
+        "Grosor: Aproximadamente 12 mm, cómodo para uso diario",
+        "Cristal: Zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad",
+        "Luminosidad: Luminova en índices y agujas para lectura óptima en la oscuridad",
+        "Caja: Acero inoxidable 904L con acabado pulido y cepillado, robusto y elegante",
+        "Corona: Enroscada para mayor protección contra agua y polvo",
+        "Bisel: Acero inoxidable pulido, clásico y atemporal",
+        "Correa: Acero inoxidable 904L con cierre desplegable seguro y cómodo"
+    ],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
+    "straps": [
+        "Jubilee",
+        "President"
+    ],
+    "specs": {
+        "Diámetro": "36 mm o 39 mm (sin corona), adaptable para distintos gustos y tamaños de muñeca",
+        "Movimiento": "Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas",
+        "Grosor": "Aproximadamente 12 mm, cómodo para uso diario",
+        "Cristal": "Zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad",
+        "Luminosidad": "Luminova en índices y agujas para lectura óptima en la oscuridad",
+        "Caja": "Acero inoxidable 904L con acabado pulido y cepillado, robusto y elegante",
+        "Corona": "Enroscada para mayor protección contra agua y polvo",
+        "Bisel": "Acero inoxidable pulido, clásico y atemporal",
+        "Correa": "Acero inoxidable 904L con cierre desplegable seguro y cómodo"
+    }
+}
+,
+    {
+    "id": 1769773429133,
+    "name": "Seikojust Gold White Arabic",
+    "category": "Seikojust",
+    "league": "Seikojust",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seikojust-gold-white-arabic/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seikojust-gold-white-arabic/2.webp",
+        "/assets/productos/RC_Mods/seikojust-gold-white-arabic/3.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 36 mm o 39 mm (sin corona), adaptable para distintos tamaños de muñeca\nMovimiento: Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas\nGrosor: aproximadamente 12 mm, cómodo para uso diario\nCristal: zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad\nLuminosidad: Luminova en agujas para lectura óptima en la oscuridad\nCaja: acero inoxidable 904L con baño de oro pulido y cepillado, robusto y elegante\nCorona: enroscada para mayor protección contra agua y polvo\nBisel: acero inoxidable 904L con baño de oro pulido, clásico y atemporal\nCorrea: brazalete Jubilee en acero inoxidable 904L con baño de oro, cómodo, flexible y seguro",
+    "features": [
+        "Diámetro: 36 mm o 39 mm (sin corona), adaptable para distintos tamaños de muñeca",
+        "Movimiento: Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas",
+        "Grosor: aproximadamente 12 mm, cómodo para uso diario",
+        "Cristal: zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad",
+        "Luminosidad: Luminova en agujas para lectura óptima en la oscuridad",
+        "Caja: acero inoxidable 904L con baño de oro pulido y cepillado, robusto y elegante",
+        "Corona: enroscada para mayor protección contra agua y polvo",
+        "Bisel: acero inoxidable 904L con baño de oro pulido, clásico y atemporal",
+        "Correa: brazalete Jubilee en acero inoxidable 904L con baño de oro, cómodo, flexible y seguro"
+    ],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
+    "straps": [
+        "Jubilee",
+        "President"
+    ],
+    "specs": {
+        "Diámetro": "36 mm o 39 mm (sin corona), adaptable para distintos tamaños de muñeca",
+        "Movimiento": "Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas",
+        "Grosor": "aproximadamente 12 mm, cómodo para uso diario",
+        "Cristal": "zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad",
+        "Luminosidad": "Luminova en agujas para lectura óptima en la oscuridad",
+        "Caja": "acero inoxidable 904L con baño de oro pulido y cepillado, robusto y elegante",
+        "Corona": "enroscada para mayor protección contra agua y polvo",
+        "Bisel": "acero inoxidable 904L con baño de oro pulido, clásico y atemporal",
+        "Correa": "brazalete Jubilee en acero inoxidable 904L con baño de oro, cómodo, flexible y seguro"
+    }
+}
+,
+    {
+    "id": 1769773448025,
+    "name": "Seikojust Green Roman",
+    "category": "Seikojust",
+    "league": "Seikojust",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seikojust-green-roman/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seikojust-green-roman/2.webp",
+        "/assets/productos/RC_Mods/seikojust-green-roman/3.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 36 mm o 39 mm (sin corona), adaptable para distintos tamaños de muñecaMovimiento: Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horasGrosor: aproximadamente 12 mm, cómodo para uso diarioCristal: zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridadLuminosidad: Luminova en agujas para lectura óptima en la oscuridadCaja: acero inoxidable 904L pulido y cepillado, robusto y eleganteCorona: enroscada para mayor protección contra agua y polvoBisel: acero inoxidable pulido, clásico y atemporalCorrea: acero inoxidable 904L, con cierre desplegable seguro y cómodoResistencia al agua: 3 ATM, adecuado para uso diario y salpicadurasFunción fecha: ventana de fecha a las 3 en punto con lupa ciclópea para mejor visibilidad\nMovimiento: Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horasGrosor: aproximadamente 12 mm, cómodo para uso diarioCristal: zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridadLuminosidad: Luminova en agujas para lectura óptima en la oscuridadCaja: acero inoxidable 904L pulido y cepillado, robusto y eleganteCorona: enroscada para mayor protección contra agua y polvoBisel: acero inoxidable pulido, clásico y atemporalCorrea: acero inoxidable 904L, con cierre desplegable seguro y cómodoResistencia al agua: 3 ATM, adecuado para uso diario y salpicadurasFunción fecha: ventana de fecha a las 3 en punto con lupa ciclópea para mejor visibilidad\nGrosor: aproximadamente 12 mm, cómodo para uso diarioCristal: zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridadLuminosidad: Luminova en agujas para lectura óptima en la oscuridadCaja: acero inoxidable 904L pulido y cepillado, robusto y eleganteCorona: enroscada para mayor protección contra agua y polvoBisel: acero inoxidable pulido, clásico y atemporalCorrea: acero inoxidable 904L, con cierre desplegable seguro y cómodoResistencia al agua: 3 ATM, adecuado para uso diario y salpicadurasFunción fecha: ventana de fecha a las 3 en punto con lupa ciclópea para mejor visibilidad\nCristal: zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridadLuminosidad: Luminova en agujas para lectura óptima en la oscuridadCaja: acero inoxidable 904L pulido y cepillado, robusto y eleganteCorona: enroscada para mayor protección contra agua y polvoBisel: acero inoxidable pulido, clásico y atemporalCorrea: acero inoxidable 904L, con cierre desplegable seguro y cómodoResistencia al agua: 3 ATM, adecuado para uso diario y salpicadurasFunción fecha: ventana de fecha a las 3 en punto con lupa ciclópea para mejor visibilidad\nLuminosidad: Luminova en agujas para lectura óptima en la oscuridadCaja: acero inoxidable 904L pulido y cepillado, robusto y eleganteCorona: enroscada para mayor protección contra agua y polvoBisel: acero inoxidable pulido, clásico y atemporalCorrea: acero inoxidable 904L, con cierre desplegable seguro y cómodoResistencia al agua: 3 ATM, adecuado para uso diario y salpicadurasFunción fecha: ventana de fecha a las 3 en punto con lupa ciclópea para mejor visibilidad\nCaja: acero inoxidable 904L pulido y cepillado, robusto y eleganteCorona: enroscada para mayor protección contra agua y polvoBisel: acero inoxidable pulido, clásico y atemporalCorrea: acero inoxidable 904L, con cierre desplegable seguro y cómodoResistencia al agua: 3 ATM, adecuado para uso diario y salpicadurasFunción fecha: ventana de fecha a las 3 en punto con lupa ciclópea para mejor visibilidad\nCorona: enroscada para mayor protección contra agua y polvoBisel: acero inoxidable pulido, clásico y atemporalCorrea: acero inoxidable 904L, con cierre desplegable seguro y cómodoResistencia al agua: 3 ATM, adecuado para uso diario y salpicadurasFunción fecha: ventana de fecha a las 3 en punto con lupa ciclópea para mejor visibilidad\nBisel: acero inoxidable pulido, clásico y atemporalCorrea: acero inoxidable 904L, con cierre desplegable seguro y cómodoResistencia al agua: 3 ATM, adecuado para uso diario y salpicadurasFunción fecha: ventana de fecha a las 3 en punto con lupa ciclópea para mejor visibilidad\nCorrea: acero inoxidable 904L, con cierre desplegable seguro y cómodoResistencia al agua: 3 ATM, adecuado para uso diario y salpicadurasFunción fecha: ventana de fecha a las 3 en punto con lupa ciclópea para mejor visibilidad",
+    "features": [
+        "Diámetro: 36 mm o 39 mm (sin corona), adaptable para distintos tamaños de muñecaMovimiento: Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horasGrosor: aproximadamente 12 mm, cómodo para uso diarioCristal: zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridadLuminosidad: Luminova en agujas para lectura óptima en la oscuridadCaja: acero inoxidable 904L pulido y cepillado, robusto y eleganteCorona: enroscada para mayor protección contra agua y polvoBisel: acero inoxidable pulido, clásico y atemporalCorrea: acero inoxidable 904L, con cierre desplegable seguro y cómodoResistencia al agua: 3 ATM, adecuado para uso diario y salpicadurasFunción fecha: ventana de fecha a las 3 en punto con lupa ciclópea para mejor visibilidad",
+        "Movimiento: Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horasGrosor: aproximadamente 12 mm, cómodo para uso diarioCristal: zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridadLuminosidad: Luminova en agujas para lectura óptima en la oscuridadCaja: acero inoxidable 904L pulido y cepillado, robusto y eleganteCorona: enroscada para mayor protección contra agua y polvoBisel: acero inoxidable pulido, clásico y atemporalCorrea: acero inoxidable 904L, con cierre desplegable seguro y cómodoResistencia al agua: 3 ATM, adecuado para uso diario y salpicadurasFunción fecha: ventana de fecha a las 3 en punto con lupa ciclópea para mejor visibilidad",
+        "Grosor: aproximadamente 12 mm, cómodo para uso diarioCristal: zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridadLuminosidad: Luminova en agujas para lectura óptima en la oscuridadCaja: acero inoxidable 904L pulido y cepillado, robusto y eleganteCorona: enroscada para mayor protección contra agua y polvoBisel: acero inoxidable pulido, clásico y atemporalCorrea: acero inoxidable 904L, con cierre desplegable seguro y cómodoResistencia al agua: 3 ATM, adecuado para uso diario y salpicadurasFunción fecha: ventana de fecha a las 3 en punto con lupa ciclópea para mejor visibilidad",
+        "Cristal: zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridadLuminosidad: Luminova en agujas para lectura óptima en la oscuridadCaja: acero inoxidable 904L pulido y cepillado, robusto y eleganteCorona: enroscada para mayor protección contra agua y polvoBisel: acero inoxidable pulido, clásico y atemporalCorrea: acero inoxidable 904L, con cierre desplegable seguro y cómodoResistencia al agua: 3 ATM, adecuado para uso diario y salpicadurasFunción fecha: ventana de fecha a las 3 en punto con lupa ciclópea para mejor visibilidad",
+        "Luminosidad: Luminova en agujas para lectura óptima en la oscuridadCaja: acero inoxidable 904L pulido y cepillado, robusto y eleganteCorona: enroscada para mayor protección contra agua y polvoBisel: acero inoxidable pulido, clásico y atemporalCorrea: acero inoxidable 904L, con cierre desplegable seguro y cómodoResistencia al agua: 3 ATM, adecuado para uso diario y salpicadurasFunción fecha: ventana de fecha a las 3 en punto con lupa ciclópea para mejor visibilidad",
+        "Caja: acero inoxidable 904L pulido y cepillado, robusto y eleganteCorona: enroscada para mayor protección contra agua y polvoBisel: acero inoxidable pulido, clásico y atemporalCorrea: acero inoxidable 904L, con cierre desplegable seguro y cómodoResistencia al agua: 3 ATM, adecuado para uso diario y salpicadurasFunción fecha: ventana de fecha a las 3 en punto con lupa ciclópea para mejor visibilidad",
+        "Corona: enroscada para mayor protección contra agua y polvoBisel: acero inoxidable pulido, clásico y atemporalCorrea: acero inoxidable 904L, con cierre desplegable seguro y cómodoResistencia al agua: 3 ATM, adecuado para uso diario y salpicadurasFunción fecha: ventana de fecha a las 3 en punto con lupa ciclópea para mejor visibilidad",
+        "Bisel: acero inoxidable pulido, clásico y atemporalCorrea: acero inoxidable 904L, con cierre desplegable seguro y cómodoResistencia al agua: 3 ATM, adecuado para uso diario y salpicadurasFunción fecha: ventana de fecha a las 3 en punto con lupa ciclópea para mejor visibilidad",
+        "Correa: acero inoxidable 904L, con cierre desplegable seguro y cómodoResistencia al agua: 3 ATM, adecuado para uso diario y salpicadurasFunción fecha: ventana de fecha a las 3 en punto con lupa ciclópea para mejor visibilidad"
+    ],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
+    "straps": [
+        "Jubilee",
+        "President"
+    ],
+    "specs": {
+        "Diámetro": "36 mm o 39 mm (sin corona), adaptable para distintos tamaños de muñecaMovimiento: Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horasGrosor: aproximadamente 12 mm, cómodo para uso diarioCristal: zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridadLuminosidad: Luminova en agujas para lectura óptima en la oscuridadCaja: acero inoxidable 904L pulido y cepillado, robusto y eleganteCorona: enroscada para mayor protección contra agua y polvoBisel: acero inoxidable pulido, clásico y atemporalCorrea: acero inoxidable 904L, con cierre desplegable seguro y cómodoResistencia al agua: 3 ATM, adecuado para uso diario y salpicadurasFunción fecha: ventana de fecha a las 3 en punto con lupa ciclópea para mejor visibilidad",
+        "Movimiento": "Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horasGrosor: aproximadamente 12 mm, cómodo para uso diarioCristal: zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridadLuminosidad: Luminova en agujas para lectura óptima en la oscuridadCaja: acero inoxidable 904L pulido y cepillado, robusto y eleganteCorona: enroscada para mayor protección contra agua y polvoBisel: acero inoxidable pulido, clásico y atemporalCorrea: acero inoxidable 904L, con cierre desplegable seguro y cómodoResistencia al agua: 3 ATM, adecuado para uso diario y salpicadurasFunción fecha: ventana de fecha a las 3 en punto con lupa ciclópea para mejor visibilidad",
+        "Grosor": "aproximadamente 12 mm, cómodo para uso diarioCristal: zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridadLuminosidad: Luminova en agujas para lectura óptima en la oscuridadCaja: acero inoxidable 904L pulido y cepillado, robusto y eleganteCorona: enroscada para mayor protección contra agua y polvoBisel: acero inoxidable pulido, clásico y atemporalCorrea: acero inoxidable 904L, con cierre desplegable seguro y cómodoResistencia al agua: 3 ATM, adecuado para uso diario y salpicadurasFunción fecha: ventana de fecha a las 3 en punto con lupa ciclópea para mejor visibilidad",
+        "Cristal": "zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridadLuminosidad: Luminova en agujas para lectura óptima en la oscuridadCaja: acero inoxidable 904L pulido y cepillado, robusto y eleganteCorona: enroscada para mayor protección contra agua y polvoBisel: acero inoxidable pulido, clásico y atemporalCorrea: acero inoxidable 904L, con cierre desplegable seguro y cómodoResistencia al agua: 3 ATM, adecuado para uso diario y salpicadurasFunción fecha: ventana de fecha a las 3 en punto con lupa ciclópea para mejor visibilidad",
+        "Luminosidad": "Luminova en agujas para lectura óptima en la oscuridadCaja: acero inoxidable 904L pulido y cepillado, robusto y eleganteCorona: enroscada para mayor protección contra agua y polvoBisel: acero inoxidable pulido, clásico y atemporalCorrea: acero inoxidable 904L, con cierre desplegable seguro y cómodoResistencia al agua: 3 ATM, adecuado para uso diario y salpicadurasFunción fecha: ventana de fecha a las 3 en punto con lupa ciclópea para mejor visibilidad",
+        "Caja": "acero inoxidable 904L pulido y cepillado, robusto y eleganteCorona: enroscada para mayor protección contra agua y polvoBisel: acero inoxidable pulido, clásico y atemporalCorrea: acero inoxidable 904L, con cierre desplegable seguro y cómodoResistencia al agua: 3 ATM, adecuado para uso diario y salpicadurasFunción fecha: ventana de fecha a las 3 en punto con lupa ciclópea para mejor visibilidad",
+        "Corona": "enroscada para mayor protección contra agua y polvoBisel: acero inoxidable pulido, clásico y atemporalCorrea: acero inoxidable 904L, con cierre desplegable seguro y cómodoResistencia al agua: 3 ATM, adecuado para uso diario y salpicadurasFunción fecha: ventana de fecha a las 3 en punto con lupa ciclópea para mejor visibilidad",
+        "Bisel": "acero inoxidable pulido, clásico y atemporalCorrea: acero inoxidable 904L, con cierre desplegable seguro y cómodoResistencia al agua: 3 ATM, adecuado para uso diario y salpicadurasFunción fecha: ventana de fecha a las 3 en punto con lupa ciclópea para mejor visibilidad",
+        "Correa": "acero inoxidable 904L, con cierre desplegable seguro y cómodoResistencia al agua: 3 ATM, adecuado para uso diario y salpicadurasFunción fecha: ventana de fecha a las 3 en punto con lupa ciclópea para mejor visibilidad"
+    }
+}
+,
+    {
+    "id": 1769773510686,
+    "name": "Seikojust Diamond Bronze Rose Gold",
+    "category": "Seikojust",
+    "league": "Seikojust",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seikojust-diamond-bronze-rose-gold/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seikojust-diamond-bronze-rose-gold/2.webp",
+        "/assets/productos/RC_Mods/seikojust-diamond-bronze-rose-gold/3.webp",
+        "/assets/productos/RC_Mods/seikojust-diamond-bronze-rose-gold/4.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 36 mm o 39 mm (sin corona), adaptable para distintos gustos y tamaños de muñeca\nMovimiento: Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas\nGrosor: aproximadamente 12 mm, cómodo para uso diario\nCristal: zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad\nLuminosidad: Luminova en índices y agujas para lectura óptima en la oscuridad\nCaja: acero inoxidable 904L con acabado en oro rosa pulido y cepillado, robusto y elegante\nCorona: enroscada para mayor protección contra agua y polvo\nBisel: acero inoxidable 904L con acabado oro rosa pulido, clásico y atemporal\nCorrea: acero inoxidable 904L con acabado oro rosa, con cierre desplegable seguro y cómodo",
+    "features": [
+        "Diámetro: 36 mm o 39 mm (sin corona), adaptable para distintos gustos y tamaños de muñeca",
+        "Movimiento: Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas",
+        "Grosor: aproximadamente 12 mm, cómodo para uso diario",
+        "Cristal: zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad",
+        "Luminosidad: Luminova en índices y agujas para lectura óptima en la oscuridad",
+        "Caja: acero inoxidable 904L con acabado en oro rosa pulido y cepillado, robusto y elegante",
+        "Corona: enroscada para mayor protección contra agua y polvo",
+        "Bisel: acero inoxidable 904L con acabado oro rosa pulido, clásico y atemporal",
+        "Correa: acero inoxidable 904L con acabado oro rosa, con cierre desplegable seguro y cómodo"
+    ],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
+    "straps": [
+        "Jubilee",
+        "President"
+    ],
+    "specs": {
+        "Diámetro": "36 mm o 39 mm (sin corona), adaptable para distintos gustos y tamaños de muñeca",
+        "Movimiento": "Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas",
+        "Grosor": "aproximadamente 12 mm, cómodo para uso diario",
+        "Cristal": "zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad",
+        "Luminosidad": "Luminova en índices y agujas para lectura óptima en la oscuridad",
+        "Caja": "acero inoxidable 904L con acabado en oro rosa pulido y cepillado, robusto y elegante",
+        "Corona": "enroscada para mayor protección contra agua y polvo",
+        "Bisel": "acero inoxidable 904L con acabado oro rosa pulido, clásico y atemporal",
+        "Correa": "acero inoxidable 904L con acabado oro rosa, con cierre desplegable seguro y cómodo"
+    }
+}
+,
+    {
+    "id": 1769773564383,
+    "name": "Seikojust Diamond Black",
+    "category": "Seikojust",
+    "league": "Seikojust",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seikojust-diamond-black/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seikojust-diamond-black/2.webp",
+        "/assets/productos/RC_Mods/seikojust-diamond-black/3.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 36 mm o 39 mm (sin corona), adaptable para distintos gustos y tamaños de muñeca\nMovimiento: Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas\nGrosor: aproximadamente 12 mm, cómodo para uso diario\nCristal: zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad\nLuminosidad: Luminova en índices y agujas para lectura óptima en la oscuridad\nCaja: acero inoxidable 904L pulido y cepillado, robusto y elegante\nCorona: enroscada para mayor protección contra agua y polvo\nBisel: acero inoxidable pulido, clásico y atemporal\nCorrea: acero inoxidable 904L, con cierre desplegable seguro y cómodo",
+    "features": [
+        "Diámetro: 36 mm o 39 mm (sin corona), adaptable para distintos gustos y tamaños de muñeca",
+        "Movimiento: Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas",
+        "Grosor: aproximadamente 12 mm, cómodo para uso diario",
+        "Cristal: zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad",
+        "Luminosidad: Luminova en índices y agujas para lectura óptima en la oscuridad",
+        "Caja: acero inoxidable 904L pulido y cepillado, robusto y elegante",
+        "Corona: enroscada para mayor protección contra agua y polvo",
+        "Bisel: acero inoxidable pulido, clásico y atemporal",
+        "Correa: acero inoxidable 904L, con cierre desplegable seguro y cómodo"
+    ],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
+    "straps": [
+        "Jubilee",
+        "President"
+    ],
+    "specs": {
+        "Diámetro": "36 mm o 39 mm (sin corona), adaptable para distintos gustos y tamaños de muñeca",
+        "Movimiento": "Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas",
+        "Grosor": "aproximadamente 12 mm, cómodo para uso diario",
+        "Cristal": "zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad",
+        "Luminosidad": "Luminova en índices y agujas para lectura óptima en la oscuridad",
+        "Caja": "acero inoxidable 904L pulido y cepillado, robusto y elegante",
+        "Corona": "enroscada para mayor protección contra agua y polvo",
+        "Bisel": "acero inoxidable pulido, clásico y atemporal",
+        "Correa": "acero inoxidable 904L, con cierre desplegable seguro y cómodo"
+    }
+}
+,
+    {
+    "id": 1769773748581,
+    "name": "Seikojust Diamond Gold",
+    "category": "Seikojust",
+    "league": "Seikojust",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seikojust-diamond-gold/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seikojust-diamond-gold/2.webp",
+        "/assets/productos/RC_Mods/seikojust-diamond-gold/3.webp",
+        "/assets/productos/RC_Mods/seikojust-diamond-gold/4.webp",
+        "/assets/productos/RC_Mods/seikojust-diamond-gold/5.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 36 mm o 39 mm (sin corona), adaptable para distintos gustos y tamaños de muñeca\nMovimiento: Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas\nGrosor: Aproximadamente 12 mm, cómodo para uso diario\nCristal: Zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad\nLuminosidad: Luminova en índices y agujas para lectura óptima en la oscuridad\nCaja: Acero inoxidable 904L, robusto y elegante\nCorona: Enroscada para mayor protección contra agua y polvo\nBisel: Acero inoxidable pulido, clásico y atemporal\nCorrea: Acero inoxidable 904L con cierre desplegable seguro y cómodo",
+    "features": [
+        "Diámetro: 36 mm o 39 mm (sin corona), adaptable para distintos gustos y tamaños de muñeca",
+        "Movimiento: Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas",
+        "Grosor: Aproximadamente 12 mm, cómodo para uso diario",
+        "Cristal: Zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad",
+        "Luminosidad: Luminova en índices y agujas para lectura óptima en la oscuridad",
+        "Caja: Acero inoxidable 904L, robusto y elegante",
+        "Corona: Enroscada para mayor protección contra agua y polvo",
+        "Bisel: Acero inoxidable pulido, clásico y atemporal",
+        "Correa: Acero inoxidable 904L con cierre desplegable seguro y cómodo"
+    ],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
+    "straps": [
+        "Jubilee",
+        "President"
+    ],
+    "specs": {
+        "Diámetro": "36 mm o 39 mm (sin corona), adaptable para distintos gustos y tamaños de muñeca",
+        "Movimiento": "Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas",
+        "Grosor": "Aproximadamente 12 mm, cómodo para uso diario",
+        "Cristal": "Zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad",
+        "Luminosidad": "Luminova en índices y agujas para lectura óptima en la oscuridad",
+        "Caja": "Acero inoxidable 904L, robusto y elegante",
+        "Corona": "Enroscada para mayor protección contra agua y polvo",
+        "Bisel": "Acero inoxidable pulido, clásico y atemporal",
+        "Correa": "Acero inoxidable 904L con cierre desplegable seguro y cómodo"
+    }
+}
+,
+    {
+    "id": 1769773831636,
+    "name": "Seikojust Wimbledon Black",
+    "category": "Seikojust",
+    "league": "Seikojust",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seikojust-wimbledon-black/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seikojust-wimbledon-black/2.webp",
+        "/assets/productos/RC_Mods/seikojust-wimbledon-black/3.webp",
+        "/assets/productos/RC_Mods/seikojust-wimbledon-black/4.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 36 mm, 39 mm o 31mm (sin corona), adaptable para distintos gustos y tamaños de muñeca\nMovimiento: Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas\nGrosor: aproximadamente 12 mm, cómodo para uso diario\nCristal: zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad\nLuminosidad: Luminova en índices y agujas para lectura óptima en la oscuridad\nCaja: acero inoxidable 904L pulido y cepillado, robusto y elegante\nCorona: enroscada para mayor protección contra agua y polvo\nBisel: acero inoxidable pulido, clásico y atemporal\nCorrea: acero inoxidable 904L, con cierre desplegable seguro y cómodo",
+    "features": [
+        "Diámetro: 36 mm, 39 mm o 31mm (sin corona), adaptable para distintos gustos y tamaños de muñeca",
+        "Movimiento: Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas",
+        "Grosor: aproximadamente 12 mm, cómodo para uso diario",
+        "Cristal: zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad",
+        "Luminosidad: Luminova en índices y agujas para lectura óptima en la oscuridad",
+        "Caja: acero inoxidable 904L pulido y cepillado, robusto y elegante",
+        "Corona: enroscada para mayor protección contra agua y polvo",
+        "Bisel: acero inoxidable pulido, clásico y atemporal",
+        "Correa: acero inoxidable 904L, con cierre desplegable seguro y cómodo"
+    ],
+    "sizes": [],
+    "straps": [
+        "Jubilee",
+        "President"
+    ],
+    "specs": {
+        "Diámetro": "36 mm, 39 mm o 31mm (sin corona), adaptable para distintos gustos y tamaños de muñeca",
+        "Movimiento": "Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas",
+        "Grosor": "aproximadamente 12 mm, cómodo para uso diario",
+        "Cristal": "zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad",
+        "Luminosidad": "Luminova en índices y agujas para lectura óptima en la oscuridad",
+        "Caja": "acero inoxidable 904L pulido y cepillado, robusto y elegante",
+        "Corona": "enroscada para mayor protección contra agua y polvo",
+        "Bisel": "acero inoxidable pulido, clásico y atemporal",
+        "Correa": "acero inoxidable 904L, con cierre desplegable seguro y cómodo"
+    }
+}
+,
+    {
+    "id": 1769773907262,
+    "name": "Seikojust Arabic Green",
+    "category": "Seikojust",
+    "league": "Seikojust",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seikojust-arabic-green/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seikojust-arabic-green/2.webp",
+        "/assets/productos/RC_Mods/seikojust-arabic-green/3.webp",
+        "/assets/productos/RC_Mods/seikojust-arabic-green/4.webp",
+        "/assets/productos/RC_Mods/seikojust-arabic-green/5.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 36 mm o 39 mm (sin corona), adaptable a distintos tamaños de muñeca\nMovimiento: Automático Seiko NH35, preciso y fiable con reserva de marcha de ~41 h\nGrosor: ~12 mm, equilibrio entre comodidad y presencia\nCristal: Zafiro con tratamiento antirreflejos, resistente a rayaduras y con máxima nitidez\nLuminosidad: Luminova en agujas e índices para excelente visibilidad en la oscuridad\nCaja: Acero inoxidable 904L pulido y cepillado, robustez y acabados premium\nCorona: Enroscada, mayor protección contra agua y polvo\nBisel: Acero inoxidable pulido, diseño clásico y atemporal\nCorrea: Acero inoxidable 904L Oyster o Jubilee con cierre desplegable seguro",
+    "features": [
+        "Diámetro: 36 mm o 39 mm (sin corona), adaptable a distintos tamaños de muñeca",
+        "Movimiento: Automático Seiko NH35, preciso y fiable con reserva de marcha de ~41 h",
+        "Grosor: ~12 mm, equilibrio entre comodidad y presencia",
+        "Cristal: Zafiro con tratamiento antirreflejos, resistente a rayaduras y con máxima nitidez",
+        "Luminosidad: Luminova en agujas e índices para excelente visibilidad en la oscuridad",
+        "Caja: Acero inoxidable 904L pulido y cepillado, robustez y acabados premium",
+        "Corona: Enroscada, mayor protección contra agua y polvo",
+        "Bisel: Acero inoxidable pulido, diseño clásico y atemporal",
+        "Correa: Acero inoxidable 904L Oyster o Jubilee con cierre desplegable seguro"
+    ],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
+    "straps": [
+        "Jubilee",
+        "President"
+    ],
+    "specs": {
+        "Diámetro": "36 mm o 39 mm (sin corona), adaptable a distintos tamaños de muñeca",
+        "Movimiento": "Automático Seiko NH35, preciso y fiable con reserva de marcha de ~41 h",
+        "Grosor": "~12 mm, equilibrio entre comodidad y presencia",
+        "Cristal": "Zafiro con tratamiento antirreflejos, resistente a rayaduras y con máxima nitidez",
+        "Luminosidad": "Luminova en agujas e índices para excelente visibilidad en la oscuridad",
+        "Caja": "Acero inoxidable 904L pulido y cepillado, robustez y acabados premium",
+        "Corona": "Enroscada, mayor protección contra agua y polvo",
+        "Bisel": "Acero inoxidable pulido, diseño clásico y atemporal",
+        "Correa": "Acero inoxidable 904L Oyster o Jubilee con cierre desplegable seguro"
+    }
+}
+,
+    {
+    "id": 1769773935448,
+    "name": "Seikojust Sky Dweller Gold Black",
+    "category": "Seikojust",
+    "league": "Seikojust",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seikojust-sky-dweller-gold-black/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seikojust-sky-dweller-gold-black/2.webp",
+        "/assets/productos/RC_Mods/seikojust-sky-dweller-gold-black/3.webp",
+        "/assets/productos/RC_Mods/seikojust-sky-dweller-gold-black/4.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 36 mm o 39 mm (sin corona), adaptable a cualquier estilo\nMovimiento: Automático Seiko NH35, precisión y fiabilidad excepcionales\nGrosor: 12 mm, cómodo y equilibrado\nCristal: Zafiro antiarañazos con tratamiento antirreflejos, máxima claridad\nLuminosidad: Luminova en agujas e índices, legibilidad garantizada en la oscuridad\nCaja: Acero inoxidable 904L con recubrimiento Gold Premium, lujo y durabilidad\nCorona: Enroscada, mayor protección y seguridad\nLugs: 20 mm, compatibles con múltiples correas\nFondo de caja: Transparente, movimiento visible",
+    "features": [
+        "Diámetro: 36 mm o 39 mm (sin corona), adaptable a cualquier estilo",
+        "Movimiento: Automático Seiko NH35, precisión y fiabilidad excepcionales",
+        "Grosor: 12 mm, cómodo y equilibrado",
+        "Cristal: Zafiro antiarañazos con tratamiento antirreflejos, máxima claridad",
+        "Luminosidad: Luminova en agujas e índices, legibilidad garantizada en la oscuridad",
+        "Caja: Acero inoxidable 904L con recubrimiento Gold Premium, lujo y durabilidad",
+        "Corona: Enroscada, mayor protección y seguridad",
+        "Lugs: 20 mm, compatibles con múltiples correas",
+        "Fondo de caja: Transparente, movimiento visible"
+    ],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
+    "straps": [
+        "Jubilee",
+        "President"
+    ],
+    "specs": {
+        "Diámetro": "36 mm o 39 mm (sin corona), adaptable a cualquier estilo",
+        "Movimiento": "Automático Seiko NH35, precisión y fiabilidad excepcionales",
+        "Grosor": "12 mm, cómodo y equilibrado",
+        "Cristal": "Zafiro antiarañazos con tratamiento antirreflejos, máxima claridad",
+        "Luminosidad": "Luminova en agujas e índices, legibilidad garantizada en la oscuridad",
+        "Caja": "Acero inoxidable 904L con recubrimiento Gold Premium, lujo y durabilidad",
+        "Corona": "Enroscada, mayor protección y seguridad",
+        "Lugs": "20 mm, compatibles con múltiples correas",
+        "Fondo de caja": "Transparente, movimiento visible"
+    }
+}
+,
+    {
+    "id": 1769773994262,
+    "name": "Exploreiko I Black",
+    "category": "Exploreiko",
+    "league": "Exploreiko",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/exploreiko-i-black/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/exploreiko-i-black/2.webp",
+        "/assets/productos/RC_Mods/exploreiko-i-black/3.webp",
+        "/assets/productos/RC_Mods/exploreiko-i-black/4.webp",
+        "/assets/productos/RC_Mods/exploreiko-i-black/5.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 36 mm o 39 mm (sin corona), diseño equilibrado y elegante\nMovimiento: Automático Seiko NH35, fiable y preciso\nGrosor: 12 mm, cómodo para uso diario\nCristal: Zafiro anti-arañazos con tratamiento antirreflejos\nLuminosidad: Luminova en agujas e índices, perfecta visibilidad en la oscuridad\nCaja: Acero inoxidable 904L, duradero y con acabado premium\nCorona: Enroscada, seguridad y funcionalidad\nTamaño de muñeca: Ajustable entre 14,5 cm y 22 cm\nLugs: 20 mm, compatibles con correas intercambiables\nFondo de caja: Cristal transparente (movimiento visible) o acero cerrado",
+    "features": [
+        "Diámetro: 36 mm o 39 mm (sin corona), diseño equilibrado y elegante",
+        "Movimiento: Automático Seiko NH35, fiable y preciso",
+        "Grosor: 12 mm, cómodo para uso diario",
+        "Cristal: Zafiro anti-arañazos con tratamiento antirreflejos",
+        "Luminosidad: Luminova en agujas e índices, perfecta visibilidad en la oscuridad",
+        "Caja: Acero inoxidable 904L, duradero y con acabado premium",
+        "Corona: Enroscada, seguridad y funcionalidad",
+        "Tamaño de muñeca: Ajustable entre 14,5 cm y 22 cm",
+        "Lugs: 20 mm, compatibles con correas intercambiables",
+        "Fondo de caja: Cristal transparente (movimiento visible) o acero cerrado"
+    ],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
+    "straps": [],
+    "specs": {
+        "Diámetro": "36 mm o 39 mm (sin corona), diseño equilibrado y elegante",
+        "Movimiento": "Automático Seiko NH35, fiable y preciso",
+        "Grosor": "12 mm, cómodo para uso diario",
+        "Cristal": "Zafiro anti-arañazos con tratamiento antirreflejos",
+        "Luminosidad": "Luminova en agujas e índices, perfecta visibilidad en la oscuridad",
+        "Caja": "Acero inoxidable 904L, duradero y con acabado premium",
+        "Corona": "Enroscada, seguridad y funcionalidad",
+        "Tamaño de muñeca": "Ajustable entre 14,5 cm y 22 cm",
+        "Lugs": "20 mm, compatibles con correas intercambiables",
+        "Fondo de caja": "Cristal transparente (movimiento visible) o acero cerrado"
+    }
+}
+,
+    {
+    "id": 1769774018946,
+    "name": "Exploreiko I Tiffany Blue",
+    "category": "Exploreiko",
+    "league": "Exploreiko",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/exploreiko-i-tiffany-blue/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/exploreiko-i-tiffany-blue/2.webp",
+        "/assets/productos/RC_Mods/exploreiko-i-tiffany-blue/3.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nMovimiento: Automático NH35, fiable y preciso.\\n\\n\\nEsfera: Negra minimalista con índices luminiscentes.\\n\\n\\nBrazalete: Tipo Oyster en acero inoxidable 904L con cierre seguro.\\n\\n\\nResistencia al agua: 50 metros (5 ATM).\\n\\n\\nReserva de marcha: Aproximadamente 41 horas.\\n\\n\nCristal: Zafiro irrayable con tratamiento antirreflejos.\\n\\n\\nMovimiento: Automático NH35, fiable y preciso.\\n\\n\\nEsfera: Negra minimalista con índices luminiscentes.\\n\\n\\nBrazalete: Tipo Oyster en acero inoxidable 904L con cierre seguro.\\n\\n\\nResistencia al agua: 50 metros (5 ATM).\\n\\n\\nReserva de marcha: Aproximadamente 41 horas.\\n\\n\nCaja: Acero inoxidable de 39 mm o 36mm, acabados pulidos y cepillados.\\n\\n\\nCristal: Zafiro irrayable con tratamiento antirreflejos.\\n\\n\\nMovimiento: Automático NH35, fiable y preciso.\\n\\n\\nEsfera: Negra minimalista con índices luminiscentes.\\n\\n\\nBrazalete: Tipo Oyster en acero inoxidable 904L con cierre seguro.\\n\\n\\nResistencia al agua: 50 metros (5 ATM).\\n\\n\\nReserva de marcha: Aproximadamente 41 horas.\\n\\n",
+    "features": [
+        "Movimiento: Automático NH35, fiable y preciso.\\n\\n\\nEsfera: Negra minimalista con índices luminiscentes.\\n\\n\\nBrazalete: Tipo Oyster en acero inoxidable 904L con cierre seguro.\\n\\n\\nResistencia al agua: 50 metros (5 ATM).\\n\\n\\nReserva de marcha: Aproximadamente 41 horas.\\n\\n",
+        "Cristal: Zafiro irrayable con tratamiento antirreflejos.\\n\\n\\nMovimiento: Automático NH35, fiable y preciso.\\n\\n\\nEsfera: Negra minimalista con índices luminiscentes.\\n\\n\\nBrazalete: Tipo Oyster en acero inoxidable 904L con cierre seguro.\\n\\n\\nResistencia al agua: 50 metros (5 ATM).\\n\\n\\nReserva de marcha: Aproximadamente 41 horas.\\n\\n",
+        "Caja: Acero inoxidable de 39 mm o 36mm, acabados pulidos y cepillados.\\n\\n\\nCristal: Zafiro irrayable con tratamiento antirreflejos.\\n\\n\\nMovimiento: Automático NH35, fiable y preciso.\\n\\n\\nEsfera: Negra minimalista con índices luminiscentes.\\n\\n\\nBrazalete: Tipo Oyster en acero inoxidable 904L con cierre seguro.\\n\\n\\nResistencia al agua: 50 metros (5 ATM).\\n\\n\\nReserva de marcha: Aproximadamente 41 horas.\\n\\n"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Movimiento": "Automático NH35, fiable y preciso.\\n\\n\\nEsfera: Negra minimalista con índices luminiscentes.\\n\\n\\nBrazalete: Tipo Oyster en acero inoxidable 904L con cierre seguro.\\n\\n\\nResistencia al agua: 50 metros (5 ATM).\\n\\n\\nReserva de marcha: Aproximadamente 41 horas.\\n\\n",
+        "Cristal": "Zafiro irrayable con tratamiento antirreflejos.\\n\\n\\nMovimiento: Automático NH35, fiable y preciso.\\n\\n\\nEsfera: Negra minimalista con índices luminiscentes.\\n\\n\\nBrazalete: Tipo Oyster en acero inoxidable 904L con cierre seguro.\\n\\n\\nResistencia al agua: 50 metros (5 ATM).\\n\\n\\nReserva de marcha: Aproximadamente 41 horas.\\n\\n",
+        "Caja": "Acero inoxidable de 39 mm o 36mm, acabados pulidos y cepillados.\\n\\n\\nCristal: Zafiro irrayable con tratamiento antirreflejos.\\n\\n\\nMovimiento: Automático NH35, fiable y preciso.\\n\\n\\nEsfera: Negra minimalista con índices luminiscentes.\\n\\n\\nBrazalete: Tipo Oyster en acero inoxidable 904L con cierre seguro.\\n\\n\\nResistencia al agua: 50 metros (5 ATM).\\n\\n\\nReserva de marcha: Aproximadamente 41 horas.\\n\\n"
+    }
+}
 ];
 
 export default products;
