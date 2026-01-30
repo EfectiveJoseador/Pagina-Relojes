@@ -931,6 +931,50 @@ const products = [
             "Grosor": "11 mm"
         }
     }
+,
+    {
+    "id": 1769772242095,
+    "name": "Nauteiko Openheart Rose Gold Chocolatte",
+    "category": "Nauteiko",
+    "league": "Nauteiko",
+    "price": 139.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/nauteiko-openheart-rose-gold-chocolatte/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/nauteiko-openheart-rose-gold-chocolatte/2.webp",
+        "/assets/productos/RC_Mods/nauteiko-openheart-rose-gold-chocolatte/3.webp",
+        "/assets/productos/RC_Mods/nauteiko-openheart-rose-gold-chocolatte/4.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nDiámetro: 41 mm (sin incluir la corona), moderno y equilibrado\nMovimiento: Automático Seiko NH38, visible en la ventana open-heart\nGrosor: 12 mm, cómodo para el uso diario\nCristal: Zafiro anti-arañazos con tratamiento antirreflectante\nLuminosidad: Luminova en agujas e índices, perfecta en baja luz\nCaja: Transparente, mostrando el movimiento automático\nCorona: Enroscada, segura y funcional\nTamaño de muñeca: Ajustable entre 14,5 cm y 22 cm\nLugs: 13 mm\nCorrea: Acero inoxidable 904L con cierre mariposa de seguridad\nFondo de caja: Transparente, mostrando el movimiento automático",
+    "features": [
+        "Diámetro: 41 mm (sin incluir la corona), moderno y equilibrado",
+        "Movimiento: Automático Seiko NH38, visible en la ventana open-heart",
+        "Grosor: 12 mm, cómodo para el uso diario",
+        "Cristal: Zafiro anti-arañazos con tratamiento antirreflectante",
+        "Luminosidad: Luminova en agujas e índices, perfecta en baja luz",
+        "Caja: Transparente, mostrando el movimiento automático",
+        "Corona: Enroscada, segura y funcional",
+        "Tamaño de muñeca: Ajustable entre 14,5 cm y 22 cm",
+        "Lugs: 13 mm",
+        "Correa: Acero inoxidable 904L con cierre mariposa de seguridad",
+        "Fondo de caja: Transparente, mostrando el movimiento automático"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Diámetro": "41 mm (sin incluir la corona), moderno y equilibrado",
+        "Movimiento": "Automático Seiko NH38, visible en la ventana open-heart",
+        "Grosor": "12 mm, cómodo para el uso diario",
+        "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
+        "Luminosidad": "Luminova en agujas e índices, perfecta en baja luz",
+        "Caja": "Transparente, mostrando el movimiento automático",
+        "Corona": "Enroscada, segura y funcional",
+        "Tamaño de muñeca": "Ajustable entre 14,5 cm y 22 cm",
+        "Lugs": "13 mm",
+        "Correa": "Acero inoxidable 904L con cierre mariposa de seguridad",
+        "Fondo de caja": "Transparente, mostrando el movimiento automático"
+    }
+}
 ];
 
 export default products;

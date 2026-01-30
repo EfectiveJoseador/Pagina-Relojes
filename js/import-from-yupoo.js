@@ -4,7 +4,6 @@ const path = require('path');
 const readline = require('readline');
 const sharp = require('sharp');
 
-
 const COLORS = {
     reset: '\x1b[0m',
     bright: '\x1b[1m',
@@ -21,12 +20,9 @@ const FILES = {
     assetsDir: path.join(__dirname, '..', 'assets', 'productos', 'RC_Mods')
 };
 
-
 if (!fs.existsSync(FILES.assetsDir)) {
     fs.mkdirSync(FILES.assetsDir, { recursive: true });
 }
-
-
 
 function print(color, text) {
     console.log(`${COLORS[color] || COLORS.reset}${text}${COLORS.reset}`);
@@ -37,34 +33,127 @@ function fetchHtml(url) {
         const options = {
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+                'Accept-Language': 'es-ES,es;q=0.9,en;q=0.8',
+                'Accept-Encoding': 'identity',
+                'Cache-Control': 'max-age=0',
+                'Sec-Ch-Ua': '"Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"',
+                'Sec-Ch-Ua-Mobile': '?0',
+                'Sec-Ch-Ua-Platform': '"Windows"',
+                'Sec-Fetch-Dest': 'document',
+                'Sec-Fetch-Mode': 'navigate',
+                'Sec-Fetch-Site': 'none',
+                'Sec-Fetch-User': '?1',
+                'Upgrade-Insecure-Requests': '1'
+            }
+        };
+
+        https.get(url, options, (res) => {
+            let data = '';
+
+            if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+                let redirectUrl = res.headers.location;
+                if (redirectUrl.startsWith('/')) {
+                    const parsedOriginal = new URL(url);
+                    redirectUrl = `${parsedOriginal.protocol}//${parsedOriginal.host}${redirectUrl}`;
+                }
+                print('yellow', `  ↳ Redirigiendo a: ${redirectUrl}`);
+                return fetchHtml(redirectUrl).then(resolve).catch(reject);
+            }
+
+            if (res.statusCode !== 200) {
+                print('red', `  Status Code: ${res.statusCode}`);
+            }
+
+            res.setEncoding('utf8');
+            res.on('data', chunk => data += chunk);
+            res.on('end', () => resolve(data));
+        }).on('error', reject);
+    });
+}
+
+function downloadImage(url, destPath) {
+    return new Promise((resolve, reject) => {
+        const file = fs.createWriteStream(destPath);
+        https.get(url, (response) => {
+            response.pipe(file);
+            file.on('finish', () => {
+                file.close(resolve);
+            });
+        }).on('error', (err) => {
+            fs.unlink(destPath, () => reject(err));
+        });
+    });
+}
+
+async function processImage(url, destDir, filename) {
+    const tempPath = path.join(destDir, `${filename}.tmp`);
+    const finalPath = path.join(destDir, `${filename}.webp`);
+    const miniPath = path.join(destDir, `${filename}_mini.webp`);
+
+    try {
+        await downloadImage(url, tempPath);
+
+        await sharp(tempPath)
+            .webp({ quality: 85 })
+            .toFile(finalPath);
+
+        print('green', `  ✓ Guardada: ${path.basename(finalPath)}`);
+
+        if (filename === '1' || filename === '2') {
+            await sharp(tempPath)
+                .resize(600, 600, {
+                    fit: 'cover',
+                    position: 'center'
+                })
+                .webp({ quality: 80 })
+                .toFile(miniPath);
+            print('green', `  ✓ Miniatura: ${path.basename(miniPath)}`);
+        }
+
+        fs.unlinkSync(tempPath);
+
+        return `/assets/productos/RC_Mods/${path.basename(destDir)}/${path.basename(finalPath)}`;
+
+    } catch (e) {
+        if (fs.existsSync(tempPath)) fs.unlinkSync(tempPath);
+        throw new Error(`Error procesando imagen ${filename}: ${e.message}`);
+    }
+}
+
+function askQuestion(query) {
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+    return new Promise(resolve => rl.question(query, ans => {
+        rl.close();
+        resolve(ans);
+    }));
+}
+
 function calculatePrice(productName, specifications) {
     const name = productName.toLowerCase();
     const movement = (specifications.Movimiento || '').toLowerCase();
-
 
     if (name.includes('gmteiko')) {
         print('cyan', '  💰 Tipo detectado: GMTeiko → 139.90€ / 169.90€');
         return { price: 139.90, oldPrice: 169.90 };
     }
 
-
     if (movement.includes('vk') || movement.includes('cuarzo') || movement.includes('quartz') || movement.includes('híbrido')) {
         print('cyan', '  💰 Tipo detectado: Cuarzo/Híbrido → 119.90€ / 149.90€');
         return { price: 119.90, oldPrice: 149.90 };
     }
-
 
     if (name.includes('open heart') || name.includes('openheart') || name.includes('open-heart')) {
         print('cyan', '  💰 Tipo detectado: Open Heart → 139.90€ / 169.90€');
         return { price: 139.90, oldPrice: 169.90 };
     }
 
-
     print('cyan', '  💰 Tipo detectado: Automático → 129.90€ / 169.90€');
     return { price: 129.90, oldPrice: 169.90 };
 }
-
 
 function detectCollection(productName) {
     const name = productName.toLowerCase();
@@ -94,12 +183,9 @@ function detectCollection(productName) {
         return 'Seitona';
     }
 
-
     const firstWord = productName.split(' ')[0];
     return firstWord.charAt(0).toUpperCase() + firstWord.slice(1);
 }
-
-
 
 function parseRcbMods(html) {
     const data = {
@@ -113,17 +199,13 @@ function parseRcbMods(html) {
         specifications: {}
     };
 
-
     const titleMatch = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
     if (titleMatch) {
         let rawName = titleMatch[1].replace(/<[^>]+>/g, '').trim();
-
         data.name = rawName.replace(/\s*\([^)]+\)/g, '').trim();
     }
 
-
     const cleanHtml = html.replace(/\s+/g, ' ');
-
 
     const specPatterns = {
         'Diámetro': /Diámetro:\s*([^<•·\n"]+)/i,
@@ -149,7 +231,6 @@ function parseRcbMods(html) {
         }
     }
 
-
     const strapsMatch = cleanHtml.match(/Correas Disponibles:\s*([^<]+)/i) ||
         cleanHtml.match(/Available Straps?:\s*([^<]+)/i) ||
         cleanHtml.match(/Bracelet Options?:\s*([^<]+)/i);
@@ -161,7 +242,6 @@ function parseRcbMods(html) {
             .filter(Boolean);
     }
 
-
     data.sizes = [];
     const sizeFeatures = data.features.find(f => f.startsWith('Diámetro:') || f.startsWith('Diametro:'));
     if (sizeFeatures && (sizeFeatures.includes('36 mm o 39 mm') || sizeFeatures.includes('36mm o 39mm') || sizeFeatures.includes('36mm / 39mm'))) {
@@ -169,12 +249,10 @@ function parseRcbMods(html) {
         console.log('  ℹ Tamaños detectados: 36mm, 39mm');
     }
 
-
     if (data.straps.length === 0 && (data.name.toLowerCase().includes('gmt') || data.name.toLowerCase().includes('diver'))) {
         data.straps = ['Jubilee', 'Oyster'];
         console.log('  ℹ No se encontraron correas específicas, usando opciones por defecto: Jubilee, Oyster');
     }
-
 
     if (data.name.toLowerCase().includes('seikojust') || data.name.toLowerCase().includes('just')) {
         const requiredStraps = ['Jubilee', 'President'];
@@ -183,7 +261,6 @@ function parseRcbMods(html) {
         });
         console.log('  ℹ Seikojust detectado: Asegurando correas Jubilee y President');
     }
-
 
     const imgRegex = /class="[^"]*product__media[^"]*media--transparent[^"]*"[\s\S]*?<img[^>]+src="([^"]+)"/g;
     let match;
@@ -197,7 +274,6 @@ function parseRcbMods(html) {
     }
     data.images = Array.from(foundImages);
 
-
     const priceMatch = html.match(/<meta property="og:price:amount" content="([^"]+)"/);
     if (priceMatch) {
         data.price = parseFloat(priceMatch[1].replace(',', '.'));
@@ -205,8 +281,6 @@ function parseRcbMods(html) {
 
     return data;
 }
-
-
 
 async function main() {
     print('bright', '\n=== IMPORTE DE RELOJES (RCB MODS) ===\n');
@@ -254,7 +328,6 @@ async function main() {
         if (data.straps.length) console.log(`${COLORS.bright}Correas:${COLORS.reset} ${data.straps.join(', ')}`);
         console.log(`${COLORS.bright}Imágenes encontradas:${COLORS.reset} ${data.images.length}`);
 
-
         if (data.images.length === 0) {
             print('red', 'No se encontraron imágenes. Revisa el selector.');
             continue;
@@ -275,9 +348,7 @@ async function main() {
 
         const selectedImages = selectedIndices.map(i => data.images[i]);
 
-
         const handle = data.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-
 
         print('yellow', '\nDescargando y procesando imágenes...');
         const localImages = [];
@@ -294,10 +365,7 @@ async function main() {
             }
         }
 
-
-
         const productPricing = calculatePrice(data.name, data.specifications);
-
 
         const collectionName = detectCollection(data.name);
 
@@ -317,7 +385,6 @@ async function main() {
             specs: data.specifications
         };
 
-
         await saveOrUpdateProduct(finalProduct);
 
         print('bright', '\n--- Producto Completado ---\n');
@@ -334,7 +401,6 @@ async function saveOrUpdateProduct(newProduct) {
 
     let content = fs.readFileSync(FILES.products, 'utf-8');
 
-
     const startIdx = content.indexOf('[');
     const endIdx = content.lastIndexOf(']');
 
@@ -345,7 +411,6 @@ async function saveOrUpdateProduct(newProduct) {
 
     let arrayContent = content.substring(startIdx + 1, endIdx);
 
-
     const escapedName = newProduct.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     const namePattern = new RegExp(`"name"\\s*:\\s*"${escapedName}"`);
     const nameMatch = arrayContent.match(namePattern);
@@ -353,9 +418,7 @@ async function saveOrUpdateProduct(newProduct) {
     if (nameMatch) {
         print('yellow', `\n⚠️  El producto "${newProduct.name}" ya existe. Actualizando datos...`);
 
-
         let blockStart = arrayContent.lastIndexOf('{', nameMatch.index);
-
 
         let blockEnd = -1;
         let braceCount = 0;
@@ -373,12 +436,10 @@ async function saveOrUpdateProduct(newProduct) {
         if (blockStart !== -1 && blockEnd !== -1) {
             const oldBlock = arrayContent.substring(blockStart, blockEnd + 1);
 
-
             const idMatch = oldBlock.match(/"id":\s*(\d+)/);
             if (idMatch) newProduct.id = parseInt(idMatch[1]);
 
             const newBlock = JSON.stringify(newProduct, null, 4);
-
 
             const newContent = content.substring(0, startIdx + 1 + blockStart) +
                 newBlock +
@@ -390,7 +451,6 @@ async function saveOrUpdateProduct(newProduct) {
         }
     }
 
-
     print('green', `\nCreando nuevo producto: "${newProduct.name}"`);
 
     let insertionContent = content.replace(/export\s+default\s+products;\s*$/, '').trim();
@@ -398,7 +458,7 @@ async function saveOrUpdateProduct(newProduct) {
 
     const newEntry = JSON.stringify(newProduct, null, 4);
     const innerContent = insertionContent.substring(startIdx + 1, newEndIdx).trim();
-    const hasActualProducts = innerContent.replace(/\/\*[\s\S]*?\*\
+    const hasActualProducts = innerContent.replace(/\/\*[\s\S]*?\*\//g, '').trim().length > 0;
     const prefix = (hasActualProducts && !innerContent.endsWith(',')) ? ',' : '';
 
     const insertion = `${prefix}\n    ${newEntry}\n`;
@@ -412,4 +472,3 @@ async function saveOrUpdateProduct(newProduct) {
 main().catch(err => {
     console.error('Error fatal:', err);
 });
-
