@@ -1932,8 +1932,7 @@ const products = [
         "images": [
             "/assets/productos/RC_Mods/exploreiko-i-black/2.webp",
             "/assets/productos/RC_Mods/exploreiko-i-black/3.webp",
-            "/assets/productos/RC_Mods/exploreiko-i-black/4.webp",
-            "/assets/productos/RC_Mods/exploreiko-i-black/5.webp"
+            "/assets/productos/RC_Mods/exploreiko-i-black/4.webp"
         ],
         "description": "Especificaciones Técnicas:\nDiámetro: 36 mm o 39 mm (sin corona), diseño equilibrado y elegante\nMovimiento: Automático Seiko NH35, fiable y preciso\nGrosor: 12 mm, cómodo para uso diario\nCristal: Zafiro anti-arañazos con tratamiento antirreflejos\nLuminosidad: Luminova en agujas e índices, perfecta visibilidad en la oscuridad\nCaja: Acero inoxidable 904L, duradero y con acabado premium\nCorona: Enroscada, seguridad y funcionalidad\nTamaño de muñeca: Ajustable entre 14,5 cm y 22 cm\nLugs: 20 mm, compatibles con correas intercambiables\nFondo de caja: Cristal transparente (movimiento visible) o acero cerrado",
         "features": [

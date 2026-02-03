@@ -152,8 +152,9 @@ body.low-performance * {
 .scroll-indicator {
     position: absolute;
     bottom: 25px;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 30px;
+    left: auto;
+    transform: none;
     z-index: 100;
     cursor: pointer;
     opacity: 0;
@@ -166,7 +167,7 @@ body.low-performance * {
 }
 
 .scroll-indicator:hover {
-    transform: translateX(-50%) scale(1.05);
+    transform: scale(1.05);
 }
 
 .scroll-indicator:hover .scroll-text {
@@ -181,18 +182,18 @@ body.low-performance * {
 .scroll-indicator.hidden {
     opacity: 0 !important;
     pointer-events: none;
-    transform: translateX(-50%) translateY(20px);
+    transform: translateY(20px);
 }
 
 @keyframes scrollIndicatorFadeIn {
     0% {
         opacity: 0;
-        transform: translateX(-50%) translateY(30px);
+        transform: translateY(30px);
     }
 
     100% {
         opacity: 1;
-        transform: translateX(-50%) translateY(0);
+        transform: translateY(0);
     }
 }
 
@@ -272,6 +273,7 @@ body.low-performance * {
 @media (max-width: 768px) {
     .scroll-indicator {
         bottom: 15px;
+        right: 20px;
     }
 
     .scroll-text {
