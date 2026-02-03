@@ -1774,6 +1774,61 @@ const products = [
         "Fondo de caja": "Cristal (movimiento visible) / Acero (parte trasera cerrada)",
         "Función GMT": "Funcional"
     }
+},
+    {
+    "id": 1770158449659,
+    "name": "GMTeiko \"Joker\"",
+    "category": "GMTeiko",
+    "league": "GMTeiko",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seiko-mod-gmt-master-ii-joker/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seiko-mod-gmt-master-ii-joker/2.webp"
+    ],
+    "sizes": [],
+    "straps": [
+        "Jubilee",
+        "Oyster"
+    ],
+    "specs": {
+        "Movimiento": "Automático original NH34 Seiko Time Corp.",
+        "Caja": "Acero inoxidable 316L",
+        "Grosor": "12 mm",
+        "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
+        "Corona": "Roscado",
+        "Correa": "20 mm",
+        "Bisel": "Cerámico",
+        "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
+        "Fondo de caja": "Cristal (movimiento visible) / Acero (parte trasera cerrada)",
+        "Función GMT": "Funcional"
+    }
+},
+    {
+    "id": 1770158503577,
+    "name": "Seitona Rose Gold OysterFlex",
+    "category": "Seitona",
+    "league": "Seitona",
+    "price": 119.9,
+    "oldPrice": 149.9,
+    "image": "/assets/productos/RC_Mods/seiko-mod-daytona-rose-gold-oysterflex/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seiko-mod-daytona-rose-gold-oysterflex/2.webp"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Diámetro": "40 mm (sin incluir la corona)",
+        "Movimiento": "Movimiento híbrido VK63 (combina automático con cuarzo)",
+        "Grosor": "12 mm",
+        "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
+        "Luminosidad": "Sí",
+        "Corona": "Roscado",
+        "Bisel": "Cerámico",
+        "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
+        "Pulsera": "Acero inoxidable 316L (con cierre de seguridad)",
+        "Correa": "20 mm"
+    }
 }
 ];
 
