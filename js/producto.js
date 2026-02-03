@@ -31,23 +31,19 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('product-name').textContent = product.name;
     document.getElementById('product-price').textContent = `€${product.price.toFixed(2)}`;
 
-
+    // Generar features desde specs
     const featuresEl = document.getElementById('product-features');
-    if (featuresEl && product.features && Array.isArray(product.features)) {
-        featuresEl.innerHTML = product.features.map(feature => {
-            if (feature.includes(':')) {
-                const [label, ...rest] = feature.split(':');
-                const value = rest.join(':').trim();
-                return `<li><i class="fas fa-check"></i> <span><strong>${label}:</strong> ${value}</span></li>`;
-            }
-            return `<li><i class="fas fa-check"></i> <span>${feature}</span></li>`;
-        }).join('');
+    if (featuresEl && product.specs && typeof product.specs === 'object') {
+        const features = Object.entries(product.specs)
+            .filter(([key, value]) => value && value.trim() !== '')
+            .map(([key, value]) => {
+                return `<li><i class="fas fa-check"></i> <span><strong>${key}:</strong> ${value}</span></li>`;
+            });
+        featuresEl.innerHTML = features.join('');
     }
-
 
     const sizeContainer = document.getElementById('size-selector-container');
     const sizeSelector = document.getElementById('size-selector');
-
     if (product.sizes && product.sizes.length > 0) {
         if (sizeContainer) sizeContainer.style.display = 'block';
         if (sizeSelector) {
