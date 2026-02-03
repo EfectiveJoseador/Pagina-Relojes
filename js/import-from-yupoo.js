@@ -158,6 +158,9 @@ function calculatePrice(productName, specifications) {
 function detectCollection(productName) {
     const name = productName.toLowerCase();
 
+    if (name.includes('datejust') || name.includes('seikojust')) {
+        return 'Seikojust';
+    }
     if (name.includes('gmteiko')) {
         return 'GMTeiko';
     }
@@ -166,9 +169,6 @@ function detectCollection(productName) {
     }
     if (name.includes('royal seikoak') || name.includes('royal-seikoak')) {
         return 'Royal Seikoak';
-    }
-    if (name.includes('seikojust')) {
-        return 'Seikojust';
     }
     if (name.includes('seikom') || name.includes('seiko m') || name.includes('mariner')) {
         return 'SeikoMariner';
@@ -187,7 +187,7 @@ function detectCollection(productName) {
     return firstWord.charAt(0).toUpperCase() + firstWord.slice(1);
 }
 
-function parseRcbMods(html) {
+function parseShopifyProduct(html) {
     const data = {
         name: 'Desconocido',
         description: '',
@@ -199,35 +199,108 @@ function parseRcbMods(html) {
         specifications: {}
     };
 
-    const titleMatch = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+    const titleMatch = html.match(/<h1[^>]*class="[^"]*product[^"]*"[^>]*>([\s\S]*?)<\/h1>/i) ||
+        html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
     if (titleMatch) {
         let rawName = titleMatch[1].replace(/<[^>]+>/g, '').trim();
-        data.name = rawName.replace(/\s*\([^)]+\)/g, '').trim();
+        rawName = rawName.replace(/\s*\([^)]+\)/g, '').trim();
+
+        // Transformar "Seiko Mod Datejust" a "Seikojust"
+        data.name = rawName.replace(/Seiko\s+Mod\s+Datejust/gi, 'Seikojust');
     }
 
     const cleanHtml = html.replace(/\s+/g, ' ');
 
+    // Intentar extraer desde meta description og:description
+    const metaDescMatch = html.match(/<meta\s+property="og:description"\s+content="([^"]+)"/i);
+    let descriptionText = '';
+    if (metaDescMatch) {
+        descriptionText = metaDescMatch[1];
+    }
+
+    // Combinar HTML y descripción para buscar especificaciones
+    const combinedText = cleanHtml + ' ' + descriptionText;
+
+    // Shopify usa formato de lista HTML <li><strong>Campo:</strong> valor</li> o bullets
     const specPatterns = {
-        'Diámetro': /Diámetro:\s*([^<•·\n"]+)/i,
-        'Movimiento': /Movimiento:\s*([^<•·\n"]+)/i,
-        'Grosor': /Grosor:\s*([^<•·\n"]+)/i,
-        'Cristal': /Cristal:\s*([^<•·\n"]+)/i,
-        'Luminosidad': /Luminosidad:\s*([^<•·\n"]+)/i,
-        'Caja': /Caja:\s*([^<•·\n"]+)/i,
-        'Corona': /Corona:\s*([^<•·\n"]+)/i,
-        'Bisel': /Bisel:\s*([^<•·\n"]+)/i,
-        'Tamaño de muñeca': /Tamaño de muñeca:\s*([^<•·\n"]+)/i,
-        'Lugs': /Lugs:\s*([^<•·\n"]+)/i,
-        'Correa': /Correa:\s*([^<•·\n"]+)/i,
-        'Fondo de caja': /Fondo de caja:\s*([^<•·\n"]+)/i
+        'Caja': /<strong>Caja:<\/strong>\s*([^<]+)|[-•]\s*Caja:\s*([^\n<-•]+)/i,
+        'Diámetro': /<strong>Diámetro:<\/strong>\s*([^<]+)|[-•]\s*Diámetro:\s*([^\n<-•]+)/i,
+        'Movimiento': /<strong>Movimiento:\s*<\/strong>\s*([^<]+)|<strong>Movimiento:<\/strong>\s*([^<]+)|[-•]?\s*Movimiento:\s*([^\n<-•]+)/i,
+        'Grosor': /<strong>Grosor:<\/strong>\s*([^<]+)|[-•]\s*Grosor:\s*([^\n<-•]+)/i,
+        'Cristal': /<strong>Cristal:<\/strong>\s*([^<]+)|[-•]\s*Cristal:\s*([^\n<-•]+)/i,
+        'Luminosidad': /<strong>Luminosidad:<\/strong>\s*([^<]+)|[-•]\s*Luminosidad:\s*([^\n<-•]+)/i,
+        'Corona': /<strong>Corona:<\/strong>\s*([^<]+)|[-•]\s*Corona:\s*([^\n<-•]+)/i,
+        'Bisel': /<strong>Bisel:<\/strong>\s*([^<]+)|[-•]\s*Bisel:\s*([^\n<-•]+)/i,
+        'Tamaño de muñeca': /<strong>Tamaño de (?:la )?muñeca:<\/strong>\s*([^<]+)|[-•]\s*Tamaño de (?:la )?muñeca:\s*([^\n<-•]+)/i,
+        'Pulsera': /<strong>Pulsera:<\/strong>\s*([^<]+)|[-•]\s*Pulsera:\s*([^\n<-•]+)/i,
+        'Correa': /<strong>Correa:<\/strong>\s*([^<]+)|[-•]\s*Correa:\s*([^\n<-•]+)/i,
+        'Fondo de caja': /<strong>Fondo de caja:<\/strong>\s*([^<]+)|[-•]\s*Fondo de caja:\s*([^\n<-•]+)/i,
+        'Esfera': /<strong>Esfera:<\/strong>\s*([^<]+)|[-•]\s*Esfera:\s*([^\n<-•]+)/i
     };
 
     for (const [key, regex] of Object.entries(specPatterns)) {
-        const match = cleanHtml.match(regex);
+        const match = combinedText.match(regex);
         if (match) {
-            let value = match[1].trim();
+            // El regex tiene múltiples grupos de captura, tomar el que no sea undefined
+            let value = (match[1] || match[2] || match[3] || '').trim();
+            // Limpiar caracteres especiales adicionales
+            value = value.replace(/[•·].*$/, '').trim();
+            // Capitalizar primera letra
+            if (value.length > 0) {
+                value = value.charAt(0).toUpperCase() + value.slice(1);
+            }
             data.specifications[key] = value;
-            data.features.push(`${key}: ${value}`);
+
+            // Formatear features con descripciones contextuales
+            let featureText = '';
+            switch (key) {
+                case 'Diámetro':
+                    featureText = `Diámetro: ${value}, diseño equilibrado y elegante`;
+                    break;
+                case 'Movimiento':
+                    if (value.toLowerCase().includes('nh35')) {
+                        featureText = `Movimiento: ${value}, fiable y preciso`;
+                    } else {
+                        featureText = `Movimiento: ${value}`;
+                    }
+                    break;
+                case 'Grosor':
+                    featureText = `Grosor: ${value}, cómodo para uso diario`;
+                    break;
+                case 'Cristal':
+                    featureText = `Cristal: ${value}`;
+                    break;
+                case 'Luminosidad':
+                    featureText = `Luminosidad: ${value}, perfecta visibilidad en la oscuridad`;
+                    break;
+                case 'Caja':
+                    featureText = `Caja: ${value}, duradero y con acabado premium`;
+                    break;
+                case 'Corona':
+                    featureText = `Corona: ${value}, seguridad y funcionalidad`;
+                    break;
+                case 'Tamaño de muñeca':
+                    featureText = `Tamaño de muñeca: ${value}`;
+                    break;
+                case 'Pulsera':
+                    featureText = `Pulsera: ${value}`;
+                    break;
+                case 'Correa':
+                    featureText = `Correa: ${value}`;
+                    break;
+                case 'Resistencia al agua':
+                    featureText = `Resistencia al agua: ${value}`;
+                    break;
+                case 'Fondo de caja':
+                    featureText = `Fondo de caja: ${value}`;
+                    break;
+                case 'Esfera':
+                    featureText = `Esfera: ${value}`;
+                    break;
+                default:
+                    featureText = `${key}: ${value}`;
+            }
+            data.features.push(featureText);
         }
     }
 
@@ -262,17 +335,82 @@ function parseRcbMods(html) {
         console.log('  ℹ Seikojust detectado: Asegurando correas Jubilee y President');
     }
 
-    const imgRegex = /class="[^"]*product__media[^"]*media--transparent[^"]*"[\s\S]*?<img[^>]+src="([^"]+)"/g;
+    // Shopify usa diferentes patrones para imágenes
+    // Intentar varios selectores comunes de Shopify
+    const imgRegex1 = /<img[^>]+class="[^"]*product[^"]*"[^>]+src="([^"]+)"/gi;
+    const imgRegex2 = /<img[^>]+data-src="([^"]+)"/gi;
+    const imgRegex3 = /<img[^>]+srcset="([^"]+)\s+\d+w/gi;
+    const imgRegex4 = /<img[^>]+src="([^"]+)"/gi;
+
     let match;
     const foundImages = new Set();
 
-    while ((match = imgRegex.exec(html)) !== null) {
+    // Intentar primer patrón (imágenes de producto)
+    while ((match = imgRegex1.exec(html)) !== null) {
         let src = match[1];
         if (src.startsWith('//')) src = 'https:' + src;
         let cleanSrc = src.split('?')[0];
-        foundImages.add(cleanSrc);
+        if (!cleanSrc.includes('placeholder') && !cleanSrc.includes('icon')) {
+            foundImages.add(cleanSrc);
+        }
     }
-    data.images = Array.from(foundImages);
+
+    // Intentar data-src si no se encontraron imágenes
+    if (foundImages.size === 0) {
+        while ((match = imgRegex2.exec(html)) !== null) {
+            let src = match[1];
+            if (src.startsWith('//')) src = 'https:' + src;
+            let cleanSrc = src.split('?')[0];
+            if (!cleanSrc.includes('placeholder') && !cleanSrc.includes('icon')) {
+                foundImages.add(cleanSrc);
+            }
+        }
+    }
+
+    // Intentar srcset si aun no hay imágenes
+    if (foundImages.size === 0) {
+        while ((match = imgRegex3.exec(html)) !== null) {
+            let src = match[1];
+            if (src.startsWith('//')) src = 'https:' + src;
+            let cleanSrc = src.split('?')[0];
+            if (!cleanSrc.includes('placeholder') && !cleanSrc.includes('icon')) {
+                foundImages.add(cleanSrc);
+            }
+        }
+    }
+
+    // Como último recurso, tomar todas las imágenes
+    if (foundImages.size === 0) {
+        while ((match = imgRegex4.exec(html)) !== null) {
+            let src = match[1];
+            if (src.startsWith('//')) src = 'https:' + src;
+            let cleanSrc = src.split('?')[0];
+            if (!cleanSrc.includes('placeholder') && !cleanSrc.includes('icon') &&
+                (cleanSrc.includes('cdn.shopify.com') || cleanSrc.includes('atelier-cohen-dubois'))) {
+                foundImages.add(cleanSrc);
+            }
+        }
+    }
+
+    // Convertir a array y filtrar la primera imagen (generalmente el logo)
+    const allImages = Array.from(foundImages);
+
+    // Encontrar el índice de la imagen de corte (Trustpilot o banners finales)
+    const cutoffIndex = allImages.findIndex(img =>
+        img.includes('Banniere_Trustpilot_-_ES_-_Page_produits.png') ||
+        img.includes('25_2759eda4-8b45-475c-8c06-550e77d4398f.png')
+    );
+
+    // Si se encuentra la imagen de corte, tomar solo hasta antes de esa imagen
+    // Si no, tomar todas (menos la primera si hay más de una)
+    let finalImages = allImages;
+
+    if (cutoffIndex !== -1) {
+        finalImages = allImages.slice(0, cutoffIndex);
+    }
+
+    // Saltar la primera imagen (logo) si hay más de una y no hemos cortado antes
+    data.images = finalImages.length > 1 ? finalImages.slice(1) : finalImages;
 
     const priceMatch = html.match(/<meta property="og:price:amount" content="([^"]+)"/);
     if (priceMatch) {
@@ -283,7 +421,7 @@ function parseRcbMods(html) {
 }
 
 async function main() {
-    print('bright', '\n=== IMPORTE DE RELOJES (RCB MODS) ===\n');
+    print('bright', '\n=== IMPORTE DE RELOJES (SHOPIFY) ===\n');
 
     const args = process.argv.slice(2);
     let initialUrl = args[0];
@@ -305,8 +443,8 @@ async function main() {
             break;
         }
 
-        if (!url.includes('rcbmods.com')) {
-            print('red', 'Error: La URL no parece ser de rcbmods.com');
+        if (!url.includes('atelier-cohen-dubois.com')) {
+            print('red', 'Error: La URL no parece ser de atelier-cohen-dubois.com');
             continue;
         }
 
@@ -319,7 +457,7 @@ async function main() {
             continue;
         }
 
-        const data = parseRcbMods(html);
+        const data = parseShopifyProduct(html);
 
         print('green', '\n¡Datos Extraídos!');
         console.log(`${COLORS.bright}Nombre:${COLORS.reset} ${data.name}`);
@@ -399,74 +537,69 @@ async function saveOrUpdateProduct(newProduct) {
         return;
     }
 
+    // Leer el archivo completo
     let content = fs.readFileSync(FILES.products, 'utf-8');
 
-    const startIdx = content.indexOf('[');
-    const endIdx = content.lastIndexOf(']');
-
-    if (startIdx === -1 || endIdx === -1) {
-        print('red', 'No se pudo encontrar el array de productos.');
+    // Extraer la parte del array de productos
+    const arrayStartMatch = content.match(/const\s+products\s*=\s*\[/);
+    if (!arrayStartMatch) {
+        print('red', 'No se pudo encontrar la declaración del array de productos.');
         return;
     }
 
-    let arrayContent = content.substring(startIdx + 1, endIdx);
+    const arrayStart = arrayStartMatch.index + arrayStartMatch[0].length;
+    const arrayEndMatch = content.match(/\];\s*export\s+default\s+products;/);
+    if (!arrayEndMatch) {
+        print('red', 'No se pudo encontrar el final del array de productos.');
+        return;
+    }
 
-    const escapedName = newProduct.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const namePattern = new RegExp(`"name"\\s*:\\s*"${escapedName}"`);
-    const nameMatch = arrayContent.match(namePattern);
+    const arrayEnd = arrayEndMatch.index;
+    const arrayContent = content.substring(arrayStart, arrayEnd);
 
-    if (nameMatch) {
-        print('yellow', `\n⚠️  El producto "${newProduct.name}" ya existe. Actualizando datos...`);
+    // Intentar parsear el array de productos
+    let products;
+    try {
+        products = JSON.parse('[' + arrayContent + ']');
+    } catch (e) {
+        print('red', `Error parseando el array de productos: ${e.message}`);
+        print('yellow', 'Intentando recuperación...');
 
-        let blockStart = arrayContent.lastIndexOf('{', nameMatch.index);
-
-        let blockEnd = -1;
-        let braceCount = 0;
-        for (let i = blockStart; i < arrayContent.length; i++) {
-            if (arrayContent[i] === '{') braceCount++;
-            if (arrayContent[i] === '}') {
-                braceCount--;
-                if (braceCount === 0) {
-                    blockEnd = i;
-                    break;
-                }
+        // Intentar extraer productos uno por uno
+        products = [];
+        const productMatches = arrayContent.matchAll(/{[\s\S]*?(?=,\s*{|$)}/g);
+        for (const match of productMatches) {
+            try {
+                const prod = JSON.parse(match[0].trim().replace(/,$/, ''));
+                products.push(prod);
+            } catch (err) {
+                // Skip productos corruptos
             }
-        }
-
-        if (blockStart !== -1 && blockEnd !== -1) {
-            const oldBlock = arrayContent.substring(blockStart, blockEnd + 1);
-
-            const idMatch = oldBlock.match(/"id":\s*(\d+)/);
-            if (idMatch) newProduct.id = parseInt(idMatch[1]);
-
-            const newBlock = JSON.stringify(newProduct, null, 4);
-
-            const newContent = content.substring(0, startIdx + 1 + blockStart) +
-                newBlock +
-                content.substring(startIdx + 1 + blockEnd + 1);
-
-            fs.writeFileSync(FILES.products, newContent);
-            print('green', `✓ Producto "${newProduct.name}" actualizado exitosamente.`);
-            return;
         }
     }
 
-    print('green', `\nCreando nuevo producto: "${newProduct.name}"`);
+    // Buscar si el producto ya existe
+    const existingIndex = products.findIndex(p => p.name === newProduct.name);
 
-    let insertionContent = content.replace(/export\s+default\s+products;\s*$/, '').trim();
-    const newEndIdx = insertionContent.lastIndexOf(']');
+    if (existingIndex !== -1) {
+        print('yellow', `\n⚠️  El producto "${newProduct.name}" ya existe. Actualizando datos...`);
+        // Preservar el ID del producto existente
+        newProduct.id = products[existingIndex].id;
+        // Actualizar el producto
+        products[existingIndex] = newProduct;
+    } else {
+        print('green', `\nCreando nuevo producto: "${newProduct.name}"`);
+        // Agregar nuevo producto
+        products.push(newProduct);
+    }
 
-    const newEntry = JSON.stringify(newProduct, null, 4);
-    const innerContent = insertionContent.substring(startIdx + 1, newEndIdx).trim();
-    const hasActualProducts = innerContent.replace(/\/\*[\s\S]*?\*\//g, '').trim().length > 0;
-    const prefix = (hasActualProducts && !innerContent.endsWith(',')) ? ',' : '';
+    // Generar el nuevo contenido del archivo
+    const productsJson = products.map(p => JSON.stringify(p, null, 4)).join(',\n    ');
+    const newContent = `const products = [\n    ${productsJson}\n];\n\nexport default products;`;
 
-    const insertion = `${prefix}\n    ${newEntry}\n`;
-    let finalContent = insertionContent.slice(0, newEndIdx) + insertion + insertionContent.slice(newEndIdx);
-    finalContent += '\n\nexport default products;';
-
-    fs.writeFileSync(FILES.products, finalContent);
-    print('green', `✓ Producto guardado en ${FILES.products}`);
+    // Escribir el archivo
+    fs.writeFileSync(FILES.products, newContent, 'utf-8');
+    print('green', `✓ Producto "${newProduct.name}" guardado exitosamente en ${FILES.products}`);
 }
 
 main().catch(err => {
