@@ -137,8 +137,8 @@ const products = [
     {
         "id": 1769015309818,
         "name": "Royal Seikoak Chrono Black",
-        "category": "Royal Seikoak",
-        "league": "Royal Seikoak",
+        "category": "Cuarzo",
+        "league": "Cuarzo",
         "price": 119.9,
         "oldPrice": 149.9,
         "image": "/assets/productos/RC_Mods/royal-seikoak-chrono-black/1.webp",
@@ -874,8 +874,8 @@ const products = [
     {
         "id": 1769260114751,
         "name": "Seitona Black Panda",
-        "category": "Seitona",
-        "league": "Seitona",
+        "category": "Cuarzo",
+        "league": "Cuarzo",
         "price": 119.9,
         "oldPrice": 149.9,
         "image": "/assets/productos/RC_Mods/seitona-black-panda/1.webp",
@@ -987,8 +987,8 @@ const products = [
     {
         "id": 1769772710753,
         "name": "Nauteiko Chrono White",
-        "category": "Nauteiko",
-        "league": "Nauteiko",
+        "category": "Cuarzo",
+        "league": "Cuarzo",
         "price": 119.9,
         "oldPrice": 149.9,
         "image": "/assets/productos/RC_Mods/nauteiko-chrono-white/1.webp",
@@ -1105,8 +1105,8 @@ const products = [
     {
         "id": 1769772889755,
         "name": "Royal Seikoak Chrono Green",
-        "category": "Royal Seikoak",
-        "league": "Royal Seikoak",
+        "category": "Cuarzo",
+        "league": "Cuarzo",
         "price": 119.9,
         "oldPrice": 149.9,
         "image": "/assets/productos/RC_Mods/royal-seikoak-chrono-green/1.webp",
@@ -1298,8 +1298,8 @@ const products = [
     {
         "id": 1769773182886,
         "name": "Seitona Gold Ice Blue",
-        "category": "Seitona",
-        "league": "Seitona",
+        "category": "Cuarzo",
+        "league": "Cuarzo",
         "price": 119.9,
         "oldPrice": 149.9,
         "image": "/assets/productos/RC_Mods/seitona-gold-ice-blue/1.webp",
@@ -1342,8 +1342,8 @@ const products = [
     {
         "id": 1769773222514,
         "name": "Seitona Rose Gold Rainbow",
-        "category": "Seitona",
-        "league": "Seitona",
+        "category": "Cuarzo",
+        "league": "Cuarzo",
         "price": 119.9,
         "oldPrice": 149.9,
         "image": "/assets/productos/RC_Mods/seitona-rose-gold-rainbow/1.webp",
@@ -1389,8 +1389,8 @@ const products = [
     {
         "id": 1769773264234,
         "name": "Seitona Gold Black II",
-        "category": "Seitona",
-        "league": "Seitona",
+        "category": "Cuarzo",
+        "league": "Cuarzo",
         "price": 119.9,
         "oldPrice": 149.9,
         "image": "/assets/productos/RC_Mods/seitona-gold-black-ii/1.webp",
@@ -1432,8 +1432,8 @@ const products = [
     {
         "id": 1769773292351,
         "name": "Seitona Silver Blue",
-        "category": "Seitona",
-        "league": "Seitona",
+        "category": "Cuarzo",
+        "league": "Cuarzo",
         "price": 119.9,
         "oldPrice": 149.9,
         "image": "/assets/productos/RC_Mods/seitona-silver-blue/1.webp",
@@ -1477,8 +1477,8 @@ const products = [
     {
         "id": 1769773310001,
         "name": "Seitona Gold Green",
-        "category": "Seitona",
-        "league": "Seitona",
+        "category": "Cuarzo",
+        "league": "Cuarzo",
         "price": 119.9,
         "oldPrice": 149.9,
         "image": "/assets/productos/RC_Mods/seitona-gold-green/1.webp",
@@ -1974,8 +1974,7 @@ const products = [
         "oldPrice": 169.9,
         "image": "/assets/productos/RC_Mods/exploreiko-i-tiffany-blue/1.webp",
         "images": [
-            "/assets/productos/RC_Mods/exploreiko-i-tiffany-blue/2.webp",
-            "/assets/productos/RC_Mods/exploreiko-i-tiffany-blue/3.webp"
+            "/assets/productos/RC_Mods/exploreiko-i-tiffany-blue/2.webp"
         ],
         "description": "Especificaciones Técnicas:\\nMovimiento: Automático NH35, fiable y preciso.\\n\\n\\nEsfera: Negra minimalista con índices luminiscentes.\\n\\n\\nBrazalete: Tipo Oyster en acero inoxidable 904L con cierre seguro.\\n\\n\\n\\n\\nReserva de marcha: Aproximadamente 41 horas.\\n\\n\\nCristal: Zafiro irrayable con tratamiento antirreflejos.\\n\\n\\nMovimiento: Automático NH35, fiable y preciso.\\n\\n\\nEsfera: Negra minimalista con índices luminiscentes.\\n\\n\\nBrazalete: Tipo Oyster en acero inoxidable 904L con cierre seguro.\\n\\n\\n\\n\\nReserva de marcha: Aproximadamente 41 horas.\\n\\n\\nCaja: Acero inoxidable de 39 mm o 36mm, acabados pulidos y cepillados.\\n\\n\\nCristal: Zafiro irrayable con tratamiento antirreflejos.\\n\\n\\nMovimiento: Automático NH35, fiable y preciso.\\n\\n\\nEsfera: Negra minimalista con índices luminiscentes.\\n\\n\\nBrazalete: Tipo Oyster en acero inoxidable 904L con cierre seguro.\\n\\n\\n\\n\\n\\nReserva de marcha: Aproximadamente 41 horas.\\n\\n Cristal: Zafiro irrayable con tratamiento antirreflejos.\\n\\n\\nMovimiento: Automático NH35, fiable y preciso.\\n\\n\\n\\nEsfera: Negra minimalista con índices luminiscentes.\\n\\n\\n\\nBrazalete: Tipo Oyster en acero inoxidable 904L con cierre seguro.\\n\\n\\n\\n\\n\\nReserva de marcha: Aproximadamente 41 horas.\\n\\n Cristal: Zafiro irrayable con tratamiento antirreflejos.\\n\\n\\nMovimiento: Automático NH35, fiable y preciso.\\n\\n\\nEsfera: Negra minimalista con índices luminiscentes.\\n\\n\\nBrazalete: Tipo Oyster en acero inoxidable 904L con cierre seguro.\\n\\n\\n\\n\\nReserva de marcha: Aproximadamente 41 horas.\\n\\n Caja: Acero inoxidable de 39 mm o 36mm, acabados pulidos y cepillados.\\n\\n\\nCristal: Zafiro irrayable con tratamiento antirreflejos.\\n\\n\\nMovimiento: Automático NH35, fiable y preciso.\\n\\n\\nEsfera: Negra minimalista con índices luminiscentes.\\n\\n\\nBrazalete: Tipo Oyster en acero inoxidable 904L con cierre seguro.\\n\\n\\n\\n\\nReserva de marcha: Aproximadamente 41 horas.\\n\\n",
         "features": [
