@@ -158,31 +158,17 @@ function calculatePrice(productName, specifications) {
 function detectCollection(productName) {
     const name = productName.toLowerCase();
 
-    if (name.includes('datejust') || name.includes('seikojust')) {
-        return 'Seikojust';
-    }
-    if (name.includes('gmteiko')) {
-        return 'GMTeiko';
-    }
-    if (name.includes('nauteiko')) {
-        return 'Nauteiko';
-    }
-    if (name.includes('royal seikoak') || name.includes('royal-seikoak')) {
-        return 'Royal Seikoak';
-    }
-    if (name.includes('seikom') || name.includes('seiko m') || name.includes('mariner')) {
-        return 'SeikoMariner';
-    }
-    if (name.includes('yatch') || name.includes('tacheiko')) {
-        return 'Yatcheiko';
-    }
-    if (name.includes('santeiko') || name.includes('santos')) {
-        return 'Santeiko';
-    }
-    if (name.includes('seitona') || name.includes('daytona')) {
-        return 'Seitona';
-    }
+    // Prioridad a colecciones específicas
+    if (name.includes('royal seikoak') || name.includes('royal-seikoak')) return 'Royal Seikoak';
+    if (name.includes('seitona') || name.includes('daytona')) return 'Seitona';
+    if (name.includes('gmteiko')) return 'GMTeiko';
+    if (name.includes('nauteiko')) return 'Nauteiko';
+    if (name.includes('seikom') || name.includes('seiko m') || name.includes('mariner') || name.includes('submariner')) return 'SeikoMariner';
+    if (name.includes('yatch') || name.includes('tacheiko') || name.includes('yacht')) return 'Yatcheiko';
+    if (name.includes('seikojust') || name.includes('datejust') || name.includes('just')) return 'Seikojust';
+    if (name.includes('santeiko') || name.includes('santos')) return 'Santeiko';
 
+    // Fallback inteligente: Usar la primera palabra capitalizada si parece una marca
     const firstWord = productName.split(' ')[0];
     return firstWord.charAt(0).toUpperCase() + firstWord.slice(1);
 }
@@ -258,11 +244,29 @@ function parseShopifyProduct(html) {
                     featureText = `Diámetro: ${value}, diseño equilibrado y elegante`;
                     break;
                 case 'Movimiento':
-                    if (value.toLowerCase().includes('nh35')) {
+                    const vLower = value.toLowerCase();
+                    if (vLower.includes('vk') || vLower.includes('cuarzo') || vLower.includes('quartz') || vLower.includes('mecaquartz')) {
+                        // Forzar formato estándar para filtro: "mecaquartz (cuarzo híbrido)"
+                        // Extraer el calibre si existe (ej. VK63, VK64)
+                        let caliber = 'VK63';
+                        if (vLower.includes('vk64')) caliber = 'VK64';
+                        if (vLower.includes('vk61')) caliber = 'VK61';
+
+                        value = `Seiko ${caliber} mecaquartz (cuarzo híbrido)`;
+                        featureText = `Movimiento: ${value}, fiable y preciso`;
+                    } else if (vLower.includes('nh35') || vLower.includes('automático') || vLower.includes('automatic')) {
+                        // Estandarizar automático
+                        let caliber = 'NH35';
+                        if (vLower.includes('nh34') || vLower.includes('gmt')) caliber = 'NH34';
+                        if (vLower.includes('nh38')) caliber = 'NH38';
+
+                        value = `Seiko ${caliber} automático`; // Asegurar que tenga "automático"
                         featureText = `Movimiento: ${value}, fiable y preciso`;
                     } else {
                         featureText = `Movimiento: ${value}`;
                     }
+                    // Actualizar el valor en specs para que el filtro funcione
+                    data.specifications['Movimiento'] = value;
                     break;
                 case 'Grosor':
                     featureText = `Grosor: ${value}, cómodo para uso diario`;

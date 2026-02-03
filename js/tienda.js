@@ -522,7 +522,10 @@ function formatLeagueName(league) {
         'gmteiko': 'GMTeiko',
         'nauteiko': 'Nauteiko',
         'royal seikoak': 'Royal Seikoak',
-        'seikojust': 'Seikojust'
+        'seikojust': 'Seikojust',
+        'seitona': 'Seitona',
+        'seikomariner': 'SeikoMariner',
+        'yatcheiko': 'Yatcheiko'
     };
     return map[league.toLowerCase()] || league;
 }
