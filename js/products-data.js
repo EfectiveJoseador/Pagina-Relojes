@@ -2446,7 +2446,7 @@ const products = [
 },
     {
     "id": 1770115648919,
-    "name": "Seiko Mod Daytona Platinum",
+    "name": "Seitona Platinum",
     "category": "Seitona",
     "league": "Seitona",
     "price": 129.9,
@@ -2487,6 +2487,49 @@ const products = [
         "Pulsera": "Acero inoxidable 316L (con cierre de seguridad)",
         "Correa": "20 mm",
         "Resistencia al agua": "100m"
+    }
+},
+    {
+    "id": 1770115985793,
+    "name": "Seiko Mod Daytona Platinum",
+    "category": "Seitona",
+    "league": "Seitona",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seiko-mod-daytona-platinum/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seiko-mod-daytona-platinum/2.webp",
+        "/assets/productos/RC_Mods/seiko-mod-daytona-platinum/3.webp",
+        "/assets/productos/RC_Mods/seiko-mod-daytona-platinum/4.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nCaja: Acero inoxidable 316L, duradero y con acabado premium\nDiámetro: 40 mm (sin incluir la corona), diseño equilibrado y elegante\nMovimiento: Seiko NH35 automático, fiable y preciso\nGrosor: 3,5 mm, cómodo para uso diario\nCristal: Zafiro, antirayaduras con tratamiento antirreflejos\nLuminosidad: Sí, perfecta visibilidad en la oscuridad\nCorona: Roscada, seguridad y funcionalidad\nBisel: Cerámico\nTamaño de muñeca: 14,5cm a 22cm (ajustable)\nPulsera: Acero inoxidable 316L (con cierre de seguridad)\nCorrea: 20 mm",
+    "features": [
+        "Caja: Acero inoxidable 316L, duradero y con acabado premium",
+        "Diámetro: 40 mm (sin incluir la corona), diseño equilibrado y elegante",
+        "Movimiento: Seiko NH35 automático, fiable y preciso",
+        "Grosor: 3,5 mm, cómodo para uso diario",
+        "Cristal: Zafiro, antirayaduras con tratamiento antirreflejos",
+        "Luminosidad: Sí, perfecta visibilidad en la oscuridad",
+        "Corona: Roscada, seguridad y funcionalidad",
+        "Bisel: Cerámico",
+        "Tamaño de muñeca: 14,5cm a 22cm (ajustable)",
+        "Pulsera: Acero inoxidable 316L (con cierre de seguridad)",
+        "Correa: 20 mm"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Caja": "Acero inoxidable 316L",
+        "Diámetro": "40 mm (sin incluir la corona)",
+        "Movimiento": "Seiko NH35 automático",
+        "Grosor": "3,5 mm",
+        "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
+        "Luminosidad": "Sí",
+        "Corona": "Roscada",
+        "Bisel": "Cerámico",
+        "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
+        "Pulsera": "Acero inoxidable 316L (con cierre de seguridad)",
+        "Correa": "20 mm"
     }
 }
 ];

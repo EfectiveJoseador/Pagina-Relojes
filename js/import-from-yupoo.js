@@ -94,13 +94,32 @@ async function processImage(url, destDir, filename) {
     try {
         await downloadImage(url, tempPath);
 
-        await sharp(tempPath)
-            .webp({ quality: 85 })
-            .toFile(finalPath);
+        const image = sharp(tempPath);
+        const metadata = await image.metadata();
+
+        if (metadata.height > metadata.width) {
+            print('yellow', `  ℹ Imagen vertical detectada (${metadata.width}x${metadata.height}). Recortando a cuadrado...`);
+            const cropSize = metadata.width;
+            const topOffset = Math.floor((metadata.height - cropSize) / 2);
+
+            await image
+                .extract({ left: 0, top: topOffset, width: cropSize, height: cropSize })
+                .webp({ quality: 85 })
+                .toFile(finalPath);
+        } else {
+            await image
+                .webp({ quality: 85 })
+                .toFile(finalPath);
+        }
 
         print('green', `  ✓ Guardada: ${path.basename(finalPath)}`);
 
         if (filename === '1' || filename === '2') {
+            // Re-instantiate sharp for the resize to ensure we work from the original temp file
+            // or we could chain from the previous operation if we weren't saving to file mid-way.
+            // Simplest is to just read tempPath again or reuse the image object if we carefully await.
+            // Since we extracted above potentially, let's just reload from tempPath to be safe and simple for the thumbnail
+            // The thumbnail logic forces a square cover resize anyway.
             await sharp(tempPath)
                 .resize(600, 600, {
                     fit: 'cover',
@@ -265,8 +284,7 @@ function parseShopifyProduct(html) {
         'Pulsera': /<strong>Pulsera:<\/strong>\s*([^<]+)|<b>Pulsera:<\/b>(?:\s*<span>\s*<\/span>)?\s*([^<]+)|[-•]\s*Pulsera:\s*([^\n<-•]+)/i,
         'Correa': /<strong>Correa:<\/strong>\s*([^<]+)|<b>Correa:<\/b>(?:\s*<span>\s*<\/span>)?\s*([^<]+)|<b>Tamaño de la correa:<\/b>(?:\s*<span>\s*<\/span>)?\s*([^<]+)|[-•]\s*Correa:\s*([^\n<-•]+)/i,
         'Fondo de caja': /<strong>Fondo de caja:<\/strong>\s*([^<]+)|[-•]\s*Fondo de caja:\s*([^\n<-•]+)/i,
-        'Esfera': /<strong>Esfera:<\/strong>\s*([^<]+)|[-•]\s*Esfera:\s*([^\n<-•]+)/i,
-        'Resistencia al agua': /<strong>Resistencia al agua:<\/strong>\s*([^<]+)|<b>Resistencia al agua:<\/b>(?:\s*<span>\s*<\/span>)?\s*([^<]+)|[-•]\s*Resistencia al agua:\s*([^\n<-•]+)/i
+        'Esfera': /<strong>Esfera:<\/strong>\s*([^<]+)|[-•]\s*Esfera:\s*([^\n<-•]+)/i
     };
 
     for (const [key, regex] of Object.entries(specPatterns)) {
@@ -292,7 +310,7 @@ function parseShopifyProduct(html) {
                     break;
                 case 'Movimiento':
                     const vLower = value.toLowerCase();
-                    if (vLower.includes('vk') || vLower.includes('cuarzo') || vLower.includes('quartz') || vLower.includes('mecaquartz')) {
+                    if (vLower.includes('vk') || vLower.includes('cuarzo') || vLower.includes('quartz') || vLower.includes('mecaquartz') || vLower.includes('híbrido') || vLower.includes('hibrido')) {
                         let caliber = 'VK63';
                         if (vLower.includes('vk64')) caliber = 'VK64';
                         if (vLower.includes('vk61')) caliber = 'VK61';
@@ -334,9 +352,6 @@ function parseShopifyProduct(html) {
                     break;
                 case 'Correa':
                     featureText = `Correa: ${value}`;
-                    break;
-                case 'Resistencia al agua':
-                    featureText = `Resistencia al agua: ${value}`;
                     break;
                 case 'Fondo de caja':
                     featureText = `Fondo de caja: ${value}`;
