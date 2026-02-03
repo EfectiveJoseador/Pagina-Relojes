@@ -197,15 +197,22 @@ function parseShopifyProduct(html) {
         name: 'Desconocido',
         description: '',
         images: [],
-        features: [],
         straps: [],
         sizes: [],
         price: 0,
         specifications: {}
     };
 
-    // Intentar extraer datos del JSON inyectado por Shopify (const product = {...})
-    const productJsonMatch = html.match(/const\s+product\s*=\s*({[\s\S]*?});/);
+    // Intentar extraer datos del JSON inyectado por Shopify (const product = {...} o window.essentialCountdownTimerMeta)
+    let productJsonMatch = html.match(/const\s+product\s*=\s*({[\s\S]*?});/);
+    let jsonSource = 'const product';
+
+    // Si no encuentra const product, intentar con window.essentialCountdownTimerMeta
+    if (!productJsonMatch) {
+        productJsonMatch = html.match(/window\.essentialCountdownTimerMeta\s*=\s*{[\s\S]*?productData:\s*({[\s\S]*?}),/);
+        jsonSource = 'window.essentialCountdownTimerMeta';
+    }
+
     if (productJsonMatch) {
         try {
             const productData = JSON.parse(productJsonMatch[1]);
@@ -227,7 +234,7 @@ function parseShopifyProduct(html) {
                 });
             }
 
-            console.log(COLORS.green + '  ✓ Datos extraídos del objeto JSON nativo.' + COLORS.reset);
+            console.log(COLORS.green + `  ✓ Datos extraídos del objeto JSON nativo (${jsonSource}).` + COLORS.reset);
         } catch (e) {
             console.log(COLORS.red + '  Error parseando JSON nativo: ' + e.message + COLORS.reset);
         }
@@ -258,15 +265,22 @@ function parseShopifyProduct(html) {
     }
 
     // Combinar HTML y descripción para buscar especificaciones
-    // A veces la descripción en el JSON es la que tiene los detalles, asegurémonos de usarla si existe
+    // IMPORTANTE: Si extrajimos datos del JSON, usar SOLO la descripción del JSON
+    // porque el HTML puede tener datos de otros productos
     let combinedText = cleanHtml + ' ' + descriptionText;
 
-    // Si extrajimos descripción del JSON, añadirla también al texto de búsqueda
+    // Si extrajimos descripción del JSON, usarla como fuente principal
     if (productJsonMatch) {
         try {
-            const jsonDesc = JSON.parse(productJsonMatch[1]).description;
-            combinedText += ' ' + jsonDesc.replace(/\s+/g, ' ');
-        } catch (e) { }
+            const productData = JSON.parse(productJsonMatch[1]);
+            const jsonDesc = productData.description || '';
+            if (jsonDesc) {
+                console.log(COLORS.cyan + '  ℹ Usando descripción del JSON para extraer especificaciones' + COLORS.reset);
+                combinedText = jsonDesc.replace(/\s+/g, ' ') + ' ' + descriptionText;
+            }
+        } catch (e) {
+            // Si falla el parse, seguir con combinedText original
+        }
     }
 
     // Shopify usa formato de lista HTML <li><strong>Campo:</strong> valor</li> o bullets
@@ -274,7 +288,7 @@ function parseShopifyProduct(html) {
     const specPatterns = {
         'Caja': /<strong>Caja:<\/strong>\s*([^<]+)|<b>Caja:<\/b>(?:\s*<span>\s*<\/span>)?\s*([^<]+)|[-•]\s*Caja:\s*([^\n<-•]+)/i,
         'Diámetro': /<strong>Diámetro:<\/strong>\s*([^<]+)|<b>Diámetro:<\/b>(?:\s*<span>\s*<\/span>)?\s*([^<]+)|[-•]\s*Diámetro:\s*([^\n<-•]+)/i,
-        'Movimiento': /<strong>Movimiento:\s*<\/strong>\s*([^<]+)|<b>Movimiento:<\/b>(?:\s*<span>\s*<\/span>)?\s*([^<]+)|<strong>Movimiento:<\/strong>\s*([^<]+)|[-•]?\s*Movimiento:\s*([^\n<-•]+)/i,
+        'Movimiento': /<strong>Movimiento:\s*<\/strong>\s*([^<]+)|<b>Movimiento:<\/b>(?:\s*<span>(?:&nbsp;|\s)*<\/span>)?\s*([^<]+)|<strong>Movimiento:<\/strong>\s*([^<]+)|[-•]?\s*Movimiento:\s*([^\n<-•]+)/i,
         'Grosor': /<strong>Grosor:<\/strong>\s*([^<]+)|<b>Espesor:<\/b>(?:\s*<span>\s*<\/span>)?\s*([^<]+)|<b>Grosor:<\/b>(?:\s*<span>\s*<\/span>)?\s*([^<]+)|[-•]\s*Grosor:\s*([^\n<-•]+)/i,
         'Cristal': /<strong>Cristal:<\/strong>\s*([^<]+)|<b>Cristal:<\/b>(?:\s*<span>\s*<\/span>)?\s*([^<]+)|[-•]\s*Cristal:\s*([^\n<-•]+)/i,
         'Luminosidad': /<strong>Luminosidad:<\/strong>\s*([^<]+)|<b>Agujas luminosas:<\/b>(?:\s*<span>\s*<\/span>)?\s*([^<]+)|[-•]\s*Luminosidad:\s*([^\n<-•]+)/i,
@@ -302,69 +316,18 @@ function parseShopifyProduct(html) {
             }
             data.specifications[key] = value;
 
-            // Formatear features con descripciones contextuales
-            let featureText = '';
-            switch (key) {
-                case 'Diámetro':
-                    featureText = `Diámetro: ${value}, diseño equilibrado y elegante`;
-                    break;
-                case 'Movimiento':
-                    const vLower = value.toLowerCase();
-                    if (vLower.includes('vk') || vLower.includes('cuarzo') || vLower.includes('quartz') || vLower.includes('mecaquartz') || vLower.includes('híbrido') || vLower.includes('hibrido')) {
-                        let caliber = 'VK63';
-                        if (vLower.includes('vk64')) caliber = 'VK64';
-                        if (vLower.includes('vk61')) caliber = 'VK61';
-
-                        value = `Seiko ${caliber} mecaquartz (cuarzo híbrido)`;
-                        featureText = `Movimiento: ${value}, fiable y preciso`;
-                    } else if (vLower.includes('nh35') || vLower.includes('automático') || vLower.includes('automatic')) {
+            // Normalizar el movimiento para casos específicos
+            if (key === 'Movimiento') {
+                const vLower = value.toLowerCase();
+                // Solo normalizar automáticos, mantener híbridos como están
+                if (vLower.includes('nh35') || vLower.includes('automático') || vLower.includes('automatic')) {
+                    if (!vLower.includes('vk') && !vLower.includes('híbrido') && !vLower.includes('hibrido')) {
                         let caliber = 'NH35';
                         if (vLower.includes('nh34') || vLower.includes('gmt')) caliber = 'NH34';
                         if (vLower.includes('nh38')) caliber = 'NH38';
-
-                        value = `Seiko ${caliber} automático`;
-                        featureText = `Movimiento: ${value}, fiable y preciso`;
-                    } else {
-                        featureText = `Movimiento: ${value}`;
+                        data.specifications['Movimiento'] = `Seiko ${caliber} automático`;
                     }
-                    data.specifications['Movimiento'] = value;
-                    break;
-                case 'Grosor':
-                    featureText = `Grosor: ${value}, cómodo para uso diario`;
-                    break;
-                case 'Cristal':
-                    featureText = `Cristal: ${value}`;
-                    break;
-                case 'Luminosidad':
-                    featureText = `Luminosidad: ${value}, perfecta visibilidad en la oscuridad`;
-                    break;
-                case 'Caja':
-                    featureText = `Caja: ${value}, duradero y con acabado premium`;
-                    break;
-                case 'Corona':
-                    featureText = `Corona: ${value}, seguridad y funcionalidad`;
-                    break;
-                case 'Tamaño de muñeca':
-                    featureText = `Tamaño de muñeca: ${value}`;
-                    break;
-                case 'Pulsera':
-                    featureText = `Pulsera: ${value}`;
-                    break;
-                case 'Correa':
-                    featureText = `Correa: ${value}`;
-                    break;
-                case 'Fondo de caja':
-                    featureText = `Fondo de caja: ${value}`;
-                    break;
-                case 'Esfera':
-                    featureText = `Esfera: ${value}`;
-                    break;
-                default:
-                    featureText = `${key}: ${value}`;
-            }
-            // Evitar duplicados
-            if (!data.features.includes(featureText)) {
-                data.features.push(featureText);
+                }
             }
         }
     }
@@ -579,15 +542,13 @@ async function main() {
 
         const finalProduct = {
             id: Date.now(),
-            name: data.name,
+            name: collectionName,  // Usar el nombre de la categoría como nombre del producto
             category: collectionName,
             league: collectionName,
             price: productPricing.price,
             oldPrice: productPricing.oldPrice,
             image: localImages[0],
             images: localImages.slice(1),
-            description: data.features.length > 0 ? "Especificaciones Técnicas:\n" + data.features.join('\n') : "Reloj de alta calidad.",
-            features: data.features,
             sizes: data.sizes,
             straps: data.straps,
             specs: data.specifications
