@@ -2002,8 +2002,7 @@ const products = [
     "images": [
         "/assets/productos/RC_Mods/seikojust-numero-ar-bigo-navy-elegance/2.webp",
         "/assets/productos/RC_Mods/seikojust-numero-ar-bigo-navy-elegance/3.webp",
-        "/assets/productos/RC_Mods/seikojust-numero-ar-bigo-navy-elegance/4.webp",
-        "/assets/productos/RC_Mods/seikojust-numero-ar-bigo-navy-elegance/5.webp"
+        "/assets/productos/RC_Mods/seikojust-numero-ar-bigo-navy-elegance/4.webp"
     ],
     "description": "Especificaciones Técnicas:\nCaja: Acero inoxidable 316L, duradero y con acabado premium\nDiámetro: 39 mm, diseño equilibrado y elegante\nMovimiento: Seiko NH35a Automático Mecánico, fiable y preciso\nGrosor: 12,5 mm, cómodo para uso diario\nCristal: Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos\nCorona: Corona atornillada para mejorar la estanqueidad, seguridad y funcionalidad\nTamaño de muñeca: Ajustable de 14,5 a 22 cm\nPulsera: Jubilee - Ancho 20 mm\nEsfera: 28,5 mm",
     "features": [
