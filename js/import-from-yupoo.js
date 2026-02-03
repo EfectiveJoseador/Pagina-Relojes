@@ -185,15 +185,49 @@ function parseShopifyProduct(html) {
         specifications: {}
     };
 
+    // Intentar extraer datos del JSON inyectado por Shopify (const product = {...})
+    const productJsonMatch = html.match(/const\s+product\s*=\s*({[\s\S]*?});/);
+    if (productJsonMatch) {
+        try {
+            const productData = JSON.parse(productJsonMatch[1]);
+            data.name = productData.title;
+
+            // Descripción desde JSON
+            const desc = productData.description || '';
+            // Limpiar descripción de tags HTML para búsqueda simple si fuera necesario, 
+            // pero para regexes de specs usamos el HTML
+
+            // Precio (viene en centimos habitualmente en Shopify JSON)
+            data.price = productData.price / 100;
+
+            // Imágenes
+            if (productData.images && productData.images.length > 0) {
+                data.images = productData.images.map(img => {
+                    if (img.startsWith('//')) return 'https:' + img;
+                    return img.split('?')[0];
+                });
+            }
+
+            console.log(COLORS.green + '  ✓ Datos extraídos del objeto JSON nativo.' + COLORS.reset);
+        } catch (e) {
+            console.log(COLORS.red + '  Error parseando JSON nativo: ' + e.message + COLORS.reset);
+        }
+    }
+
     const titleMatch = html.match(/<h1[^>]*class="[^"]*product[^"]*"[^>]*>([\s\S]*?)<\/h1>/i) ||
         html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
-    if (titleMatch) {
-        let rawName = titleMatch[1].replace(/<[^>]+>/g, '').trim();
-        rawName = rawName.replace(/\s*\([^)]+\)/g, '').trim();
 
-        // Transformar "Seiko Mod Datejust" a "Seikojust"
-        data.name = rawName.replace(/Seiko\s+Mod\s+Datejust/gi, 'Seikojust');
+    // Si no tenemos nombre aún o queremos confirmar con el H1 (a veces el JSON tiene variantes)
+    if (!data.name || data.name === 'Desconocido') {
+        if (titleMatch) {
+            let rawName = titleMatch[1].replace(/<[^>]+>/g, '').trim();
+            rawName = rawName.replace(/\s*\([^)]+\)/g, '').trim();
+            data.name = rawName;
+        }
     }
+
+    // Post-procesado del nombre (común para ambos métodos)
+    data.name = data.name.replace(/Seiko\s+Mod\s+Datejust/gi, 'Seikojust');
 
     const cleanHtml = html.replace(/\s+/g, ' ');
 
@@ -205,32 +239,45 @@ function parseShopifyProduct(html) {
     }
 
     // Combinar HTML y descripción para buscar especificaciones
-    const combinedText = cleanHtml + ' ' + descriptionText;
+    // A veces la descripción en el JSON es la que tiene los detalles, asegurémonos de usarla si existe
+    let combinedText = cleanHtml + ' ' + descriptionText;
+
+    // Si extrajimos descripción del JSON, añadirla también al texto de búsqueda
+    if (productJsonMatch) {
+        try {
+            const jsonDesc = JSON.parse(productJsonMatch[1]).description;
+            combinedText += ' ' + jsonDesc.replace(/\s+/g, ' ');
+        } catch (e) { }
+    }
 
     // Shopify usa formato de lista HTML <li><strong>Campo:</strong> valor</li> o bullets
+    // Actualizado para soportar <b>Campo:</b><span> </span>Valor (CrownMods)
     const specPatterns = {
-        'Caja': /<strong>Caja:<\/strong>\s*([^<]+)|[-•]\s*Caja:\s*([^\n<-•]+)/i,
-        'Diámetro': /<strong>Diámetro:<\/strong>\s*([^<]+)|[-•]\s*Diámetro:\s*([^\n<-•]+)/i,
-        'Movimiento': /<strong>Movimiento:\s*<\/strong>\s*([^<]+)|<strong>Movimiento:<\/strong>\s*([^<]+)|[-•]?\s*Movimiento:\s*([^\n<-•]+)/i,
-        'Grosor': /<strong>Grosor:<\/strong>\s*([^<]+)|[-•]\s*Grosor:\s*([^\n<-•]+)/i,
-        'Cristal': /<strong>Cristal:<\/strong>\s*([^<]+)|[-•]\s*Cristal:\s*([^\n<-•]+)/i,
-        'Luminosidad': /<strong>Luminosidad:<\/strong>\s*([^<]+)|[-•]\s*Luminosidad:\s*([^\n<-•]+)/i,
-        'Corona': /<strong>Corona:<\/strong>\s*([^<]+)|[-•]\s*Corona:\s*([^\n<-•]+)/i,
-        'Bisel': /<strong>Bisel:<\/strong>\s*([^<]+)|[-•]\s*Bisel:\s*([^\n<-•]+)/i,
-        'Tamaño de muñeca': /<strong>Tamaño de (?:la )?muñeca:<\/strong>\s*([^<]+)|[-•]\s*Tamaño de (?:la )?muñeca:\s*([^\n<-•]+)/i,
-        'Pulsera': /<strong>Pulsera:<\/strong>\s*([^<]+)|[-•]\s*Pulsera:\s*([^\n<-•]+)/i,
-        'Correa': /<strong>Correa:<\/strong>\s*([^<]+)|[-•]\s*Correa:\s*([^\n<-•]+)/i,
+        'Caja': /<strong>Caja:<\/strong>\s*([^<]+)|<b>Caja:<\/b>(?:\s*<span>\s*<\/span>)?\s*([^<]+)|[-•]\s*Caja:\s*([^\n<-•]+)/i,
+        'Diámetro': /<strong>Diámetro:<\/strong>\s*([^<]+)|<b>Diámetro:<\/b>(?:\s*<span>\s*<\/span>)?\s*([^<]+)|[-•]\s*Diámetro:\s*([^\n<-•]+)/i,
+        'Movimiento': /<strong>Movimiento:\s*<\/strong>\s*([^<]+)|<b>Movimiento:<\/b>(?:\s*<span>\s*<\/span>)?\s*([^<]+)|<strong>Movimiento:<\/strong>\s*([^<]+)|[-•]?\s*Movimiento:\s*([^\n<-•]+)/i,
+        'Grosor': /<strong>Grosor:<\/strong>\s*([^<]+)|<b>Espesor:<\/b>(?:\s*<span>\s*<\/span>)?\s*([^<]+)|<b>Grosor:<\/b>(?:\s*<span>\s*<\/span>)?\s*([^<]+)|[-•]\s*Grosor:\s*([^\n<-•]+)/i,
+        'Cristal': /<strong>Cristal:<\/strong>\s*([^<]+)|<b>Cristal:<\/b>(?:\s*<span>\s*<\/span>)?\s*([^<]+)|[-•]\s*Cristal:\s*([^\n<-•]+)/i,
+        'Luminosidad': /<strong>Luminosidad:<\/strong>\s*([^<]+)|<b>Agujas luminosas:<\/b>(?:\s*<span>\s*<\/span>)?\s*([^<]+)|[-•]\s*Luminosidad:\s*([^\n<-•]+)/i,
+        'Corona': /<strong>Corona:<\/strong>\s*([^<]+)|<b>Corona:<\/b>(?:\s*<span>\s*<\/span>)?\s*([^<]+)|[-•]\s*Corona:\s*([^\n<-•]+)/i,
+        'Bisel': /<strong>Bisel:<\/strong>\s*([^<]+)|<b>Bisel:<\/b>(?:\s*<span>\s*<\/span>)?\s*([^<]+)|[-•]\s*Bisel:\s*([^\n<-•]+)/i,
+        'Tamaño de muñeca': /<strong>Tamaño de (?:la )?muñeca:<\/strong>\s*([^<]+)|<b>Tamaño de la muñeca:<\/b>(?:\s*<span>\s*<\/span>)?\s*([^<]+)|[-•]\s*Tamaño de (?:la )?muñeca:\s*([^\n<-•]+)/i,
+        'Pulsera': /<strong>Pulsera:<\/strong>\s*([^<]+)|<b>Pulsera:<\/b>(?:\s*<span>\s*<\/span>)?\s*([^<]+)|[-•]\s*Pulsera:\s*([^\n<-•]+)/i,
+        'Correa': /<strong>Correa:<\/strong>\s*([^<]+)|<b>Correa:<\/b>(?:\s*<span>\s*<\/span>)?\s*([^<]+)|<b>Tamaño de la correa:<\/b>(?:\s*<span>\s*<\/span>)?\s*([^<]+)|[-•]\s*Correa:\s*([^\n<-•]+)/i,
         'Fondo de caja': /<strong>Fondo de caja:<\/strong>\s*([^<]+)|[-•]\s*Fondo de caja:\s*([^\n<-•]+)/i,
-        'Esfera': /<strong>Esfera:<\/strong>\s*([^<]+)|[-•]\s*Esfera:\s*([^\n<-•]+)/i
+        'Esfera': /<strong>Esfera:<\/strong>\s*([^<]+)|[-•]\s*Esfera:\s*([^\n<-•]+)/i,
+        'Resistencia al agua': /<strong>Resistencia al agua:<\/strong>\s*([^<]+)|<b>Resistencia al agua:<\/b>(?:\s*<span>\s*<\/span>)?\s*([^<]+)|[-•]\s*Resistencia al agua:\s*([^\n<-•]+)/i
     };
 
     for (const [key, regex] of Object.entries(specPatterns)) {
         const match = combinedText.match(regex);
         if (match) {
-            // El regex tiene múltiples grupos de captura, tomar el que no sea undefined
-            let value = (match[1] || match[2] || match[3] || '').trim();
-            // Limpiar caracteres especiales adicionales
-            value = value.replace(/[•·].*$/, '').trim();
+            // Encontrar el primer grupo capturado no nulo
+            let value = match.slice(1).find(m => m !== undefined && m !== null) || '';
+            value = value.trim();
+            // Limpiar caracteres especiales adicionales y tags HTML residuales
+            value = value.replace(/[•·].*$/, '').replace(/<\/?[^>]+(>|$)/g, "").trim();
+
             // Capitalizar primera letra
             if (value.length > 0) {
                 value = value.charAt(0).toUpperCase() + value.slice(1);
@@ -246,8 +293,6 @@ function parseShopifyProduct(html) {
                 case 'Movimiento':
                     const vLower = value.toLowerCase();
                     if (vLower.includes('vk') || vLower.includes('cuarzo') || vLower.includes('quartz') || vLower.includes('mecaquartz')) {
-                        // Forzar formato estándar para filtro: "mecaquartz (cuarzo híbrido)"
-                        // Extraer el calibre si existe (ej. VK63, VK64)
                         let caliber = 'VK63';
                         if (vLower.includes('vk64')) caliber = 'VK64';
                         if (vLower.includes('vk61')) caliber = 'VK61';
@@ -255,17 +300,15 @@ function parseShopifyProduct(html) {
                         value = `Seiko ${caliber} mecaquartz (cuarzo híbrido)`;
                         featureText = `Movimiento: ${value}, fiable y preciso`;
                     } else if (vLower.includes('nh35') || vLower.includes('automático') || vLower.includes('automatic')) {
-                        // Estandarizar automático
                         let caliber = 'NH35';
                         if (vLower.includes('nh34') || vLower.includes('gmt')) caliber = 'NH34';
                         if (vLower.includes('nh38')) caliber = 'NH38';
 
-                        value = `Seiko ${caliber} automático`; // Asegurar que tenga "automático"
+                        value = `Seiko ${caliber} automático`;
                         featureText = `Movimiento: ${value}, fiable y preciso`;
                     } else {
                         featureText = `Movimiento: ${value}`;
                     }
-                    // Actualizar el valor en specs para que el filtro funcione
                     data.specifications['Movimiento'] = value;
                     break;
                 case 'Grosor':
@@ -304,7 +347,10 @@ function parseShopifyProduct(html) {
                 default:
                     featureText = `${key}: ${value}`;
             }
-            data.features.push(featureText);
+            // Evitar duplicados
+            if (!data.features.includes(featureText)) {
+                data.features.push(featureText);
+            }
         }
     }
 
@@ -339,6 +385,11 @@ function parseShopifyProduct(html) {
         console.log('  ℹ Seikojust detectado: Asegurando correas Jubilee y President');
     }
 
+    // Si ya tenemos imágenes del JSON, no necesitamos buscarlas en el HTML
+    if (data.images.length > 0) {
+        return data;
+    }
+
     // Shopify usa diferentes patrones para imágenes
     // Intentar varios selectores comunes de Shopify
     const imgRegex1 = /<img[^>]+class="[^"]*product[^"]*"[^>]+src="([^"]+)"/gi;
@@ -349,6 +400,7 @@ function parseShopifyProduct(html) {
     let match;
     const foundImages = new Set();
 
+    // ... rest doesn't need much change but keeping logic consistent
     // Intentar primer patrón (imágenes de producto)
     while ((match = imgRegex1.exec(html)) !== null) {
         let src = match[1];
@@ -390,7 +442,7 @@ function parseShopifyProduct(html) {
             if (src.startsWith('//')) src = 'https:' + src;
             let cleanSrc = src.split('?')[0];
             if (!cleanSrc.includes('placeholder') && !cleanSrc.includes('icon') &&
-                (cleanSrc.includes('cdn.shopify.com') || cleanSrc.includes('atelier-cohen-dubois'))) {
+                (cleanSrc.includes('cdn.shopify.com') || cleanSrc.includes('atelier-cohen-dubois') || cleanSrc.includes('crownmods'))) {
                 foundImages.add(cleanSrc);
             }
         }
@@ -447,9 +499,8 @@ async function main() {
             break;
         }
 
-        if (!url.includes('atelier-cohen-dubois.com')) {
-            print('red', 'Error: La URL no parece ser de atelier-cohen-dubois.com');
-            continue;
+        if (!url.includes('atelier-cohen-dubois.com') && !url.includes('crownmods.es') && !url.includes('shopify') && !url.includes('crownmods')) {
+            print('red', 'Warning: La URL no parece conocida, pero intentaremos continuar.');
         }
 
         print('yellow', `\nDescargando HTML de: ${url}...`);
