@@ -180,16 +180,53 @@ function detectCollection(productName) {
     // Prioridad a colecciones específicas
     if (name.includes('royal seikoak') || name.includes('royal-seikoak')) return 'Royal Seikoak';
     if (name.includes('seitona') || name.includes('daytona')) return 'Seitona';
-    if (name.includes('gmteiko')) return 'GMTeiko';
+    if (name.includes('gmteiko') || name.includes('gmt')) return 'GMTeiko';
     if (name.includes('nauteiko')) return 'Nauteiko';
-    if (name.includes('seikom') || name.includes('seiko m') || name.includes('mariner') || name.includes('submariner')) return 'SeikoMariner';
+    if (name.includes('seikom') || name.includes('seiko m') || name.includes('submariner') || (name.includes('mariner') && !name.includes('master'))) return 'SeikoMariner';
     if (name.includes('yatch') || name.includes('tacheiko') || name.includes('yacht')) return 'Yatcheiko';
     if (name.includes('seikojust') || name.includes('datejust') || name.includes('just')) return 'Seikojust';
     if (name.includes('santeiko') || name.includes('santos')) return 'Santeiko';
+    if (name.includes('exploreiko') || name.includes('explorer')) return 'Exploreiko';
+    if (name.includes('daydate')) return 'SeikoDayDate';
 
     // Fallback inteligente: Usar la primera palabra capitalizada si parece una marca
     const firstWord = productName.split(' ')[0];
     return firstWord.charAt(0).toUpperCase() + firstWord.slice(1);
+}
+
+function cleanProductName(productName, collectionName) {
+    let cleanName = productName;
+
+    // Patrones a eliminar (base models de Rolex, Patek, etc.)
+    const patternsToRemove = [
+        /Seiko\s+Mod\s+GMT\s+Master\s+II/gi,
+        /Seiko\s+Mod\s+GMT/gi,
+        /Seiko\s+Mod\s+Submariner/gi,
+        /Seiko\s+Mod\s+Datejust/gi,
+        /Seiko\s+Mod\s+Daytona/gi,
+        /Seiko\s+Mod\s+Day-Date/gi,
+        /Seiko\s+Mod\s+Nautilus/gi,
+        /Seiko\s+Mod\s+Aquanaut/gi,
+        /Seiko\s+Mod\s+Santos/gi,
+        /Seiko\s+Mod\s+Royal\s+Oak/gi,
+        /Seiko\s+Mod\s+Yacht\s+Master/gi,
+        /Seiko\s+Mod\s+Explorer/gi,
+        /Seiko\s+Mod\s+/gi,  // Eliminar "Seiko Mod" restante
+        /^\s*-\s*/  // Eliminar guiones al inicio
+    ];
+
+    // Aplicar todos los patrones
+    patternsToRemove.forEach(pattern => {
+        cleanName = cleanName.replace(pattern, '');
+    });
+
+    // Agregar el nombre de la colección al inicio
+    cleanName = cleanName.trim();
+    if (!cleanName.toLowerCase().startsWith(collectionName.toLowerCase())) {
+        cleanName = `${collectionName} ${cleanName}`;
+    }
+
+    return cleanName.trim();
 }
 
 function parseShopifyProduct(html) {
@@ -301,6 +338,7 @@ function parseShopifyProduct(html) {
         'Esfera': /<strong>Esfera:<\/strong>\s*([^<]+)|[-•]\s*Esfera:\s*([^\n<-•]+)/i
     };
 
+
     for (const [key, regex] of Object.entries(specPatterns)) {
         const match = combinedText.match(regex);
         if (match) {
@@ -315,20 +353,122 @@ function parseShopifyProduct(html) {
                 value = value.charAt(0).toUpperCase() + value.slice(1);
             }
             data.specifications[key] = value;
+        }
+    }
 
-            // Normalizar el movimiento para casos específicos
-            if (key === 'Movimiento') {
-                const vLower = value.toLowerCase();
-                // Solo normalizar automáticos, mantener híbridos como están
-                if (vLower.includes('nh35') || vLower.includes('automático') || vLower.includes('automatic')) {
-                    if (!vLower.includes('vk') && !vLower.includes('híbrido') && !vLower.includes('hibrido')) {
-                        let caliber = 'NH35';
-                        if (vLower.includes('nh34') || vLower.includes('gmt')) caliber = 'NH34';
-                        if (vLower.includes('nh38')) caliber = 'NH38';
-                        data.specifications['Movimiento'] = `Seiko ${caliber} automático`;
+    // Debug: mostrar cuántas specs se encontraron (solo no vacías)
+    const specsFound = Object.keys(data.specifications).filter(k => data.specifications[k] && data.specifications[k].trim() !== '').length;
+
+    if (specsFound < 3) {
+        console.log(COLORS.yellow + `  ⚠ Solo se encontraron ${specsFound} especificaciones válidas. Intentando búsqueda alternativa...` + COLORS.reset);
+
+        // Intentar buscar directamente en el HTML sin procesar con patrones más flexibles
+        const rawSpecPatterns = {
+            'Movimiento': /(?:Movimiento|Movement)[:\s]+([^\n<]{5,100})/i,
+            'Diámetro': /(?:Diámetro|Diameter)[:\s]+([^\n<]{2,50})/i,
+            'Caja': /(?:Caja|Case)[:\s]+([^\n<]{5,100})/i,
+            'Grosor': /(?:Grosor|Espesor|Thickness)[:\s]+([^\n<]{2,50})/i,
+            'Cristal': /(?:Cristal|Crystal|Glass)[:\s]+([^\n<]{5,100})/i,
+            'Corona': /(?:Corona|Crown)[:\s]+([^\n<]{5,100})/i,
+            'Correa': /(?:Correa|Pulsera|Bracelet|Strap)[:\s]+([^\n<]{5,150})/i,
+            'Bisel': /(?:Bisel|Bezel)[:\s]+([^\n<]{5,100})/i,
+            'Luminosidad': /(?:Luminosidad|Lume|Luminous)[:\s]+([^\n<]{5,100})/i,
+            'Tamaño de muñeca': /(?:Tamaño de (?:la )?muñeca|Wrist size)[:\s]+([^\n<]{5,50})/i,
+            'Fondo de caja': /(?:Fondo de caja|Case back)[:\s]+([^\n<]{5,100})/i,
+            'Función GMT': /(?:Función de hora dual \(GMT\)|GMT function|Dual time)[:\s]+([^\n<",]{5,50})/i
+        };
+
+        for (const [key, regex] of Object.entries(rawSpecPatterns)) {
+            if (!data.specifications[key] || data.specifications[key].trim() === '') {
+                const match = html.match(regex);
+                if (match && match[1]) {
+                    let value = match[1].trim();
+
+                    // Decodificar entidades HTML unicode (ej: \u003cbr\u003e -> <br>)
+                    value = value.replace(/\\u003c/g, '<').replace(/\\u003e/g, '>');
+
+                    // Limpiar HTML tags
+                    value = value.replace(/<\/?[^>]+(>|$)/g, " ").trim();
+
+                    // Limpiar entidades HTML (&nbsp;, etc.)
+                    value = value.replace(/&nbsp;/gi, ' ').replace(/&[a-z]+;/gi, ' ').trim();
+
+                    // Eliminar saltos de línea y tomar solo la primera línea
+                    value = value.split(/\\n|\n/)[0].trim();
+
+                    // Remover texto después de bullets
+                    value = value.split(/•|·/)[0].trim();
+
+                    // Limpiar espacios múltiples
+                    value = value.replace(/\s+/g, ' ').trim();
+
+                    // Remover escapes innecesarios de caracteres comunes
+                    value = value.replace(/\\\//g, '/');
+
+                    // Validaciones específicas para rechazar valores inválidos
+                    const isValid = value.length > 2 &&
+                        value.length < 200 &&
+                        !value.includes('video.') &&
+                        !value.includes('function') &&
+                        !value.includes('window.') &&
+                        !value.includes('querySelector') &&
+                        !value.includes('published_at') &&
+                        !value.includes('created_at') &&
+                        !value.match(/^["'<>]+$/) &&
+                        !value.match(/^\d{1,2}">$/) &&
+                        !value.match(/",\\?"/);
+
+                    if (isValid) {
+                        data.specifications[key] = value;
+                        console.log(COLORS.cyan + `  ℹ Encontrado ${key}: ${value.substring(0, 60)}${value.length > 60 ? '...' : ''}` + COLORS.reset);
                     }
+
                 }
             }
+        }
+    } else {
+        console.log(COLORS.green + `  ✓ Especificaciones encontradas: ${specsFound}` + COLORS.reset);
+    }
+
+    // Limpiar specs vacíos al final
+    Object.keys(data.specifications).forEach(key => {
+        if (!data.specifications[key] || data.specifications[key].trim() === '') {
+            delete data.specifications[key];
+        }
+    });
+
+    // Normalizar el campo Movimiento después de todas las extracciones
+    if (data.specifications['Movimiento']) {
+        let value = data.specifications['Movimiento'];
+        const vLower = value.toLowerCase();
+
+        // Limpiar texto descriptivo innecesario
+        value = value.replace(/,?\s*presentamos.*$/i, '').trim();
+        value = value.replace(/\.\s*Un reloj.*$/i, '').trim();
+
+        // Capitalizar primera letra
+        value = value.charAt(0).toUpperCase() + value.slice(1);
+
+        // Normalizar "automático" con mayúscula
+        value = value.replace(/automático/gi, 'Automático');
+
+        // Solo normalizar automáticos, mantener híbridos como están
+        if (vLower.includes('nh35') || vLower.includes('automático') || vLower.includes('automatic')) {
+            if (!vLower.includes('vk') && !vLower.includes('híbrido') && !vLower.includes('hibrido')) {
+                let caliber = 'NH35';
+                if (vLower.includes('nh34') || vLower.includes('gmt')) caliber = 'NH34';
+                if (vLower.includes('nh38')) caliber = 'NH38';
+
+                // Formato limpio: "Automático original NH34 Seiko Time Corp."
+                if (vLower.includes('original')) {
+                    data.specifications['Movimiento'] = `Automático original ${caliber} Seiko Time Corp.`;
+                } else {
+                    data.specifications['Movimiento'] = `Seiko ${caliber} Automático Seiko Time Corp.`;
+                }
+            }
+        } else {
+            // Si no es automático pero tiene algún caliber, actualizar el valor limpio
+            data.specifications['Movimiento'] = value;
         }
     }
 
@@ -343,9 +483,10 @@ function parseShopifyProduct(html) {
             .filter(Boolean);
     }
 
+
     data.sizes = [];
-    const sizeFeatures = data.features.find(f => f.startsWith('Diámetro:') || f.startsWith('Diametro:'));
-    if (sizeFeatures && (sizeFeatures.includes('36 mm o 39 mm') || sizeFeatures.includes('36mm o 39mm') || sizeFeatures.includes('36mm / 39mm'))) {
+    const diametroSpec = data.specifications['Diámetro'] || data.specifications['Diametro'] || '';
+    if (diametroSpec && (diametroSpec.includes('36 mm o 39 mm') || diametroSpec.includes('36mm o 39mm') || diametroSpec.includes('36mm / 39mm'))) {
         data.sizes = ['36mm', '39mm'];
         console.log('  ℹ Tamaños detectados: 36mm, 39mm');
     }
@@ -539,10 +680,11 @@ async function main() {
         const productPricing = calculatePrice(data.name, data.specifications);
 
         const collectionName = detectCollection(data.name);
+        const cleanedName = cleanProductName(data.name, collectionName);
 
         const finalProduct = {
             id: Date.now(),
-            name: collectionName,  // Usar el nombre de la categoría como nombre del producto
+            name: cleanedName,  // Usar el nombre limpio y simplificado
             category: collectionName,
             league: collectionName,
             price: productPricing.price,
