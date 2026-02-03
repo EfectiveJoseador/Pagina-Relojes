@@ -1719,7 +1719,7 @@ const products = [
     },
     {
         "id": 1770148241631,
-        "name": "Seiko Mod Daytona Platinum",
+        "name": "Seitona Platinum",
         "category": "Seitona",
         "league": "Seitona",
         "price": 119.9,
