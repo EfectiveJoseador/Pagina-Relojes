@@ -2031,6 +2031,418 @@ const products = [
         "Pulsera": "Jubilee - Ancho 20 mm",
         "Esfera": "28,5 mm"
     }
+},
+    {
+    "id": 1770113568933,
+    "name": "Seikojust - Número arábigo - Esmeralda real",
+    "category": "Seikojust",
+    "league": "Seikojust",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seikojust-n-mero-ar-bigo-esmeralda-real/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seikojust-n-mero-ar-bigo-esmeralda-real/2.webp",
+        "/assets/productos/RC_Mods/seikojust-n-mero-ar-bigo-esmeralda-real/3.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nCaja: Acero inoxidable 316L, duradero y con acabado premium\nDiámetro: 39 mm, diseño equilibrado y elegante\nMovimiento: Seiko NH35 automático, fiable y preciso\nGrosor: 12,5 mm, cómodo para uso diario\nCristal: Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos\nCorona: Corona atornillada para mejorar la estanqueidad, seguridad y funcionalidad\nTamaño de muñeca: Ajustable de 14,5 a 22 cm\nPulsera: Jubilee - Ancho 20 mm\nEsfera: 28,5 mm",
+    "features": [
+        "Caja: Acero inoxidable 316L, duradero y con acabado premium",
+        "Diámetro: 39 mm, diseño equilibrado y elegante",
+        "Movimiento: Seiko NH35 automático, fiable y preciso",
+        "Grosor: 12,5 mm, cómodo para uso diario",
+        "Cristal: Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
+        "Corona: Corona atornillada para mejorar la estanqueidad, seguridad y funcionalidad",
+        "Tamaño de muñeca: Ajustable de 14,5 a 22 cm",
+        "Pulsera: Jubilee - Ancho 20 mm",
+        "Esfera: 28,5 mm"
+    ],
+    "sizes": [],
+    "straps": [
+        "Jubilee",
+        "President"
+    ],
+    "specs": {
+        "Caja": "Acero inoxidable 316L",
+        "Diámetro": "39 mm",
+        "Movimiento": "Seiko NH35 automático",
+        "Grosor": "12,5 mm",
+        "Cristal": "Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
+        "Corona": "Corona atornillada para mejorar la estanqueidad",
+        "Tamaño de muñeca": "Ajustable de 14,5 a 22 cm",
+        "Pulsera": "Jubilee - Ancho 20 mm",
+        "Esfera": "28,5 mm"
+    }
+},
+    {
+    "id": 1770113620081,
+    "name": "SeikoDayDate - Número romano - Mont Blanc",
+    "category": "SeikoDayDate",
+    "league": "SeikoDayDate",
+    "price": 134.9,
+    "oldPrice": 174.9,
+    "image": "/assets/productos/RC_Mods/seikojust-n-mero-romano-mont-blanc/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seikojust-n-mero-romano-mont-blanc/2.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nCaja: Acero inoxidable 316L, duradero y con acabado premium\nDiámetro: 39 mm, diseño equilibrado y elegante\nMovimiento: Seiko NH35 automático, fiable y preciso\nGrosor: 12,5 mm, cómodo para uso diario\nCristal: Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos\nCorona: Corona atornillada para mejorar la estanqueidad, seguridad y funcionalidad\nTamaño de muñeca: Ajustable de 14,5 a 22 cm\nPulsera: Jubilee - Ancho 20 mm\nEsfera: 28,5 mm",
+    "features": [
+        "Caja: Acero inoxidable 316L, duradero y con acabado premium",
+        "Diámetro: 39 mm, diseño equilibrado y elegante",
+        "Movimiento: Seiko NH35 automático, fiable y preciso",
+        "Grosor: 12,5 mm, cómodo para uso diario",
+        "Cristal: Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
+        "Corona: Corona atornillada para mejorar la estanqueidad, seguridad y funcionalidad",
+        "Tamaño de muñeca: Ajustable de 14,5 a 22 cm",
+        "Pulsera: Jubilee - Ancho 20 mm",
+        "Esfera: 28,5 mm"
+    ],
+    "sizes": [],
+    "straps": [
+        "Jubilee",
+        "President"
+    ],
+    "specs": {
+        "Caja": "Acero inoxidable 316L",
+        "Diámetro": "39 mm",
+        "Movimiento": "Seiko NH35 automático",
+        "Grosor": "12,5 mm",
+        "Cristal": "Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
+        "Corona": "Corona atornillada para mejorar la estanqueidad",
+        "Tamaño de muñeca": "Ajustable de 14,5 a 22 cm",
+        "Pulsera": "President - Ancho 20 mm",
+        "Esfera": "28,5 mm"
+    }
+},
+    {
+    "id": 1770113801825,
+    "name": "Seikojust - Espíritu oscuro",
+    "category": "Seikojust",
+    "league": "Seikojust",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seikojust-esp-ritu-oscuro/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seikojust-esp-ritu-oscuro/2.webp",
+        "/assets/productos/RC_Mods/seikojust-esp-ritu-oscuro/3.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nCaja: Acero inoxidable 316L, duradero y con acabado premium\nDiámetro: 39 mm, diseño equilibrado y elegante\nMovimiento: Seiko NH35 automático, fiable y preciso\nGrosor: 12,5 mm, cómodo para uso diario\nCristal: Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos\nCorona: Corona atornillada para mejorar la estanqueidad, seguridad y funcionalidad\nTamaño de muñeca: Ajustable de 14,5 a 22 cm\nPulsera: Jubilee - Ancho 20 mm\nEsfera: 28,5 mm",
+    "features": [
+        "Caja: Acero inoxidable 316L, duradero y con acabado premium",
+        "Diámetro: 39 mm, diseño equilibrado y elegante",
+        "Movimiento: Seiko NH35 automático, fiable y preciso",
+        "Grosor: 12,5 mm, cómodo para uso diario",
+        "Cristal: Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
+        "Corona: Corona atornillada para mejorar la estanqueidad, seguridad y funcionalidad",
+        "Tamaño de muñeca: Ajustable de 14,5 a 22 cm",
+        "Pulsera: Jubilee - Ancho 20 mm",
+        "Esfera: 28,5 mm"
+    ],
+    "sizes": [],
+    "straps": [
+        "Jubilee",
+        "President"
+    ],
+    "specs": {
+        "Caja": "Acero inoxidable 316L",
+        "Diámetro": "39 mm",
+        "Movimiento": "Seiko NH35 automático",
+        "Grosor": "12,5 mm",
+        "Cristal": "Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
+        "Corona": "Corona atornillada para mejorar la estanqueidad",
+        "Tamaño de muñeca": "Ajustable de 14,5 a 22 cm",
+        "Pulsera": "Jubilee - Ancho 20 mm",
+        "Esfera": "28,5 mm"
+    }
+},
+    {
+    "id": 1770113818247,
+    "name": "SeikoDayDate - Numero Romano - Acero Niebla",
+    "category": "SeikoDayDate",
+    "league": "SeikoDayDate",
+    "price": 134.9,
+    "oldPrice": 174.9,
+    "image": "/assets/productos/RC_Mods/seikojust-numero-romano-acero-niebla/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seikojust-numero-romano-acero-niebla/2.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nCaja: Acero inoxidable 316L, duradero y con acabado premium\nDiámetro: 39 mm, diseño equilibrado y elegante\nMovimiento: Seiko NH35 automático, fiable y preciso\nGrosor: 12,5 mm, cómodo para uso diario\nCristal: Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos\nCorona: Corona atornillada para mejorar la estanqueidad, seguridad y funcionalidad\nTamaño de muñeca: Ajustable de 14,5 a 22 cm\nPulsera: Jubilee - Ancho 20 mm\nEsfera: 28,5 mm",
+    "features": [
+        "Caja: Acero inoxidable 316L, duradero y con acabado premium",
+        "Diámetro: 39 mm, diseño equilibrado y elegante",
+        "Movimiento: Seiko NH35 automático, fiable y preciso",
+        "Grosor: 12,5 mm, cómodo para uso diario",
+        "Cristal: Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
+        "Corona: Corona atornillada para mejorar la estanqueidad, seguridad y funcionalidad",
+        "Tamaño de muñeca: Ajustable de 14,5 a 22 cm",
+        "Pulsera: President - Ancho 20 mm",
+        "Esfera: 28,5 mm"
+    ],
+    "sizes": [],
+    "straps": [
+        "Jubilee",
+        "President"
+    ],
+    "specs": {
+        "Caja": "Acero inoxidable 316L",
+        "Diámetro": "39 mm",
+        "Movimiento": "Seiko NH35 automático",
+        "Grosor": "12,5 mm",
+        "Cristal": "Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
+        "Corona": "Corona atornillada para mejorar la estanqueidad",
+        "Tamaño de muñeca": "Ajustable de 14,5 a 22 cm",
+        "Pulsera": "Jubilee - Ancho 20 mm",
+        "Esfera": "28,5 mm"
+    }
+},
+    {
+    "id": 1770113890696,
+    "name": "Seikojust - Escarlata Real",
+    "category": "Seikojust",
+    "league": "Seikojust",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seikojust-escarlata-real/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seikojust-escarlata-real/2.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nCaja: Acero inoxidable 316L, duradero y con acabado premium\nDiámetro: 39 mm, diseño equilibrado y elegante\nMovimiento: Seiko NH35 automático, fiable y preciso\nGrosor: 12,5 mm, cómodo para uso diario\nCristal: Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos\nCorona: Corona atornillada para mejorar la estanqueidad, seguridad y funcionalidad\nTamaño de muñeca: Ajustable de 14,5 a 22 cm\nPulsera: Jubilee - Ancho 20 mm\nEsfera: 28,5 mm",
+    "features": [
+        "Caja: Acero inoxidable 316L, duradero y con acabado premium",
+        "Diámetro: 39 mm, diseño equilibrado y elegante",
+        "Movimiento: Seiko NH35 automático, fiable y preciso",
+        "Grosor: 12,5 mm, cómodo para uso diario",
+        "Cristal: Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
+        "Corona: Corona atornillada para mejorar la estanqueidad, seguridad y funcionalidad",
+        "Tamaño de muñeca: Ajustable de 14,5 a 22 cm",
+        "Pulsera: Jubilee - Ancho 20 mm",
+        "Esfera: 28,5 mm"
+    ],
+    "sizes": [],
+    "straps": [
+        "Jubilee",
+        "President"
+    ],
+    "specs": {
+        "Caja": "Acero inoxidable 316L",
+        "Diámetro": "39 mm",
+        "Movimiento": "Seiko NH35 automático",
+        "Grosor": "12,5 mm",
+        "Cristal": "Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
+        "Corona": "Corona atornillada para mejorar la estanqueidad",
+        "Tamaño de muñeca": "Ajustable de 14,5 a 22 cm",
+        "Pulsera": "Jubilee - Ancho 20 mm",
+        "Esfera": "28,5 mm"
+    }
+},
+    {
+    "id": 1770113911899,
+    "name": "Seikojust - Numeración arábiga - Oro del desierto",
+    "category": "Seikojust",
+    "league": "Seikojust",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seikojust-numeraci-n-ar-biga-oro-del-desierto/1.webp",
+    "images": [],
+    "description": "Especificaciones Técnicas:\nCaja: Acero inoxidable 316L, duradero y con acabado premium\nDiámetro: 39 mm, diseño equilibrado y elegante\nMovimiento: Seiko NH35 automático, fiable y preciso\nGrosor: 12,5 mm, cómodo para uso diario\nCristal: Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos\nCorona: Corona atornillada para mejorar la estanqueidad, seguridad y funcionalidad\nTamaño de muñeca: Ajustable de 14,5 a 22 cm\nPulsera: Jubilee - Ancho 20 mm\nEsfera: 28,5 mm",
+    "features": [
+        "Caja: Acero inoxidable 316L, duradero y con acabado premium",
+        "Diámetro: 39 mm, diseño equilibrado y elegante",
+        "Movimiento: Seiko NH35 automático, fiable y preciso",
+        "Grosor: 12,5 mm, cómodo para uso diario",
+        "Cristal: Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
+        "Corona: Corona atornillada para mejorar la estanqueidad, seguridad y funcionalidad",
+        "Tamaño de muñeca: Ajustable de 14,5 a 22 cm",
+        "Pulsera: Jubilee - Ancho 20 mm",
+        "Esfera: 28,5 mm"
+    ],
+    "sizes": [],
+    "straps": [
+        "Jubilee",
+        "President"
+    ],
+    "specs": {
+        "Caja": "Acero inoxidable 316L",
+        "Diámetro": "39 mm",
+        "Movimiento": "Seiko NH35 automático",
+        "Grosor": "12,5 mm",
+        "Cristal": "Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
+        "Corona": "Corona atornillada para mejorar la estanqueidad",
+        "Tamaño de muñeca": "Ajustable de 14,5 a 22 cm",
+        "Pulsera": "President - Ancho 20 mm",
+        "Esfera": "28,5 mm"
+    }
+},
+    {
+    "id": 1770114007922,
+    "name": "Seitona Cosmograph - Panda",
+    "category": "Seitona",
+    "league": "Seitona",
+    "price": 119.9,
+    "oldPrice": 149.9,
+    "image": "/assets/productos/RC_Mods/seiko-mod-daytona-cosmograph-panda/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seiko-mod-daytona-cosmograph-panda/2.webp",
+        "/assets/productos/RC_Mods/seiko-mod-daytona-cosmograph-panda/3.webp",
+        "/assets/productos/RC_Mods/seiko-mod-daytona-cosmograph-panda/4.webp",
+        "/assets/productos/RC_Mods/seiko-mod-daytona-cosmograph-panda/5.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nCaja: Acero inoxidable 316L, duradero y con acabado premium\nMovimiento: Seiko NH35 automático, fiable y preciso\nGrosor: 13,5 mm, cómodo para uso diario\nCristal: Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos\nCorona: Corona atornillada para mejorar la estanqueidad, seguridad y funcionalidad\nTamaño de muñeca: Ajustable de 14,5 a 22 cm\nPulsera: \nEsfera: 28,5 mm",
+    "features": [
+        "Caja: Acero inoxidable 316L, duradero y con acabado premium",
+        "Movimiento: Seiko NH35 automático, fiable y preciso",
+        "Grosor: 13,5 mm, cómodo para uso diario",
+        "Cristal: Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
+        "Corona: Corona atornillada para mejorar la estanqueidad, seguridad y funcionalidad",
+        "Tamaño de muñeca: Ajustable de 14,5 a 22 cm",
+        "Pulsera: Oyster - ancho 20 mm",
+        "Esfera: 28,5 mm"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Caja": "Acero inoxidable 316L",
+        "Movimiento": "Seiko VK63 Cuarzo",
+        "Grosor": "13,5 mm",
+        "Cristal": "Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
+        "Corona": "Corona atornillada para mejorar la estanqueidad",
+        "Tamaño de muñeca": "Ajustable de 14,5 a 22 cm",
+        "Pulsera": "Oyster - ancho 20 mm",
+        "Esfera": "28,5 mm"
+    }
+},
+    {
+    "id": 1770114187809,
+    "name": "GMTeiko - Batman",
+    "category": "GMTeiko",
+    "league": "GMTeiko",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seiko-mod-submariner-batman/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seiko-mod-submariner-batman/2.webp",
+        "/assets/productos/RC_Mods/seiko-mod-submariner-batman/3.webp",
+        "/assets/productos/RC_Mods/seiko-mod-submariner-batman/4.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nCaja: Acero inoxidable 316L, duradero y con acabado premium\nMovimiento: Seiko NH35 automático, fiable y preciso\nGrosor: 13,5 mm, cómodo para uso diario\nCristal: Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos\nCorona: Corona atornillada para mejorar la estanqueidad, seguridad y funcionalidad\nTamaño de muñeca: Ajustable de 14,5 a 22 cm\nPulsera: \nEsfera: 28,5 mm",
+    "features": [
+        "Caja: Acero inoxidable 316L, duradero y con acabado premium",
+        "Movimiento: Seiko NH35 automático, fiable y preciso",
+        "Grosor: 13,5 mm, cómodo para uso diario",
+        "Cristal: Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
+        "Corona: Corona atornillada para mejorar la estanqueidad, seguridad y funcionalidad",
+        "Tamaño de muñeca: Ajustable de 14,5 a 22 cm",
+        "Pulsera: Oyster - ancho 20 mm",
+        "Esfera: 28,5 mm"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Caja": "Acero inoxidable 316L",
+        "Movimiento": "Seiko NH35 automático",
+        "Grosor": "13,5 mm",
+        "Cristal": "Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
+        "Corona": "Corona atornillada para mejorar la estanqueidad",
+        "Tamaño de muñeca": "Ajustable de 14,5 a 22 cm",
+        "Pulsera": "Oyster - ancho 20 mm",
+        "Esfera": "28,5 mm"
+    }
+},
+    {
+    "id": 1770114365478,
+    "name": "Nauteiko Aquanaut 42mm - Verde Soberano",
+    "category": "Nauteiko",
+    "league": "Nauteiko",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seiko-mod-aquanaut-42mm-verde-soberano/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seiko-mod-aquanaut-42mm-verde-soberano/2.webp",
+        "/assets/productos/RC_Mods/seiko-mod-aquanaut-42mm-verde-soberano/3.webp",
+        "/assets/productos/RC_Mods/seiko-mod-aquanaut-42mm-verde-soberano/4.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nCaja: Aquanaut 42 mm, duradero y con acabado premium\nMovimiento: Seiko NH35 automático, fiable y preciso\nGrosor: 12 mm, cómodo para uso diario\nCristal: Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos\nCorrea: Nautilus 22 mm\nEsfera: Aquanaut",
+    "features": [
+        "Caja: Aquanaut 42 mm, duradero y con acabado premium",
+        "Movimiento: Seiko NH35 automático, fiable y preciso",
+        "Grosor: 12 mm, cómodo para uso diario",
+        "Cristal: Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
+        "Correa: Nautilus 22 mm",
+        "Esfera: Aquanaut"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Caja": "Aquanaut 42 mm",
+        "Movimiento": "Seiko NH35 automático",
+        "Grosor": "12 mm",
+        "Cristal": "Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
+        "Correa": "Nautilus 22 mm",
+        "Esfera": "Aquanaut"
+    }
+},
+    {
+    "id": 1770114457854,
+    "name": "Nauteiko Aquanaut 42mm - Negro Imperial",
+    "category": "Nauteiko",
+    "league": "Nauteiko",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seiko-mod-aquanaut-42mm-negro-imperial/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seiko-mod-aquanaut-42mm-negro-imperial/2.webp",
+        "/assets/productos/RC_Mods/seiko-mod-aquanaut-42mm-negro-imperial/3.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nCaja: Aquanaut 42 mm, duradero y con acabado premium\nMovimiento: Seiko NH35 automático, fiable y preciso\nGrosor: 12 mm, cómodo para uso diario\nCristal: Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos\nCorrea: Nautilus 22 mm\nEsfera: Aquanaut",
+    "features": [
+        "Caja: Aquanaut 42 mm, duradero y con acabado premium",
+        "Movimiento: Seiko NH35 automático, fiable y preciso",
+        "Grosor: 12 mm, cómodo para uso diario",
+        "Cristal: Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
+        "Correa: Nautilus 22 mm",
+        "Esfera: Aquanaut"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Caja": "Aquanaut 42 mm",
+        "Movimiento": "Seiko NH35 automático",
+        "Grosor": "12 mm",
+        "Cristal": "Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
+        "Correa": "Nautilus 22 mm",
+        "Esfera": "Aquanaut"
+    }
+},
+    {
+    "id": 1770114544604,
+    "name": "Nauteiko Aquanaut 42mm - Azul",
+    "category": "Nauteiko",
+    "league": "Nauteiko",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seiko-mod-aquanaut-42mm-ombre-d-039-azur/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seiko-mod-aquanaut-42mm-ombre-d-039-azur/2.webp",
+        "/assets/productos/RC_Mods/seiko-mod-aquanaut-42mm-ombre-d-039-azur/3.webp"
+    ],
+    "description": "Especificaciones Técnicas:\nCaja: Aquanaut 42 mm, duradero y con acabado premium\nMovimiento: Seiko NH35 automático, fiable y preciso\nGrosor: 12 mm, cómodo para uso diario\nCristal: Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos\nCorrea: Nautilus 22 mm\nEsfera: Aquanaut",
+    "features": [
+        "Caja: Aquanaut 42 mm, duradero y con acabado premium",
+        "Movimiento: Seiko NH35 automático, fiable y preciso",
+        "Grosor: 12 mm, cómodo para uso diario",
+        "Cristal: Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
+        "Correa: Nautilus 22 mm",
+        "Esfera: Aquanaut"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Caja": "Aquanaut 42 mm",
+        "Movimiento": "Seiko NH35 automático",
+        "Grosor": "12 mm",
+        "Cristal": "Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
+        "Correa": "Nautilus 22 mm",
+        "Esfera": "Aquanaut"
+    }
 }
 ];
 
