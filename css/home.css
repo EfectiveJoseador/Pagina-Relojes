@@ -136,153 +136,7 @@ body.low-performance * {
 }
 
 
-/* =============================================
-   SCROLL INDICATOR - SIMPLIFIED
-   ============================================= */
 
-.scroll-indicator {
-    position: absolute;
-    bottom: 25px;
-    right: 30px;
-    left: auto;
-    transform: none;
-    z-index: 100;
-    cursor: pointer;
-    opacity: 0;
-    animation: scrollIndicatorFadeIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) 2s forwards;
-    transition: opacity 0.5s ease, transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-.scroll-indicator:hover {
-    transform: scale(1.05);
-}
-
-.scroll-indicator:hover .scroll-text {
-    color: #D4AF37;
-    text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
-}
-
-.scroll-indicator:hover .scroll-arrow {
-    border-color: #E5C76B;
-}
-
-.scroll-indicator.hidden {
-    opacity: 0 !important;
-    pointer-events: none;
-    transform: translateY(20px);
-}
-
-@keyframes scrollIndicatorFadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Scroll Text */
-.scroll-text {
-    font-family: var(--font-heading);
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.9);
-    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.7);
-    animation: textPulse 3s ease-in-out infinite;
-    transition: all 0.3s ease;
-}
-
-@keyframes textPulse {
-
-    0%,
-    100% {
-        opacity: 0.8;
-    }
-
-    50% {
-        opacity: 1;
-    }
-}
-
-/* Cascading Arrows */
-.scroll-arrows {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3px;
-}
-
-.scroll-arrow {
-    width: 14px;
-    height: 14px;
-    border-right: 2px solid rgba(212, 175, 55, 0.9);
-    border-bottom: 2px solid rgba(212, 175, 55, 0.9);
-    transform: rotate(45deg);
-    animation: arrowBounce 2s ease-in-out infinite;
-    filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.6));
-    transition: all 0.3s ease;
-}
-
-.scroll-arrow:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.scroll-arrow:nth-child(2) {
-    animation-delay: 0.2s;
-    opacity: 0.65;
-}
-
-.scroll-arrow:nth-child(3) {
-    animation-delay: 0.4s;
-    opacity: 0.35;
-}
-
-@keyframes arrowBounce {
-
-    0%,
-    100% {
-        opacity: 0.3;
-        transform: rotate(45deg) translateY(0);
-    }
-
-    50% {
-        opacity: 1;
-        transform: rotate(45deg) translateY(6px);
-    }
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .scroll-indicator {
-        bottom: 15px;
-        right: 20px;
-    }
-
-    .scroll-text {
-        font-size: 0.7rem;
-        letter-spacing: 2px;
-    }
-
-    .scroll-arrow {
-        width: 12px;
-        height: 12px;
-    }
-}
-
-/* Keep scroll indicator visible after seen */
-body.animation-seen .scroll-indicator {
-    animation: none;
-    opacity: 1;
-}
 
 
 
@@ -467,7 +321,7 @@ body.animation-seen .scroll-indicator {
 
 .hero-title {
     font-family: var(--font-heading);
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 8vw, 3.5rem);
     line-height: 1.2;
     margin-bottom: 1rem;
     font-weight: 900;
@@ -1491,24 +1345,33 @@ a.catalogo-btn:hover,
 
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 3.5rem;
+        font-size: 2.2rem;
+        margin-bottom: 0.75rem;
     }
 
     .hero-brand {
-        font-size: 1.8rem;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
     }
 
     .hero-subtitle {
-        font-size: 1.1rem;
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+        padding: 0 1rem;
+        line-height: 1.5;
     }
 
     .hero-buttons {
         flex-direction: column;
         width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+        gap: 1rem;
     }
 
     .btn {
         width: 100%;
+        padding: 0.9rem 2rem;
     }
 
     .section-title {

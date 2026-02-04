@@ -60,63 +60,10 @@ async function initHome() {
     applySpecialPricing();
     initCatalogoCarousel();
     initCatalogoCards();
-    initScrollIndicator();
+
 }
 
-// Scroll Indicator Functionality
-function initScrollIndicator() {
-    const scrollIndicator = document.getElementById('scroll-indicator');
-    if (!scrollIndicator) return;
 
-    // Click to scroll smoothly to next section
-    scrollIndicator.addEventListener('click', () => {
-        const heroSection = document.querySelector('.hero-section');
-        const nextSection = heroSection?.nextElementSibling;
-
-        if (nextSection) {
-            // Get header height to offset scroll position
-            const header = document.querySelector('.main-header') || document.querySelector('header');
-            const headerHeight = header ? header.offsetHeight : 70;
-
-            // Calculate scroll position with offset for header + padding
-            const sectionTop = nextSection.getBoundingClientRect().top + window.scrollY;
-            const scrollTo = sectionTop - headerHeight;
-
-            window.scrollTo({
-                top: scrollTo,
-                behavior: 'smooth'
-            });
-        }
-    });
-
-    // Hide scroll indicator when user scrolls
-    let hasScrolled = false;
-    let lastScrollY = window.scrollY;
-
-    const handleScroll = () => {
-        const currentScrollY = window.scrollY;
-
-        // Only hide after scrolling past 100px
-        if (currentScrollY > 100 && !hasScrolled) {
-            hasScrolled = true;
-            scrollIndicator.classList.add('hidden');
-        } else if (currentScrollY <= 50 && hasScrolled) {
-            hasScrolled = false;
-            scrollIndicator.classList.remove('hidden');
-        }
-
-        lastScrollY = currentScrollY;
-    };
-
-    // Use passive listener for better performance
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
-    // Initial check in case page is already scrolled
-    if (window.scrollY > 100) {
-        scrollIndicator.classList.add('hidden');
-        hasScrolled = true;
-    }
-}
 function initCatalogoCarousel() {
     const carousel = document.getElementById('catalogo-carousel');
     if (!carousel) return;
