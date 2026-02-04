@@ -183,15 +183,15 @@ function detectCollection(productName) {
     const name = productName.toLowerCase();
 
     // Prioridad a colecciones específicas
-    if (name.includes('royal seikoak') || name.includes('royal-seikoak')) return 'Royal Seikoak';
+    if (name.includes('royal seikoak') || name.includes('royal-seikoak') || name.includes('royal oak') || name.includes('royal-oak')) return 'Royal Seikoak';
     if (name.includes('day-date') || name.includes('daydate') || name.includes('day date')) return 'SeikoDayDate';
     if (name.includes('seitona') || name.includes('daytona')) return 'Seitona';
     if (name.includes('gmteiko') || name.includes('gmt')) return 'GMTeiko';
     if (name.includes('nauteiko') || name.includes('nautilus') || name.includes('aquanaut')) return 'Nauteiko';
-    if (name.includes('seikom') || name.includes('seiko m') || name.includes('submariner') || (name.includes('mariner') && !name.includes('master'))) return 'SeikoMariner';
-    if (name.includes('yatch') || name.includes('tacheiko') || name.includes('yacht')) return 'Yatcheiko';
-    if (name.includes('seikojust') || name.includes('datejust') || name.includes('just') || name.includes('sky-dweller') || name.includes('skydweller')) return 'Seikojust';
     if (name.includes('santeiko') || name.includes('santos')) return 'Santeiko';
+    if (name.includes('yatch') || name.includes('tacheiko') || name.includes('yacht')) return 'Yatcheiko';
+    if (name.includes('seikom') || name.includes('seiko m') || name.includes('submariner') || (name.includes('mariner') && !name.includes('master'))) return 'SeikoMariner';
+    if (name.includes('seikojust') || name.includes('datejust') || name.includes('just') || name.includes('sky-dweller') || name.includes('skydweller')) return 'Seikojust';
     if (name.includes('exploreiko') || name.includes('explorer')) return 'Exploreiko';
 
     // Fallback inteligente: Usar la primera palabra capitalizada si parece una marca
@@ -212,11 +212,10 @@ function cleanProductName(productName, collectionName) {
         /Seiko\s+Mod\s+Day-Date/gi,
         /Seiko\s+Mod\s+Nautilus/gi,
         /Seiko\s+Mod\s+Aquanaut/gi,
-        /Seiko\s+Mod\s+Santos/gi,
         /Seiko\s+Mod\s+Royal\s+Oak/gi,
         /Seiko\s+Mod\s+Yacht\s+Master/gi,
         /Seiko\s+Mod\s+Explorer/gi,
-        /Seiko\s+Mod\s+/gi,  // Eliminar "Seiko Mod" restante (mantendrá Sky-Dweller, etc.)
+        /Seiko\s+Mod\s+/gi,  // Eliminar "Seiko Mod" restante (mantendrá Sky-Dweller, Santos, etc.)
         /^\s*-\s*/  // Eliminar guiones al inicio
     ];
 

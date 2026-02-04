@@ -3054,6 +3054,571 @@ const products = [
         "Bisel": "cerámico",
         "Fondo de caja": "Cristal (movimiento visto)"
     }
+},
+    {
+    "id": 1770204792367,
+    "name": "Royal Seikoak \"Navy blue\"",
+    "category": "Royal Seikoak",
+    "league": "Royal Seikoak",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seiko-mod-royal-oak-navy-blue/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seiko-mod-royal-oak-navy-blue/2.webp",
+        "/assets/productos/RC_Mods/seiko-mod-royal-oak-navy-blue/3.webp",
+        "/assets/productos/RC_Mods/seiko-mod-royal-oak-navy-blue/4.webp"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Caja": "Zafiro, antirayaduras con tratamiento antirreflejos",
+        "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+        "Grosor": "12 mm",
+        "Luminosidad": "Sí",
+        "Corona": "Roscado",
+        "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
+        "Pulsera": "Acero inoxidable 316L (con cierre de seguridad tipo mariposa)"
+    }
+},
+    {
+    "id": 1770204876512,
+    "name": "Royal Seikoak \"Skeleton\"",
+    "category": "Royal Seikoak",
+    "league": "Royal Seikoak",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seiko-mod-royal-oak-skeleton/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seiko-mod-royal-oak-skeleton/2.webp",
+        "/assets/productos/RC_Mods/seiko-mod-royal-oak-skeleton/3.webp",
+        "/assets/productos/RC_Mods/seiko-mod-royal-oak-skeleton/4.webp",
+        "/assets/productos/RC_Mods/seiko-mod-royal-oak-skeleton/5.webp",
+        "/assets/productos/RC_Mods/seiko-mod-royal-oak-skeleton/6.webp"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Caja": "Zafiro, antirayaduras con tratamiento antirreflejos",
+        "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+        "Grosor": "12 mm",
+        "Luminosidad": "Sí",
+        "Corona": "Roscado",
+        "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
+        "Pulsera": "Acero inoxidable 316L (con cierre de seguridad tipo mariposa)"
+    }
+},
+    {
+    "id": 1770204897344,
+    "name": "Royal Seikoak \"Panda Cronógrafo\"",
+    "category": "Royal Seikoak",
+    "league": "Royal Seikoak",
+    "price": 119.9,
+    "oldPrice": 149.9,
+    "image": "/assets/productos/RC_Mods/seiko-mod-royal-oak-panda-cron-grafo/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seiko-mod-royal-oak-panda-cron-grafo/2.webp",
+        "/assets/productos/RC_Mods/seiko-mod-royal-oak-panda-cron-grafo/3.webp"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Caja": "Acero inoxidable cepillado 316L",
+        "Movimiento": "Movimiento híbrido Seiko VK63 (combina automático con cuarzo)",
+        "Grosor": "12 mm",
+        "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
+        "Luminosidad": "Sí",
+        "Corona": "Roscado",
+        "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
+        "Pulsera": "Acero inoxidable 316L (con cierre de seguridad tipo mariposa)"
+    }
+},
+    {
+    "id": 1770204936357,
+    "name": "Royal Seikoak Chronograph Dark Blue",
+    "category": "Royal Seikoak",
+    "league": "Royal Seikoak",
+    "price": 119.9,
+    "oldPrice": 149.9,
+    "image": "/assets/productos/RC_Mods/seiko-mod-royal-oak-chronograph-dark-blue/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seiko-mod-royal-oak-chronograph-dark-blue/2.webp"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Caja": "Acero inoxidable cepillado 316L",
+        "Movimiento": "Movimiento híbrido Seiko VK63 (combina automático con cuarzo)",
+        "Grosor": "12 mm",
+        "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
+        "Luminosidad": "Sí",
+        "Corona": "Roscado",
+        "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
+        "Pulsera": "Acero inoxidable 316L (con cierre de seguridad tipo mariposa)"
+    }
+},
+    {
+    "id": 1770204994508,
+    "name": "Royal Seikoak Chronograph \"Oro Rosa dial azul\"",
+    "category": "Royal Seikoak",
+    "league": "Royal Seikoak",
+    "price": 119.9,
+    "oldPrice": 149.9,
+    "image": "/assets/productos/RC_Mods/seiko-mod-royal-oak-chronograph-oro-rosa-dial-azul/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seiko-mod-royal-oak-chronograph-oro-rosa-dial-azul/2.webp",
+        "/assets/productos/RC_Mods/seiko-mod-royal-oak-chronograph-oro-rosa-dial-azul/3.webp"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Caja": "Acero inoxidable cepillado 316L",
+        "Movimiento": "Movimiento híbrido Seiko VK63 (combina automático con cuarzo)",
+        "Grosor": "12 mm",
+        "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
+        "Luminosidad": "Sí",
+        "Corona": "Roscado",
+        "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
+        "Pulsera": "Acero inoxidable 316L (con cierre de seguridad tipo mariposa)"
+    }
+},
+    {
+    "id": 1770205089857,
+    "name": "Royal Seikoak \"Cronógrafo blanco\"",
+    "category": "Royal Seikoak",
+    "league": "Royal Seikoak",
+    "price": 119.9,
+    "oldPrice": 149.9,
+    "image": "/assets/productos/RC_Mods/seiko-mod-royal-oak-cron-grafo-blanco/1.webp",
+    "images": [],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Caja": "Acero inoxidable cepillado 316L",
+        "Movimiento": "Movimiento híbrido Seiko VK63 (combina automático con cuarzo)",
+        "Grosor": "12 mm",
+        "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
+        "Luminosidad": "Sí",
+        "Corona": "Roscado",
+        "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
+        "Pulsera": "Acero inoxidable 316L (con cierre de seguridad tipo mariposa)"
+    }
+},
+    {
+    "id": 1770205098906,
+    "name": "Royal Seikoak \"Verde\"",
+    "category": "Royal Seikoak",
+    "league": "Royal Seikoak",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seiko-mod-royal-oak-verde/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seiko-mod-royal-oak-verde/2.webp"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Caja": "Zafiro, antirayaduras con tratamiento antirreflejos",
+        "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+        "Grosor": "12 mm",
+        "Luminosidad": "Sí",
+        "Corona": "Roscado",
+        "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
+        "Pulsera": "Acero inoxidable 316L (con cierre de seguridad tipo mariposa)"
+    }
+},
+    {
+    "id": 1770205114918,
+    "name": "Royal Seikoak \"oro rosa y azul marino\"",
+    "category": "Royal Seikoak",
+    "league": "Royal Seikoak",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seiko-mod-royal-oak-oro-rosa-y-azul-marino/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seiko-mod-royal-oak-oro-rosa-y-azul-marino/2.webp",
+        "/assets/productos/RC_Mods/seiko-mod-royal-oak-oro-rosa-y-azul-marino/3.webp"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Caja": "Zafiro, antirayaduras con tratamiento antirreflejos",
+        "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+        "Grosor": "12 mm",
+        "Luminosidad": "Sí",
+        "Corona": "Roscado",
+        "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
+        "Pulsera": "Acero inoxidable 316L (con cierre de seguridad tipo mariposa)"
+    }
+},
+    {
+    "id": 1770205121040,
+    "name": "Royal Seikoak Negro y Oro Rosa",
+    "category": "Royal Seikoak",
+    "league": "Royal Seikoak",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seiko-mod-royal-oak-negro-y-oro-rosa/1.webp",
+    "images": [],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Caja": "Zafiro, antirayaduras con tratamiento antirreflejos",
+        "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+        "Grosor": "12 mm",
+        "Luminosidad": "Sí",
+        "Corona": "Roscado",
+        "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
+        "Pulsera": "Acero inoxidable 316L (con cierre de seguridad tipo mariposa)"
+    }
+},
+    {
+    "id": 1770205132013,
+    "name": "Royal Seikoak Chronograph Black and Silver",
+    "category": "Royal Seikoak",
+    "league": "Royal Seikoak",
+    "price": 119.9,
+    "oldPrice": 149.9,
+    "image": "/assets/productos/RC_Mods/seiko-mod-royal-oak-chronograph-black-and-silver/1.webp",
+    "images": [],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Caja": "Acero inoxidable cepillado 316L",
+        "Movimiento": "Movimiento híbrido Seiko VK63 (combina automático con cuarzo)",
+        "Grosor": "12 mm",
+        "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
+        "Luminosidad": "Sí",
+        "Corona": "Roscado",
+        "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
+        "Pulsera": "Acero inoxidable 316L (con cierre de seguridad tipo mariposa)"
+    }
+},
+    {
+    "id": 1770205256185,
+    "name": "Santeiko Santos White",
+    "category": "Santeiko",
+    "league": "Santeiko",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seiko-mod-santos-white/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seiko-mod-santos-white/2.webp",
+        "/assets/productos/RC_Mods/seiko-mod-santos-white/3.webp",
+        "/assets/productos/RC_Mods/seiko-mod-santos-white/4.webp",
+        "/assets/productos/RC_Mods/seiko-mod-santos-white/5.webp"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Caja": "Acero inoxidable 316L",
+        "Diámetro": "38mm (sin incluir la corona)",
+        "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+        "Grosor": "12 mm",
+        "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
+        "Luminosidad": "Sí",
+        "Corona": "Roscado",
+        "Bisel": "Cerámico",
+        "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
+        "Pulsera": "Acero inoxidable 316L"
+    }
+},
+    {
+    "id": 1770205276303,
+    "name": "Santeiko Santos White Two Tones",
+    "category": "Santeiko",
+    "league": "Santeiko",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seiko-mod-santos-white-two-tones/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seiko-mod-santos-white-two-tones/2.webp",
+        "/assets/productos/RC_Mods/seiko-mod-santos-white-two-tones/3.webp",
+        "/assets/productos/RC_Mods/seiko-mod-santos-white-two-tones/4.webp"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Caja": "Acero inoxidable 316L",
+        "Diámetro": "38mm (sin incluir la corona)",
+        "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+        "Grosor": "12 mm",
+        "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
+        "Luminosidad": "Sí",
+        "Corona": "Roscado",
+        "Bisel": "Cerámico",
+        "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
+        "Pulsera": "Acero inoxidable 316L"
+    }
+},
+    {
+    "id": 1770205382931,
+    "name": "Santeiko Santos Green",
+    "category": "Santeiko",
+    "league": "Santeiko",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seiko-mod-santos-green/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seiko-mod-santos-green/2.webp",
+        "/assets/productos/RC_Mods/seiko-mod-santos-green/3.webp",
+        "/assets/productos/RC_Mods/seiko-mod-santos-green/4.webp"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Caja": "Acero inoxidable 316L",
+        "Diámetro": "38mm (sin incluir la corona)",
+        "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+        "Grosor": "12 mm",
+        "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
+        "Luminosidad": "Sí",
+        "Corona": "Roscado",
+        "Bisel": "Cerámico",
+        "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
+        "Pulsera": "Acero inoxidable 316L"
+    }
+},
+    {
+    "id": 1770205405054,
+    "name": "Santeiko Santos \"F*ck 9-5\"",
+    "category": "Santeiko",
+    "league": "Santeiko",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seiko-mod-santos-f-ck-9-5/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seiko-mod-santos-f-ck-9-5/2.webp",
+        "/assets/productos/RC_Mods/seiko-mod-santos-f-ck-9-5/3.webp",
+        "/assets/productos/RC_Mods/seiko-mod-santos-f-ck-9-5/4.webp"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Caja": "Acero inoxidable 316L",
+        "Diámetro": "38mm (sin incluir la corona)",
+        "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+        "Grosor": "12 mm",
+        "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
+        "Luminosidad": "Sí",
+        "Corona": "Roscado",
+        "Bisel": "Cerámico",
+        "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
+        "Pulsera": "Acero inoxidable 316L"
+    }
+},
+    {
+    "id": 1770205415360,
+    "name": "Santeiko Santos Brown",
+    "category": "Santeiko",
+    "league": "Santeiko",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seiko-mod-santos-brown/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seiko-mod-santos-brown/2.webp"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+        "Diámetro": "39 mm (sin corona)",
+        "Caja": "acero inoxidable 316L",
+        "Grosor": "12 mm",
+        "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
+        "Correa": "20 mm",
+        "Bisel": "cerámico",
+        "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
+        "Fondo de caja": "Cristal (movimiento visible)"
+    }
+},
+    {
+    "id": 1770205442027,
+    "name": "Santeiko Santos Blue",
+    "category": "Santeiko",
+    "league": "Santeiko",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seiko-mod-santos-blue/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seiko-mod-santos-blue/2.webp",
+        "/assets/productos/RC_Mods/seiko-mod-santos-blue/3.webp",
+        "/assets/productos/RC_Mods/seiko-mod-santos-blue/4.webp"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Caja": "Acero inoxidable 316L",
+        "Diámetro": "38mm (sin incluir la corona)",
+        "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+        "Grosor": "12 mm",
+        "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
+        "Luminosidad": "Sí",
+        "Corona": "Roscado",
+        "Bisel": "Cerámico",
+        "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
+        "Pulsera": "Acero inoxidable 316L"
+    }
+},
+    {
+    "id": 1770205677515,
+    "name": "Yatcheiko \"Plata y azul marino\"",
+    "category": "Yatcheiko",
+    "league": "Yatcheiko",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seiko-mod-yacht-master-plata-y-azul-marino/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seiko-mod-yacht-master-plata-y-azul-marino/2.webp",
+        "/assets/productos/RC_Mods/seiko-mod-yacht-master-plata-y-azul-marino/3.webp"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Caja": "Acero inoxidable 316L",
+        "Diámetro": "40 mm (sin incluir la corona)",
+        "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+        "Grosor": "12 mm",
+        "Luminosidad": "Sí",
+        "Corona": "Roscado",
+        "Bisel": "Cerámico",
+        "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
+        "Pulsera": "Acero inoxidable 316L (con cierre de seguridad)"
+    }
+},
+    {
+    "id": 1770205708546,
+    "name": "Yatcheiko \"Plata\"",
+    "category": "Yatcheiko",
+    "league": "Yatcheiko",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seiko-mod-yacht-master-plata/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seiko-mod-yacht-master-plata/2.webp"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Caja": "Acero inoxidable 316L",
+        "Diámetro": "40 mm (sin incluir la corona)",
+        "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+        "Grosor": "12 mm",
+        "Luminosidad": "Sí",
+        "Corona": "Roscado",
+        "Bisel": "Cerámico",
+        "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
+        "Pulsera": "Acero inoxidable 316L (con cierre de seguridad)"
+    }
+},
+    {
+    "id": 1770205863270,
+    "name": "Seikojust Oyster Perpetual \"Tiffany\"",
+    "category": "Seikojust",
+    "league": "Seikojust",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seiko-mod-oyster-perpetual-tiffany/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seiko-mod-oyster-perpetual-tiffany/2.webp",
+        "/assets/productos/RC_Mods/seiko-mod-oyster-perpetual-tiffany/3.webp",
+        "/assets/productos/RC_Mods/seiko-mod-oyster-perpetual-tiffany/4.webp"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Caja": "Acero inoxidable 316L",
+        "Diámetro": "36 o 39 mm (sin corona)",
+        "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+        "Grosor": "12 mm",
+        "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
+        "Luminosidad": "Sí",
+        "Corona": "Roscado",
+        "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
+        "Pulsera": "Acero inoxidable 316L (con cierre de seguridad)"
+    }
+},
+    {
+    "id": 1770205972513,
+    "name": "Seikojust \"Who cares I'm already late?\"",
+    "category": "Seikojust",
+    "league": "Seikojust",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seikojust-who-cares-i-m-already-late/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seikojust-who-cares-i-m-already-late/2.webp",
+        "/assets/productos/RC_Mods/seikojust-who-cares-i-m-already-late/3.webp",
+        "/assets/productos/RC_Mods/seikojust-who-cares-i-m-already-late/4.webp",
+        "/assets/productos/RC_Mods/seikojust-who-cares-i-m-already-late/5.webp"
+    ],
+    "sizes": [],
+    "straps": [
+        "Jubilee",
+        "President"
+    ],
+    "specs": {
+        "Caja": "Acero inoxidable 316L",
+        "Diámetro": "36 o 39 mm (sin corona)",
+        "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+        "Grosor": "12 mm",
+        "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
+        "Luminosidad": "Sí",
+        "Corona": "Roscado",
+        "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
+        "Pulsera": "Acero inoxidable 316L (con cierre de seguridad)"
+    }
+},
+    {
+    "id": 1770205987335,
+    "name": "Seikojust Oyster Perpetual \"Bubbles celebration\"",
+    "category": "Seikojust",
+    "league": "Seikojust",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seiko-mod-oyster-perpetual-bubbles-celebration/1.webp",
+    "images": [
+        "/assets/productos/RC_Mods/seiko-mod-oyster-perpetual-bubbles-celebration/2.webp",
+        "/assets/productos/RC_Mods/seiko-mod-oyster-perpetual-bubbles-celebration/3.webp"
+    ],
+    "sizes": [],
+    "straps": [],
+    "specs": {
+        "Caja": "Acero inoxidable 316L",
+        "Diámetro": "36 o 39 mm (sin corona)",
+        "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+        "Grosor": "12 mm",
+        "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
+        "Luminosidad": "Sí",
+        "Corona": "Roscado",
+        "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
+        "Pulsera": "Acero inoxidable 316L (con cierre de seguridad)"
+    }
+},
+    {
+    "id": 1770206005411,
+    "name": "Seikojust Black “Venom”",
+    "category": "Seikojust",
+    "league": "Seikojust",
+    "price": 129.9,
+    "oldPrice": 169.9,
+    "image": "/assets/productos/RC_Mods/seikojust-black-venom/1.webp",
+    "images": [],
+    "sizes": [],
+    "straps": [
+        "Jubilee",
+        "President"
+    ],
+    "specs": {
+        "Caja": "Acero inoxidable 316L",
+        "Diámetro": "36 o 39 mm (sin corona)",
+        "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+        "Grosor": "12 mm",
+        "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
+        "Luminosidad": "Sí",
+        "Corona": "Roscado",
+        "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
+        "Pulsera": "Acero inoxidable 316L (con cierre de seguridad)"
+    }
 }
 ];
 
