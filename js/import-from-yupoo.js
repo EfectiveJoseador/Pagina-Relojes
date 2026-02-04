@@ -160,6 +160,11 @@ function calculatePrice(productName, specifications) {
         return { price: 139.90, oldPrice: 169.90 };
     }
 
+    if (name.includes('day-date') || name.includes('daydate') || name.includes('day date')) {
+        print('cyan', '  💰 Tipo detectado: Day-Date → 134.90€ / 174.90€');
+        return { price: 134.90, oldPrice: 174.90 };
+    }
+
     if (movement.includes('vk') || movement.includes('cuarzo') || movement.includes('quartz') || movement.includes('híbrido')) {
         print('cyan', '  💰 Tipo detectado: Cuarzo/Híbrido → 119.90€ / 149.90€');
         return { price: 119.90, oldPrice: 149.90 };
@@ -179,15 +184,15 @@ function detectCollection(productName) {
 
     // Prioridad a colecciones específicas
     if (name.includes('royal seikoak') || name.includes('royal-seikoak')) return 'Royal Seikoak';
+    if (name.includes('day-date') || name.includes('daydate') || name.includes('day date')) return 'SeikoDayDate';
     if (name.includes('seitona') || name.includes('daytona')) return 'Seitona';
     if (name.includes('gmteiko') || name.includes('gmt')) return 'GMTeiko';
-    if (name.includes('nauteiko')) return 'Nauteiko';
+    if (name.includes('nauteiko') || name.includes('nautilus') || name.includes('aquanaut')) return 'Nauteiko';
     if (name.includes('seikom') || name.includes('seiko m') || name.includes('submariner') || (name.includes('mariner') && !name.includes('master'))) return 'SeikoMariner';
     if (name.includes('yatch') || name.includes('tacheiko') || name.includes('yacht')) return 'Yatcheiko';
-    if (name.includes('seikojust') || name.includes('datejust') || name.includes('just')) return 'Seikojust';
+    if (name.includes('seikojust') || name.includes('datejust') || name.includes('just') || name.includes('sky-dweller') || name.includes('skydweller')) return 'Seikojust';
     if (name.includes('santeiko') || name.includes('santos')) return 'Santeiko';
     if (name.includes('exploreiko') || name.includes('explorer')) return 'Exploreiko';
-    if (name.includes('daydate')) return 'SeikoDayDate';
 
     // Fallback inteligente: Usar la primera palabra capitalizada si parece una marca
     const firstWord = productName.split(' ')[0];
@@ -211,7 +216,7 @@ function cleanProductName(productName, collectionName) {
         /Seiko\s+Mod\s+Royal\s+Oak/gi,
         /Seiko\s+Mod\s+Yacht\s+Master/gi,
         /Seiko\s+Mod\s+Explorer/gi,
-        /Seiko\s+Mod\s+/gi,  // Eliminar "Seiko Mod" restante
+        /Seiko\s+Mod\s+/gi,  // Eliminar "Seiko Mod" restante (mantendrá Sky-Dweller, etc.)
         /^\s*-\s*/  // Eliminar guiones al inicio
     ];
 
