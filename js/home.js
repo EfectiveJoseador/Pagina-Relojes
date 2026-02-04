@@ -533,15 +533,8 @@ function getMiniImagePath(imagePath) {
 
 
 function getSecondaryMiniImage(product) {
-
     if (product.images && product.images.length > 0) {
         return getMiniImagePath(product.images[0]);
-    }
-
-
-    if (product.image) {
-        const secondaryPath = product.image.replace(/\/1\.(webp|jpg|png|jpeg)$/i, '/2.$1');
-        return getMiniImagePath(secondaryPath);
     }
     return null;
 }

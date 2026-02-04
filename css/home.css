@@ -1349,6 +1349,7 @@ a.catalogo-btn:hover,
 
 .product-card:hover .product-image img:only-child {
     transform: scale(1.1);
+    opacity: 1;
 }
 
 
