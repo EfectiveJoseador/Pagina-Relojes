@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes | Luxe MOD Watches</title>
+    <link rel="icon" type="image/x-icon" href="../assets/logo/logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/assets/fonts/fontawesome/css/all.min.css">
+
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/auth.css">
+
+    <style>
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            margin-bottom: 1rem;
+            padding: 0;
+            /* Removed padding from container to let button fill it */
+            background: rgba(var(--bg-card-rgb, 10, 10, 10), 0.3);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            /* Ensure children obey border radius */
+        }
+
+        .faq-item:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            background: rgba(var(--bg-card-rgb, 10, 10, 10), 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .faq-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 1.5rem;
+            /* Clickable area covers the whole top */
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-main);
+            transition: all 0.3s ease;
+            margin: 0;
+        }
+
+        .faq-question:hover {
+            color: #D4AF37;
+            background: rgba(212, 175, 55, 0.05);
+            /* Subtle hover feedback on button */
+        }
+
+        .faq-question.active {
+            color: #D4AF37;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .faq-question i {
+            font-size: 1rem;
+            color: #D4AF37;
+            transition: transform 0.3s ease;
+            margin-left: 1rem;
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            opacity: 0;
+        }
+
+        .faq-answer.open {
+            opacity: 1;
+        }
+
+        .faq-answer-content {
+            padding: 1.5rem;
+            /* Content padding */
+            padding-top: 1rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .faq-answer-content p {
+            margin-bottom: 1rem;
+        }
+
+        .faq-answer-content p:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="page-content" style="min-height: 80vh; background: var(--bg-body); padding: 1rem 1.5rem;">
+        <div class="auth-card" style="max-width: 800px; margin: 0 auto; animation: slideUp 0.8s ease backwards;">
+            <h1
+                style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem;">
+                Preguntas Frecuentes</h1>
+
+            <div class="faq-container">
+
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        ¿Qué es un Seiko Mod?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Un Seiko Mod es un reloj ensamblado artesanalmente que incorpora un movimiento automático
+                                original de Seiko, como los calibres NH35 o NH36, reconocidos por su resistencia,
+                                precisión y larga vida útil.</p>
+                            <p>Estos relojes se construyen empleando materiales premium como acero inoxidable 316L,
+                                cristal de zafiro o biseles cerámicos. En Luxe Mod Watches, cada pieza se monta
+                                manualmente por un especialista, se somete a controles de funcionamiento y pruebas de
+                                estanqueidad, y se fabrica de forma exclusiva para cada cliente.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Tiempo y coste del envío
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>El plazo de entrega habitual oscila entre 12 y 25 días, variando según el modelo elegido
+                                y el destino del envío. En el caso de relojes disponibles en la sección “en stock”, el
+                                envío a la península tarda entre 2 y 5 días laborables, dependiendo de la empresa de
+                                transporte seleccionada.</p>
+                            <p>Este tiempo se debe a que cada reloj se fabrica bajo demanda: se seleccionan y reúnen los
+                                componentes, se realiza el ensamblaje artesanal, se efectúan pruebas de calidad,
+                                rendimiento y estanqueidad, y posteriormente se prepara el pedido para su envío. El
+                                envío es gratuito en todos los pedidos, salvo en los modelos enviados desde stock.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Movimientos utilizados
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>En Luxe Mod Watches trabajamos exclusivamente con movimientos originales de Seiko,
+                                ampliamente valorados por su fiabilidad, exactitud y durabilidad a largo plazo.</p>
+                            <ul style="list-style-type: none; padding-left: 0; margin-top: 1rem;">
+                                <li style="margin-bottom: 0.5rem;"><strong>VK63</strong> – Movimiento meca-quartz
+                                    (combinación de mecánico y cuarzo)</li>
+                                <li style="margin-bottom: 0.5rem;"><strong>NH35</strong> – Movimiento automático con
+                                    función de fecha</li>
+                                <li style="margin-bottom: 0.5rem;"><strong>NH36</strong> – Movimiento automático con
+                                    indicación de día y fecha</li>
+                                <li style="margin-bottom: 0.5rem;"><strong>NH38</strong> – Movimiento automático sin
+                                    fecha y con mecanismo visible en la esfera</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        ¿Puedo diseñar mi propio reloj?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>¡Sí! Ofrecemos la posibilidad de personalizar distintos elementos del reloj, como el
+                                estilo y color de la correa, la caja, la esfera o las manecillas. También puedes incluir
+                                un rotor personalizado o añadir tus iniciales o logotipo.</p>
+                            <p>Si deseas crear un modelo exclusivo, puedes contactar con nosotros a través de Instagram
+                                en <a href="https://www.instagram.com/luxemodwatches/" target="_blank"
+                                    style="color: #D4AF37; text-decoration: none; font-weight: 600;">@luxemodwatches</a>,
+                                donde uno de nuestros especialistas te ayudará a diseñarlo.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        ¿Qué métodos de pago aceptáis?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Disponemos de varias opciones de pago: Bizum, transferencia bancaria y tarjetas de
+                                crédito. Todas las transacciones se realizan mediante sistemas seguros y cifrados para
+                                garantizar la protección de tus datos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        ¿Los relojes son originales?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Todos nuestros relojes Seiko Mod incorporan movimientos SEIKO 100 % originales, como el
+                                NH35, ampliamente reconocido por su precisión y fiabilidad.</p>
+                            <p>Cada reloj se ensambla cuidadosamente utilizando componentes personalizados de alta gama,
+                                como acero inoxidable 316L, cristal de zafiro o biseles cerámicos, inspirados en diseños
+                                clásicos e icónicos de la relojería.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="/js/theme.js"></script>
+    <script src="/js/components.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const isOpen = question.classList.contains('active');
+
+                    // Close all other FAQs
+                    document.querySelectorAll('.faq-question').forEach(btn => {
+                        if (btn !== question) {
+                            btn.classList.remove('active');
+                            btn.nextElementSibling.style.maxHeight = null;
+                            btn.nextElementSibling.classList.remove('open');
+                        }
+                    });
+
+                    // Toggle current FAQ
+                    question.classList.toggle('active');
+
+                    if (!isOpen) {
+                        answer.classList.add('open');
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                        question.classList.add('active'); // Ensure active class is added for styling
+                    } else {
+                        answer.classList.remove('open');
+                        answer.style.maxHeight = null;
+                        question.classList.remove('active'); // Remove active class
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
