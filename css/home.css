@@ -93,7 +93,7 @@ body.low-performance * {
     padding: 0;
     margin: 0;
     overflow: hidden;
-    clip-path: inset(0);
+    /* clip-path: inset(0); removed to prevent cutting off blur */
     animation: heroReveal 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
@@ -110,16 +110,7 @@ body.low-performance * {
     pointer-events: none;
 }
 
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
-    z-index: -1;
-    pointer-events: none;
-}
+
 
 @media (max-width: 768px) {
     .hero-section {
@@ -342,7 +333,7 @@ body.animation-seen .scroll-indicator {
     right: 0;
     bottom: 0;
     background:
-        linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(10, 10, 10, 0.6) 50%, rgba(0, 0, 0, 0.75) 100%),
+        linear-gradient(180deg, var(--bg-body) 0%, rgba(0, 0, 0, 0.6) 20%, rgba(0, 0, 0, 0.6) 80%, var(--bg-body) 100%),
         linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(184, 150, 46, 0.08) 100%);
     z-index: 1;
 }
@@ -418,10 +409,9 @@ body.animation-seen .scroll-indicator {
     left: 0;
     right: 0;
     bottom: 0;
-    background:
-        radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.45) 100%),
-        linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.45) 100%);
-    z-index: 1;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%);
+    z-index: 0;
+    pointer-events: none;
     will-change: opacity;
     animation: overlayFadeIn 2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s backwards;
 }
@@ -440,17 +430,15 @@ body.animation-seen .scroll-indicator {
 .hero-section::after {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0);
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, transparent 60%);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40vh;
+    background: linear-gradient(to bottom, transparent 0%, var(--bg-body) 100%);
     z-index: 1;
     pointer-events: none;
     will-change: opacity;
-    animation: glowPulse 6s ease-in-out infinite;
-    animation-delay: 1.5s;
+    animation: overlayFadeIn 2s cubic-bezier(0.16, 1, 0.3, 1) 0.5s backwards;
 }
 
 @keyframes glowPulse {
