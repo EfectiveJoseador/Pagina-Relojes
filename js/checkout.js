@@ -204,8 +204,13 @@ Phone Number: ${phone}`;
                 const itemTotal = unitPrice * qty;
                 subtotal += itemTotal;
 
-                let detailsStr = '';
-                if (custom.strap) detailsStr += `Correa: ${custom.strap}, `;
+                const detailsParts = [];
+
+                if (custom.size || item.size) {
+                    const s = custom.size || item.size;
+                    if (s && s !== 'N/A') detailsParts.push(`Tamaño: ${s}`);
+                }
+                if (custom.strap) detailsParts.push(`Correa: ${custom.strap}`);
 
                 if (custom.box && custom.box !== 'none') {
                     const boxNames = {
@@ -215,17 +220,18 @@ Phone Number: ${phone}`;
                         'seiko': 'Caja Seiko + Tarjetas'
                     };
                     const boxName = boxNames[custom.box] || custom.box;
-                    detailsStr += `Caja: ${boxName}, `;
+                    detailsParts.push(`Caja: ${boxName}`);
                 }
 
-                detailsStr = detailsStr.replace(/, $/, '');
+                const detailsHTML = detailsParts.join('<br>'); // Para visualización
+                const detailsText = detailsParts.join(', ');   // Para email/pedido
 
                 const el = document.createElement('div');
                 el.className = 'checkout-item-mini';
                 el.innerHTML = `
                     <div style="flex:1">
                         <h4>${product.name} <span style="font-size:0.8em; color:var(--text-muted)">x${qty}</span></h4>
-                        <p style="font-size:0.8rem; color:var(--text-muted)">${detailsStr}</p>
+                        <p style="font-size:0.8rem; color:var(--text-muted); line-height: 1.4; margin-top: 4px;">${detailsHTML}</p>
                     </div>
                     <span style="font-weight:600">€${itemTotal.toFixed(2)}</span>
                 `;
@@ -234,7 +240,7 @@ Phone Number: ${phone}`;
 
                 orderStr += `#${index + 1} - ${product.name}\n`;
                 orderStr += `   Cant: ${qty} | Precio Ud: €${unitPrice.toFixed(2)} | Total: €${itemTotal.toFixed(2)}\n`;
-                if (detailsStr) orderStr += `   ${detailsStr}\n`;
+                if (detailsText) orderStr += `   ${detailsText}\n`;
                 orderStr += "--------------------------------\n";
             });
 

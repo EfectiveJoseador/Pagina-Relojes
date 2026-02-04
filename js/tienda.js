@@ -18,6 +18,26 @@ let totalPages = 1;
 let imageObserver = null;
 
 
+function generateSizeOptionsHTML(product) {
+    if (!product.sizes || product.sizes.length === 0) {
+        return '';
+    }
+
+    let options = '<option value="">Seleccionar tamaño *</option>';
+    product.sizes.forEach(size => {
+        options += `<option value="${size}">${size}</option>`;
+    });
+
+    return `
+        <div class="form-group">
+            <label>Tamaño *</label>
+            <select class="quick-size" required>
+                ${options}
+            </select>
+        </div>
+    `;
+}
+
 function generateStrapOptionsHTML(product) {
     if (!product.straps || product.straps.length === 0) {
         return '';
@@ -136,7 +156,9 @@ function getSecondaryMiniImagePath(product) {
         return getMiniImagePath(product.images[0]);
     }
 
-    return product.image.replace(/\/1\.(webp|jpg|png|jpeg)$/i, '/2_mini.$1');
+    // Si no hay imágenes extra, devolvemos la misma imagen principal
+    // para evitar que aparezca vacío al hacer hover
+    return getMiniImagePath(product.image);
 }
 
 function renderProducts() {
@@ -194,6 +216,7 @@ function renderProducts() {
                         <button class="panel-close" data-id="${product.id}"><i class="fas fa-times"></i></button>
                     </div>
                     <form class="quick-add-form" data-product-id="${product.id}">
+                        ${generateSizeOptionsHTML(product)}
                         ${generateStrapOptionsHTML(product)}
                         
                         <div class="form-group">
@@ -360,10 +383,24 @@ function closeAllQuickAddPanels() {
 }
 
 function handleQuickAddSubmit(form, product) {
+    const sizeSelect = form.querySelector('.quick-size');
     const strapSelect = form.querySelector('.quick-strap');
     const boxSelect = form.querySelector('.quick-box');
 
+    // Validar tamaño si es requerido
+    if (product.sizes && product.sizes.length > 0) {
+        const size = sizeSelect?.value;
+        if (!size) {
+            if (window.Toast) {
+                window.Toast.error('Por favor, selecciona un tamaño');
+            } else {
+                alert('Por favor, selecciona un tamaño');
+            }
+            return;
+        }
+    }
 
+    // Validar correa si es requerida
     if (product.straps && product.straps.length > 0) {
         const strap = strapSelect?.value;
         if (!strap) {
@@ -389,6 +426,7 @@ function handleQuickAddSubmit(form, product) {
     const totalPrice = product.price + boxPrice;
 
     const customization = {
+        size: sizeSelect?.value || null,
         strap: strapSelect?.value || null,
         box: selectedBox,
         boxPrice: boxPrice

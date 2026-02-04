@@ -136,6 +136,7 @@ const products = [
         "39mm"
     ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -169,6 +170,7 @@ const products = [
         "39mm"
     ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -466,6 +468,7 @@ const products = [
         "39mm"
     ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -529,6 +532,7 @@ const products = [
         "39mm"
     ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -563,6 +567,7 @@ const products = [
         "39mm"
     ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -1045,6 +1050,7 @@ const products = [
         "39mm"
     ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -1077,6 +1083,7 @@ const products = [
         "39mm"
     ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -1111,6 +1118,7 @@ const products = [
         "39mm"
     ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -1143,6 +1151,7 @@ const products = [
         "39mm"
     ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -1177,6 +1186,7 @@ const products = [
         "39mm"
     ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -1205,8 +1215,12 @@ const products = [
         "/assets/productos/RC_Mods/seikojust-wimbledon-black/3.webp",
         "/assets/productos/RC_Mods/seikojust-wimbledon-black/4.webp"
     ],
-    "sizes": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -1241,6 +1255,7 @@ const products = [
         "39mm"
     ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -1274,6 +1289,7 @@ const products = [
         "39mm"
     ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -1352,8 +1368,12 @@ const products = [
         "/assets/productos/RC_Mods/seikojust-numero-ar-bigo-navy-elegance/2.webp",
         "/assets/productos/RC_Mods/seikojust-numero-ar-bigo-navy-elegance/3.webp"
     ],
-    "sizes": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -1381,8 +1401,12 @@ const products = [
         "/assets/productos/RC_Mods/seikojust-n-mero-ar-bigo-esmeralda-real/2.webp",
         "/assets/productos/RC_Mods/seikojust-n-mero-ar-bigo-esmeralda-real/3.webp"
     ],
-    "sizes": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -1465,8 +1489,12 @@ const products = [
     "images": [
         "/assets/productos/RC_Mods/seikojust-escarlata-real/2.webp"
     ],
-    "sizes": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -1491,8 +1519,12 @@ const products = [
     "oldPrice": 169.9,
     "image": "/assets/productos/RC_Mods/seikojust-numeraci-n-ar-biga-oro-del-desierto/1.webp",
     "images": [],
-    "sizes": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -1992,8 +2024,12 @@ const products = [
         "/assets/productos/RC_Mods/seikojust-wimbledon/3.webp",
         "/assets/productos/RC_Mods/seikojust-wimbledon/4.webp"
     ],
-    "sizes": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -2022,8 +2058,12 @@ const products = [
         "/assets/productos/RC_Mods/seikojust-olive-green/3.webp",
         "/assets/productos/RC_Mods/seikojust-olive-green/4.webp"
     ],
-    "sizes": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -2053,8 +2093,12 @@ const products = [
         "/assets/productos/RC_Mods/seikojust-arabic-blue/4.webp",
         "/assets/productos/RC_Mods/seikojust-arabic-blue/5.webp"
     ],
-    "sizes": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -2084,8 +2128,12 @@ const products = [
         "/assets/productos/RC_Mods/seikojust-arabic-black/4.webp",
         "/assets/productos/RC_Mods/seikojust-arabic-black/5.webp"
     ],
-    "sizes": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -2115,8 +2163,12 @@ const products = [
         "/assets/productos/RC_Mods/seikojust-azul-degradado-rabe/4.webp",
         "/assets/productos/RC_Mods/seikojust-azul-degradado-rabe/5.webp"
     ],
-    "sizes": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -2145,8 +2197,12 @@ const products = [
         "/assets/productos/RC_Mods/seikojust-arabic-steel/3.webp",
         "/assets/productos/RC_Mods/seikojust-arabic-steel/4.webp"
     ],
-    "sizes": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -2175,8 +2231,12 @@ const products = [
         "/assets/productos/RC_Mods/seikojust-esfera-con-degradado-arabic-white/3.webp",
         "/assets/productos/RC_Mods/seikojust-esfera-con-degradado-arabic-white/4.webp"
     ],
-    "sizes": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -2205,8 +2265,12 @@ const products = [
         "/assets/productos/RC_Mods/seikojust-negro/3.webp",
         "/assets/productos/RC_Mods/seikojust-negro/4.webp"
     ],
-    "sizes": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -2235,8 +2299,12 @@ const products = [
         "/assets/productos/RC_Mods/seikojust-blue-diamonds-dial/3.webp",
         "/assets/productos/RC_Mods/seikojust-blue-diamonds-dial/4.webp"
     ],
-    "sizes": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -2264,8 +2332,12 @@ const products = [
         "/assets/productos/RC_Mods/seikojust-two-tones-champagne/2.webp",
         "/assets/productos/RC_Mods/seikojust-two-tones-champagne/3.webp"
     ],
-    "sizes": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -2292,8 +2364,12 @@ const products = [
     "images": [
         "/assets/productos/RC_Mods/seikojust-azul-marino/2.webp"
     ],
-    "sizes": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -2320,8 +2396,15 @@ const products = [
     "images": [
         "/assets/productos/RC_Mods/seiko-mod-sky-dweller-olive-green/2.webp"
     ],
-    "sizes": [],
-    "straps": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
+    "straps": [
+        "Oyster",
+        "Jubilee",
+        "President"
+    ],
     "specs": {
         "Caja": "Acero inoxidable 316L",
         "Diámetro": "36 o 39 mm (sin corona)",
@@ -2343,8 +2426,12 @@ const products = [
     "oldPrice": 169.9,
     "image": "/assets/productos/RC_Mods/seikojust-wimbledon-two-tones/1.webp",
     "images": [],
-    "sizes": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -2392,8 +2479,12 @@ const products = [
     "oldPrice": 169.9,
     "image": "/assets/productos/RC_Mods/seikojust-wimbledon-two-tones-oro-amarillo/1.webp",
     "images": [],
-    "sizes": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -2418,8 +2509,12 @@ const products = [
     "oldPrice": 169.9,
     "image": "/assets/productos/RC_Mods/seikojust-purple-dial/1.webp",
     "images": [],
-    "sizes": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -2444,8 +2539,15 @@ const products = [
     "oldPrice": 169.9,
     "image": "/assets/productos/RC_Mods/seiko-mod-sky-dweller-white-two-tones/1.webp",
     "images": [],
-    "sizes": [],
-    "straps": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
+    "straps": [
+        "Oyster",
+        "Jubilee",
+        "President"
+    ],
     "specs": {
         "Caja": "Acero inoxidable 316L",
         "Diámetro": "36 o 39 mm (sin corona)",
@@ -2467,8 +2569,12 @@ const products = [
     "oldPrice": 169.9,
     "image": "/assets/productos/RC_Mods/seikojust-chocolate-roman/1.webp",
     "images": [],
-    "sizes": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -2493,8 +2599,12 @@ const products = [
     "oldPrice": 169.9,
     "image": "/assets/productos/RC_Mods/seikojust-two-tones-gold/1.webp",
     "images": [],
-    "sizes": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -2519,8 +2629,12 @@ const products = [
     "oldPrice": 169.9,
     "image": "/assets/productos/RC_Mods/seikojust-yellow-gold/1.webp",
     "images": [],
-    "sizes": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -2545,8 +2659,12 @@ const products = [
     "oldPrice": 169.9,
     "image": "/assets/productos/RC_Mods/seikojust-green-dial/1.webp",
     "images": [],
-    "sizes": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -2571,8 +2689,12 @@ const products = [
     "oldPrice": 169.9,
     "image": "/assets/productos/RC_Mods/seikojust-chocolate/1.webp",
     "images": [],
-    "sizes": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -2597,8 +2719,12 @@ const products = [
     "oldPrice": 169.9,
     "image": "/assets/productos/RC_Mods/seikojust-chocolate-two-tones/1.webp",
     "images": [],
-    "sizes": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -2623,8 +2749,12 @@ const products = [
     "oldPrice": 169.9,
     "image": "/assets/productos/RC_Mods/seikojust-black-arabic-dial/1.webp",
     "images": [],
-    "sizes": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -2672,8 +2802,12 @@ const products = [
     "oldPrice": 169.9,
     "image": "/assets/productos/RC_Mods/seikojust-pink-two-tones/1.webp",
     "images": [],
-    "sizes": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -3523,8 +3657,15 @@ const products = [
         "/assets/productos/RC_Mods/seiko-mod-oyster-perpetual-tiffany/3.webp",
         "/assets/productos/RC_Mods/seiko-mod-oyster-perpetual-tiffany/4.webp"
     ],
-    "sizes": [],
-    "straps": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
+    "straps": [
+        "Oyster",
+        "Jubilee",
+        "President"
+    ],
     "specs": {
         "Caja": "Acero inoxidable 316L",
         "Diámetro": "36 o 39 mm (sin corona)",
@@ -3551,8 +3692,12 @@ const products = [
         "/assets/productos/RC_Mods/seikojust-who-cares-i-m-already-late/4.webp",
         "/assets/productos/RC_Mods/seikojust-who-cares-i-m-already-late/5.webp"
     ],
-    "sizes": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],
@@ -3580,8 +3725,15 @@ const products = [
         "/assets/productos/RC_Mods/seiko-mod-oyster-perpetual-bubbles-celebration/2.webp",
         "/assets/productos/RC_Mods/seiko-mod-oyster-perpetual-bubbles-celebration/3.webp"
     ],
-    "sizes": [],
-    "straps": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
+    "straps": [
+        "Oyster",
+        "Jubilee",
+        "President"
+    ],
     "specs": {
         "Caja": "Acero inoxidable 316L",
         "Diámetro": "36 o 39 mm (sin corona)",
@@ -3603,8 +3755,12 @@ const products = [
     "oldPrice": 169.9,
     "image": "/assets/productos/RC_Mods/seikojust-black-venom/1.webp",
     "images": [],
-    "sizes": [],
+    "sizes": [
+        "36mm",
+        "39mm"
+    ],
     "straps": [
+        "Oyster",
         "Jubilee",
         "President"
     ],

@@ -161,6 +161,13 @@ const Cart = {
             let customDetails = '';
 
 
+            if (custom.size || item.size) {
+                const sizeDisplay = custom.size || item.size;
+                if (sizeDisplay && sizeDisplay !== 'N/A') {
+                    customDetails += `<div>Tamaño: ${sizeDisplay}</div>`;
+                }
+            }
+
             if (strap) {
                 customDetails += `<div>Correa: ${strap}</div>`;
             }
@@ -255,7 +262,10 @@ const Cart = {
                 <img src="${product.image}" alt="${product.name}">
                 <div>
                     <h4>${product.name} x${qty}</h4>
-                    <p>${custom.strap ? `Correa: ${custom.strap}` : ''}</p>
+                    <p>
+                        ${size !== 'N/A' ? `Tamaño: ${size}<br>` : ''}
+                        ${custom.strap ? `Correa: ${custom.strap}` : ''}
+                    </p>
                 </div>
                 <span>€${(basePrice * qty).toFixed(2)}</span>
             `;
