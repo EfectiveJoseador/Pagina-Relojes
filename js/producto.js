@@ -535,11 +535,6 @@ function getSecondaryMiniImage(product) {
     if (product.images && product.images.length > 0) {
         return getMiniImagePath(product.images[0]);
     }
-    if (product.image) {
-
-        const secondaryPath = product.image.replace(/\/1\.(webp|jpg|png|jpeg)$/i, '/2.$1');
-        return getMiniImagePath(secondaryPath);
-    }
     return null;
 }
 
@@ -566,7 +561,7 @@ function loadRelatedProducts() {
         const miniImage = getMiniImagePath(product.image);
         const secondaryImg = getSecondaryMiniImage(product);
         return `
-            <article class="product-card carousel-product-card">
+            <article class="product-card carousel-product-card ${secondaryImg ? 'has-secondary' : ''}">
                 <div class="product-image">
                     <a href="/pages/producto.html?id=${product.id}">
                         <img src="${miniImage}" alt="${product.name}" class="primary-image" loading="lazy">
