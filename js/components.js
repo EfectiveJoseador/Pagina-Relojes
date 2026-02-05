@@ -64,7 +64,7 @@ const Components = {
                     <h4 style="margin-top: 1rem;">Síguenos</h4>
                     <div class="social-links">
                         <a href="https://www.instagram.com/luxemodwatches/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.tiktok.com/@luxemodwatches" target="_blank" rel="noopener" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.tiktok.com/@luxemod.watches" target="_blank" rel="noopener" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
             </div>
