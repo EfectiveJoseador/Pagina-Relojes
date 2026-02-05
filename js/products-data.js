@@ -2125,15 +2125,10 @@ const products = [
     "images": [
         "/assets/productos/RC_Mods/seikojust-arabic-black/2.webp",
         "/assets/productos/RC_Mods/seikojust-arabic-black/3.webp",
-        "/assets/productos/RC_Mods/seikojust-arabic-black/4.webp",
-        "/assets/productos/RC_Mods/seikojust-arabic-black/5.webp"
+        "/assets/productos/RC_Mods/seikojust-arabic-black/4.webp"
     ],
-    "sizes": [
-        "36mm",
-        "39mm"
-    ],
+    "sizes": [],
     "straps": [
-        "Oyster",
         "Jubilee",
         "President"
     ],

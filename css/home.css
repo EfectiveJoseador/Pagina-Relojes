@@ -469,13 +469,22 @@ body.low-performance * {
 
 
 .collections-section {
-    padding: 5rem 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
+    padding: 5rem 0;
+    width: 100%;
+    margin: 0;
     position: relative;
     z-index: 30;
     overflow: visible;
     transition: padding-bottom 0.3s ease;
+    background: var(--bg-body);
+}
+
+.collections-section>* {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 .collections-section:has(.dropdown-open) {
@@ -874,17 +883,27 @@ a.catalogo-btn:hover,
 
 
 .featured-section {
-    padding: 5rem 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
+    padding: 5rem 0;
+    width: 100%;
     background: var(--bg-body);
+}
+
+.featured-section>.catalogo-carousel {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 .section-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 3rem;
+    margin: 0 auto 3rem;
+    max-width: 1400px;
+    padding: 0 2rem;
+    width: 100%;
     animation: fadeIn 1s ease;
 }
 
@@ -942,9 +961,9 @@ a.catalogo-btn:hover,
 
 
 .info-section {
-    padding: 4rem 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
+    padding: 4rem 0;
+    width: 100%;
+    background: var(--bg-body);
     animation: fadeIn 1s ease 0.4s backwards;
 }
 
@@ -953,6 +972,9 @@ a.catalogo-btn:hover,
     grid-template-columns: 1fr 2fr;
     gap: 3rem;
     align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
 
