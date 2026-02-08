@@ -311,6 +311,16 @@ main {
         0 0 30px rgba(212, 175, 55, 0.3);
 }
 
+.social-logo {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.social-link-img:hover .social-logo {
+    filter: brightness(0) invert(1);
+}
+
 .footer-bottom {
     border-top: 1px solid var(--border);
     padding-top: 2rem;

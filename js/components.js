@@ -65,6 +65,8 @@ const Components = {
                     <div class="social-links">
                         <a href="https://www.instagram.com/luxemodwatches/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.tiktok.com/@luxemod.watches" target="_blank" rel="noopener" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.wallapop.com/user/igor-437216296?_pid=wi&_uid=437216296" target="_blank" rel="noopener" class="social-link social-link-img" aria-label="Wallapop"><img src="/assets/logo/wallapop.png" alt="Wallapop" class="social-logo"></a>
+                        <a href="https://www.vinted.es/member/267040188-luxemodwatches1" target="_blank" rel="noopener" class="social-link social-link-img" aria-label="Vinted"><img src="/assets/logo/vinted.png" alt="Vinted" class="social-logo"></a>
                     </div>
                 </div>
             </div>
