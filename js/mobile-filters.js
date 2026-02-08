@@ -59,7 +59,7 @@
                             <label class="mobile-filter-checkbox" for="mobile-filter-quartz">
                                 <input type="checkbox" id="mobile-filter-quartz">
                                 <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">Cuarzo</span>
+                                <span class="checkbox-label">Mecaquartz</span>
                             </label>
                         </div>
                     </div>
