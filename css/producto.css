@@ -564,6 +564,7 @@
 }
 
 
+
 .carousel-track.dragging .product-card,
 .carousel-track.dragging .product-image img {
     pointer-events: none;
@@ -588,6 +589,17 @@
     transition: none !important;
     animation: none !important;
 }
+
+/* Prevent image opacity changes during drag */
+.carousel-track.dragging .product-card:hover .product-image img.primary-image,
+.carousel-track.dragging .product-card.has-secondary:hover .product-image img.primary-image {
+    opacity: 1 !important;
+}
+
+.carousel-track.dragging .product-card:hover .product-image img.secondary-image {
+    opacity: 0 !important;
+}
+
 
 
 .carousel-arrows {
