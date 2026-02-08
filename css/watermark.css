@@ -38,28 +38,11 @@
     transform: translate(-50%, -50%) scale(1.08);
 }
 
-/* Collection Cards */
+/* Collection Cards - watermark removed */
 .equipo-card {
     position: relative;
 }
 
-.equipo-card::after {
-    content: '';
-    position: absolute;
-    top: 70%;
-    left: 60%;
-    transform: translate(-50%, -50%);
-    width: 30%;
-    height: 30%;
-    background-image: url('/assets/logo/logo_transparente.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.55;
-    pointer-events: none;
-    z-index: 2;
-    transition: opacity 0.3s ease;
-}
 
 /* Lightbox images (producto.html) */
 #lightbox-wrapper::after {
@@ -81,8 +64,7 @@
 }
 
 /* Hover state - slightly more visible on interaction */
-.product-card:hover .product-image::after,
-.equipo-card:hover::after {
+.product-card:hover .product-image::after {
     opacity: 0.55;
 }
 
