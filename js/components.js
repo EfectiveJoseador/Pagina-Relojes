@@ -271,4 +271,10 @@ const CookieConsent = {
 
 document.addEventListener('DOMContentLoaded', () => {
     Components.load();
+
+    // Load global anti-bot protection
+    const antiBotScript = document.createElement('script');
+    antiBotScript.src = '/js/anti-bot.js';
+    antiBotScript.async = false; // Load synchronously to ensure protection is active
+    document.head.appendChild(antiBotScript);
 });

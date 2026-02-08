@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const submitBtn = document.getElementById('confirm-order-btn');
     const addressSection = document.querySelector('.checkout-section:nth-of-type(2)');
 
-
     renderCheckoutSummary();
 
 
@@ -115,6 +114,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
+
+        // Note: Anti-bot verification (honeypot, timestamp, interaction) is handled by global system
 
         // Validate hCaptcha (Web3Forms integration)
         const hCaptchaResponse = form.querySelector('textarea[name=h-captcha-response]');
