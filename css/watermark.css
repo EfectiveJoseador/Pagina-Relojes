@@ -1,0 +1,114 @@
+/* ====================================
+   WATERMARK SYSTEM
+   ==================================== */
+
+/* 
+   Applies transparent logo watermark to all product images
+   across the site using CSS pseudo-elements.
+   
+   Targets:
+   - Product cards on index.html (carousel)
+   - Product cards on tienda.html (grid)
+   - Product detail images on producto.html (main + related)
+   - Collection cards on index.html
+*/
+
+/* Product Images - Primary watermark target */
+.product-image::after,
+.main-image::after {
+    content: '';
+    position: absolute;
+    top: 70%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 30%;
+    background-image: url('/assets/logo/logo_transparente.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+
+/* Collection Cards */
+.equipo-card {
+    position: relative;
+}
+
+.equipo-card::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35%;
+    height: 35%;
+    background-image: url('/assets/logo/logo_transparente.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.18;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Lightbox images (producto.html) */
+#lightbox-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25%;
+    height: 25%;
+    background-image: url('/assets/logo/logo_transparente.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Hover state - slightly more visible on interaction */
+.product-card:hover .product-image::after,
+.equipo-card:hover::after {
+    opacity: 0.2;
+}
+
+/* Mobile responsiveness - smaller watermark */
+@media (max-width: 768px) {
+    .product-image::after,
+    .main-image::after {
+        width: 25%;
+        height: 25%;
+    }
+    
+    .equipo-card::after {
+        width: 30%;
+        height: 30%;
+    }
+    
+    #lightbox-wrapper::after {
+        width: 20%;
+        height: 20%;
+    }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .product-image::after,
+    .main-image::after {
+        width: 28%;
+        height: 28%;
+    }
+}
+
+/* Prevent watermark on placeholder/loading images */
+.product-image.loading::after,
+.lazy-image:not(.loaded) + .product-image::after {
+    display: none;
+}
