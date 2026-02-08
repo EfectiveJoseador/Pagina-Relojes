@@ -30,7 +30,12 @@
     opacity: 0.55;
     pointer-events: none;
     z-index: 2;
-    transition: opacity 0.3s ease;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
+}
+
+/* Watermark zoom effect on hover to match image zoom */
+.main-image:hover::after {
+    transform: translate(-50%, -50%) scale(1.08);
 }
 
 /* Collection Cards */
