@@ -65,11 +65,11 @@
 #lightbox-wrapper::after {
     content: '';
     position: absolute;
-    top: 70%;
-    left: 60%;
+    top: 65.8%;
+    left: 53.9%;
     transform: translate(-50%, -50%);
-    width: 30%;
-    height: 30%;
+    width: 25%;
+    height: 25%;
     background-image: url('/assets/logo/logo_transparente.png');
     background-size: contain;
     background-position: center;
