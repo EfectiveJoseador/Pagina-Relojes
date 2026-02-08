@@ -718,15 +718,15 @@
 
     .related-products .product-image img.primary-image,
     .related-products .product-image img.secondary-image {
-        transition: none;
+        transition: none !important;
     }
 
-    .related-products .product-card:hover .product-image img.primary-image {
-        opacity: 1;
+    .related-products .product-card .product-image img.primary-image {
+        opacity: 1 !important;
     }
 
-    .related-products .product-card:hover .product-image img.secondary-image {
-        opacity: 0;
+    .related-products .product-card .product-image img.secondary-image {
+        opacity: 0 !important;
     }
 
     .related-products .product-card:hover .product-image img {

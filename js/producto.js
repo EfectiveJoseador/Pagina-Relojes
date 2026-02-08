@@ -751,35 +751,20 @@ function loadRelatedProducts() {
 
     function touchMove(event) {
         if (!isDragging) return;
-
-        // Prevent default to avoid scrolling
         event.preventDefault();
-
         const currentX = event.touches[0].clientX;
         const diff = currentX - lastPos;
         const now = performance.now();
         const dt = now - lastTime;
 
-        // Calculate velocity for inertia
         if (dt > 0) {
             velocity = diff / dt * 16;
         }
-
         currentPosition -= diff;
         lastPos = currentX;
         lastTime = now;
 
-        // Use translate3d for GPU acceleration (prevents flickering)
-        track.style.transform = `translate3d(${-currentPosition}px, 0, 0)`;
-
-        // Check and adjust boundaries during drag to prevent jumping
-        if (currentPosition >= totalCards * 2 * cardWidth) {
-            currentPosition -= totalCards * cardWidth;
-            track.style.transform = `translate3d(${-currentPosition}px, 0, 0)`;
-        } else if (currentPosition < totalCards * cardWidth) {
-            currentPosition += totalCards * cardWidth;
-            track.style.transform = `translate3d(${-currentPosition}px, 0, 0)`;
-        }
+        track.style.transform = `translateX(${-currentPosition}px)`;
     }
 
     function touchEnd() {
@@ -800,36 +785,21 @@ function loadRelatedProducts() {
 
     function applyInertia() {
         const friction = 0.94;
-
         function inertiaStep() {
             if (Math.abs(velocity) < 0.1) {
                 inertiaId = null;
-
                 if (resumeTimeout) clearTimeout(resumeTimeout);
                 resumeTimeout = setTimeout(() => {
                     isPaused = false;
-                    if (!animationId) {
-                        animationId = requestAnimationFrame(smoothScroll);
-                    }
+                    if (!animationId) animationId = requestAnimationFrame(smoothScroll);
                 }, PAUSE_DURATION);
                 return;
             }
-
             currentPosition -= velocity;
             velocity *= friction;
-
-            // Check boundaries during inertia
-            if (currentPosition >= totalCards * 2 * cardWidth) {
-                currentPosition -= totalCards * cardWidth;
-            } else if (currentPosition < totalCards * cardWidth) {
-                currentPosition += totalCards * cardWidth;
-            }
-
-            track.style.transform = `translate3d(${-currentPosition}px, 0, 0)`;
-
+            track.style.transform = `translateX(${-currentPosition}px)`;
             inertiaId = requestAnimationFrame(inertiaStep);
         }
-
         inertiaId = requestAnimationFrame(inertiaStep);
     }
 
