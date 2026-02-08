@@ -116,17 +116,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        // Validate reCAPTCHA
-        const captchaResponse = grecaptcha.getResponse();
+        // Validate hCaptcha (Web3Forms integration)
+        const hCaptchaResponse = form.querySelector('textarea[name=h-captcha-response]');
         const captchaError = document.getElementById('captcha-error');
 
-        if (!captchaResponse) {
+        if (!hCaptchaResponse || !hCaptchaResponse.value) {
             // Show error message
             if (captchaError) {
                 captchaError.style.display = 'block';
             }
             // Scroll to CAPTCHA section
-            const captchaSection = document.querySelector('.g-recaptcha');
+            const captchaSection = document.querySelector('.h-captcha');
             if (captchaSection) {
                 captchaSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }

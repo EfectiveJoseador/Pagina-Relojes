@@ -27,9 +27,6 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/carrito.css">
     <link rel="stylesheet" href="/css/ux-feedback.css">
-
-    <!-- Google reCAPTCHA v2 -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -125,7 +122,8 @@
                         <p style="margin-bottom: 1rem; font-size: 0.9rem; color: var(--text-muted);">
                             Por favor, completa la verificación para confirmar que no eres un robot.
                         </p>
-                        <div class="g-recaptcha" data-sitekey="6Lfal2QsAAAAALQQxiLxi5RGms-g60xfa-lmy8Lr"></div>
+                        <!-- hCaptcha with Web3Forms zero-config integration -->
+                        <div class="h-captcha" data-captcha="true"></div>
                         <div id="captcha-error"
                             style="display: none; color: #e74c3c; margin-top: 0.5rem; font-size: 0.9rem;">
                             <i class="fas fa-exclamation-triangle"></i> Por favor, completa la verificación CAPTCHA.
@@ -173,6 +171,8 @@
     <script src="/js/components.js"></script>
     <script src="/js/ux-feedback.js"></script>
 
+    <!-- Web3Forms script for hCaptcha integration -->
+    <script src="https://web3forms.com/client/script.js" async defer></script>
 
     <script type="module" src="/js/checkout.js"></script>
 </body>
