@@ -714,45 +714,23 @@
 }
 
 
-/* Mobile devices - completely disable image swapping */
-@media (hover: none) and (pointer: coarse) {
+@media (hover: none) {
 
-    /* Force no transitions on any images */
-    .related-products .product-image img,
     .related-products .product-image img.primary-image,
     .related-products .product-image img.secondary-image {
-        transition: none !important;
-        animation: none !important;
+        transition: none;
     }
 
-    /* Always show primary, always hide secondary */
-    .related-products .product-card .product-image img.primary-image,
-    .related-products .product-card:hover .product-image img.primary-image,
-    .related-products .product-card.has-secondary .product-image img.primary-image,
-    .related-products .product-card.has-secondary:hover .product-image img.primary-image {
-        opacity: 1 !important;
-        z-index: 2 !important;
+    .related-products .product-card:hover .product-image img.primary-image {
+        opacity: 1;
     }
 
-    .related-products .product-card .product-image img.secondary-image,
-    .related-products .product-card:hover .product-image img.secondary-image,
-    .related-products .product-card.has-secondary .product-image img.secondary-image,
-    .related-products .product-card.has-secondary:hover .product-image img.secondary-image {
-        opacity: 0 !important;
-        z-index: 1 !important;
+    .related-products .product-card:hover .product-image img.secondary-image {
+        opacity: 0;
     }
 
-    /* No transform effects on mobile */
     .related-products .product-card:hover .product-image img {
-        transform: none !important;
-    }
-
-    /* Disable any card hover effects during/after drag */
-    .carousel-track.dragging .related-products .product-card,
-    .carousel-track.dragging .related-products .product-card * {
-        pointer-events: none !important;
-        transition: none !important;
-        animation: none !important;
+        transform: none;
     }
 }
 
@@ -799,6 +777,46 @@
 
 @media (max-width: 768px) {
 
+    /* CRITICAL: Disable ALL transitions and animations on carousel for mobile */
+    .related-products .carousel-track,
+    .related-products .carousel-track *,
+    .related-products .product-card,
+    .related-products .product-card *,
+    .related-products .product-image,
+    .related-products .product-image *,
+    .related-products .product-info,
+    .related-products .product-info *,
+    .related-products .product-price,
+    .related-products .product-price * {
+        transition: none !important;
+        animation: none !important;
+    }
+
+    /* Force cards to stay visible, no transforms */
+    .related-products .product-card {
+        transform: none !important;
+        opacity: 1 !important;
+    }
+
+    .related-products .product-card:hover {
+        transform: none !important;
+        box-shadow: var(--shadow-sm) !important;
+    }
+
+    /* Force images to stay in place */
+    .related-products .product-image img {
+        transform: none !important;
+    }
+
+    /* Primary image always visible, secondary always hidden */
+    .related-products .product-image img.primary-image {
+        opacity: 1 !important;
+    }
+
+    .related-products .product-image img.secondary-image {
+        opacity: 0 !important;
+        display: none !important;
+    }
 
 
     html,
