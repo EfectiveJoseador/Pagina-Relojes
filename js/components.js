@@ -6,7 +6,7 @@ const Components = {
             <div class="container header-container">
                 <a href="/index.html" class="logo-link">
                     <img src="/assets/logo/logo.png" alt="Luxe MOD Watches" class="logo-img">
-                    <span>LUXE MOD</span>
+                    <span>LUXE MOD WATCHES</span>
                 </a>
 
                 <nav class="nav-menu" id="navMenu">
