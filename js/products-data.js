@@ -555,9 +555,9 @@ const products = [
         "league": "Seikojust",
         "price": 129.9,
         "oldPrice": 169.9,
-        "image": "/assets/productos/Productos/seikojust-sky-dweller-blue/1.webp",
+        "image": "/assets/productos/Productos/seikojust-sky-dweller-blue/2.webp",
         "images": [
-            "/assets/productos/Productos/seikojust-sky-dweller-blue/2.webp",
+            "/assets/productos/Productos/seikojust-sky-dweller-blue/1.webp",
             "/assets/productos/Productos/seikojust-sky-dweller-blue/3.webp",
             "/assets/productos/Productos/seikojust-sky-dweller-blue/4.webp",
             "/assets/productos/Productos/seikojust-sky-dweller-blue/5.webp"

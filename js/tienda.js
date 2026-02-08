@@ -9,6 +9,7 @@ const CONFIG = {
     PROGRESSIVE_LOADING: {
         ENABLED: true,
         ROW_DELAY: 75,  // ms between each row
+        CARD_DELAY: 50,  // ms between each card within a row (left to right)
         FIRST_ROW_DELAY: 0,  // ms for first row (instant)
         USE_RAF: true  // use requestAnimationFrame
     }
@@ -196,9 +197,9 @@ function renderProductRow(products, rowIndex) {
     const fragment = document.createDocumentFragment();
     const tempDiv = document.createElement('div');
 
-    tempDiv.innerHTML = products.map(product => {
+    tempDiv.innerHTML = products.map((product, colIndex) => {
         return `
-        <article class="product-card progressive-loading" data-id="${product.id}" data-row="${rowIndex}">
+        <article class="product-card progressive-loading" data-id="${product.id}" data-row="${rowIndex}" data-col="${colIndex}">
             <div class="product-image">
                 <span class="badge-sale">OFERTA</span>
                 <a href="/pages/producto.html?id=${product.id}">
@@ -277,17 +278,21 @@ function renderProductRow(products, rowIndex) {
     // Add all products to grid at once
     grid.appendChild(fragment);
 
-    // Trigger animation after a small delay to ensure DOM is ready
-    requestAnimationFrame(() => {
-        const rowCards = grid.querySelectorAll(`[data-row="${rowIndex}"]`);
-        rowCards.forEach(card => {
-            card.classList.remove('progressive-loading');
-            card.classList.add('progressive-loaded');
-        });
-    });
+    // Trigger animation sequentially from left to right
+    const rowCards = grid.querySelectorAll(`[data-row="${rowIndex}"]`);
+    rowCards.forEach((card, index) => {
+        const cardDelay = index * CONFIG.PROGRESSIVE_LOADING.CARD_DELAY;
 
-    // Observe lazy images in this row
-    observeLazyImages();
+        setTimeout(() => {
+            requestAnimationFrame(() => {
+                card.classList.remove('progressive-loading');
+                card.classList.add('progressive-loaded');
+
+                // Trigger lazy loading for this specific card
+                observeLazyImages();
+            });
+        }, cardDelay);
+    });
 }
 
 /**
