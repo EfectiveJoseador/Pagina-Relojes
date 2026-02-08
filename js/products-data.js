@@ -631,7 +631,8 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "38 mm",
-            "Grosor": "11 mm"
+            "Grosor": "11 mm",
+            "Movimiento": "Seiko NH35 automático"
         }
     },
     {
@@ -734,7 +735,9 @@ const products = [
         ],
         "sizes": [],
         "straps": [],
-        "specs": {}
+        "specs": {
+            "Movimiento": "Seiko NH35 automático"
+        }
     },
     {
         "id": 1769772827641,
@@ -749,7 +752,9 @@ const products = [
         ],
         "sizes": [],
         "straps": [],
-        "specs": {}
+        "specs": {
+            "Movimiento": "Seiko NH38 automático"
+        }
     },
     {
         "id": 1769772889755,

@@ -50,16 +50,16 @@
                         
                         <!-- Checkbox Filters -->
                         <div class="mobile-filter-step mobile-filter-checkboxes">
-                            <label class="mobile-filter-checkbox" for="mobile-filter-kids">
-                                <input type="checkbox" id="mobile-filter-kids">
+                            <label class="mobile-filter-checkbox" for="mobile-filter-auto">
+                                <input type="checkbox" id="mobile-filter-auto">
                                 <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">Solo Niños</span>
+                                <span class="checkbox-label">Automático</span>
                             </label>
                             
-                            <label class="mobile-filter-checkbox" for="mobile-filter-retro">
-                                <input type="checkbox" id="mobile-filter-retro">
+                            <label class="mobile-filter-checkbox" for="mobile-filter-quartz">
+                                <input type="checkbox" id="mobile-filter-quartz">
                                 <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">Solo Retro</span>
+                                <span class="checkbox-label">Cuarzo</span>
                             </label>
                         </div>
                     </div>
@@ -100,13 +100,13 @@
         const mobileLeagueSelect = document.getElementById('mobile-filter-league');
         const mobileTeamSelect = document.getElementById('mobile-filter-team');
         const mobileTeamStep = document.getElementById('mobile-team-step');
-        const mobileKidsCheckbox = document.getElementById('mobile-filter-kids');
-        const mobileRetroCheckbox = document.getElementById('mobile-filter-retro');
+        const mobileAutoCheckbox = document.getElementById('mobile-filter-auto');
+        const mobileQuartzCheckbox = document.getElementById('mobile-filter-quartz');
 
         const desktopLeagueSelect = document.getElementById('filter-league');
         const desktopTeamSelect = document.getElementById('filter-team');
-        const desktopKidsCheckbox = document.getElementById('filter-kids');
-        const desktopRetroCheckbox = document.getElementById('filter-retro');
+        const desktopAutoCheckbox = document.getElementById('filter-auto');
+        const desktopQuartzCheckbox = document.getElementById('filter-quartz');
 
         if (!panel || !btn) {
             console.warn('Mobile filter elements not found');
@@ -136,61 +136,93 @@
             } else {
                 mobileTeamStep.classList.add('hidden');
             }
-            
-            if (desktopKidsCheckbox && mobileKidsCheckbox) {
-                mobileKidsCheckbox.checked = desktopKidsCheckbox.checked;
+
+            if (desktopAutoCheckbox && mobileAutoCheckbox) {
+                mobileAutoCheckbox.checked = desktopAutoCheckbox.checked;
             }
-            if (desktopRetroCheckbox && mobileRetroCheckbox) {
-                mobileRetroCheckbox.checked = desktopRetroCheckbox.checked;
+            if (desktopQuartzCheckbox && mobileQuartzCheckbox) {
+                mobileQuartzCheckbox.checked = desktopQuartzCheckbox.checked;
             }
         }
         function applyFilters() {
             const selectedLeague = mobileLeagueSelect.value;
             const selectedTeam = mobileTeamSelect.value;
-            const kidsChecked = mobileKidsCheckbox ? mobileKidsCheckbox.checked : false;
-            const retroChecked = mobileRetroCheckbox ? mobileRetroCheckbox.checked : false;
+            const autoChecked = mobileAutoCheckbox ? mobileAutoCheckbox.checked : false;
+            const quartzChecked = mobileQuartzCheckbox ? mobileQuartzCheckbox.checked : false;
 
+            // Update desktop values WITHOUT triggering change events
             if (desktopLeagueSelect) {
                 desktopLeagueSelect.value = selectedLeague;
-                desktopLeagueSelect.dispatchEvent(new Event('change'));
             }
 
-            
-            if (desktopKidsCheckbox) {
-                desktopKidsCheckbox.checked = kidsChecked;
-                desktopKidsCheckbox.dispatchEvent(new Event('change'));
+            if (desktopAutoCheckbox) {
+                desktopAutoCheckbox.checked = autoChecked;
             }
-            if (desktopRetroCheckbox) {
-                desktopRetroCheckbox.checked = retroChecked;
-                desktopRetroCheckbox.dispatchEvent(new Event('change'));
+            if (desktopQuartzCheckbox) {
+                desktopQuartzCheckbox.checked = quartzChecked;
             }
 
-            setTimeout(() => {
-                if (selectedTeam && desktopTeamSelect) {
-                    desktopTeamSelect.value = selectedTeam;
-                    desktopTeamSelect.dispatchEvent(new Event('change'));
-                }
-                closePanel();
-            }, 50);
+            if (selectedTeam && desktopTeamSelect) {
+                desktopTeamSelect.value = selectedTeam;
+            }
+
+            // Update global variables in tienda.js
+            if (typeof window.selectedAuto !== 'undefined') {
+                window.selectedAuto = autoChecked;
+            }
+            if (typeof window.selectedQuartz !== 'undefined') {
+                window.selectedQuartz = quartzChecked;
+            }
+            if (typeof window.selectedLeague !== 'undefined') {
+                window.selectedLeague = selectedLeague;
+            }
+            if (typeof window.selectedTeam !== 'undefined') {
+                window.selectedTeam = selectedTeam;
+            }
+
+            // Call applyFilters ONCE
+            if (typeof window.applyFilters === 'function') {
+                window.applyFilters();
+            }
+
+            closePanel();
         }
         function clearFilters() {
+            // Clear mobile values
             mobileLeagueSelect.value = '';
             mobileTeamSelect.value = '';
             mobileTeamStep.classList.add('hidden');
-            if (mobileKidsCheckbox) mobileKidsCheckbox.checked = false;
-            if (mobileRetroCheckbox) mobileRetroCheckbox.checked = false;
+            if (mobileAutoCheckbox) mobileAutoCheckbox.checked = false;
+            if (mobileQuartzCheckbox) mobileQuartzCheckbox.checked = false;
 
+            // Clear desktop values WITHOUT triggering change events
             if (desktopLeagueSelect) {
                 desktopLeagueSelect.value = '';
-                desktopLeagueSelect.dispatchEvent(new Event('change'));
             }
-            if (desktopKidsCheckbox) {
-                desktopKidsCheckbox.checked = false;
-                desktopKidsCheckbox.dispatchEvent(new Event('change'));
+            if (desktopAutoCheckbox) {
+                desktopAutoCheckbox.checked = false;
             }
-            if (desktopRetroCheckbox) {
-                desktopRetroCheckbox.checked = false;
-                desktopRetroCheckbox.dispatchEvent(new Event('change'));
+            if (desktopQuartzCheckbox) {
+                desktopQuartzCheckbox.checked = false;
+            }
+
+            // Clear global variables
+            if (typeof window.selectedAuto !== 'undefined') {
+                window.selectedAuto = false;
+            }
+            if (typeof window.selectedQuartz !== 'undefined') {
+                window.selectedQuartz = false;
+            }
+            if (typeof window.selectedLeague !== 'undefined') {
+                window.selectedLeague = '';
+            }
+            if (typeof window.selectedTeam !== 'undefined') {
+                window.selectedTeam = '';
+            }
+
+            // Call applyFilters ONCE
+            if (typeof window.applyFilters === 'function') {
+                window.applyFilters();
             }
 
             closePanel();

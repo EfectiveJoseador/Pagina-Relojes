@@ -25,6 +25,12 @@ let currentPage = 1;
 let totalPages = 1;
 let imageObserver = null;
 
+// Export variables to window for mobile-filters.js
+window.selectedAuto = selectedAuto;
+window.selectedQuartz = selectedQuartz;
+window.selectedLeague = selectedLeague;
+window.selectedTeam = selectedTeam;
+
 
 function generateSizeOptionsHTML(product) {
     if (!product.sizes || product.sizes.length === 0) {
@@ -855,6 +861,7 @@ function attachEventListeners() {
     if (autoCheckbox) {
         autoCheckbox.addEventListener('change', (e) => {
             selectedAuto = e.target.checked;
+            window.selectedAuto = selectedAuto; // Sync to window
             applyFilters();
         });
     }
@@ -863,6 +870,7 @@ function attachEventListeners() {
     if (quartzCheckbox) {
         quartzCheckbox.addEventListener('change', (e) => {
             selectedQuartz = e.target.checked;
+            window.selectedQuartz = selectedQuartz; // Sync to window
             applyFilters();
         });
     }
@@ -897,6 +905,12 @@ function attachEventListeners() {
         const quartzCb = document.getElementById('filter-quartz');
         if (quartzCb) quartzCb.checked = false;
 
+        // Sync with window variables
+        window.selectedAuto = false;
+        window.selectedQuartz = false;
+        window.selectedLeague = '';
+        window.selectedTeam = '';
+
         document.getElementById('search-input').value = '';
         document.getElementById('sort-select').value = 'default';
         applyFilters();
@@ -908,6 +922,20 @@ function normalizeString(str) {
 }
 
 function applyFilters(updateURL = true) {
+    // Sync local variables with window (for mobile-filters.js)
+    if (typeof window.selectedAuto !== 'undefined') {
+        selectedAuto = window.selectedAuto;
+    }
+    if (typeof window.selectedQuartz !== 'undefined') {
+        selectedQuartz = window.selectedQuartz;
+    }
+    if (typeof window.selectedLeague !== 'undefined') {
+        selectedLeague = window.selectedLeague;
+    }
+    if (typeof window.selectedTeam !== 'undefined') {
+        selectedTeam = window.selectedTeam;
+    }
+
     const searchInput = document.getElementById('search-input');
     const searchTerm = searchInput ? normalizeString(searchInput.value) : '';
     const sortBy = document.getElementById('sort-select').value;
@@ -921,13 +949,16 @@ function applyFilters(updateURL = true) {
         let matchesAuto = true;
         if (selectedAuto) {
             const mov = (product.specs && product.specs['Movimiento']) || '';
-            matchesAuto = mov.toLowerCase().includes('automático');
+            const normalizedMov = normalizeString(mov);
+            // Must include 'automatico' AND NOT include 'cuarzo'
+            matchesAuto = normalizedMov.includes('automatico') && !normalizedMov.includes('cuarzo');
         }
 
         let matchesQuartz = true;
         if (selectedQuartz) {
             const mov = (product.specs && product.specs['Movimiento']) || '';
-            matchesQuartz = mov.toLowerCase().includes('cuarzo');
+            const normalizedMov = normalizeString(mov);
+            matchesQuartz = normalizedMov.includes('cuarzo');
         }
 
         return matchesSearch && matchesLeague && matchesAuto && matchesQuartz;
@@ -957,6 +988,9 @@ function applyFilters(updateURL = true) {
 
     renderProducts();
 }
+
+// Export applyFilters to window for mobile-filters.js
+window.applyFilters = applyFilters;
 
 function addToCart(item) {
     let cart = JSON.parse(localStorage.getItem('cart') || '[]');
