@@ -116,8 +116,27 @@ document.addEventListener('DOMContentLoaded', async () => {
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
+        // Validate reCAPTCHA
+        const captchaResponse = grecaptcha.getResponse();
+        const captchaError = document.getElementById('captcha-error');
 
-
+        if (!captchaResponse) {
+            // Show error message
+            if (captchaError) {
+                captchaError.style.display = 'block';
+            }
+            // Scroll to CAPTCHA section
+            const captchaSection = document.querySelector('.g-recaptcha');
+            if (captchaSection) {
+                captchaSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            return; // Stop form submission
+        } else {
+            // Hide error message if it was shown
+            if (captchaError) {
+                captchaError.style.display = 'none';
+            }
+        }
 
 
 
