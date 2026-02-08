@@ -465,13 +465,6 @@ function initZoomControls() {
     });
 
 
-    imgWrapper.addEventListener('wheel', (e) => {
-        e.preventDefault();
-        const delta = e.deltaY * -0.002;
-        setZoom(lightboxState.zoom + delta);
-    }, { passive: false });
-
-
     imgWrapper.addEventListener('dblclick', (e) => {
         if (lightboxState.zoom > 1) {
             resetZoom();
