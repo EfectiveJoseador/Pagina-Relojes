@@ -631,8 +631,16 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "38 mm",
-            "Grosor": "11 mm",
-            "Movimiento": "Seiko NH35 automático"
+            "Grosor": "12 mm",
+            "Movimiento": "Seiko NH35 automático, fiable y preciso",
+            "Cristal": "Zafiro con tratamiento antirreflejos, alta claridad y resistencia a rayaduras",
+            "Luminosidad": "Luminova en índices y agujas, visibilidad total en ambientes oscuros",
+            "Caja": "Acero inoxidable 316L con acabado pulido, resistente y elegante",
+            "Corona": "Enroscada, mayor protección y tacto firme",
+            "Tamaño de muñeca": "Ajustable entre 14,5 cm y 22 cm",
+            "Lugs": "20 mm, permite cambiar la correa fácilmente",
+            "Correa": "Acero inoxidable 316L con cierre de seguridad",
+            "Fondo de caja": "Acero cerrado con acabado cepillado, sobrio y discreto"
         }
     },
     {
@@ -685,10 +693,11 @@ const products = [
             "Movimiento": "Seiko VK61 mecaquartz (cuarzo híbrido) con cronógrafo funcional",
             "Cristal": "Zafiro antiarañazos con tratamiento antirreflejos",
             "Luminosidad": "Luminova en índices y agujas",
-            "Caja": "Acero inoxidable 316L",
-            "Corona": "Atornillada",
+            "Caja": "Acero inoxidable 316L pulido, resistente y elegante",
+            "Corona": "Atornillada, segura y funcional",
             "Tamaño de muñeca": "Ajustable de 14,5 cm a 22 cm",
             "Lugs": "13 mm",
+            "Correa": "Acero inoxidable 316L con cierre de seguridad",
             "Fondo de caja": "Cristal transparente (movimiento visible)"
         }
     },
@@ -736,7 +745,17 @@ const products = [
         "sizes": [],
         "straps": [],
         "specs": {
-            "Movimiento": "Seiko NH35 automático"
+            "Diámetro": "41 mm (sin incluir la corona), moderno y equilibrado",
+            "Movimiento": "Seiko NH35 automático, fiable y preciso",
+            "Grosor": "12 mm, cómodo para el uso diario",
+            "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
+            "Luminosidad": "Luminova en agujas e índices, perfecta en baja luz",
+            "Caja": "Acero inoxidable 904L con acabado Gold, elegante y duradero",
+            "Corona": "Enroscada, segura y funcional",
+            "Tamaño de muñeca": "Ajustable entre 14,5 cm y 22 cm",
+            "Lugs": "20 mm, compatibles con correas intercambiables",
+            "Correa": "Acero inoxidable 904L con acabado Gold y cierre de seguridad",
+            "Fondo de caja": "Cristal transparente, mostrando el movimiento automático"
         }
     },
     {
@@ -753,7 +772,17 @@ const products = [
         "sizes": [],
         "straps": [],
         "specs": {
-            "Movimiento": "Seiko NH38 automático"
+            "Diámetro": "41 mm (sin corona), equilibrio entre presencia y comodidad",
+            "Movimiento": "Seiko NH38 automático, visible en el open-heart",
+            "Grosor": "12.5 mm, perfil estilizado y versátil",
+            "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
+            "Luminosidad": "Luminova en índices y agujas, legibilidad en la oscuridad",
+            "Caja": "Acero inoxidable 904L con acabado Rose Gold, duradera y premium",
+            "Corona": "Enroscada, seguridad y funcionalidad",
+            "Tamaño de muñeca": "Ajustable entre 14,5 cm y 22 cm",
+            "Lugs": "20 mm, compatibles con correas intercambiables",
+            "Correa": "Acero 904L con acabado Rose Gold y cierre de seguridad",
+            "Fondo de caja": "Cristal transparente, mostrando el movimiento automático"
         }
     },
     {
