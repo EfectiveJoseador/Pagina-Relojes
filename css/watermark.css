@@ -101,6 +101,8 @@
     }
 
     #lightbox-wrapper::after {
+        top: 60%;
+        left: 60%;
         width: 20%;
         height: 20%;
     }
