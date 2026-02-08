@@ -4,7 +4,14 @@ import products from './products-data.js';
 const CONFIG = {
     PRODUCTS_PER_PAGE: 20,
     LAZY_LOAD_THRESHOLD: '200px',
-    PLACEHOLDER_COLOR: '#e0e0e0'
+    PLACEHOLDER_COLOR: '#e0e0e0',
+    // Progressive loading configuration
+    PROGRESSIVE_LOADING: {
+        ENABLED: true,
+        ROW_DELAY: 75,  // ms between each row
+        FIRST_ROW_DELAY: 0,  // ms for first row (instant)
+        USE_RAF: true  // use requestAnimationFrame
+    }
 };
 let allProducts = [];
 let filteredProducts = [];
@@ -161,22 +168,184 @@ function getSecondaryMiniImagePath(product) {
     return getMiniImagePath(product.image);
 }
 
-function renderProducts() {
+/**
+ * Detects the current number of columns in the grid
+ * by reading computed CSS grid-template-columns
+ */
+function getCurrentGridColumns() {
     const grid = document.getElementById('product-grid');
-    const noResults = document.getElementById('no-results');
+    if (!grid) return 5; // default fallback
 
-    calculatePagination();
+    const computedStyle = window.getComputedStyle(grid);
+    const columns = computedStyle.gridTemplateColumns;
 
-    if (filteredProducts.length === 0) {
-        grid.innerHTML = '';
-        noResults.classList.remove('hidden');
-        renderPagination();
+    // Count the number of column definitions
+    // e.g., "1fr 1fr 1fr 1fr 1fr" = 5 columns
+    const columnCount = columns.split(' ').filter(col => col.trim()).length;
+
+    return columnCount || 5;
+}
+
+/**
+ * Renders a single row of products
+ */
+function renderProductRow(products, rowIndex) {
+    const grid = document.getElementById('product-grid');
+    if (!grid) return;
+
+    const fragment = document.createDocumentFragment();
+    const tempDiv = document.createElement('div');
+
+    tempDiv.innerHTML = products.map(product => {
+        return `
+        <article class="product-card progressive-loading" data-id="${product.id}" data-row="${rowIndex}">
+            <div class="product-image">
+                <span class="badge-sale">OFERTA</span>
+                <a href="/pages/producto.html?id=${product.id}">
+                    <img 
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Crect fill='%23e5e7eb' width='1' height='1'/%3E%3C/svg%3E"
+                        data-src="${getMiniImagePath(product.image)}"
+                        alt="${product.name}"
+                        class="primary-image lazy-image"
+                        width="300"
+                        height="300"
+                        loading="lazy"
+                    >
+                    <img 
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Crect fill='%23e5e7eb' width='1' height='1'/%3E%3C/svg%3E"
+                        data-src="${getSecondaryMiniImagePath(product)}"
+                        alt="${product.name} - Vista 2"
+                        class="secondary-image lazy-image"
+                        width="300"
+                        height="300"
+                        loading="lazy"
+                    >
+                </a>
+                <button class="btn-quick-add" data-id="${product.id}" title="Añadir al carrito">
+                    <i class="fas fa-shopping-basket"></i>
+                </button>
+                
+                <!-- Quick Add Panel -->
+                <div class="quick-add-panel" data-product-id="${product.id}">
+                    <div class="panel-header">
+                        <span class="panel-title">Añadir rápido</span>
+                        <button class="panel-close" data-id="${product.id}"><i class="fas fa-times"></i></button>
+                    </div>
+                    <form class="quick-add-form" data-product-id="${product.id}">
+                        ${generateSizeOptionsHTML(product)}
+                        ${generateStrapOptionsHTML(product)}
+                        
+                        <div class="form-group">
+                            <label>Caja <span style="color: var(--text-muted); font-weight: 400; font-size: 0.8em;">Opcional</span></label>
+                            <select class="quick-box">
+                                <option value="none">Sin caja - Gratis</option>
+                                <option value="basic">Caja 1 - Básica (+€3)</option>
+                                <option value="black">Caja 2 - Negra (+€5)</option>
+                                <option value="brown">Caja 3 - Negra/Marrón (+€5)</option>
+                                <option value="seiko">Caja 4 - Seiko + Tarjetas (+€10)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="price-preview">
+                            <span class="price-label">Total:</span>
+                            <span class="price-value" data-base="${product.price}">€${product.price.toFixed(2)}</span>
+                        </div>
+                        
+                        <button type="submit" class="btn-add-quick">
+                            <i class="fas fa-cart-plus"></i> Añadir
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="product-info">
+                <span class="product-category">${product.category}</span>
+                <h3 class="product-title">${product.name}</h3>
+                <div class="product-price">
+                    <span class="price-old">€${product.oldPrice.toFixed(2)}</span>
+                    <span class="price">€${product.price.toFixed(2)}</span>
+                </div>
+            </div>
+        </article>
+    `;
+    }).join('');
+
+    // Append all products in this row to fragment
+    while (tempDiv.firstChild) {
+        fragment.appendChild(tempDiv.firstChild);
+    }
+
+    // Add all products to grid at once
+    grid.appendChild(fragment);
+
+    // Trigger animation after a small delay to ensure DOM is ready
+    requestAnimationFrame(() => {
+        const rowCards = grid.querySelectorAll(`[data-row="${rowIndex}"]`);
+        rowCards.forEach(card => {
+            card.classList.remove('progressive-loading');
+            card.classList.add('progressive-loaded');
+        });
+    });
+
+    // Observe lazy images in this row
+    observeLazyImages();
+}
+
+/**
+ * Renders products progressively by rows
+ */
+function renderProductsByRows(productsToShow) {
+    const grid = document.getElementById('product-grid');
+    if (!grid) return;
+
+    // Clear grid
+    grid.innerHTML = '';
+
+    if (!CONFIG.PROGRESSIVE_LOADING.ENABLED) {
+        // Fallback to instant rendering
+        renderAllProductsInstantly(productsToShow);
         return;
     }
 
-    noResults.classList.add('hidden');
+    // Detect current grid columns
+    const columnsPerRow = getCurrentGridColumns();
 
-    const productsToShow = getProductsForCurrentPage();
+    // Split products into rows
+    const rows = [];
+    for (let i = 0; i < productsToShow.length; i += columnsPerRow) {
+        rows.push(productsToShow.slice(i, i + columnsPerRow));
+    }
+
+    // Render rows progressively
+    rows.forEach((rowProducts, rowIndex) => {
+        const delay = rowIndex === 0
+            ? CONFIG.PROGRESSIVE_LOADING.FIRST_ROW_DELAY
+            : CONFIG.PROGRESSIVE_LOADING.ROW_DELAY * rowIndex;
+
+        if (CONFIG.PROGRESSIVE_LOADING.USE_RAF) {
+            setTimeout(() => {
+                requestAnimationFrame(() => {
+                    renderProductRow(rowProducts, rowIndex);
+                });
+            }, delay);
+        } else {
+            setTimeout(() => {
+                renderProductRow(rowProducts, rowIndex);
+            }, delay);
+        }
+    });
+
+    // Setup listeners after all rows are rendered
+    const totalDelay = CONFIG.PROGRESSIVE_LOADING.ROW_DELAY * rows.length + 100;
+    setTimeout(() => {
+        setupQuickAddListeners();
+    }, totalDelay);
+}
+
+/**
+ * Fallback: Render all products instantly (when progressive loading is disabled)
+ */
+function renderAllProductsInstantly(productsToShow) {
+    const grid = document.getElementById('product-grid');
     const fragment = document.createDocumentFragment();
     const tempDiv = document.createElement('div');
 
@@ -252,14 +421,39 @@ function renderProducts() {
         </article>
     `;
     }).join('');
-    grid.innerHTML = '';
+
     while (tempDiv.firstChild) {
         fragment.appendChild(tempDiv.firstChild);
     }
     grid.appendChild(fragment);
     observeLazyImages();
-    renderPagination();
     setupQuickAddListeners();
+}
+
+/**
+ * Main render function - now uses progressive loading
+ */
+function renderProducts() {
+    const grid = document.getElementById('product-grid');
+    const noResults = document.getElementById('no-results');
+
+    calculatePagination();
+
+    if (filteredProducts.length === 0) {
+        grid.innerHTML = '';
+        noResults.classList.remove('hidden');
+        renderPagination();
+        return;
+    }
+
+    noResults.classList.add('hidden');
+
+    const productsToShow = getProductsForCurrentPage();
+
+    // Use progressive loading system
+    renderProductsByRows(productsToShow);
+
+    renderPagination();
 }
 
 

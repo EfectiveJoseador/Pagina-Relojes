@@ -34,19 +34,19 @@
     pointer-events: none;
     z-index: -1;
     background:
-        
+
         radial-gradient(ellipse 600px 400px at 5% 10%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
-        
+
         radial-gradient(ellipse 500px 500px at 95% 30%, rgba(212, 175, 55, 0.06) 0%, transparent 50%),
-        
+
         radial-gradient(ellipse 700px 400px at 10% 70%, rgba(184, 150, 46, 0.07) 0%, transparent 50%),
-        
+
         radial-gradient(ellipse 400px 300px at 50% 5%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
-        
+
         radial-gradient(ellipse 600px 500px at 90% 85%, rgba(212, 175, 55, 0.06) 0%, transparent 50%),
-        
+
         radial-gradient(ellipse 500px 400px at 40% 50%, rgba(184, 150, 46, 0.04) 0%, transparent 50%),
-        
+
         radial-gradient(ellipse 350px 250px at 75% 60%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
         radial-gradient(ellipse 400px 300px at 25% 40%, rgba(212, 175, 55, 0.04) 0%, transparent 50%);
 }
@@ -455,7 +455,11 @@
 .product-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 1.25rem;
+    gap: 1.5rem;
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+    max-width: 100%;
 }
 
 .product-card {
@@ -467,89 +471,114 @@
     display: flex;
     flex-direction: column;
     border: 1px solid var(--border);
-
-    animation: blurIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) backwards;
     position: relative;
 }
 
+/* Progressive loading states */
+.product-card.progressive-loading {
+    opacity: 0;
+    transform: translateY(30px);
+}
 
-.product-card:nth-child(1) {
+.product-card.progressive-loaded {
+    animation: progressiveSlideIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes progressiveSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fallback blur-in animation for non-progressive loading */
+.product-card:not(.progressive-loading):not(.progressive-loaded) {
+    animation: blurIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+/* Staggered delays for fallback animation (when progressive loading is off) */
+.product-card:not(.progressive-loading):not(.progressive-loaded):nth-child(1) {
     animation-delay: 0.05s;
 }
 
-.product-card:nth-child(2) {
+.product-card:not(.progressive-loading):not(.progressive-loaded):nth-child(2) {
     animation-delay: 0.1s;
 }
 
-.product-card:nth-child(3) {
+.product-card:not(.progressive-loading):not(.progressive-loaded):nth-child(3) {
     animation-delay: 0.15s;
 }
 
-.product-card:nth-child(4) {
+.product-card:not(.progressive-loading):not(.progressive-loaded):nth-child(4) {
     animation-delay: 0.2s;
 }
 
-.product-card:nth-child(5) {
+.product-card:not(.progressive-loading):not(.progressive-loaded):nth-child(5) {
     animation-delay: 0.25s;
 }
 
-.product-card:nth-child(6) {
+.product-card:not(.progressive-loading):not(.progressive-loaded):nth-child(6) {
     animation-delay: 0.3s;
 }
 
-.product-card:nth-child(7) {
+.product-card:not(.progressive-loading):not(.progressive-loaded):nth-child(7) {
     animation-delay: 0.35s;
 }
 
-.product-card:nth-child(8) {
+.product-card:not(.progressive-loading):not(.progressive-loaded):nth-child(8) {
     animation-delay: 0.4s;
 }
 
-.product-card:nth-child(9) {
+.product-card:not(.progressive-loading):not(.progressive-loaded):nth-child(9) {
     animation-delay: 0.45s;
 }
 
-.product-card:nth-child(10) {
+.product-card:not(.progressive-loading):not(.progressive-loaded):nth-child(10) {
     animation-delay: 0.5s;
 }
 
-.product-card:nth-child(11) {
+.product-card:not(.progressive-loading):not(.progressive-loaded):nth-child(11) {
     animation-delay: 0.55s;
 }
 
-.product-card:nth-child(12) {
+.product-card:not(.progressive-loading):not(.progressive-loaded):nth-child(12) {
     animation-delay: 0.6s;
 }
 
-.product-card:nth-child(13) {
+.product-card:not(.progressive-loading):not(.progressive-loaded):nth-child(13) {
     animation-delay: 0.65s;
 }
 
-.product-card:nth-child(14) {
+.product-card:not(.progressive-loading):not(.progressive-loaded):nth-child(14) {
     animation-delay: 0.7s;
 }
 
-.product-card:nth-child(15) {
+.product-card:not(.progressive-loading):not(.progressive-loaded):nth-child(15) {
     animation-delay: 0.75s;
 }
 
-.product-card:nth-child(16) {
+.product-card:not(.progressive-loading):not(.progressive-loaded):nth-child(16) {
     animation-delay: 0.8s;
 }
 
-.product-card:nth-child(17) {
+.product-card:not(.progressive-loading):not(.progressive-loaded):nth-child(17) {
     animation-delay: 0.85s;
 }
 
-.product-card:nth-child(18) {
+.product-card:not(.progressive-loading):not(.progressive-loaded):nth-child(18) {
     animation-delay: 0.9s;
 }
 
-.product-card:nth-child(19) {
+.product-card:not(.progressive-loading):not(.progressive-loaded):nth-child(19) {
     animation-delay: 0.95s;
 }
 
-.product-card:nth-child(20) {
+.product-card:not(.progressive-loading):not(.progressive-loaded):nth-child(20) {
     animation-delay: 1s;
 }
 
@@ -742,40 +771,63 @@
 
 
 
-@media (max-width: 1600px) {
+/* Responsive Grid Breakpoints - Progressive degradation */
+
+/* Extra large screens: 5 columns */
+@media (min-width: 1600px) {
     .product-grid {
         grid-template-columns: repeat(5, 1fr);
+        gap: 1.75rem;
     }
 }
 
+/* Large screens: 5 columns */
+@media (max-width: 1599px) and (min-width: 1400px) {
+    .product-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1.5rem;
+    }
+}
 
-@media (max-width: 1400px) {
+/* Medium-large screens: 4 columns */
+@media (max-width: 1399px) and (min-width: 1200px) {
     .product-grid {
         grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
     }
 }
 
-
-@media (max-width: 1024px) {
+/* Medium screens: 4 columns */
+@media (max-width: 1199px) and (min-width: 1024px) {
     .product-grid {
         grid-template-columns: repeat(4, 1fr);
+        gap: 1.25rem;
     }
 }
 
-@media (max-width: 900px) {
+/* Tablet landscape: 3 columns */
+@media (max-width: 1023px) and (min-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+    }
+}
+
+/* Tablet portrait and mobile: optimized layouts */
+@media (max-width: 899px) and (min-width: 768px) {
     .catalog-container {
         grid-template-columns: 1fr;
+        padding: 1.5rem 1.5%;
     }
 
     .filters-sidebar {
         display: none;
-
-
     }
 
     .catalog-toolbar {
         flex-direction: column;
         align-items: stretch;
+        margin-bottom: 1.5rem;
     }
 
     #sort-select {
@@ -783,13 +835,32 @@
     }
 
     .product-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
     }
 }
 
-@media (max-width: 600px) {
+/* Mobile landscape: 2 columns */
+@media (max-width: 767px) and (min-width: 600px) {
+    .catalog-container {
+        padding: 1.25rem 2%;
+    }
+
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+/* Mobile portrait: 2 columns optimized */
+@media (max-width: 599px) {
+    .catalog-container {
+        padding: 1rem 3%;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.875rem;
     }
 }
 
