@@ -719,6 +719,8 @@ function loadRelatedProducts() {
     startAutoScroll();
 
 
+
+
     let isDragging = false;
     let startPos = 0;
     let lastPos = 0;
@@ -726,14 +728,18 @@ function loadRelatedProducts() {
     let velocity = 0;
     let inertiaId = null;
 
+    // Critical for mobile performance
     track.style.touchAction = 'pan-y';
     track.style.userSelect = 'none';
+    track.style.webkitUserSelect = 'none';
 
     function touchStart(event) {
+        // Stop any ongoing animations
         if (inertiaId) {
             cancelAnimationFrame(inertiaId);
             inertiaId = null;
         }
+
         if (animationId) {
             cancelAnimationFrame(animationId);
             animationId = null;
@@ -751,20 +757,35 @@ function loadRelatedProducts() {
 
     function touchMove(event) {
         if (!isDragging) return;
+
+        // Prevent default scrolling
         event.preventDefault();
+
         const currentX = event.touches[0].clientX;
         const diff = currentX - lastPos;
         const now = performance.now();
         const dt = now - lastTime;
 
+        // Calculate velocity for inertia
         if (dt > 0) {
             velocity = diff / dt * 16;
         }
+
         currentPosition -= diff;
         lastPos = currentX;
         lastTime = now;
 
-        track.style.transform = `translateX(${-currentPosition}px)`;
+        // Use translate3d for GPU acceleration - critical for no flickering
+        track.style.transform = `translate3d(${-currentPosition}px, 0, 0)`;
+
+        // Real-time boundary checking during drag prevents jumping
+        if (currentPosition >= totalCards * 2 * cardWidth) {
+            currentPosition -= totalCards * cardWidth;
+            track.style.transform = `translate3d(${-currentPosition}px, 0, 0)`;
+        } else if (currentPosition < totalCards * cardWidth) {
+            currentPosition += totalCards * cardWidth;
+            track.style.transform = `translate3d(${-currentPosition}px, 0, 0)`;
+        }
     }
 
     function touchEnd() {
@@ -772,34 +793,53 @@ function loadRelatedProducts() {
         isDragging = false;
         track.classList.remove('dragging');
 
+        // Apply inertia if velocity is sufficient
         if (Math.abs(velocity) > 0.5) {
             applyInertia();
         } else {
+            // Resume auto-scroll after pause
             if (resumeTimeout) clearTimeout(resumeTimeout);
             resumeTimeout = setTimeout(() => {
                 isPaused = false;
-                if (!animationId) animationId = requestAnimationFrame(smoothScroll);
+                if (!animationId) {
+                    animationId = requestAnimationFrame(smoothScroll);
+                }
             }, PAUSE_DURATION);
         }
     }
 
     function applyInertia() {
         const friction = 0.94;
+
         function inertiaStep() {
             if (Math.abs(velocity) < 0.1) {
                 inertiaId = null;
+
                 if (resumeTimeout) clearTimeout(resumeTimeout);
                 resumeTimeout = setTimeout(() => {
                     isPaused = false;
-                    if (!animationId) animationId = requestAnimationFrame(smoothScroll);
+                    if (!animationId) {
+                        animationId = requestAnimationFrame(smoothScroll);
+                    }
                 }, PAUSE_DURATION);
                 return;
             }
+
             currentPosition -= velocity;
             velocity *= friction;
-            track.style.transform = `translateX(${-currentPosition}px)`;
+
+            // Check boundaries during inertia
+            if (currentPosition >= totalCards * 2 * cardWidth) {
+                currentPosition -= totalCards * cardWidth;
+            } else if (currentPosition < totalCards * cardWidth) {
+                currentPosition += totalCards * cardWidth;
+            }
+
+            track.style.transform = `translate3d(${-currentPosition}px, 0, 0)`;
+
             inertiaId = requestAnimationFrame(inertiaStep);
         }
+
         inertiaId = requestAnimationFrame(inertiaStep);
     }
 

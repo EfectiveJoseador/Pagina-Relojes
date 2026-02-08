@@ -714,23 +714,45 @@
 }
 
 
-@media (hover: none) {
+/* Mobile devices - completely disable image swapping */
+@media (hover: none) and (pointer: coarse) {
 
+    /* Force no transitions on any images */
+    .related-products .product-image img,
     .related-products .product-image img.primary-image,
     .related-products .product-image img.secondary-image {
         transition: none !important;
+        animation: none !important;
     }
 
-    .related-products .product-card .product-image img.primary-image {
+    /* Always show primary, always hide secondary */
+    .related-products .product-card .product-image img.primary-image,
+    .related-products .product-card:hover .product-image img.primary-image,
+    .related-products .product-card.has-secondary .product-image img.primary-image,
+    .related-products .product-card.has-secondary:hover .product-image img.primary-image {
         opacity: 1 !important;
+        z-index: 2 !important;
     }
 
-    .related-products .product-card .product-image img.secondary-image {
+    .related-products .product-card .product-image img.secondary-image,
+    .related-products .product-card:hover .product-image img.secondary-image,
+    .related-products .product-card.has-secondary .product-image img.secondary-image,
+    .related-products .product-card.has-secondary:hover .product-image img.secondary-image {
         opacity: 0 !important;
+        z-index: 1 !important;
     }
 
+    /* No transform effects on mobile */
     .related-products .product-card:hover .product-image img {
-        transform: none;
+        transform: none !important;
+    }
+
+    /* Disable any card hover effects during/after drag */
+    .carousel-track.dragging .related-products .product-card,
+    .carousel-track.dragging .related-products .product-card * {
+        pointer-events: none !important;
+        transition: none !important;
+        animation: none !important;
     }
 }
 
