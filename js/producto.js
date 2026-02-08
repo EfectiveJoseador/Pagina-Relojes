@@ -334,10 +334,23 @@ function initLightbox(images) {
 
 
     const closeBtn = document.getElementById('lightbox-close');
-    const overlay = document.getElementById('lightbox-overlay');
+    const lightboxImage = document.getElementById('lightbox-image');
 
-    [closeBtn, overlay].forEach(el => {
-        el?.addEventListener('click', closeLightbox);
+    // Close when clicking the close button
+    closeBtn?.addEventListener('click', closeLightbox);
+
+    // Close when clicking anywhere outside the image
+    lightbox.addEventListener('click', (e) => {
+        // Don't close if clicking on the image itself, nav buttons, thumbnails, or close button
+        if (
+            e.target === lightboxImage ||
+            e.target.closest('.lightbox-nav') ||
+            e.target.closest('.lightbox-close') ||
+            e.target.closest('.lightbox-thumbnails')
+        ) {
+            return;
+        }
+        closeLightbox();
     });
 
     document.addEventListener('keydown', (e) => {
