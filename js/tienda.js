@@ -790,6 +790,7 @@ function applyURLFilters() {
 
     if (league) {
         selectedLeague = league;
+        window.selectedLeague = league; // Sync with window for mobile-filters.js
         const leagueSelect = document.getElementById('filter-league');
         if (leagueSelect) {
             leagueSelect.value = league;
@@ -800,6 +801,7 @@ function applyURLFilters() {
 
     if (auto) {
         selectedAuto = auto === 'true';
+        window.selectedAuto = selectedAuto; // Sync with window for mobile-filters.js
         const cb = document.getElementById('filter-auto');
         if (cb) {
             cb.checked = selectedAuto;
@@ -808,6 +810,7 @@ function applyURLFilters() {
 
     if (quartz) {
         selectedQuartz = quartz === 'true';
+        window.selectedQuartz = selectedQuartz; // Sync with window for mobile-filters.js
         const cb = document.getElementById('filter-quartz');
         if (cb) {
             cb.checked = selectedQuartz;
