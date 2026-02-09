@@ -1,5 +1,5 @@
-# Robots.txt for Luxe MOD Watches - Relojes de Lujo
-# https://luxemodwatches.com
+# Robots.txt for Luxe Mod Watches - Relojes de Lujo
+# https://luxemodwatches.shop
 
 User-agent: *
 Allow: /
@@ -22,7 +22,7 @@ Disallow: /scripts/
 Disallow: /*.json$
 
 # Ubicación del Sitemap
-Sitemap: https://luxemodwatches.com/sitemap.xml
+Sitemap: https://luxemodwatches.shop/sitemap.xml
 
 # Delay de rastreo para un crawling educado
 Crawl-delay: 1
