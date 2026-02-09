@@ -6,7 +6,7 @@
 
     <!-- Página principal -->
     <url>
-        <loc>https://www.luxemodwatches.com/</loc>
+        <loc>https://www.luxemodwatches.shop/</loc>
         <lastmod>2026-02-09</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
@@ -14,28 +14,28 @@
 
     <!-- Páginas principales -->
     <url>
-        <loc>https://www.luxemodwatches.com/pages/tienda.html</loc>
+        <loc>https://www.luxemodwatches.shop/pages/tienda.html</loc>
         <lastmod>2026-02-09</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
     <url>
-        <loc>https://www.luxemodwatches.com/pages/quienes-somos.html</loc>
+        <loc>https://www.luxemodwatches.shop/pages/quienes-somos.html</loc>
         <lastmod>2026-02-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://www.luxemodwatches.com/pages/contacto.html</loc>
+        <loc>https://www.luxemodwatches.shop/pages/contacto.html</loc>
         <lastmod>2026-02-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>https://www.luxemodwatches.com/pages/faq.html</loc>
+        <loc>https://www.luxemodwatches.shop/pages/faq.html</loc>
         <lastmod>2026-02-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
@@ -43,56 +43,56 @@
 
     <!-- Colecciones de relojes (filtros de tienda) -->
     <url>
-        <loc>https://www.luxemodwatches.com/pages/tienda.html?collection=GMTeiko</loc>
+        <loc>https://www.luxemodwatches.shop/pages/tienda.html?collection=GMTeiko</loc>
         <lastmod>2026-02-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://www.luxemodwatches.com/pages/tienda.html?collection=Nauteiko</loc>
+        <loc>https://www.luxemodwatches.shop/pages/tienda.html?collection=Nauteiko</loc>
         <lastmod>2026-02-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://www.luxemodwatches.com/pages/tienda.html?collection=Royal%20Seikoak</loc>
+        <loc>https://www.luxemodwatches.shop/pages/tienda.html?collection=Royal%20Seikoak</loc>
         <lastmod>2026-02-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://www.luxemodwatches.com/pages/tienda.html?collection=Seikojust</loc>
+        <loc>https://www.luxemodwatches.shop/pages/tienda.html?collection=Seikojust</loc>
         <lastmod>2026-02-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://www.luxemodwatches.com/pages/tienda.html?collection=SeikoMariner</loc>
+        <loc>https://www.luxemodwatches.shop/pages/tienda.html?collection=SeikoMariner</loc>
         <lastmod>2026-02-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://www.luxemodwatches.com/pages/tienda.html?collection=Yatcheiko</loc>
+        <loc>https://www.luxemodwatches.shop/pages/tienda.html?collection=Yatcheiko</loc>
         <lastmod>2026-02-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://www.luxemodwatches.com/pages/tienda.html?collection=Seitona</loc>
+        <loc>https://www.luxemodwatches.shop/pages/tienda.html?collection=Seitona</loc>
         <lastmod>2026-02-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://www.luxemodwatches.com/pages/tienda.html?collection=Santeiko</loc>
+        <loc>https://www.luxemodwatches.shop/pages/tienda.html?collection=Santeiko</loc>
         <lastmod>2026-02-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
@@ -100,14 +100,14 @@
 
     <!-- Filtros por tipo de movimiento -->
     <url>
-        <loc>https://www.luxemodwatches.com/pages/tienda.html?movement=Automatico</loc>
+        <loc>https://www.luxemodwatches.shop/pages/tienda.html?movement=Automatico</loc>
         <lastmod>2026-02-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://www.luxemodwatches.com/pages/tienda.html?movement=Mecaquartz</loc>
+        <loc>https://www.luxemodwatches.shop/pages/tienda.html?movement=Mecaquartz</loc>
         <lastmod>2026-02-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
@@ -115,42 +115,42 @@
 
     <!-- Modelos destacados (los más populares) -->
     <url>
-        <loc>https://www.luxemodwatches.com/pages/tienda.html?collection=GMTeiko&amp;model=Pepsi</loc>
+        <loc>https://www.luxemodwatches.shop/pages/tienda.html?collection=GMTeiko&amp;model=Pepsi</loc>
         <lastmod>2026-02-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://www.luxemodwatches.com/pages/tienda.html?collection=GMTeiko&amp;model=Sprite</loc>
+        <loc>https://www.luxemodwatches.shop/pages/tienda.html?collection=GMTeiko&amp;model=Sprite</loc>
         <lastmod>2026-02-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://www.luxemodwatches.com/pages/tienda.html?collection=SeikoMariner&amp;model=Hulk</loc>
+        <loc>https://www.luxemodwatches.shop/pages/tienda.html?collection=SeikoMariner&amp;model=Hulk</loc>
         <lastmod>2026-02-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://www.luxemodwatches.com/pages/tienda.html?collection=Royal%20Seikoak&amp;model=Ice%20Blue</loc>
+        <loc>https://www.luxemodwatches.shop/pages/tienda.html?collection=Royal%20Seikoak&amp;model=Ice%20Blue</loc>
         <lastmod>2026-02-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://www.luxemodwatches.com/pages/tienda.html?collection=Nauteiko&amp;model=Rose%20Gold%20Chocolatte</loc>
+        <loc>https://www.luxemodwatches.shop/pages/tienda.html?collection=Nauteiko&amp;model=Rose%20Gold%20Chocolatte</loc>
         <lastmod>2026-02-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://www.luxemodwatches.com/pages/tienda.html?collection=Yatcheiko&amp;model=Master%20Rose%20Gold</loc>
+        <loc>https://www.luxemodwatches.shop/pages/tienda.html?collection=Yatcheiko&amp;model=Master%20Rose%20Gold</loc>
         <lastmod>2026-02-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
@@ -158,7 +158,7 @@
 
     <!-- Páginas de información adicional -->
     <url>
-        <loc>https://www.luxemodwatches.com/pages/soporte.html</loc>
+        <loc>https://www.luxemodwatches.shop/pages/soporte.html</loc>
         <lastmod>2026-02-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
@@ -166,7 +166,7 @@
 
     <!-- Páginas del proceso de compra -->
     <url>
-        <loc>https://www.luxemodwatches.com/pages/carrito.html</loc>
+        <loc>https://www.luxemodwatches.shop/pages/carrito.html</loc>
         <lastmod>2026-02-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.4</priority>
@@ -174,21 +174,21 @@
 
     <!-- Páginas legales -->
     <url>
-        <loc>https://www.luxemodwatches.com/pages/cookies.html</loc>
+        <loc>https://www.luxemodwatches.shop/pages/cookies.html</loc>
         <lastmod>2026-02-09</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
 
     <url>
-        <loc>https://www.luxemodwatches.com/pages/privacidad.html</loc>
+        <loc>https://www.luxemodwatches.shop/pages/privacidad.html</loc>
         <lastmod>2026-02-09</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
 
     <url>
-        <loc>https://www.luxemodwatches.com/pages/terminos.html</loc>
+        <loc>https://www.luxemodwatches.shop/pages/terminos.html</loc>
         <lastmod>2026-02-09</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
