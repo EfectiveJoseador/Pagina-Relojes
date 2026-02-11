@@ -4,6 +4,7 @@ let product = null;
 let selectedStrap = null;
 let selectedSize = null;
 let selectedBox = 'none';
+let selectedGmt = false;
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -119,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
     boxRadios.forEach(radio => {
         radio.addEventListener('change', (e) => {
             selectedBox = e.target.value;
+            updatePrice();
         });
     });
 
@@ -135,12 +137,83 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // GMT Option Logic
+    if (product.category === 'GMTeiko') {
+        const optionsBlock = document.querySelector('.options-block');
+        const strapContainer = document.getElementById('strap-selector-container');
+
+        // Create GMT Option container
+        const gmtContainer = document.createElement('div');
+        gmtContainer.className = 'option-group';
+        gmtContainer.id = 'gmt-selector-container';
+
+        gmtContainer.innerHTML = `
+            <label class="option-label">Extra GMT <span style="color: var(--primary); font-size: 0.9rem;">+€15.00</span></label>
+            <label class="box-option" style="cursor: pointer; display: flex; align-items: center; gap: 10px; padding: 10px; border: 1px solid var(--border); border-radius: var(--radius-sm);">
+                <input type="checkbox" id="gmt-check" style="width: 20px; height: 20px; accent-color: var(--primary);">
+                <div style="display: flex; flex-direction: column;">
+                    <span style="font-weight: 600; color: var(--text-main);">Aguja GMT (4ª aguja)</span>
+                    <span style="font-size: 0.85rem; color: var(--text-muted);">Movimiento Seiko NH34</span>
+                </div>
+            </label>
+            <p style="margin-top: 8px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;">
+                <i class="fas fa-info-circle"></i> Si no se selecciona, el reloj montará un movimiento Seiko NH35 (3 agujas) estándar.
+            </p>
+        `;
+
+        // Insert before box selector, or after strap selector
+        if (strapContainer && strapContainer.parentNode) {
+            strapContainer.parentNode.insertBefore(gmtContainer, strapContainer.nextSibling);
+        } else {
+            // Fallback insertion
+            const boxSelector = document.querySelector('.option-group:has(.box-selector)') || optionsBlock.lastElementChild;
+            optionsBlock.insertBefore(gmtContainer, boxSelector);
+        }
+
+        // Listener
+        document.getElementById('gmt-check').addEventListener('change', (e) => {
+            selectedGmt = e.target.checked;
+            updatePrice();
+            updateSpecsText();
+        });
+    }
+
     const style = document.createElement('style');
     style.innerHTML = `
         .product-description { display: none; }
     `;
     document.head.appendChild(style);
 });
+
+function updatePrice() {
+    const boxPrices = { 'none': 0, 'basic': 3, 'black': 5, 'brown': 5, 'seiko': 10 };
+    const boxPrice = boxPrices[selectedBox] || 0;
+    const gmtPrice = selectedGmt ? 15 : 0;
+
+    // Ensure product is loaded
+    if (!product) return;
+
+    const total = product.price + boxPrice + gmtPrice;
+    const priceEl = document.getElementById('product-price');
+    if (priceEl) priceEl.textContent = `€${total.toFixed(2)}`;
+}
+
+function updateSpecsText() {
+    // Update Movimiento spec text in the features list
+    const featuresEl = document.getElementById('product-features');
+    if (!featuresEl) return;
+
+    const listItems = featuresEl.querySelectorAll('li');
+    listItems.forEach(li => {
+        if (li.textContent.includes('Movimiento:')) {
+            if (selectedGmt) {
+                li.innerHTML = '<i class="fas fa-check"></i> <span><strong>Movimiento:</strong> Seiko NH34 Automático (4 agujas - GMT)</span>';
+            } else {
+                li.innerHTML = '<i class="fas fa-check"></i> <span><strong>Movimiento:</strong> Seiko NH35 Automático (3 agujas)</span>';
+            }
+        }
+    });
+}
 
 function initQuantitySelector() {
     const qtyInput = document.getElementById('qty-input');
@@ -182,7 +255,8 @@ function addToCart() {
         'seiko': 10
     };
     const boxPrice = boxPrices[selectedBox] || 0;
-    const totalPrice = product.price + boxPrice;
+    const gmtPrice = selectedGmt ? 15 : 0;
+    const totalPrice = product.price + boxPrice + gmtPrice;
 
     const cartItem = {
         id: product.id,
@@ -195,7 +269,9 @@ function addToCart() {
             size: selectedSize,
             strap: selectedStrap,
             box: selectedBox,
-            boxPrice: boxPrice
+            boxPrice: boxPrice,
+            gmt: selectedGmt,
+            gmtPrice: gmtPrice
         }
     };
 
@@ -204,7 +280,8 @@ function addToCart() {
         item.id === cartItem.id &&
         item.customization.strap === cartItem.customization.strap &&
         item.customization.size === cartItem.customization.size &&
-        item.customization.box === cartItem.customization.box
+        item.customization.box === cartItem.customization.box &&
+        item.customization.gmt === cartItem.customization.gmt
     );
 
     if (existingIndex > -1) {

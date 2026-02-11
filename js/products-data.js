@@ -4,7 +4,7 @@ const products = [
         "name": "GMTeiko Bruce Wayne",
         "category": "GMTeiko",
         "league": "GMTeiko",
-        "price": 139.9,
+        "price": 129.9,
         "oldPrice": 169.9,
         "image": "/assets/productos/Productos/gmteiko-bruce-wayne/1.webp",
         "images": [
@@ -19,7 +19,7 @@ const products = [
         ],
         "specs": {
             "Diámetro": "40 mm (sin corona), perfecto equilibrio entre presencia y comodidad",
-            "Movimiento": "Seiko NH34 automático, preciso y fiable",
+            "Movimiento": "Seiko NH35 Automático (3 agujas) | Opción GMT: Seiko NH34 (4 agujas)",
             "Grosor": "13,5 mm, elegante y cómodo para el día a día",
             "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
             "Luminosidad": "Luminova en índices y agujas, legible en la oscuridad",
@@ -29,7 +29,8 @@ const products = [
             "Tamaño de muñeca": "Ajustable entre 14,5 cm y 22 cm",
             "Lugs": "20 mm, permite cambiar la correa fácilmente",
             "Correa": "En acero 904L con cierre de seguridad",
-            "Fondo de caja": "Cristal transparente, mostrando el movimiento"
+            "Fondo de caja": "Cristal transparente, mostrando el movimiento",
+            "Nota GMT": "Por defecto 3 agujas (NH35). Selecciona 'Aguja GMT' para 4 agujas (NH34)."
         }
     },
     {
@@ -191,7 +192,7 @@ const products = [
         "name": "GMTeiko Pepsi",
         "category": "GMTeiko",
         "league": "GMTeiko",
-        "price": 139.9,
+        "price": 129.9,
         "oldPrice": 169.9,
         "image": "/assets/productos/Productos/gmteiko-pepsi/1.webp",
         "images": [
@@ -205,7 +206,7 @@ const products = [
         ],
         "specs": {
             "Diámetro": "40 mm (sin corona), equilibrio perfecto entre presencia y comodidad",
-            "Movimiento": "Seiko NH34 automático, fiable y preciso",
+            "Movimiento": "Seiko NH35 Automático (3 agujas) | Opción GMT: Seiko NH34 (4 agujas)",
             "Grosor": "12.5 mm, elegante y cómodo para uso diario",
             "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
             "Luminosidad": "Luminova en índices y agujas, lectura perfecta incluso en la oscuridad",
@@ -215,7 +216,8 @@ const products = [
             "Tamaño de muñeca": "Ajustable entre 14,5 cm y 22 cm",
             "Lugs": "20 mm, permite cambios de correa fácilmente",
             "Correa": "en acero 904L con cierre de seguridad",
-            "Fondo de caja": "Cristal transparente, movimiento visible"
+            "Fondo de caja": "Cristal transparente, movimiento visible",
+            "Nota GMT": "Por defecto 3 agujas (NH35). Selecciona 'Aguja GMT' para 4 agujas (NH34)."
         }
     },
     {
@@ -307,7 +309,7 @@ const products = [
         "name": "GMTeiko Sprite",
         "category": "GMTeiko",
         "league": "GMTeiko",
-        "price": 139.9,
+        "price": 129.9,
         "oldPrice": 169.9,
         "image": "/assets/productos/Productos/gmteiko-sprite/1.webp",
         "images": [
@@ -323,7 +325,7 @@ const products = [
         ],
         "specs": {
             "Diámetro": "40 mm (sin corona), perfecto equilibrio entre comodidad y presencia",
-            "Movimiento": "Seiko NH34 automático, precisión garantizada",
+            "Movimiento": "Seiko NH35 Automático (3 agujas) | Opción GMT: Seiko NH34 (4 agujas)",
             "Grosor": "12.5 mm, estilizado y versátil",
             "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
             "Luminosidad": "Luminova en índices y agujas, visibilidad en todo momento",
@@ -333,7 +335,8 @@ const products = [
             "Tamaño de muñeca": "Ajustable entre 14,5 cm y 22 cm",
             "Lugs": "20 mm, compatibles con correas intercambiables",
             "Correa": "Acero 904L con cierre de seguridad",
-            "Fondo de caja": "Cristal transparente, movimiento visible"
+            "Fondo de caja": "Cristal transparente, movimiento visible",
+            "Nota GMT": "Por defecto 3 agujas (NH35). Selecciona 'Aguja GMT' para 4 agujas (NH34)."
         }
     },
     {
@@ -821,7 +824,7 @@ const products = [
         "name": "GMTeiko Rootbeer",
         "category": "GMTeiko",
         "league": "GMTeiko",
-        "price": 139.9,
+        "price": 129.9,
         "oldPrice": 169.9,
         "image": "/assets/productos/Productos/gmteiko-rootbeer/1.webp",
         "images": [
@@ -836,7 +839,7 @@ const products = [
         ],
         "specs": {
             "Diámetro": "40 mm (sin corona), equilibrio perfecto entre presencia y comodidad",
-            "Movimiento": "Seiko NH34 automático, fiable y preciso",
+            "Movimiento": "Seiko NH35 Automático (3 agujas) | Opción GMT: Seiko NH34 (4 agujas)",
             "Grosor": "12.5 mm, elegante y versátil para uso diario",
             "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
             "Luminosidad": "Luminova en índices y agujas, visibilidad perfecta incluso en la oscuridad",
@@ -846,7 +849,8 @@ const products = [
             "Tamaño de muñeca": "Ajustable entre 14,5 cm y 22 cm",
             "Lugs": "20 mm, permite cambios de correa fácilmente",
             "Correa": "Acero 904L con cierre de seguridad",
-            "Fondo de caja": "Cristal transparente, movimiento visible"
+            "Fondo de caja": "Cristal transparente, movimiento visible",
+            "Nota GMT": "Por defecto 3 agujas (NH35). Selecciona 'Aguja GMT' para 4 agujas (NH34)."
         }
     },
     {
@@ -870,7 +874,7 @@ const products = [
         ],
         "specs": {
             "Diámetro": "40 mm (sin corona), equilibrio perfecto entre elegancia y comodidad",
-            "Movimiento": "Seiko NH34 automático, fiable y preciso",
+            "Movimiento": "Seiko NH35 Automático (3 agujas) | Opción GMT: Seiko NH34 (4 agujas)",
             "Grosor": "12.5 mm, estilizado y versátil para uso diario",
             "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
             "Luminosidad": "Luminova en índices y agujas, visibilidad en todo momento",
@@ -880,7 +884,8 @@ const products = [
             "Tamaño de muñeca": "Ajustable entre 14,5 cm y 22 cm",
             "Lugs": "20 mm, compatibilidad con correas intercambiables",
             "Correa": "Acero 904L con cierre de seguridad",
-            "Fondo de caja": "Cristal transparente, movimiento visible"
+            "Fondo de caja": "Cristal transparente, movimiento visible",
+            "Nota GMT": "Por defecto 3 agujas (NH35). Selecciona 'Aguja GMT' para 4 agujas (NH34)."
         }
     },
     {
@@ -888,7 +893,7 @@ const products = [
         "name": "GMTeiko Coke",
         "category": "GMTeiko",
         "league": "GMTeiko",
-        "price": 139.9,
+        "price": 129.9,
         "oldPrice": 169.9,
         "image": "/assets/productos/Productos/gmteiko-coke/1.webp",
         "images": [
@@ -905,7 +910,7 @@ const products = [
         ],
         "specs": {
             "Diámetro": "40 mm (sin corona), equilibrio perfecto entre presencia y comodidad",
-            "Movimiento": "Seiko NH34 automático, fiable y preciso",
+            "Movimiento": "Seiko NH35 Automático (3 agujas) | Opción GMT: Seiko NH34 (4 agujas)",
             "Grosor": "12.5 mm, elegante y versátil para uso diario",
             "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
             "Luminosidad": "Luminova en índices y agujas, visibilidad perfecta incluso en la oscuridad",
@@ -915,7 +920,8 @@ const products = [
             "Tamaño de muñeca": "Ajustable entre 14,5 cm y 22 cm",
             "Lugs": "20 mm, permite cambios de correa fácilmente",
             "Correa": "Acero 904L con cierre de seguridad",
-            "Fondo de caja": "Cristal transparente, movimiento visible"
+            "Fondo de caja": "Cristal transparente, movimiento visible",
+            "Nota GMT": "Por defecto 3 agujas (NH35). Selecciona 'Aguja GMT' para 4 agujas (NH34)."
         }
     },
     {
@@ -1618,13 +1624,14 @@ const products = [
         "straps": [],
         "specs": {
             "Caja": "Acero inoxidable 316L",
-            "Movimiento": "Seiko NH35 automático",
+            "Movimiento": "Seiko NH35 Automático (3 agujas) | Opción GMT: Seiko NH34 (4 agujas)",
             "Grosor": "13,5 mm",
             "Cristal": "Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
             "Corona": "Corona atornillada para mejorar la estanqueidad",
             "Tamaño de muñeca": "Ajustable de 14,5 a 22 cm",
             "Pulsera": "Oyster - ancho 20 mm",
-            "Esfera": "28,5 mm"
+            "Esfera": "28,5 mm",
+            "Nota GMT": "Por defecto 3 agujas (NH35). Selecciona 'Aguja GMT' para 4 agujas (NH34)."
         }
     },
     {
@@ -1743,7 +1750,7 @@ const products = [
             "Oyster"
         ],
         "specs": {
-            "Movimiento": "Automático original NH34 Seiko Time Corp.",
+            "Movimiento": "Seiko NH35 Automático (3 agujas) | Opción GMT: Seiko NH34 (4 agujas)",
             "Caja": "Acero inoxidable 316L",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
@@ -1752,7 +1759,8 @@ const products = [
             "Bisel": "Cerámico",
             "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
             "Fondo de caja": "Cristal (movimiento visible) / Acero (parte trasera cerrada)",
-            "Función GMT": "Funcional"
+            "Función GMT": "Funcional",
+            "Nota GMT": "Por defecto 3 agujas (NH35). Selecciona 'Aguja GMT' para 4 agujas (NH34)."
         }
     },
     {
@@ -1772,7 +1780,7 @@ const products = [
             "Oyster"
         ],
         "specs": {
-            "Movimiento": "Automático original NH34 Seiko Time Corp.",
+            "Movimiento": "Seiko NH35 Automático (3 agujas) | Opción GMT: Seiko NH34 (4 agujas)",
             "Caja": "Acero inoxidable 316L",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
@@ -1781,7 +1789,8 @@ const products = [
             "Bisel": "Cerámico",
             "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
             "Fondo de caja": "Cristal (movimiento visible) / Acero (parte trasera cerrada)",
-            "Función GMT": "Funcional"
+            "Función GMT": "Funcional",
+            "Nota GMT": "Por defecto 3 agujas (NH35). Selecciona 'Aguja GMT' para 4 agujas (NH34)."
         }
     },
     {
@@ -2867,7 +2876,7 @@ const products = [
             "Oyster"
         ],
         "specs": {
-            "Movimiento": "Automático original NH34 Seiko Time Corp.",
+            "Movimiento": "Seiko NH35 Automático (3 agujas) | Opción GMT: Seiko NH34 (4 agujas)",
             "Caja": "Acero inoxidable 316L",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
@@ -2876,7 +2885,8 @@ const products = [
             "Bisel": "Cerámico",
             "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
             "Fondo de caja": "Cristal (movimiento visible) / Acero (parte trasera cerrada)",
-            "Función GMT": "Funcional"
+            "Función GMT": "Funcional",
+            "Nota GMT": "Por defecto 3 agujas (NH35). Selecciona 'Aguja GMT' para 4 agujas (NH34)."
         }
     },
     {
