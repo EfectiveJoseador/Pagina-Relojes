@@ -71,6 +71,47 @@ function generateStrapOptionsHTML(product) {
         </div>
     `;
 }
+
+function generateGMTOptionsHTML(product) {
+    // Check both category and league to catch any potential data mismatch
+    if (product.category !== 'GMTeiko' && product.league !== 'GMTeiko') {
+        return '';
+    }
+
+    return `
+        <div class="form-group" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
+            <label class="quick-gmt-label" style="
+                display: grid !important; 
+                grid-template-columns: 1fr auto !important;
+                align-items: center !important; 
+                gap: 15px !important;
+                cursor: pointer; 
+                padding: 8px 15px; 
+                background: rgba(255, 255, 255, 0.05); 
+                border: 1px solid var(--border); 
+                border-radius: 8px;
+                width: 100%; 
+                box-sizing: border-box;
+            ">
+                <div style="display:flex; flex-direction:column; align-items: flex-start;">
+                    <span style="font-weight:600; font-size:1.25em; color: var(--text-main);">Aguja GMT</span>
+                    <span style="font-size:1.1em; color:var(--primary); font-weight:500;">+€15.00</span>
+                </div>
+                
+                <input type="checkbox" class="quick-gmt" style="
+                    display: block !important;
+                    width: 18px !important; 
+                    height: 18px !important; 
+                    accent-color: var(--primary); 
+                    cursor: pointer;
+                    opacity: 1 !important;
+                    visibility: visible !important;
+                    margin: 0 !important;
+                ">
+            </label>
+        </div>
+    `;
+}
 import * as imageLoader from './imageLoader.js';
 function initLazyLoading() {
     imageLoader.init();
@@ -241,6 +282,7 @@ function renderProductRow(products, rowIndex) {
                     <form class="quick-add-form" data-product-id="${product.id}">
                         ${generateSizeOptionsHTML(product)}
                         ${generateStrapOptionsHTML(product)}
+                        ${generateGMTOptionsHTML(product)}
                         
                         <div class="form-group">
                             <label>Caja <span style="color: var(--text-muted); font-weight: 400; font-size: 0.8em;">Opcional</span></label>
@@ -398,6 +440,7 @@ function renderAllProductsInstantly(productsToShow) {
                     <form class="quick-add-form" data-product-id="${product.id}">
                         ${generateSizeOptionsHTML(product)}
                         ${generateStrapOptionsHTML(product)}
+                        ${generateGMTOptionsHTML(product)}
                         
                         <div class="form-group">
                             <label>Caja <span style="color: var(--text-muted); font-weight: 400; font-size: 0.8em;">Opcional</span></label>
@@ -470,28 +513,44 @@ function renderProducts() {
 
 function setupQuickAddListeners() {
 
-    document.querySelectorAll('.btn-quick-add').forEach(btn => {
-        btn.addEventListener('click', (e) => {
+    /* Refactored to use Event Delegation for better stability */
+    const grid = document.getElementById('product-grid');
+    if (!grid) return;
+
+    // Prevent attaching multiple listeners
+    if (grid.dataset.listenersAttached === 'true') {
+        attachFormListeners();
+        return;
+    }
+
+    // Mark as attached
+    grid.dataset.listenersAttached = 'true';
+
+    // Attach delegation listeners
+    grid.addEventListener('click', (e) => {
+        // Handle Quick Add Button Click
+        const btn = e.target.closest('.btn-quick-add');
+        if (btn) {
             e.preventDefault();
             e.stopPropagation();
             const productId = btn.dataset.id;
             toggleQuickAddPanel(productId);
-        });
-    });
+            return;
+        }
 
-
-    document.querySelectorAll('.quick-add-panel .panel-close').forEach(btn => {
-        btn.addEventListener('click', (e) => {
+        // Handle Panel Close Button Click
+        const closeBtn = e.target.closest('.panel-close');
+        if (closeBtn) {
             e.preventDefault();
             e.stopPropagation();
-            const productId = btn.dataset.id;
+            const productId = closeBtn.dataset.id;
             closeQuickAddPanel(productId);
-        });
-    });
+            return;
+        }
 
-
-    document.querySelectorAll('.optional-toggle').forEach(toggle => {
-        toggle.addEventListener('click', (e) => {
+        // Handle Optional Toggle Click
+        const toggle = e.target.closest('.optional-toggle');
+        if (toggle) {
             e.preventDefault();
             const productId = toggle.dataset.id;
             const optionalFields = document.querySelector(`.optional-fields[data-id="${productId}"]`);
@@ -499,11 +558,21 @@ function setupQuickAddListeners() {
                 optionalFields.classList.toggle('show');
                 toggle.classList.toggle('expanded');
             }
-        });
+            return;
+        }
     });
 
+    attachFormListeners();
+}
 
+function attachFormListeners() {
+    // Re-attach form listeners (must be direct because forms are within the grid)
     document.querySelectorAll('.quick-add-form').forEach(form => {
+        // Prevent double attachment on forms
+        if (form.dataset.listenerAttached === 'true') return;
+
+        form.dataset.listenerAttached = 'true';
+
         const productId = form.dataset.productId;
         const product = allProducts.find(p => p.id === parseInt(productId));
         if (!product) return;
@@ -525,6 +594,12 @@ function setupQuickAddListeners() {
             const box = boxSelect?.value || 'none';
             total += boxPrices[box] || 0;
 
+            // GMT Option
+            const gmtCheckbox = form.querySelector('.quick-gmt');
+            if (gmtCheckbox && gmtCheckbox.checked) {
+                total += 15;
+            }
+
             if (priceValue) {
                 priceValue.textContent = `€${total.toFixed(2)}`;
             }
@@ -534,6 +609,10 @@ function setupQuickAddListeners() {
 
 
         form.querySelectorAll('select').forEach(input => {
+            input.addEventListener('change', updatePrice);
+        });
+
+        form.querySelectorAll('.quick-gmt').forEach(input => {
             input.addEventListener('change', updatePrice);
         });
 
@@ -591,6 +670,7 @@ function handleQuickAddSubmit(form, product) {
     const sizeSelect = form.querySelector('.quick-size');
     const strapSelect = form.querySelector('.quick-strap');
     const boxSelect = form.querySelector('.quick-box');
+    const gmtCheckbox = form.querySelector('.quick-gmt');
 
     // Validar tamaño si es requerido
     if (product.sizes && product.sizes.length > 0) {
@@ -628,13 +708,20 @@ function handleQuickAddSubmit(form, product) {
     };
     const selectedBox = boxSelect?.value || 'none';
     const boxPrice = boxPrices[selectedBox] || 0;
-    const totalPrice = product.price + boxPrice;
+
+    // GMT Logic
+    const isGmtSelected = gmtCheckbox ? gmtCheckbox.checked : false;
+    const gmtPrice = isGmtSelected ? 15 : 0;
+
+    const totalPrice = product.price + boxPrice + gmtPrice;
 
     const customization = {
         size: sizeSelect?.value || null,
         strap: strapSelect?.value || null,
         box: selectedBox,
-        boxPrice: boxPrice
+        boxPrice: boxPrice,
+        gmt: isGmtSelected,
+        gmtPrice: gmtPrice
     };
 
     const cartItem = {
@@ -857,6 +944,7 @@ function attachEventListeners() {
     });
     document.getElementById('filter-league').addEventListener('change', (e) => {
         selectedLeague = e.target.value;
+        window.selectedLeague = selectedLeague; // Sync with window
         applyFilters();
     });
 

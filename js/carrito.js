@@ -157,6 +157,7 @@ const Cart = {
             const strap = custom.strap;
             const box = custom.box;
             const boxPrice = custom.boxPrice || 0;
+            const isGmtActive = custom.gmt === true;
 
             let customDetails = '';
 
@@ -182,13 +183,12 @@ const Cart = {
                 const boxName = boxNames[box] || box;
 
                 customDetails += `<div>${boxName}</div>`;
-            } else if (box === 'none') {
-
-
             }
 
-
-
+            // GMT Display
+            if (product.category === 'GMTeiko') {
+                customDetails += `<div>Aguja GMT: <strong>${isGmtActive ? 'Activada' : 'Desactivada'}</strong></div>`;
+            }
 
             if (!customDetails && (item.size || custom.size)) {
 
@@ -264,7 +264,8 @@ const Cart = {
                     <h4>${product.name} x${qty}</h4>
                     <p>
                         ${size !== 'N/A' ? `Tamaño: ${size}<br>` : ''}
-                        ${custom.strap ? `Correa: ${custom.strap}` : ''}
+                        ${custom.strap ? `Correa: ${custom.strap}<br>` : ''}
+                        ${product.category === 'GMTeiko' ? `Aguja GMT: ${custom.gmt ? 'Activada' : 'Desactivada'}` : ''}
                     </p>
                 </div>
                 <span>€${(basePrice * qty).toFixed(2)}</span>
