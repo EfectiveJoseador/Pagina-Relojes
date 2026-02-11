@@ -1545,6 +1545,47 @@
         min-height: 44px;
 
     }
+
+    /* Mobile Quick Add Optimization */
+    /* Mobile Quick Add Optimization */
+    .product-image {
+        padding-top: 0 !important;
+        height: auto !important;
+        overflow: visible !important;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-image img.primary-image {
+        position: relative !important;
+        height: auto !important;
+        width: 100% !important;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+    }
+
+    .quick-add-panel {
+        display: none;
+        /* Hide when not active to prevent spacing issues */
+    }
+
+    .quick-add-panel.active {
+        display: block !important;
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        max-height: none !important;
+        opacity: 1 !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        background: #111116;
+        /* Fallback */
+        background: linear-gradient(180deg, rgba(20, 20, 30, 0.99) 0%, rgba(10, 10, 15, 1) 100%);
+        box-shadow: none;
+        z-index: 20;
+        margin-top: -4px;
+        /* Slight overlap or fix gap */
+    }
 }
 
 
