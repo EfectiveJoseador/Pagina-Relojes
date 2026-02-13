@@ -41,31 +41,6 @@ class AntiBotProtection {
     }
 
     /**
-     * Add honeypot field to a form
-     * @param {HTMLFormElement} form - The form to protect
-     * @returns {HTMLInputElement} The honeypot field
-     */
-    addHoneypot(form) {
-        // Check if honeypot already exists
-        let honeypot = form.querySelector('#antibot-honeypot');
-        if (honeypot) return honeypot;
-
-        // Create honeypot field (invisible to users, visible to bots)
-        honeypot = document.createElement('input');
-        honeypot.type = 'text';
-        honeypot.name = 'website';
-        honeypot.id = 'antibot-honeypot';
-        honeypot.autocomplete = 'off';
-        honeypot.tabIndex = -1;
-        honeypot.setAttribute('aria-hidden', 'true');
-        honeypot.style.cssText = 'position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none;';
-
-        // Insert at the beginning of the form
-        form.insertBefore(honeypot, form.firstChild);
-        return honeypot;
-    }
-
-    /**
      * Add timestamp field to a form
      * @param {HTMLFormElement} form - The form to protect
      * @returns {HTMLInputElement} The timestamp field
@@ -130,7 +105,6 @@ class AntiBotProtection {
         if (!form) return;
 
         // Add protection fields
-        this.addHoneypot(form);
         this.addTimestamp(form);
         this.addInteractionField(form);
 
@@ -156,20 +130,7 @@ class AntiBotProtection {
             onBotDetected = null
         } = options;
 
-        // 1. Honeypot check
-        const honeypot = form.querySelector('#antibot-honeypot');
-        if (honeypot && honeypot.value !== '') {
-            console.warn('[Anti-Bot] Bot detected: honeypot filled');
-            if (onBotDetected) onBotDetected('honeypot');
-            if (silentFail) {
-                return false;
-            } else {
-                alert('Por favor, complete el formulario correctamente.');
-                return false;
-            }
-        }
-
-        // 2. Timestamp check
+        // 1. Timestamp check
         const timestampField = form.querySelector('#antibot-timestamp');
         if (timestampField && timestampField.value) {
             const timeOnPage = Date.now() - parseInt(timestampField.value);
@@ -181,7 +142,7 @@ class AntiBotProtection {
             }
         }
 
-        // 3. Interaction check
+        // 2. Interaction check (formerly 3)
         if (requireInteraction) {
             const interactionField = form.querySelector('#antibot-interaction');
             if (interactionField && interactionField.value === '0') {
