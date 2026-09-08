@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function updatePrice() {
-    const boxPrices = { 'none': 0, 'basic': 3, 'black': 5, 'brown': 5, 'seiko': 10 };
+    const boxPrices = { 'none': 0, 'basic': 8, 'black': 10, 'brown': 10, 'seiko': 15 };
     const boxPrice = boxPrices[selectedBox] || 0;
     const gmtPrice = selectedGmt ? 15 : 0;
 
@@ -249,10 +249,10 @@ function addToCart() {
 
     const boxPrices = {
         'none': 0,
-        'basic': 3,
-        'black': 5,
-        'brown': 5,
-        'seiko': 10
+        'basic': 8,
+        'black': 10,
+        'brown': 10,
+        'seiko': 15
     };
     const boxPrice = boxPrices[selectedBox] || 0;
     const gmtPrice = selectedGmt ? 15 : 0;

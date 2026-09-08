@@ -264,11 +264,20 @@ Phone Number: ${phone}`;
                 orderStr += "--------------------------------\n";
             });
 
-            orderStr += `\nTOTAL: €${subtotal.toFixed(2)}`;
+            const shipping = Cart.items.length > 0 ? 4.90 : 0;
+            const total = subtotal + shipping;
+
+            orderStr += `\nSubtotal: €${subtotal.toFixed(2)}`;
+            orderStr += `\nEnvío: €${shipping.toFixed(2)}`;
+            orderStr += `\nTOTAL: €${total.toFixed(2)}`;
             orderDetailsInput.value = orderStr;
 
-            document.getElementById('checkout-subtotal').textContent = `€${subtotal.toFixed(2)}`;
-            document.getElementById('checkout-total').textContent = `€${subtotal.toFixed(2)}`;
+            const subtotalEl = document.getElementById('checkout-subtotal');
+            const shippingEl = document.getElementById('checkout-shipping');
+            const totalEl = document.getElementById('checkout-total');
+            if (subtotalEl) subtotalEl.textContent = `€${subtotal.toFixed(2)}`;
+            if (shippingEl) shippingEl.textContent = `€${shipping.toFixed(2)}`;
+            if (totalEl) totalEl.textContent = `€${total.toFixed(2)}`;
         });
     }
 });

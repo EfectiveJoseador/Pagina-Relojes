@@ -103,17 +103,19 @@ const Cart = {
             totalQty += qty;
         });
 
-        if (totalQty === 0) return { subtotal: 0, shipping: 0, total: 0 };
+        if (totalQty === 0) {
+            const shippingEl = document.getElementById('shipping-price');
+            if (shippingEl) shippingEl.textContent = '€0.00';
+            return { subtotal: 0, shipping: 0, total: 0 };
+        }
 
-
-        let shipping = 0;
+        let shipping = 4.90;
         const total = subtotal + shipping;
 
         const shippingEl = document.getElementById('shipping-price');
         if (shippingEl) {
-            shippingEl.textContent = 'Gratis';
+            shippingEl.textContent = `€${shipping.toFixed(2)}`;
         }
-
 
         return { subtotal, shipping, total };
     },
@@ -141,7 +143,7 @@ const Cart = {
             if (checkoutBtn) checkoutBtn.classList.add('hidden');
             document.getElementById('subtotal-price').textContent = '€0.00';
             document.getElementById('total-price').textContent = '€0.00';
-            document.getElementById('shipping-price').textContent = 'Gratis';
+            document.getElementById('shipping-price').textContent = '€0.00';
 
             return;
         }
@@ -275,8 +277,10 @@ const Cart = {
 
         const calculations = this.calculateTotal();
         const subtotalEl = document.getElementById('checkout-subtotal');
+        const shippingEl = document.getElementById('checkout-shipping');
         const totalEl = document.getElementById('checkout-total');
         if (subtotalEl) subtotalEl.textContent = `€${calculations.subtotal.toFixed(2)}`;
+        if (shippingEl) shippingEl.textContent = `€${calculations.shipping.toFixed(2)}`;
         if (totalEl) totalEl.textContent = `€${calculations.total.toFixed(2)}`;
     }
 };
