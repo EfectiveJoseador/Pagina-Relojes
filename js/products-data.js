@@ -4,7 +4,7 @@ const products = [
         "name": "GMTeiko Bruce Wayne",
         "category": "GMTeiko",
         "league": "GMTeiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/gmteiko-bruce-wayne/1.webp",
         "images": [
@@ -19,7 +19,7 @@ const products = [
         ],
         "specs": {
             "Diámetro": "40 mm (sin corona), perfecto equilibrio entre presencia y comodidad",
-            "Movimiento": "Seiko NH35 Automático (3 agujas) | Opción GMT: Seiko NH34 (4 agujas)",
+            "Movimiento": "Automático",
             "Grosor": "13,5 mm, elegante y cómodo para el día a día",
             "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
             "Luminosidad": "Luminova en índices y agujas, legible en la oscuridad",
@@ -30,7 +30,7 @@ const products = [
             "Lugs": "20 mm, permite cambiar la correa fácilmente",
             "Correa": "En acero 904L con cierre de seguridad",
             "Fondo de caja": "Cristal transparente, mostrando el movimiento",
-            "Nota GMT": "Por defecto 3 agujas (NH35). Selecciona 'Aguja GMT' para 4 agujas (NH34)."
+            "Nota GMT": "Por defecto 3 agujas. Selecciona 'Aguja GMT' para 4 agujas."
         }
     },
     {
@@ -38,7 +38,7 @@ const products = [
         "name": "Nauteiko Openheart Silver Black",
         "category": "Nauteiko",
         "league": "Nauteiko",
-        "price": 174.9,
+        "price": 139.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/nauteiko-openheart-silver-black/1.webp",
         "images": [
@@ -49,7 +49,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "41 mm (sin corona), equilibrio entre presencia y comodidad",
-            "Movimiento": "Seiko NH38 automático, visible en el open-heart",
+            "Movimiento": "Automático",
             "Grosor": "12.5 mm, perfil estilizado y versátil",
             "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
             "Luminosidad": "Luminova en índices y agujas, legibilidad en la oscuridad",
@@ -66,7 +66,7 @@ const products = [
         "name": "Royal Seikoak Black",
         "category": "Royal Seikoak",
         "league": "Royal Seikoak",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/royal-seikoak-black/1.webp",
         "images": [
@@ -78,7 +78,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "41 mm (sin corona), equilibrio perfecto entre presencia y comodidad",
-            "Movimiento": "Seiko NH35 automático, fiable y preciso",
+            "Movimiento": "Automático",
             "Grosor": "12 mm, elegante y versátil para uso diario",
             "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
             "Luminosidad": "Luminova en índices y agujas, lectura perfecta incluso en la oscuridad",
@@ -96,7 +96,7 @@ const products = [
         "name": "Royal Seikoak Chrono Black",
         "category": "Royal Seikoak",
         "league": "Royal Seikoak",
-        "price": 149.9,
+        "price": 119.9,
         "oldPrice": 189.9,
         "image": "/assets/productos/Productos/royal-seikoak-chrono-black/1.webp",
         "images": [
@@ -106,7 +106,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "41 mm (sin incluir la corona), equilibrio perfecto entre presencia y comodidad",
-            "Movimiento": "Seiko VK63 mecaquartz (cuarzo híbrido), fiable y preciso",
+            "Movimiento": "Mecaquartz",
             "Grosor": "12 mm, estilizado y cómodo para uso diario",
             "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
             "Luminosidad": "Luminova en índices y agujas, visibilidad en todo momento",
@@ -124,7 +124,7 @@ const products = [
         "name": "Seikojust Sky Dweller Black",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-sky-dweller-black/1.webp",
         "images": [
@@ -143,7 +143,7 @@ const products = [
         ],
         "specs": {
             "Diámetro": "36 mm o 39 mm (sin corona), versatilidad para todo estilo",
-            "Movimiento": "Automático Seiko NH35, precisión reconocida mundialmente",
+            "Movimiento": "Automático",
             "Grosor": "12 mm, equilibrio entre presencia y comodidad",
             "Cristal": "Zafiro anti-arañazos con tratamiento antirreflejos",
             "Luminosidad": "Luminova en agujas e índices, legibilidad en cualquier situación",
@@ -159,7 +159,7 @@ const products = [
         "name": "Seikojust Black Roman",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-black-roman-stock/1.webp",
         "images": [
@@ -177,7 +177,7 @@ const products = [
         ],
         "specs": {
             "Diámetro": "36 mm o 39 mm (sin corona), adaptable para distintos tamaños de muñeca",
-            "Movimiento": "Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas",
+            "Movimiento": "Automático",
             "Grosor": "12 mm, cómodo para uso diario",
             "Cristal": "zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad",
             "Luminosidad": "Luminova en agujas para lectura óptima en la oscuridad",
@@ -192,7 +192,7 @@ const products = [
         "name": "GMTeiko Pepsi",
         "category": "GMTeiko",
         "league": "GMTeiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/gmteiko-pepsi/1.webp",
         "images": [
@@ -206,7 +206,7 @@ const products = [
         ],
         "specs": {
             "Diámetro": "40 mm (sin corona), equilibrio perfecto entre presencia y comodidad",
-            "Movimiento": "Seiko NH35 Automático (3 agujas) | Opción GMT: Seiko NH34 (4 agujas)",
+            "Movimiento": "Automático",
             "Grosor": "12.5 mm, elegante y cómodo para uso diario",
             "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
             "Luminosidad": "Luminova en índices y agujas, lectura perfecta incluso en la oscuridad",
@@ -217,7 +217,7 @@ const products = [
             "Lugs": "20 mm, permite cambios de correa fácilmente",
             "Correa": "en acero 904L con cierre de seguridad",
             "Fondo de caja": "Cristal transparente, movimiento visible",
-            "Nota GMT": "Por defecto 3 agujas (NH35). Selecciona 'Aguja GMT' para 4 agujas (NH34)."
+            "Nota GMT": "Por defecto 3 agujas. Selecciona 'Aguja GMT' para 4 agujas."
         }
     },
     {
@@ -225,7 +225,7 @@ const products = [
         "name": "Yatcheiko Master Rubber",
         "category": "Yatcheiko",
         "league": "Yatcheiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/yatcheiko-master-rubber/1.webp",
         "images": [
@@ -236,7 +236,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "40 mm, tamaño equilibrado y versátil",
-            "Movimiento": "Seiko NH35 automático, fiable y preciso",
+            "Movimiento": "Automático",
             "Cristal": "Zafiro antiarañazos con tratamiento antirreflectante",
             "Luminosidad": "Luminova en índices y manecillas, legibilidad en la oscuridad",
             "Caja": "Acero inoxidable 904L plateado, resistente y lujosa",
@@ -251,7 +251,7 @@ const products = [
         "name": "Royal Seikoak Ice Blue",
         "category": "Royal Seikoak",
         "league": "Royal Seikoak",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/royal-seikoak-ice-blue/1.webp",
         "images": [
@@ -265,7 +265,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "41 mm (sin corona), equilibrio perfecto entre presencia y comodidad",
-            "Movimiento": "Seiko NH35 automático, fiable y preciso",
+            "Movimiento": "Automático",
             "Grosor": "12 mm, elegante y versátil para uso diario",
             "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
             "Luminosidad": "Luminova en índices y agujas, lectura perfecta incluso en la oscuridad",
@@ -283,7 +283,7 @@ const products = [
         "name": "Yatcheiko Master Rose Gold Two Tone",
         "category": "Yatcheiko",
         "league": "Yatcheiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/yatcheiko-master-rose-gold-two-tone/1.webp",
         "images": [
@@ -295,7 +295,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "40 mm, proporciones equilibradas y elegantes",
-            "Movimiento": "Seiko NH35 automático, fiabilidad y precisión garantizadas",
+            "Movimiento": "Automático",
             "Cristal": "Zafiro antiarañazos con tratamiento antirreflectante",
             "Luminosidad": "Luminova en índices y manecillas, visibilidad total en la oscuridad",
             "Caja": "Acero inoxidable 904L con acabados en oro rosa, robustez y distinción",
@@ -309,7 +309,7 @@ const products = [
         "name": "GMTeiko Sprite",
         "category": "GMTeiko",
         "league": "GMTeiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/gmteiko-sprite/1.webp",
         "images": [
@@ -325,7 +325,7 @@ const products = [
         ],
         "specs": {
             "Diámetro": "40 mm (sin corona), perfecto equilibrio entre comodidad y presencia",
-            "Movimiento": "Seiko NH35 Automático (3 agujas) | Opción GMT: Seiko NH34 (4 agujas)",
+            "Movimiento": "Automático",
             "Grosor": "12.5 mm, estilizado y versátil",
             "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
             "Luminosidad": "Luminova en índices y agujas, visibilidad en todo momento",
@@ -336,7 +336,7 @@ const products = [
             "Lugs": "20 mm, compatibles con correas intercambiables",
             "Correa": "Acero 904L con cierre de seguridad",
             "Fondo de caja": "Cristal transparente, movimiento visible",
-            "Nota GMT": "Por defecto 3 agujas (NH35). Selecciona 'Aguja GMT' para 4 agujas (NH34)."
+            "Nota GMT": "Por defecto 3 agujas. Selecciona 'Aguja GMT' para 4 agujas."
         }
     },
     {
@@ -344,7 +344,7 @@ const products = [
         "name": "Yatch Master Rose Gold Black",
         "category": "Yatcheiko",
         "league": "Yatcheiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/yatch-master-rose-gold-black/1.webp",
         "images": [
@@ -358,7 +358,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "40 mm, equilibrio entre presencia y comodidad",
-            "Movimiento": "Seiko NH35 automático, reconocido por su precisión y fiabilidad",
+            "Movimiento": "Automático",
             "Cristal": "Zafiro antiarañazos con tratamiento antirreflectante, máxima claridad",
             "Luminosidad": "Luminova en índices y manecillas, legibilidad total en la oscuridad",
             "Caja": "Acero inoxidable 904L con acabados en oro rosa, durabilidad premium",
@@ -372,7 +372,7 @@ const products = [
         "name": "Nauteiko Rose Gold Chocolatte",
         "category": "Nauteiko",
         "league": "Nauteiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/nauteiko-rose-gold-chocolatte/1.webp",
         "images": [
@@ -384,7 +384,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "41 mm (sin corona), perfecto equilibrio entre elegancia y presencia",
-            "Movimiento": "Automático Seiko NH35, fiable y preciso",
+            "Movimiento": "Automático",
             "Grosor": "12 mm, cómodo y estilizado",
             "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
             "Luminosidad": "Luminova en índices y agujas, visibilidad óptima incluso en la oscuridad",
@@ -400,7 +400,7 @@ const products = [
         "name": "Royal Seikoak White",
         "category": "Royal Seikoak",
         "league": "Royal Seikoak",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/royal-seikoak-white/1.webp",
         "images": [
@@ -412,7 +412,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "41 mm (sin corona), presencia destacada y cómoda",
-            "Movimiento": "Seiko NH35 automático, fiable y preciso",
+            "Movimiento": "Automático",
             "Grosor": "12.5 mm, elegante y versátil para uso diario",
             "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
             "Luminosidad": "Luminova en índices y agujas, lectura perfecta incluso en la oscuridad",
@@ -430,7 +430,7 @@ const products = [
         "name": "Seikomariner Black",
         "category": "SeikoMariner",
         "league": "SeikoMariner",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikomariner-black/1.webp",
         "images": [
@@ -441,7 +441,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "40 mm (sin incluir la corona), perfecto equilibrio entre presencia y comodidad",
-            "Movimiento": "Seiko NH35 automático, fiable y preciso con reserva de marcha prolongada",
+            "Movimiento": "Automático",
             "Grosor": "13,5 mm, elegante y robusto para uso diario",
             "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante, claridad máxima y protección total",
             "Luminosidad": "Luminova en índices y agujas, lectura perfecta incluso en la oscuridad",
@@ -459,7 +459,7 @@ const products = [
         "name": "Seikojust Light Blue Roman",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-light-blue-roman/1.webp",
         "images": [
@@ -477,7 +477,7 @@ const products = [
         ],
         "specs": {
             "Diámetro": "36 mm o 39 mm (sin corona), adaptable para distintos tamaños de muñeca",
-            "Movimiento": "Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas",
+            "Movimiento": "Automático",
             "Grosor": "",
             "Cristal": "zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad",
             "Luminosidad": "Luminova en índices y agujas para lectura óptima en la oscuridad",
@@ -492,7 +492,7 @@ const products = [
         "name": "Seikomariner Hulk",
         "category": "SeikoMariner",
         "league": "SeikoMariner",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikomariner-hulk/1.webp",
         "images": [
@@ -504,7 +504,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "40 mm (sin incluir la corona), equilibrio perfecto entre presencia y comodidad",
-            "Movimiento": "Seiko NH35 automático, fiable y preciso con reserva de marcha prolongada",
+            "Movimiento": "Automático",
             "Grosor": "13,5 mm, elegante y robusto para uso diario",
             "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante, claridad máxima y protección total",
             "Luminosidad": "Luminova en índices y agujas, lectura óptima incluso en la oscuridad",
@@ -522,7 +522,7 @@ const products = [
         "name": "Seikojust Green Olive Classic",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-green-olive-classic/1.webp",
         "images": [
@@ -541,7 +541,7 @@ const products = [
         ],
         "specs": {
             "Diámetro": "36 mm o 39 mm (sin corona), adaptable a cualquier muñeca",
-            "Movimiento": "Seiko NH35 automático, precisión y fiabilidad con reserva de 41 h",
+            "Movimiento": "Automático",
             "Grosor": "Aproximadamente 12 mm, cómodo para uso diario",
             "Cristal": "Zafiro con tratamiento antirreflejos, resistente a rayaduras",
             "Luminosidad": "Luminova en agujas e índices, perfecta visibilidad en la oscuridad",
@@ -556,7 +556,7 @@ const products = [
         "name": "Seikojust Sky Dweller Blue",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-sky-dweller-blue/2.webp",
         "images": [
@@ -576,7 +576,7 @@ const products = [
         ],
         "specs": {
             "Diámetro": "36 mm o 39 mm (sin corona), adaptado a cada estilo",
-            "Movimiento": "Automático Seiko NH35, fiable y preciso",
+            "Movimiento": "Automático",
             "Grosor": "12 mm, ideal para la comodidad diaria",
             "Cristal": "Zafiro anti-arañazos con tratamiento antirreflejos",
             "Luminosidad": "Luminova en agujas e índices para visibilidad total",
@@ -592,7 +592,7 @@ const products = [
         "name": "Seitona Black Panda",
         "category": "Seitona",
         "league": "Seitona",
-        "price": 149.9,
+        "price": 119.9,
         "oldPrice": 189.9,
         "image": "/assets/productos/Productos/seitona-black-panda/1.webp",
         "images": [
@@ -605,7 +605,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "40 mm (sin corona), equilibrio perfecto entre elegancia y presencia",
-            "Movimiento": "Seiko VK63 mecaquartz (cuarzo híbrido), preciso y con cronógrafo funcional de barrido suave",
+            "Movimiento": "Mecaquartz",
             "Grosor": "12 mm, delgado y cómodo para vestir o llevar a diario",
             "Cristal": "zafiro con tratamiento antirreflejos, alta claridad y resistencia a rayaduras",
             "Luminosidad": "Luminova, con visibilidad total incluso en ambientes oscuros",
@@ -623,7 +623,7 @@ const products = [
         "name": "Santeiko Black",
         "category": "Santeiko",
         "league": "Santeiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/santeiko-black/1.webp",
         "images": [
@@ -635,7 +635,7 @@ const products = [
         "specs": {
             "Diámetro": "38 mm",
             "Grosor": "12 mm",
-            "Movimiento": "Seiko NH35 automático, fiable y preciso",
+            "Movimiento": "Automático",
             "Cristal": "Zafiro con tratamiento antirreflejos, alta claridad y resistencia a rayaduras",
             "Luminosidad": "Luminova en índices y agujas, visibilidad total en ambientes oscuros",
             "Caja": "Acero inoxidable 316L con acabado pulido, resistente y elegante",
@@ -651,7 +651,7 @@ const products = [
         "name": "Nauteiko Openheart Rose Gold Chocolatte",
         "category": "Nauteiko",
         "league": "Nauteiko",
-        "price": 174.9,
+        "price": 139.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/nauteiko-openheart-rose-gold-chocolatte/1.webp",
         "images": [
@@ -663,7 +663,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "41 mm (sin incluir la corona), moderno y equilibrado",
-            "Movimiento": "Automático Seiko NH38, visible en la ventana open-heart",
+            "Movimiento": "Automático",
             "Grosor": "12 mm, cómodo para el uso diario",
             "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
             "Luminosidad": "Luminova en agujas e índices, perfecta en baja luz",
@@ -680,7 +680,7 @@ const products = [
         "name": "Nauteiko Chrono White",
         "category": "Nauteiko",
         "league": "Nauteiko",
-        "price": 149.9,
+        "price": 119.9,
         "oldPrice": 189.9,
         "image": "/assets/productos/Productos/nauteiko-chrono-white/1.webp",
         "images": [
@@ -693,7 +693,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "41 mm (sin corona)",
-            "Movimiento": "Seiko VK61 mecaquartz (cuarzo híbrido) con cronógrafo funcional",
+            "Movimiento": "Mecaquartz",
             "Cristal": "Zafiro antiarañazos con tratamiento antirreflejos",
             "Luminosidad": "Luminova en índices y agujas",
             "Caja": "Acero inoxidable 316L pulido, resistente y elegante",
@@ -709,7 +709,7 @@ const products = [
         "name": "Nauteiko Grey",
         "category": "Nauteiko",
         "league": "Nauteiko",
-        "price": 162.9,
+        "price": 139.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/nauteiko-grey/1.webp",
         "images": [
@@ -719,7 +719,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "41 mm (sin incluir la corona), moderno y equilibrado",
-            "Movimiento": "Automático Seiko NH35, visible en la ventana open-heart",
+            "Movimiento": "Automático",
             "Grosor": "12 mm, cómodo para el uso diario",
             "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
             "Luminosidad": "Luminova en agujas e índices, perfecta en baja luz",
@@ -736,7 +736,7 @@ const products = [
         "name": "Nauteiko Gold Black",
         "category": "Nauteiko",
         "league": "Nauteiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/nauteiko-gold-black/1.webp",
         "images": [
@@ -749,7 +749,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "41 mm (sin incluir la corona), moderno y equilibrado",
-            "Movimiento": "Seiko NH35 automático, fiable y preciso",
+            "Movimiento": "Automático",
             "Grosor": "12 mm, cómodo para el uso diario",
             "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
             "Luminosidad": "Luminova en agujas e índices, perfecta en baja luz",
@@ -766,7 +766,7 @@ const products = [
         "name": "Nauteiko Openheart Rose Gold Black",
         "category": "Nauteiko",
         "league": "Nauteiko",
-        "price": 174.9,
+        "price": 139.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/nauteiko-openheart-rose-gold-black/1.webp",
         "images": [
@@ -776,7 +776,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "41 mm (sin corona), equilibrio entre presencia y comodidad",
-            "Movimiento": "Seiko NH38 automático, visible en el open-heart",
+            "Movimiento": "Automático",
             "Grosor": "12.5 mm, perfil estilizado y versátil",
             "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
             "Luminosidad": "Luminova en índices y agujas, legibilidad en la oscuridad",
@@ -793,7 +793,7 @@ const products = [
         "name": "Royal Seikoak Chrono Green",
         "category": "Royal Seikoak",
         "league": "Royal Seikoak",
-        "price": 149.9,
+        "price": 119.9,
         "oldPrice": 189.9,
         "image": "/assets/productos/Productos/royal-seikoak-chrono-green/1.webp",
         "images": [
@@ -806,7 +806,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "41 mm (sin corona), equilibrio entre presencia y comodidad",
-            "Movimiento": "Seiko VK63 mecaquartz (cuarzo híbrido), fiabilidad absoluta",
+            "Movimiento": "Mecaquartz",
             "Grosor": "12 mm, estilizado y cómodo para uso diario",
             "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
             "Luminosidad": "Luminova en agujas e índices, lectura en la oscuridad",
@@ -824,7 +824,7 @@ const products = [
         "name": "GMTeiko Rootbeer",
         "category": "GMTeiko",
         "league": "GMTeiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/gmteiko-rootbeer/1.webp",
         "images": [
@@ -839,7 +839,7 @@ const products = [
         ],
         "specs": {
             "Diámetro": "40 mm (sin corona), equilibrio perfecto entre presencia y comodidad",
-            "Movimiento": "Seiko NH35 Automático (3 agujas) | Opción GMT: Seiko NH34 (4 agujas)",
+            "Movimiento": "Automático",
             "Grosor": "12.5 mm, elegante y versátil para uso diario",
             "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
             "Luminosidad": "Luminova en índices y agujas, visibilidad perfecta incluso en la oscuridad",
@@ -850,7 +850,7 @@ const products = [
             "Lugs": "20 mm, permite cambios de correa fácilmente",
             "Correa": "Acero 904L con cierre de seguridad",
             "Fondo de caja": "Cristal transparente, movimiento visible",
-            "Nota GMT": "Por defecto 3 agujas (NH35). Selecciona 'Aguja GMT' para 4 agujas (NH34)."
+            "Nota GMT": "Por defecto 3 agujas. Selecciona 'Aguja GMT' para 4 agujas."
         }
     },
     {
@@ -858,7 +858,7 @@ const products = [
         "name": "GMT Zombie",
         "category": "GMTeiko",
         "league": "GMTeiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/gmt-zombie/1.webp",
         "images": [
@@ -874,7 +874,7 @@ const products = [
         ],
         "specs": {
             "Diámetro": "40 mm (sin corona), equilibrio perfecto entre elegancia y comodidad",
-            "Movimiento": "Seiko NH35 Automático (3 agujas) | Opción GMT: Seiko NH34 (4 agujas)",
+            "Movimiento": "Automático",
             "Grosor": "12.5 mm, estilizado y versátil para uso diario",
             "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
             "Luminosidad": "Luminova en índices y agujas, visibilidad en todo momento",
@@ -885,7 +885,7 @@ const products = [
             "Lugs": "20 mm, compatibilidad con correas intercambiables",
             "Correa": "Acero 904L con cierre de seguridad",
             "Fondo de caja": "Cristal transparente, movimiento visible",
-            "Nota GMT": "Por defecto 3 agujas (NH35). Selecciona 'Aguja GMT' para 4 agujas (NH34)."
+            "Nota GMT": "Por defecto 3 agujas. Selecciona 'Aguja GMT' para 4 agujas."
         }
     },
     {
@@ -893,7 +893,7 @@ const products = [
         "name": "GMTeiko Coke",
         "category": "GMTeiko",
         "league": "GMTeiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/gmteiko-coke/1.webp",
         "images": [
@@ -910,7 +910,7 @@ const products = [
         ],
         "specs": {
             "Diámetro": "40 mm (sin corona), equilibrio perfecto entre presencia y comodidad",
-            "Movimiento": "Seiko NH35 Automático (3 agujas) | Opción GMT: Seiko NH34 (4 agujas)",
+            "Movimiento": "Automático",
             "Grosor": "12.5 mm, elegante y versátil para uso diario",
             "Cristal": "Zafiro anti-arañazos con tratamiento antirreflectante",
             "Luminosidad": "Luminova en índices y agujas, visibilidad perfecta incluso en la oscuridad",
@@ -921,7 +921,7 @@ const products = [
             "Lugs": "20 mm, permite cambios de correa fácilmente",
             "Correa": "Acero 904L con cierre de seguridad",
             "Fondo de caja": "Cristal transparente, movimiento visible",
-            "Nota GMT": "Por defecto 3 agujas (NH35). Selecciona 'Aguja GMT' para 4 agujas (NH34)."
+            "Nota GMT": "Por defecto 3 agujas. Selecciona 'Aguja GMT' para 4 agujas."
         }
     },
     {
@@ -929,7 +929,7 @@ const products = [
         "name": "Seitona Gold Ice Blue",
         "category": "Seitona",
         "league": "Seitona",
-        "price": 149.9,
+        "price": 119.9,
         "oldPrice": 189.9,
         "image": "/assets/productos/Productos/seitona-gold-ice-blue/1.webp",
         "images": [
@@ -942,7 +942,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "40 mm (sin corona), proporciones icónicas de la línea Seitona",
-            "Movimiento": "Seiko VK63 mecaquartz (cuarzo híbrido), cronógrafo funcional con segundero fluido (5 ticks\\/segundo)",
+            "Movimiento": "Mecaquartz",
             "Grosor": "12 mm, perfecto equilibrio entre comodidad y presencia",
             "Cristal": "Zafiro con tratamiento antirreflejos, máxima resistencia y nitidez",
             "Luminosidad": "Luminova en agujas e índices, visibilidad incluso en la oscuridad",
@@ -959,7 +959,7 @@ const products = [
         "name": "Seitona Rose Gold Rainbow",
         "category": "Seitona",
         "league": "Seitona",
-        "price": 149.9,
+        "price": 119.9,
         "oldPrice": 189.9,
         "image": "/assets/productos/Productos/seitona-rose-gold-rainbow/1.webp",
         "images": [
@@ -971,7 +971,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "40 mm (sin corona), medida equilibrada con presencia visual impactante",
-            "Movimiento": "Seiko VK63 mecaquartz, híbrido entre cuarzo y mecánico, con cronógrafo funcional y barrido suave",
+            "Movimiento": "Mecaquartz",
             "Grosor": "12 mm, perfil delgado y cómodo para un uso diario con carácter",
             "Cristal": "zafiro con tratamiento antirreflejos, ultraresistente y de visibilidad impecable",
             "Luminosidad": "Luminova, para destacar incluso en la oscuridad",
@@ -990,7 +990,7 @@ const products = [
         "name": "Seitona Gold Black II",
         "category": "Seitona",
         "league": "Seitona",
-        "price": 149.9,
+        "price": 119.9,
         "oldPrice": 189.9,
         "image": "/assets/productos/Productos/seitona-gold-black-ii/1.webp",
         "images": [
@@ -1000,7 +1000,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "40 mm (sin corona), tamaño clásico de la línea Seitona",
-            "Movimiento": "Seiko VK63 mecaquartz (cuarzo híbrido), cronógrafo funcional con segundero fluido",
+            "Movimiento": "Mecaquartz",
             "Grosor": "12 mm, cómodo y elegante en la muñeca",
             "Cristal": "Zafiro con revestimiento antirreflejos, máxima resistencia",
             "Luminosidad": "Luminova, visibilidad óptima en ambientes oscuros",
@@ -1018,7 +1018,7 @@ const products = [
         "name": "Seitona Silver Blue",
         "category": "Seitona",
         "league": "Seitona",
-        "price": 149.9,
+        "price": 119.9,
         "oldPrice": 189.9,
         "image": "/assets/productos/Productos/seitona-silver-blue/1.webp",
         "images": [
@@ -1030,7 +1030,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "40 mm (sin corona), tamaño clásico y equilibrado",
-            "Movimiento": "Seiko VK63 mecaquartz (cuarzo híbrido), cronógrafo funcional con segundero fluido",
+            "Movimiento": "Mecaquartz",
             "Grosor": "12 mm, perfil fino y cómodo en la muñeca",
             "Cristal": "Zafiro con antirreflejos, resistencia y claridad superior",
             "Luminosidad": "Luminova, visibilidad garantizada en ambientes con poca luz",
@@ -1048,7 +1048,7 @@ const products = [
         "name": "Seitona Gold Green",
         "category": "Seitona",
         "league": "Seitona",
-        "price": 149.9,
+        "price": 119.9,
         "oldPrice": 189.9,
         "image": "/assets/productos/Productos/seitona-gold-green/1.webp",
         "images": [
@@ -1060,7 +1060,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "40 mm (sin corona), tamaño icónico y versátil",
-            "Movimiento": "Seiko VK63 mecaquartz (cuarzo híbrido), cronógrafo funcional con barrido suave",
+            "Movimiento": "Mecaquartz",
             "Grosor": "12 mm, perfil fino y cómodo en la muñeca",
             "Cristal": "Zafiro con antirreflejos, máxima resistencia y nitidez",
             "Luminosidad": "Luminova, lectura clara incluso en ambientes oscuros",
@@ -1078,7 +1078,7 @@ const products = [
         "name": "Seikojust Gold White Arabic",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-gold-white-arabic/1.webp",
         "images": [
@@ -1096,7 +1096,7 @@ const products = [
         ],
         "specs": {
             "Diámetro": "36 mm o 39 mm (sin corona), adaptable para distintos tamaños de muñeca",
-            "Movimiento": "Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas",
+            "Movimiento": "Automático",
             "Grosor": "aproximadamente 12 mm, cómodo para uso diario",
             "Cristal": "zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad",
             "Luminosidad": "Luminova en agujas para lectura óptima en la oscuridad",
@@ -1111,7 +1111,7 @@ const products = [
         "name": "Seikojust Green Roman",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-green-roman/1.webp",
         "images": [
@@ -1129,7 +1129,7 @@ const products = [
         ],
         "specs": {
             "Diámetro": "36 mm o 39 mm (sin corona), adaptable para distintos tamaños de muñeca",
-            "Movimiento": "Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas",
+            "Movimiento": "Automático",
             "Grosor": "aproximadamente 12 mm, cómodo para uso diario",
             "Cristal": "zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad",
             "Luminosidad": "Luminova en agujas para lectura óptima en la oscuridad",
@@ -1145,7 +1145,7 @@ const products = [
         "name": "Seikojust Diamond Bronze Rose Gold",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-diamond-bronze-rose-gold/1.webp",
         "images": [
@@ -1164,7 +1164,7 @@ const products = [
         ],
         "specs": {
             "Diámetro": "36 mm o 39 mm (sin corona), adaptable para distintos gustos y tamaños de muñeca",
-            "Movimiento": "Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas",
+            "Movimiento": "Automático",
             "Grosor": "aproximadamente 12 mm, cómodo para uso diario",
             "Cristal": "zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad",
             "Luminosidad": "Luminova en índices y agujas para lectura óptima en la oscuridad",
@@ -1179,7 +1179,7 @@ const products = [
         "name": "Seikojust Diamond Black",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-diamond-black/1.webp",
         "images": [
@@ -1197,7 +1197,7 @@ const products = [
         ],
         "specs": {
             "Diámetro": "36 mm o 39 mm (sin corona), adaptable para distintos gustos y tamaños de muñeca",
-            "Movimiento": "Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas",
+            "Movimiento": "Automático",
             "Grosor": "aproximadamente 12 mm, cómodo para uso diario",
             "Cristal": "zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad",
             "Luminosidad": "Luminova en índices y agujas para lectura óptima en la oscuridad",
@@ -1212,7 +1212,7 @@ const products = [
         "name": "Seikojust Diamond Gold",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-diamond-gold/1.webp",
         "images": [
@@ -1232,7 +1232,7 @@ const products = [
         ],
         "specs": {
             "Diámetro": "36 mm o 39 mm (sin corona), adaptable para distintos gustos y tamaños de muñeca",
-            "Movimiento": "Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas",
+            "Movimiento": "Automático",
             "Grosor": "Aproximadamente 12 mm, cómodo para uso diario",
             "Cristal": "Zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad",
             "Luminosidad": "Luminova en índices y agujas para lectura óptima en la oscuridad",
@@ -1247,7 +1247,7 @@ const products = [
         "name": "Seikojust Wimbledon Black",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-wimbledon-black/1.webp",
         "images": [
@@ -1266,7 +1266,7 @@ const products = [
         ],
         "specs": {
             "Diámetro": "36 mm, 39 mm o 31mm (sin corona), adaptable para distintos gustos y tamaños de muñeca",
-            "Movimiento": "Seiko NH35 automático, fiable y preciso con reserva de marcha aproximada de 41 horas",
+            "Movimiento": "Automático",
             "Grosor": "aproximadamente 12 mm, cómodo para uso diario",
             "Cristal": "zafiro con tratamiento antirreflejos, resistente a rayaduras y con gran claridad",
             "Luminosidad": "Luminova en índices y agujas para lectura óptima en la oscuridad",
@@ -1281,7 +1281,7 @@ const products = [
         "name": "Seikojust Arabic Green",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-arabic-green/1.webp",
         "images": [
@@ -1301,7 +1301,7 @@ const products = [
         ],
         "specs": {
             "Diámetro": "36 mm o 39 mm (sin corona), adaptable a distintos tamaños de muñeca",
-            "Movimiento": "Automático Seiko NH35, preciso y fiable con reserva de marcha de ~41 h",
+            "Movimiento": "Automático",
             "Grosor": "~12 mm, equilibrio entre comodidad y presencia",
             "Cristal": "Zafiro con tratamiento antirreflejos, resistente a rayaduras y con máxima nitidez",
             "Luminosidad": "Luminova en agujas e índices para excelente visibilidad en la oscuridad",
@@ -1316,7 +1316,7 @@ const products = [
         "name": "Seikojust Sky Dweller Gold Black",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-sky-dweller-gold-black/1.webp",
         "images": [
@@ -1335,7 +1335,7 @@ const products = [
         ],
         "specs": {
             "Diámetro": "36 mm o 39 mm (sin corona), adaptable a cualquier estilo",
-            "Movimiento": "Automático Seiko NH35, precisión y fiabilidad excepcionales",
+            "Movimiento": "Automático",
             "Grosor": "12 mm, cómodo y equilibrado",
             "Cristal": "Zafiro antiarañazos con tratamiento antirreflejos, máxima claridad",
             "Luminosidad": "Luminova en agujas e índices, legibilidad garantizada en la oscuridad",
@@ -1350,7 +1350,7 @@ const products = [
         "name": "Exploreiko Black",
         "category": "Exploreiko",
         "league": "Exploreiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/exploreiko-i-black/1.webp",
         "images": [
@@ -1365,7 +1365,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "36 mm o 39 mm (sin corona), diseño equilibrado y elegante",
-            "Movimiento": "Automático Seiko NH35, fiable y preciso",
+            "Movimiento": "Automático",
             "Grosor": "12 mm, cómodo para uso diario",
             "Cristal": "Zafiro anti-arañazos con tratamiento antirreflejos",
             "Luminosidad": "Luminova en agujas e índices, perfecta visibilidad en la oscuridad",
@@ -1381,7 +1381,7 @@ const products = [
         "name": "Exploreiko Tiffany Blue",
         "category": "Exploreiko",
         "league": "Exploreiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/exploreiko-i-tiffany-blue/1.webp",
         "images": [
@@ -1390,7 +1390,7 @@ const products = [
         "sizes": [],
         "straps": [],
         "specs": {
-            "Movimiento": "Automático NH35, fiable y preciso.\\n\\n\\nEsfera: Negra minimalista con índices luminiscentes.\\n\\n\\nBrazalete: Tipo Oyster en acero inoxidable 904L con cierre seguro.\\n\\n\\n",
+            "Movimiento": "Automático",
             "Esfera": "Negra minimalista con índices luminiscentes.\\n\\n\\n",
             "Brazalete": "Tipo Oyster en acero inoxidable 904L con cierre seguro.\\n\\n\\nResistencia al agua: 50 metros (5 ATM).\\n\\n\\n",
             "Reserva de marcha": "Aproximadamente 41 horas.\\n\\n"
@@ -1401,7 +1401,7 @@ const products = [
         "name": "Seikojust - Numero arábigo - Navy Elegance",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-numero-ar-bigo-navy-elegance/1.webp",
         "images": [
@@ -1420,7 +1420,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "39 mm",
-            "Movimiento": "Seiko NH35 automático",
+            "Movimiento": "Automático",
             "Grosor": "12,5 mm",
             "Cristal": "Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
             "Corona": "Corona atornillada para mejorar la estanqueidad",
@@ -1434,7 +1434,7 @@ const products = [
         "name": "Seikojust - Número arábigo - Esmeralda real",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-n-mero-ar-bigo-esmeralda-real/1.webp",
         "images": [
@@ -1453,7 +1453,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "39 mm",
-            "Movimiento": "Seiko NH35 automático",
+            "Movimiento": "Automático",
             "Grosor": "12,5 mm",
             "Cristal": "Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
             "Corona": "Corona atornillada para mejorar la estanqueidad",
@@ -1467,7 +1467,7 @@ const products = [
         "name": "SeikoDayDate - Número romano - Mont Blanc",
         "category": "SeikoDayDate",
         "league": "SeikoDayDate",
-        "price": 169.9,
+        "price": 134.9,
         "oldPrice": 219.9,
         "image": "/assets/productos/Productos/seikojust-n-mero-romano-mont-blanc/1.webp",
         "images": [
@@ -1481,7 +1481,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "39 mm",
-            "Movimiento": "Seiko NH35 automático",
+            "Movimiento": "Automático",
             "Grosor": "12,5 mm",
             "Cristal": "Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
             "Corona": "Corona atornillada para mejorar la estanqueidad",
@@ -1495,7 +1495,7 @@ const products = [
         "name": "SeikoDayDate - Numero Romano - Acero Niebla",
         "category": "SeikoDayDate",
         "league": "SeikoDayDate",
-        "price": 169.9,
+        "price": 134.9,
         "oldPrice": 219.9,
         "image": "/assets/productos/Productos/seikojust-numero-romano-acero-niebla/1.webp",
         "images": [
@@ -1509,7 +1509,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "39 mm",
-            "Movimiento": "Seiko NH35 automático",
+            "Movimiento": "Automático",
             "Grosor": "12,5 mm",
             "Cristal": "Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
             "Corona": "Corona atornillada para mejorar la estanqueidad",
@@ -1523,7 +1523,7 @@ const products = [
         "name": "Seikojust - Escarlata Real",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-escarlata-real/1.webp",
         "images": [
@@ -1541,7 +1541,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "39 mm",
-            "Movimiento": "Seiko NH35 automático",
+            "Movimiento": "Automático",
             "Grosor": "12,5 mm",
             "Cristal": "Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
             "Corona": "Corona atornillada para mejorar la estanqueidad",
@@ -1555,7 +1555,7 @@ const products = [
         "name": "Seikojust - Numeración arábiga - Oro del desierto",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-numeraci-n-ar-biga-oro-del-desierto/1.webp",
         "images": [],
@@ -1571,7 +1571,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "39 mm",
-            "Movimiento": "Seiko NH35 automático",
+            "Movimiento": "Automático",
             "Grosor": "12,5 mm",
             "Cristal": "Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
             "Corona": "Corona atornillada para mejorar la estanqueidad",
@@ -1585,7 +1585,7 @@ const products = [
         "name": "Seitona Cosmograph - Panda",
         "category": "Seitona",
         "league": "Seitona",
-        "price": 149.9,
+        "price": 119.9,
         "oldPrice": 189.9,
         "image": "/assets/productos/Productos/seiko-mod-daytona-cosmograph-panda/1.webp",
         "images": [
@@ -1598,7 +1598,7 @@ const products = [
         "straps": [],
         "specs": {
             "Caja": "Acero inoxidable 316L",
-            "Movimiento": "Seiko VK63 Cuarzo",
+            "Movimiento": "Mecaquartz",
             "Grosor": "13,5 mm",
             "Cristal": "Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
             "Corona": "Corona atornillada para mejorar la estanqueidad",
@@ -1612,7 +1612,7 @@ const products = [
         "name": "GMTeiko - Batman",
         "category": "GMTeiko",
         "league": "GMTeiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-submariner-batman/1.webp",
         "images": [
@@ -1624,14 +1624,14 @@ const products = [
         "straps": [],
         "specs": {
             "Caja": "Acero inoxidable 316L",
-            "Movimiento": "Seiko NH35 Automático (3 agujas) | Opción GMT: Seiko NH34 (4 agujas)",
+            "Movimiento": "Automático",
             "Grosor": "13,5 mm",
             "Cristal": "Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
             "Corona": "Corona atornillada para mejorar la estanqueidad",
             "Tamaño de muñeca": "Ajustable de 14,5 a 22 cm",
             "Pulsera": "Oyster - ancho 20 mm",
             "Esfera": "28,5 mm",
-            "Nota GMT": "Por defecto 3 agujas (NH35). Selecciona 'Aguja GMT' para 4 agujas (NH34)."
+            "Nota GMT": "Por defecto 3 agujas. Selecciona 'Aguja GMT' para 4 agujas."
         }
     },
     {
@@ -1639,7 +1639,7 @@ const products = [
         "name": "Nauteiko Aquanaut 42mm - Verde Soberano",
         "category": "Nauteiko",
         "league": "Nauteiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-aquanaut-42mm-verde-soberano/1.webp",
         "images": [
@@ -1651,7 +1651,7 @@ const products = [
         "straps": [],
         "specs": {
             "Caja": "Aquanaut 42 mm",
-            "Movimiento": "Seiko NH35 automático",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
             "Correa": "Nautilus 22 mm",
@@ -1663,7 +1663,7 @@ const products = [
         "name": "Nauteiko Aquanaut 42mm - Negro Imperial",
         "category": "Nauteiko",
         "league": "Nauteiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-aquanaut-42mm-negro-imperial/1.webp",
         "images": [
@@ -1674,7 +1674,7 @@ const products = [
         "straps": [],
         "specs": {
             "Caja": "Aquanaut 42 mm",
-            "Movimiento": "Seiko NH35 automático",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
             "Correa": "Nautilus 22 mm",
@@ -1686,7 +1686,7 @@ const products = [
         "name": "Nauteiko Aquanaut 42mm - Azul",
         "category": "Nauteiko",
         "league": "Nauteiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-aquanaut-42mm-ombre-d-039-azur/1.webp",
         "images": [
@@ -1697,7 +1697,7 @@ const products = [
         "straps": [],
         "specs": {
             "Caja": "Aquanaut 42 mm",
-            "Movimiento": "Seiko NH35 automático",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro resistente a los arañazos con lupa cíclope y tratamiento antirreflejos",
             "Correa": "Nautilus 22 mm",
@@ -1709,7 +1709,7 @@ const products = [
         "name": "Seitona Platinum",
         "category": "Seitona",
         "league": "Seitona",
-        "price": 149.9,
+        "price": 119.9,
         "oldPrice": 189.9,
         "image": "/assets/productos/Productos/seiko-mod-daytona-platinum/1.webp",
         "images": [
@@ -1721,7 +1721,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "40 mm (sin incluir la corona)",
-            "Movimiento": "Movimiento híbrido VK63 (combina automático con cuarzo)",
+            "Movimiento": "Mecaquartz",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -1737,7 +1737,7 @@ const products = [
         "name": "GMTeiko Two Tones\"Zombie\"",
         "category": "GMTeiko",
         "league": "GMTeiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-gmt-master-ii-two-tones-zombie/1.webp",
         "images": [
@@ -1750,7 +1750,7 @@ const products = [
             "Oyster"
         ],
         "specs": {
-            "Movimiento": "Seiko NH35 Automático (3 agujas) | Opción GMT: Seiko NH34 (4 agujas)",
+            "Movimiento": "Automático",
             "Caja": "Acero inoxidable 316L",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
@@ -1760,7 +1760,7 @@ const products = [
             "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
             "Fondo de caja": "Cristal (movimiento visible) / Acero (parte trasera cerrada)",
             "Función GMT": "Funcional",
-            "Nota GMT": "Por defecto 3 agujas (NH35). Selecciona 'Aguja GMT' para 4 agujas (NH34)."
+            "Nota GMT": "Por defecto 3 agujas. Selecciona 'Aguja GMT' para 4 agujas."
         }
     },
     {
@@ -1768,7 +1768,7 @@ const products = [
         "name": "GMTeiko \"Joker\"",
         "category": "GMTeiko",
         "league": "GMTeiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-gmt-master-ii-joker/2.webp",
         "images": [
@@ -1780,7 +1780,7 @@ const products = [
             "Oyster"
         ],
         "specs": {
-            "Movimiento": "Seiko NH35 Automático (3 agujas) | Opción GMT: Seiko NH34 (4 agujas)",
+            "Movimiento": "Automático",
             "Caja": "Acero inoxidable 316L",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
@@ -1790,7 +1790,7 @@ const products = [
             "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
             "Fondo de caja": "Cristal (movimiento visible) / Acero (parte trasera cerrada)",
             "Función GMT": "Funcional",
-            "Nota GMT": "Por defecto 3 agujas (NH35). Selecciona 'Aguja GMT' para 4 agujas (NH34)."
+            "Nota GMT": "Por defecto 3 agujas. Selecciona 'Aguja GMT' para 4 agujas."
         }
     },
     {
@@ -1798,7 +1798,7 @@ const products = [
         "name": "Seitona Rose Gold OysterFlex",
         "category": "Seitona",
         "league": "Seitona",
-        "price": 149.9,
+        "price": 119.9,
         "oldPrice": 189.9,
         "image": "/assets/productos/Productos/seiko-mod-daytona-rose-gold-oysterflex/1.webp",
         "images": [
@@ -1808,7 +1808,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "40 mm (sin incluir la corona)",
-            "Movimiento": "Movimiento híbrido VK63 (combina automático con cuarzo)",
+            "Movimiento": "Mecaquartz",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -1825,7 +1825,7 @@ const products = [
         "name": "Seitona \"Ghost\" OysterFlex",
         "category": "Seitona",
         "league": "Seitona",
-        "price": 149.9,
+        "price": 119.9,
         "oldPrice": 189.9,
         "image": "/assets/productos/Productos/seiko-mod-daytona-ghost-oysterflex/1.webp",
         "images": [
@@ -1835,7 +1835,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "40 mm (sin incluir la corona)",
-            "Movimiento": "Movimiento híbrido VK63 (combina automático con cuarzo)",
+            "Movimiento": "Mecaquartz",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -1852,7 +1852,7 @@ const products = [
         "name": "Seitona \"Ghost\"",
         "category": "Seitona",
         "league": "Seitona",
-        "price": 149.9,
+        "price": 119.9,
         "oldPrice": 189.9,
         "image": "/assets/productos/Productos/seiko-mod-daytona-ghost/1.webp",
         "images": [],
@@ -1860,7 +1860,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "40 mm (sin incluir la corona)",
-            "Movimiento": "Movimiento híbrido VK63 (combina automático con cuarzo)",
+            "Movimiento": "Mecaquartz",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -1877,7 +1877,7 @@ const products = [
         "name": "Seitona \"Plata y verde\"",
         "category": "Seitona",
         "league": "Seitona",
-        "price": 149.9,
+        "price": 119.9,
         "oldPrice": 189.9,
         "image": "/assets/productos/Productos/seiko-mod-daytona-plata-y-verde/1.webp",
         "images": [
@@ -1889,7 +1889,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "40 mm (sin incluir la corona)",
-            "Movimiento": "Movimiento híbrido VK63 (combina automático con cuarzo)",
+            "Movimiento": "Mecaquartz",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -1905,7 +1905,7 @@ const products = [
         "name": "Seitona “Ice Blue”",
         "category": "Seitona",
         "league": "Seitona",
-        "price": 149.9,
+        "price": 119.9,
         "oldPrice": 189.9,
         "image": "/assets/productos/Productos/seiko-mod-daytona-ice-blue/1.webp",
         "images": [],
@@ -1913,7 +1913,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "40 mm (sin incluir la corona)",
-            "Movimiento": "Movimiento híbrido VK63 (combina automático con cuarzo)",
+            "Movimiento": "Mecaquartz",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -1929,7 +1929,7 @@ const products = [
         "name": "Seitona \"Oro y negro\"",
         "category": "Seitona",
         "league": "Seitona",
-        "price": 149.9,
+        "price": 119.9,
         "oldPrice": 189.9,
         "image": "/assets/productos/Productos/seiko-mod-daytona-oro-y-negro/1.webp",
         "images": [],
@@ -1937,7 +1937,7 @@ const products = [
         "straps": [],
         "specs": {
             "Diámetro": "40 mm (sin incluir la corona)",
-            "Movimiento": "Movimiento híbrido VK63 (combina automático con cuarzo)",
+            "Movimiento": "Mecaquartz",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -1953,7 +1953,7 @@ const products = [
         "name": "SeikoDayDate \"Roman Blue\"",
         "category": "SeikoDayDate",
         "league": "SeikoDayDate",
-        "price": 169.9,
+        "price": 134.9,
         "oldPrice": 219.9,
         "image": "/assets/productos/Productos/seiko-mod-day-date-roman-blue/1.webp",
         "images": [
@@ -1966,7 +1966,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -1980,7 +1980,7 @@ const products = [
         "name": "SeikoDayDate \"Roman Green\"",
         "category": "SeikoDayDate",
         "league": "SeikoDayDate",
-        "price": 169.9,
+        "price": 134.9,
         "oldPrice": 219.9,
         "image": "/assets/productos/Productos/seiko-mod-day-date-roman-green/1.webp",
         "images": [
@@ -1991,7 +1991,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2005,7 +2005,7 @@ const products = [
         "name": "SeikoDayDate \"Ice Blue\"",
         "category": "SeikoDayDate",
         "league": "SeikoDayDate",
-        "price": 169.9,
+        "price": 134.9,
         "oldPrice": 219.9,
         "image": "/assets/productos/Productos/seiko-mod-day-date-ice-blue/1.webp",
         "images": [
@@ -2018,7 +2018,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2032,7 +2032,7 @@ const products = [
         "name": "SeikoDayDate Olive Green Rose Gold",
         "category": "SeikoDayDate",
         "league": "SeikoDayDate",
-        "price": 169.9,
+        "price": 134.9,
         "oldPrice": 219.9,
         "image": "/assets/productos/Productos/seiko-mod-day-date-olive-green-rose-gold/1.webp",
         "images": [
@@ -2045,7 +2045,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2059,7 +2059,7 @@ const products = [
         "name": "Seikojust \"Wimbledon\"",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-wimbledon/1.webp",
         "images": [
@@ -2079,7 +2079,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "36 o 39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2093,7 +2093,7 @@ const products = [
         "name": "Seikojust \"Olive Green\"",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-olive-green/1.webp",
         "images": [
@@ -2113,7 +2113,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "36 o 39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2127,7 +2127,7 @@ const products = [
         "name": "Seikojust \"Arabic Blue\"",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-arabic-blue/1.webp",
         "images": [
@@ -2148,7 +2148,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "36 o 39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2162,7 +2162,7 @@ const products = [
         "name": "Seikojust \"Arabic black\"",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-arabic-black/1.webp",
         "images": [
@@ -2178,7 +2178,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "36 o 39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2192,7 +2192,7 @@ const products = [
         "name": "Seikojust \"Azul degradado árabe\"",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-azul-degradado-rabe/1.webp",
         "images": [
@@ -2213,7 +2213,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "36 o 39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2227,7 +2227,7 @@ const products = [
         "name": "Seikojust \"Arabic Steel\"",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-arabic-steel/1.webp",
         "images": [
@@ -2247,7 +2247,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "36 o 39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2261,7 +2261,7 @@ const products = [
         "name": "Seikojust Esfera con degradado \"Arabic White\"",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-esfera-con-degradado-arabic-white/1.webp",
         "images": [
@@ -2281,7 +2281,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "36 o 39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2295,7 +2295,7 @@ const products = [
         "name": "Seikojust Negro",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-negro/1.webp",
         "images": [
@@ -2315,7 +2315,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "36 o 39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2329,7 +2329,7 @@ const products = [
         "name": "Seikojust \"Blue Diamonds Dial\"",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-blue-diamonds-dial/1.webp",
         "images": [
@@ -2349,7 +2349,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "36 o 39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2363,7 +2363,7 @@ const products = [
         "name": "Seikojust Two Tones Champagne",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-two-tones-champagne/1.webp",
         "images": [
@@ -2382,7 +2382,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "36 o 39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2396,7 +2396,7 @@ const products = [
         "name": "Seikojust Azul Marino",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-azul-marino/1.webp",
         "images": [
@@ -2414,7 +2414,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "36 o 39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2428,7 +2428,7 @@ const products = [
         "name": "Seikojust Sky Dweller Olive Green",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-sky-dweller-olive-green/1.webp",
         "images": [
@@ -2446,7 +2446,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "36 o 39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2460,7 +2460,7 @@ const products = [
         "name": "Seikojust Wimbledon Two Tones",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-wimbledon-two-tones/1.webp",
         "images": [],
@@ -2476,7 +2476,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "36 o 39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2490,7 +2490,7 @@ const products = [
         "name": "SeikoDayDate Oro Amarillo \"President\"",
         "category": "SeikoDayDate",
         "league": "SeikoDayDate",
-        "price": 169.9,
+        "price": 134.9,
         "oldPrice": 219.9,
         "image": "/assets/productos/Productos/seiko-mod-day-date-oro-amarillo-president/1.webp",
         "images": [],
@@ -2499,7 +2499,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2513,7 +2513,7 @@ const products = [
         "name": "Seikojust Wimbledon Two Tones Oro Amarillo",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-wimbledon-two-tones-oro-amarillo/1.webp",
         "images": [],
@@ -2529,7 +2529,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "36 o 39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2543,7 +2543,7 @@ const products = [
         "name": "Seikojust Purple Dial",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-purple-dial/1.webp",
         "images": [],
@@ -2559,7 +2559,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "36 o 39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2573,7 +2573,7 @@ const products = [
         "name": "Seikojust Sky Dweller White Two Tones",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-sky-dweller-white-two-tones/1.webp",
         "images": [],
@@ -2589,7 +2589,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "36 o 39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2603,7 +2603,7 @@ const products = [
         "name": "Seikojust Chocolate Roman",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-chocolate-roman/1.webp",
         "images": [],
@@ -2619,7 +2619,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "36 o 39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2633,7 +2633,7 @@ const products = [
         "name": "Seikojust Two Tones Gold",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-two-tones-gold/1.webp",
         "images": [],
@@ -2649,7 +2649,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "36 o 39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2663,7 +2663,7 @@ const products = [
         "name": "Seikojust Yellow Gold",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-yellow-gold/1.webp",
         "images": [],
@@ -2679,7 +2679,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "36 o 39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2693,7 +2693,7 @@ const products = [
         "name": "Seikojust Green Dial",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-green-dial/1.webp",
         "images": [],
@@ -2709,7 +2709,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "36 o 39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2723,7 +2723,7 @@ const products = [
         "name": "Seikojust Chocolate",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-chocolate/1.webp",
         "images": [],
@@ -2739,7 +2739,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "36 o 39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2753,7 +2753,7 @@ const products = [
         "name": "Seikojust Chocolate Two Tones",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-chocolate-two-tones/1.webp",
         "images": [],
@@ -2769,7 +2769,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "36 o 39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2783,7 +2783,7 @@ const products = [
         "name": "Seikojust Black Arabic Dial",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-black-arabic-dial/1.webp",
         "images": [],
@@ -2799,7 +2799,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "36 o 39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2813,7 +2813,7 @@ const products = [
         "name": "SeikoDayDate Olive Green",
         "category": "SeikoDayDate",
         "league": "SeikoDayDate",
-        "price": 169.9,
+        "price": 134.9,
         "oldPrice": 219.9,
         "image": "/assets/productos/Productos/seiko-mod-day-date-olive-green/1.webp",
         "images": [],
@@ -2822,7 +2822,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2836,7 +2836,7 @@ const products = [
         "name": "Seikojust Pink Two Tones",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-pink-two-tones/1.webp",
         "images": [],
@@ -2852,7 +2852,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "36 o 39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2866,7 +2866,7 @@ const products = [
         "name": "GMTeiko dorado \"Bruce Wayne\"",
         "category": "GMTeiko",
         "league": "GMTeiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-gmt-master-ii-dorado-bruce-wayne/1.webp",
         "images": [],
@@ -2876,7 +2876,7 @@ const products = [
             "Oyster"
         ],
         "specs": {
-            "Movimiento": "Seiko NH35 Automático (3 agujas) | Opción GMT: Seiko NH34 (4 agujas)",
+            "Movimiento": "Automático",
             "Caja": "Acero inoxidable 316L",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
@@ -2886,7 +2886,7 @@ const products = [
             "Tamaño de muñeca": "14,5cm a 22cm (ajustable)",
             "Fondo de caja": "Cristal (movimiento visible) / Acero (parte trasera cerrada)",
             "Función GMT": "Funcional",
-            "Nota GMT": "Por defecto 3 agujas (NH35). Selecciona 'Aguja GMT' para 4 agujas (NH34)."
+            "Nota GMT": "Por defecto 3 agujas. Selecciona 'Aguja GMT' para 4 agujas."
         }
     },
     {
@@ -2894,7 +2894,7 @@ const products = [
         "name": "SeikoMariner \"Starbucks\"",
         "category": "SeikoMariner",
         "league": "SeikoMariner",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-submariner-starbucks/1.webp",
         "images": [
@@ -2907,7 +2907,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "40 mm (sin incluir la corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2922,7 +2922,7 @@ const products = [
         "name": "SeikoMariner \"Dos tonos\"",
         "category": "SeikoMariner",
         "league": "SeikoMariner",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-submariner-dos-tonos/1.webp",
         "images": [
@@ -2935,7 +2935,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "40 mm (sin incluir la corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2950,7 +2950,7 @@ const products = [
         "name": "SeikoMariner \"Bluesy\"",
         "category": "SeikoMariner",
         "league": "SeikoMariner",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-submariner-bluesy/1.webp",
         "images": [
@@ -2964,7 +2964,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "40 mm (sin incluir la corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -2979,7 +2979,7 @@ const products = [
         "name": "SeikoMariner \"Cookie Monster\"",
         "category": "SeikoMariner",
         "league": "SeikoMariner",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-submariner-cookie-monster/1.webp",
         "images": [
@@ -2990,7 +2990,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "40 mm (sin incluir la corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -3005,7 +3005,7 @@ const products = [
         "name": "SeikoMariner \"Smurf\"",
         "category": "SeikoMariner",
         "league": "SeikoMariner",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-submariner-smurf/1.webp",
         "images": [
@@ -3019,7 +3019,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "40 mm (sin incluir la corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -3034,7 +3034,7 @@ const products = [
         "name": "SeikoMariner “Azul cielo”",
         "category": "SeikoMariner",
         "league": "SeikoMariner",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-submariner-azul-cielo/1.webp",
         "images": [
@@ -3047,7 +3047,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "40 mm (sin incluir la corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -3062,7 +3062,7 @@ const products = [
         "name": "Nauteiko Open Heart Blue",
         "category": "Nauteiko",
         "league": "Nauteiko",
-        "price": 174.9,
+        "price": 139.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-nautilus-open-heart-blue/1.webp",
         "images": [
@@ -3074,7 +3074,7 @@ const products = [
         "sizes": [],
         "straps": [],
         "specs": {
-            "Movimiento": "Seiko NH38 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Caja": "Acero inoxidable 316L",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirre",
             "Corona": "Roscado",
@@ -3088,7 +3088,7 @@ const products = [
         "name": "Nauteiko \"Tiffany\"",
         "category": "Nauteiko",
         "league": "Nauteiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-nautilus-tiffany/1.webp",
         "images": [
@@ -3100,7 +3100,7 @@ const products = [
         "sizes": [],
         "straps": [],
         "specs": {
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Caja": "Acero inoxidable 316L",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirre",
             "Corona": "Roscado",
@@ -3114,7 +3114,7 @@ const products = [
         "name": "Nauteiko \"Azul\"",
         "category": "Nauteiko",
         "league": "Nauteiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-nautilus-azul/1.webp",
         "images": [
@@ -3125,7 +3125,7 @@ const products = [
         "sizes": [],
         "straps": [],
         "specs": {
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Caja": "Acero inoxidable 316L",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirre",
             "Corona": "Roscado",
@@ -3139,7 +3139,7 @@ const products = [
         "name": "Nauteiko White",
         "category": "Nauteiko",
         "league": "Nauteiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-nautilus-white/1.webp",
         "images": [
@@ -3148,7 +3148,7 @@ const products = [
         "sizes": [],
         "straps": [],
         "specs": {
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Caja": "Acero inoxidable 316L",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirre",
             "Corona": "Roscado",
@@ -3162,7 +3162,7 @@ const products = [
         "name": "Nauteiko Verde",
         "category": "Nauteiko",
         "league": "Nauteiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-nautilus-verde/1.webp",
         "images": [
@@ -3171,7 +3171,7 @@ const products = [
         "sizes": [],
         "straps": [],
         "specs": {
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Caja": "Acero inoxidable 316L",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirre",
             "Corona": "Roscado",
@@ -3185,7 +3185,7 @@ const products = [
         "name": "Nauteiko \"Oro rosa y chocolate\"",
         "category": "Nauteiko",
         "league": "Nauteiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-nautilus-oro-rosa-y-chocolate/1.webp",
         "images": [
@@ -3195,7 +3195,7 @@ const products = [
         "sizes": [],
         "straps": [],
         "specs": {
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Caja": "Acero inoxidable 316L",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirre",
             "Corona": "Roscado",
@@ -3209,7 +3209,7 @@ const products = [
         "name": "Nauteiko \"Negro\"",
         "category": "Nauteiko",
         "league": "Nauteiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-nautilus-negro/1.webp",
         "images": [
@@ -3219,7 +3219,7 @@ const products = [
         "sizes": [],
         "straps": [],
         "specs": {
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Caja": "Acero inoxidable 316L",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirre",
             "Corona": "Roscado",
@@ -3233,7 +3233,7 @@ const products = [
         "name": "Royal Seikoak \"Navy blue\"",
         "category": "Royal Seikoak",
         "league": "Royal Seikoak",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-royal-oak-navy-blue/1.webp",
         "images": [
@@ -3245,7 +3245,7 @@ const products = [
         "straps": [],
         "specs": {
             "Caja": "Zafiro, antirayaduras con tratamiento antirreflejos",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Luminosidad": "Sí",
             "Corona": "Roscado",
@@ -3258,7 +3258,7 @@ const products = [
         "name": "Royal Seikoak \"Skeleton\"",
         "category": "Royal Seikoak",
         "league": "Royal Seikoak",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-royal-oak-skeleton/1.webp",
         "images": [
@@ -3272,7 +3272,7 @@ const products = [
         "straps": [],
         "specs": {
             "Caja": "Zafiro, antirayaduras con tratamiento antirreflejos",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Luminosidad": "Sí",
             "Corona": "Roscado",
@@ -3285,7 +3285,7 @@ const products = [
         "name": "Royal Seikoak \"Panda Cronógrafo\"",
         "category": "Royal Seikoak",
         "league": "Royal Seikoak",
-        "price": 149.9,
+        "price": 119.9,
         "oldPrice": 189.9,
         "image": "/assets/productos/Productos/seiko-mod-royal-oak-panda-cron-grafo/1.webp",
         "images": [
@@ -3296,7 +3296,7 @@ const products = [
         "straps": [],
         "specs": {
             "Caja": "Acero inoxidable cepillado 316L",
-            "Movimiento": "Movimiento híbrido Seiko VK63 (combina automático con cuarzo)",
+            "Movimiento": "Mecaquartz",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -3310,7 +3310,7 @@ const products = [
         "name": "Royal Seikoak Chronograph Dark Blue",
         "category": "Royal Seikoak",
         "league": "Royal Seikoak",
-        "price": 149.9,
+        "price": 119.9,
         "oldPrice": 189.9,
         "image": "/assets/productos/Productos/seiko-mod-royal-oak-chronograph-dark-blue/1.webp",
         "images": [
@@ -3320,7 +3320,7 @@ const products = [
         "straps": [],
         "specs": {
             "Caja": "Acero inoxidable cepillado 316L",
-            "Movimiento": "Movimiento híbrido Seiko VK63 (combina automático con cuarzo)",
+            "Movimiento": "Mecaquartz",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -3334,7 +3334,7 @@ const products = [
         "name": "Royal Seikoak Chronograph \"Oro Rosa dial azul\"",
         "category": "Royal Seikoak",
         "league": "Royal Seikoak",
-        "price": 149.9,
+        "price": 119.9,
         "oldPrice": 189.9,
         "image": "/assets/productos/Productos/seiko-mod-royal-oak-chronograph-oro-rosa-dial-azul/1.webp",
         "images": [
@@ -3345,7 +3345,7 @@ const products = [
         "straps": [],
         "specs": {
             "Caja": "Acero inoxidable cepillado 316L",
-            "Movimiento": "Movimiento híbrido Seiko VK63 (combina automático con cuarzo)",
+            "Movimiento": "Mecaquartz",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -3359,7 +3359,7 @@ const products = [
         "name": "Royal Seikoak \"Cronógrafo blanco\"",
         "category": "Royal Seikoak",
         "league": "Royal Seikoak",
-        "price": 149.9,
+        "price": 119.9,
         "oldPrice": 189.9,
         "image": "/assets/productos/Productos/seiko-mod-royal-oak-cron-grafo-blanco/1.webp",
         "images": [],
@@ -3367,7 +3367,7 @@ const products = [
         "straps": [],
         "specs": {
             "Caja": "Acero inoxidable cepillado 316L",
-            "Movimiento": "Movimiento híbrido Seiko VK63 (combina automático con cuarzo)",
+            "Movimiento": "Mecaquartz",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -3381,7 +3381,7 @@ const products = [
         "name": "Royal Seikoak \"Verde\"",
         "category": "Royal Seikoak",
         "league": "Royal Seikoak",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-royal-oak-verde/1.webp",
         "images": [
@@ -3391,7 +3391,7 @@ const products = [
         "straps": [],
         "specs": {
             "Caja": "Zafiro, antirayaduras con tratamiento antirreflejos",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Luminosidad": "Sí",
             "Corona": "Roscado",
@@ -3404,7 +3404,7 @@ const products = [
         "name": "Royal Seikoak \"oro rosa y azul marino\"",
         "category": "Royal Seikoak",
         "league": "Royal Seikoak",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-royal-oak-oro-rosa-y-azul-marino/1.webp",
         "images": [
@@ -3415,7 +3415,7 @@ const products = [
         "straps": [],
         "specs": {
             "Caja": "Zafiro, antirayaduras con tratamiento antirreflejos",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Luminosidad": "Sí",
             "Corona": "Roscado",
@@ -3428,7 +3428,7 @@ const products = [
         "name": "Royal Seikoak Negro y Oro Rosa",
         "category": "Royal Seikoak",
         "league": "Royal Seikoak",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-royal-oak-negro-y-oro-rosa/1.webp",
         "images": [],
@@ -3436,7 +3436,7 @@ const products = [
         "straps": [],
         "specs": {
             "Caja": "Zafiro, antirayaduras con tratamiento antirreflejos",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Luminosidad": "Sí",
             "Corona": "Roscado",
@@ -3449,7 +3449,7 @@ const products = [
         "name": "Royal Seikoak Chronograph Black and Silver",
         "category": "Royal Seikoak",
         "league": "Royal Seikoak",
-        "price": 149.9,
+        "price": 119.9,
         "oldPrice": 189.9,
         "image": "/assets/productos/Productos/seiko-mod-royal-oak-chronograph-black-and-silver/1.webp",
         "images": [],
@@ -3457,7 +3457,7 @@ const products = [
         "straps": [],
         "specs": {
             "Caja": "Acero inoxidable cepillado 316L",
-            "Movimiento": "Movimiento híbrido Seiko VK63 (combina automático con cuarzo)",
+            "Movimiento": "Mecaquartz",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -3471,7 +3471,7 @@ const products = [
         "name": "Santeiko Santos White",
         "category": "Santeiko",
         "league": "Santeiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-santos-white/1.webp",
         "images": [
@@ -3485,7 +3485,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "38mm (sin incluir la corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -3500,7 +3500,7 @@ const products = [
         "name": "Santeiko Santos White Two Tones",
         "category": "Santeiko",
         "league": "Santeiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-santos-white-two-tones/1.webp",
         "images": [
@@ -3513,7 +3513,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "38mm (sin incluir la corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -3528,7 +3528,7 @@ const products = [
         "name": "Santeiko Santos Green",
         "category": "Santeiko",
         "league": "Santeiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-santos-green/1.webp",
         "images": [
@@ -3541,7 +3541,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "38mm (sin incluir la corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -3556,7 +3556,7 @@ const products = [
         "name": "Santeiko Santos \"F*ck 9-5\"",
         "category": "Santeiko",
         "league": "Santeiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-santos-f-ck-9-5/1.webp",
         "images": [
@@ -3569,7 +3569,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "38mm (sin incluir la corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -3584,7 +3584,7 @@ const products = [
         "name": "Santeiko Santos Brown",
         "category": "Santeiko",
         "league": "Santeiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-santos-brown/1.webp",
         "images": [
@@ -3593,7 +3593,7 @@ const products = [
         "sizes": [],
         "straps": [],
         "specs": {
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Diámetro": "39 mm (sin corona)",
             "Caja": "acero inoxidable 316L",
             "Grosor": "12 mm",
@@ -3609,7 +3609,7 @@ const products = [
         "name": "Santeiko Santos Blue",
         "category": "Santeiko",
         "league": "Santeiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-santos-blue/1.webp",
         "images": [
@@ -3622,7 +3622,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "38mm (sin incluir la corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -3637,7 +3637,7 @@ const products = [
         "name": "Yatcheiko \"Plata y azul marino\"",
         "category": "Yatcheiko",
         "league": "Yatcheiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-yacht-master-plata-y-azul-marino/1.webp",
         "images": [
@@ -3649,7 +3649,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "40 mm (sin incluir la corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Luminosidad": "Sí",
             "Corona": "Roscado",
@@ -3663,7 +3663,7 @@ const products = [
         "name": "Yatcheiko \"Plata\"",
         "category": "Yatcheiko",
         "league": "Yatcheiko",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-yacht-master-plata/1.webp",
         "images": [
@@ -3674,7 +3674,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "40 mm (sin incluir la corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Luminosidad": "Sí",
             "Corona": "Roscado",
@@ -3688,7 +3688,7 @@ const products = [
         "name": "Seikojust Oyster Perpetual \"Tiffany\"",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-oyster-perpetual-tiffany/1.webp",
         "images": [
@@ -3708,7 +3708,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "36 o 39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -3722,7 +3722,7 @@ const products = [
         "name": "Seikojust \"Who cares I'm already late?\"",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-who-cares-i-m-already-late/1.webp",
         "images": [
@@ -3743,7 +3743,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "36 o 39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -3757,7 +3757,7 @@ const products = [
         "name": "Seikojust Oyster Perpetual \"Bubbles celebration\"",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seiko-mod-oyster-perpetual-bubbles-celebration/1.webp",
         "images": [
@@ -3776,7 +3776,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "36 o 39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",
@@ -3790,7 +3790,7 @@ const products = [
         "name": "Seikojust Black “Venom”",
         "category": "Seikojust",
         "league": "Seikojust",
-        "price": 162.9,
+        "price": 129.9,
         "oldPrice": 212.9,
         "image": "/assets/productos/Productos/seikojust-black-venom/1.webp",
         "images": [],
@@ -3806,7 +3806,7 @@ const products = [
         "specs": {
             "Caja": "Acero inoxidable 316L",
             "Diámetro": "36 o 39 mm (sin corona)",
-            "Movimiento": "Seiko NH35 Automático Seiko Time Corp.",
+            "Movimiento": "Automático",
             "Grosor": "12 mm",
             "Cristal": "Zafiro, antirayaduras con tratamiento antirreflejos",
             "Luminosidad": "Sí",

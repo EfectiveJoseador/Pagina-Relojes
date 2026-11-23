@@ -153,11 +153,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <input type="checkbox" id="gmt-check" style="width: 20px; height: 20px; accent-color: var(--primary);">
                 <div style="display: flex; flex-direction: column;">
                     <span style="font-weight: 600; color: var(--text-main);">Aguja GMT (4ª aguja)</span>
-                    <span style="font-size: 0.85rem; color: var(--text-muted);">Movimiento Seiko NH34</span>
                 </div>
             </label>
             <p style="margin-top: 8px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;">
-                <i class="fas fa-info-circle"></i> Si no se selecciona, el reloj montará un movimiento Seiko NH35 (3 agujas) estándar.
+                <i class="fas fa-info-circle"></i> Si no se selecciona, el reloj montará un movimiento automático (3 agujas) estándar.
             </p>
         `;
 
@@ -186,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function updatePrice() {
-    const boxPrices = { 'none': 0, 'basic': 8, 'black': 10, 'brown': 10, 'seiko': 15 };
+    const boxPrices = { 'none': 0, 'basic': 3, 'black': 5, 'brown': 5, 'seiko': 10 };
     const boxPrice = boxPrices[selectedBox] || 0;
     const gmtPrice = selectedGmt ? 15 : 0;
 
@@ -207,9 +206,9 @@ function updateSpecsText() {
     listItems.forEach(li => {
         if (li.textContent.includes('Movimiento:')) {
             if (selectedGmt) {
-                li.innerHTML = '<i class="fas fa-check"></i> <span><strong>Movimiento:</strong> Seiko NH34 Automático (4 agujas - GMT)</span>';
+                li.innerHTML = '<i class="fas fa-check"></i> <span><strong>Movimiento:</strong> Automático (4 agujas - GMT)</span>';
             } else {
-                li.innerHTML = '<i class="fas fa-check"></i> <span><strong>Movimiento:</strong> Seiko NH35 Automático (3 agujas)</span>';
+                li.innerHTML = '<i class="fas fa-check"></i> <span><strong>Movimiento:</strong> Automático</span>';
             }
         }
     });
@@ -249,10 +248,10 @@ function addToCart() {
 
     const boxPrices = {
         'none': 0,
-        'basic': 8,
-        'black': 10,
-        'brown': 10,
-        'seiko': 15
+        'basic': 3,
+        'black': 5,
+        'brown': 5,
+        'seiko': 10
     };
     const boxPrice = boxPrices[selectedBox] || 0;
     const gmtPrice = selectedGmt ? 15 : 0;
@@ -670,29 +669,33 @@ function loadRelatedProducts() {
     const originalCards = Array.from(track.querySelectorAll('.product-card'));
     if (originalCards.length === 0) return;
 
-    const cardWidth = 280 + 24;
-    const totalCards = originalCards.length;
+    function getCardWidth() {
+        const card = track.querySelector('.product-card');
+        if (!card) return 304;
+        const rect = card.getBoundingClientRect();
+        const style = window.getComputedStyle(track);
+        const gap = parseFloat(style.gap) || (window.innerWidth <= 768 ? 16 : 24);
+        return (rect.width > 0 ? rect.width : (window.innerWidth <= 768 ? 190 : 280)) + gap;
+    }
 
+    const totalCards = originalCards.length;
 
     originalCards.forEach(card => {
         const cloneEnd = card.cloneNode(true);
         cloneEnd.classList.add('carousel-clone');
-
         track.appendChild(cloneEnd);
     });
 
     [...originalCards].reverse().forEach(card => {
         const cloneStart = card.cloneNode(true);
         cloneStart.classList.add('carousel-clone');
-
         track.insertBefore(cloneStart, track.firstChild);
     });
 
-    let currentPosition = totalCards * cardWidth;
+    let currentPosition = totalCards * getCardWidth();
     let isJumping = false;
     let animationId = null;
     let isPaused = false;
-
 
     const SCROLL_SPEED = 0.3;
     const PAUSE_DURATION = 3000;
@@ -708,6 +711,7 @@ function loadRelatedProducts() {
 
     function checkBoundary(e) {
         if (e && e.target !== track) return;
+        const cardWidth = getCardWidth();
 
         if (currentPosition >= totalCards * 2 * cardWidth) {
             isJumping = true;
@@ -735,6 +739,7 @@ function loadRelatedProducts() {
         }
 
         currentPosition += SCROLL_SPEED;
+        const cardWidth = getCardWidth();
 
         if (currentPosition >= totalCards * 2 * cardWidth) {
             currentPosition -= totalCards * cardWidth;
@@ -781,7 +786,7 @@ function loadRelatedProducts() {
         e.preventDefault();
         if (isJumping) return;
         handleUserInteraction();
-        currentPosition -= cardWidth;
+        currentPosition -= getCardWidth();
         setPosition(currentPosition, true);
     });
 
@@ -790,7 +795,7 @@ function loadRelatedProducts() {
         e.preventDefault();
         if (isJumping) return;
         handleUserInteraction();
-        currentPosition += cardWidth;
+        currentPosition += getCardWidth();
         setPosition(currentPosition, true);
     });
 
@@ -854,6 +859,7 @@ function loadRelatedProducts() {
         lastPos = currentX;
         lastTime = now;
 
+        checkBoundary();
         track.style.transform = `translateX(${-currentPosition}px)`;
     }
 
@@ -887,6 +893,7 @@ function loadRelatedProducts() {
             }
             currentPosition -= velocity;
             velocity *= friction;
+            checkBoundary();
             track.style.transform = `translateX(${-currentPosition}px)`;
             inertiaId = requestAnimationFrame(inertiaStep);
         }
@@ -896,4 +903,12 @@ function loadRelatedProducts() {
     track.addEventListener('touchstart', touchStart, { passive: true });
     track.addEventListener('touchmove', touchMove, { passive: false });
     track.addEventListener('touchend', touchEnd, { passive: true });
+
+    window.addEventListener('resize', () => {
+        const cardWidth = getCardWidth();
+        if (currentPosition < totalCards * cardWidth || currentPosition >= totalCards * 2 * cardWidth) {
+            currentPosition = totalCards * cardWidth;
+            setPosition(currentPosition, false);
+        }
+    });
 }

@@ -288,10 +288,10 @@ function renderProductRow(products, rowIndex) {
                             <label>Caja <span style="color: var(--text-muted); font-weight: 400; font-size: 0.8em;">Opcional</span></label>
                             <select class="quick-box">
                                 <option value="none">Sin caja - Gratis</option>
-                                <option value="basic">Caja 1 - Básica (+€8)</option>
-                                <option value="black">Caja 2 - Negra (+€10)</option>
-                                <option value="brown">Caja 3 - Negra/Marrón (+€10)</option>
-                                <option value="seiko">Caja 4 - Seiko + Tarjetas (+€15)</option>
+                                <option value="basic">Caja 1 - Básica (+€3)</option>
+                                <option value="black">Caja 2 - Negra (+€5)</option>
+                                <option value="brown">Caja 3 - Negra/Marrón (+€5)</option>
+                                <option value="seiko">Caja 4 - Seiko + Tarjetas (+€10)</option>
                             </select>
                         </div>
                         
@@ -446,10 +446,10 @@ function renderAllProductsInstantly(productsToShow) {
                             <label>Caja <span style="color: var(--text-muted); font-weight: 400; font-size: 0.8em;">Opcional</span></label>
                             <select class="quick-box">
                                 <option value="none">Sin caja - Gratis</option>
-                                <option value="basic">Caja 1 - Básica (+€8)</option>
-                                <option value="black">Caja 2 - Negra (+€10)</option>
-                                <option value="brown">Caja 3 - Negra/Marrón (+€10)</option>
-                                <option value="seiko">Caja 4 - Seiko + Tarjetas (+€15)</option>
+                                <option value="basic">Caja 1 - Básica (+€3)</option>
+                                <option value="black">Caja 2 - Negra (+€5)</option>
+                                <option value="brown">Caja 3 - Negra/Marrón (+€5)</option>
+                                <option value="seiko">Caja 4 - Seiko + Tarjetas (+€10)</option>
                             </select>
                         </div>
                         
@@ -586,10 +586,10 @@ function attachFormListeners() {
 
             const boxPrices = {
                 'none': 0,
-                'basic': 8,
-                'black': 10,
-                'brown': 10,
-                'seiko': 15
+                'basic': 3,
+                'black': 5,
+                'brown': 5,
+                'seiko': 10
             };
             const box = boxSelect?.value || 'none';
             total += boxPrices[box] || 0;
@@ -701,10 +701,10 @@ function handleQuickAddSubmit(form, product) {
 
     const boxPrices = {
         'none': 0,
-        'basic': 8,
-        'black': 10,
-        'brown': 10,
-        'seiko': 15
+        'basic': 3,
+        'black': 5,
+        'brown': 5,
+        'seiko': 10
     };
     const selectedBox = boxSelect?.value || 'none';
     const boxPrice = boxPrices[selectedBox] || 0;
@@ -1041,15 +1041,15 @@ function applyFilters(updateURL = true) {
         if (selectedAuto) {
             const mov = (product.specs && product.specs['Movimiento']) || '';
             const normalizedMov = normalizeString(mov);
-            // Must include 'automatico' AND NOT include 'cuarzo'
-            matchesAuto = normalizedMov.includes('automatico') && !normalizedMov.includes('cuarzo');
+            // Must include 'automatico' AND NOT include 'cuarzo' or 'mecaquartz'
+            matchesAuto = normalizedMov.includes('automatico') && !normalizedMov.includes('cuarzo') && !normalizedMov.includes('mecaquartz');
         }
 
         let matchesQuartz = true;
         if (selectedQuartz) {
             const mov = (product.specs && product.specs['Movimiento']) || '';
             const normalizedMov = normalizeString(mov);
-            matchesQuartz = normalizedMov.includes('cuarzo');
+            matchesQuartz = normalizedMov.includes('cuarzo') || normalizedMov.includes('mecaquartz');
         }
 
         return matchesSearch && matchesLeague && matchesAuto && matchesQuartz;

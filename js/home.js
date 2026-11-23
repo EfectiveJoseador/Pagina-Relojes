@@ -106,11 +106,16 @@ function initCatalogoCarousel() {
     const originalCards = Array.from(track.querySelectorAll('.product-card'));
     if (originalCards.length === 0) return;
 
-    const cardWidth = 280 + 24;
+    function getCardWidth() {
+        const card = track.querySelector('.product-card');
+        if (!card) return 304;
+        const rect = card.getBoundingClientRect();
+        const style = window.getComputedStyle(track);
+        const gap = parseFloat(style.gap) || (window.innerWidth <= 768 ? 16 : 24);
+        return (rect.width > 0 ? rect.width : (window.innerWidth <= 768 ? 200 : 280)) + gap;
+    }
+
     const totalCards = originalCards.length;
-
-
-
 
     originalCards.forEach(card => {
         const cloneEnd = card.cloneNode(true);
@@ -121,7 +126,6 @@ function initCatalogoCarousel() {
         track.appendChild(cloneEnd);
     });
 
-
     [...originalCards].reverse().forEach(card => {
         const cloneStart = card.cloneNode(true);
         cloneStart.classList.add('carousel-clone');
@@ -131,7 +135,7 @@ function initCatalogoCarousel() {
         track.insertBefore(cloneStart, track.firstChild);
     });
 
-    let currentPosition = totalCards * cardWidth;
+    let currentPosition = totalCards * getCardWidth();
     let isJumping = false;
     let animationId = null;
     let isPaused = false;
@@ -149,9 +153,8 @@ function initCatalogoCarousel() {
     }
 
     function checkBoundary(e) {
-
         if (e && e.target !== track) return;
-
+        const cardWidth = getCardWidth();
 
         if (currentPosition >= totalCards * 2 * cardWidth) {
             isJumping = true;
@@ -172,7 +175,6 @@ function initCatalogoCarousel() {
         }
     }
 
-
     function smoothScroll() {
         if (isPaused || isJumping) {
             animationId = requestAnimationFrame(smoothScroll);
@@ -180,7 +182,7 @@ function initCatalogoCarousel() {
         }
 
         currentPosition += SCROLL_SPEED;
-
+        const cardWidth = getCardWidth();
 
         if (currentPosition >= totalCards * 2 * cardWidth) {
             currentPosition -= totalCards * cardWidth;
@@ -227,7 +229,7 @@ function initCatalogoCarousel() {
         e.preventDefault();
         if (isJumping) return;
         handleUserInteraction();
-        currentPosition -= cardWidth;
+        currentPosition -= getCardWidth();
         setPosition(currentPosition, true);
     });
 
@@ -236,7 +238,7 @@ function initCatalogoCarousel() {
         e.preventDefault();
         if (isJumping) return;
         handleUserInteraction();
-        currentPosition += cardWidth;
+        currentPosition += getCardWidth();
         setPosition(currentPosition, true);
     });
 
